@@ -11,5 +11,7 @@ namespace SomerenModel
         public String Name { get; set; }
         public int Number { get; set; } // LecturerNumber, e.g. 47198
 
+        public int TeacherId { get; set; }
+
     }
 }
