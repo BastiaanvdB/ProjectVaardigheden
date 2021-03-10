@@ -52,3 +52,15 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenLogic\obj\Debug\SomerenLogic.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenLogic\obj\Debug\SomerenLogic.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\bin\Debug\SomerenLogic.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\bin\Debug\SomerenLogic.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\bin\Debug\SomerenDAL.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\bin\Debug\SomerenModel.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\bin\Debug\SomerenDAL.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\bin\Debug\SomerenModel.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.pdb
