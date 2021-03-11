@@ -211,10 +211,12 @@
             // studentName
             // 
             this.studentName.Text = "Name";
+            this.studentName.Width = 100;
             // 
             // studentDOB
             // 
             this.studentDOB.Text = "Date of Birth";
+            this.studentDOB.Width = 75;
             // 
             // pictureBox1
             // 
@@ -266,6 +268,7 @@
             // teacherName
             // 
             this.teacherName.Text = "Name";
+            this.teacherName.Width = 100;
             // 
             // pictureBox2
             // 
@@ -316,11 +319,13 @@
             // 
             // roomID
             // 
-            this.roomID.Text = "ID";
+            this.roomID.Text = "RoomNumber";
+            this.roomID.Width = 80;
             // 
             // roomType
             // 
             this.roomType.Text = "Type";
+            this.roomType.Width = 100;
             // 
             // roomCapacity
             // 
