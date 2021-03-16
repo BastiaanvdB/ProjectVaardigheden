@@ -64,3 +64,15 @@ C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debu
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.dll
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenLogic\obj\Debug\SomerenLogic.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\bin\Debug\SomerenLogic.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\bin\Debug\SomerenLogic.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\bin\Debug\SomerenDAL.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\bin\Debug\SomerenModel.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\bin\Debug\SomerenDAL.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\bin\Debug\SomerenModel.pdb
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\obj\Debug\SomerenLogic.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\obj\Debug\SomerenLogic.dll
+C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenLogic\obj\Debug\SomerenLogic.pdb
