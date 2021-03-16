@@ -34,6 +34,7 @@ namespace SomerenUI
                     pnl_Students.Hide();
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
+                    pnl_Products.Hide();
 
                     // show dashboard
                     pnl_Dashboard.Show();
@@ -111,6 +112,38 @@ namespace SomerenUI
                             type = "Studentenkamer";
                         }
                         listViewRooms.Items.Add(new ListViewItem(new string[] { $"{r.Number}", $"{type}", $"{r.Capacity}" }));
+                    }
+                    break;
+
+                case "Products":
+                    // hide all other panels
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+                    pnl_Students.Hide();
+                    pnl_Teachers.Hide();
+                    pnl_Rooms.Hide();
+
+                    // show room panel
+                    pnl_Products.Show();
+
+                   // listViewBeverage.Items.Clear();
+
+                    // fill the rooms listview within the rooms panel with a list of rooms
+                    SomerenLogic.Product_Service productService = new SomerenLogic.Product_Service();
+                    List<Product> productList = productService.GetProducts();
+                    listViewBeverage.View = View.Details;
+                    foreach (SomerenModel.Product p in productList)
+                    {
+                        /*string type = "";
+                        if (p. == true)
+                        {
+                            type = "Docentenkamer";
+                        }
+                        else
+                        {
+                            type = "Studentenkamer";
+                        }*/
+                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"{p.Price}", $"{p.Stock}", $"{p.Restocklevel}" }));
                     }
                     break;
             }
@@ -194,7 +227,13 @@ namespace SomerenUI
 
         private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
+
+        private void beverageStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showPanel("Products");
+        }
+
+
     }
 }
