@@ -60,9 +60,7 @@ namespace SomerenUI
                     listViewStudents.View = View.Details;
                     foreach (SomerenModel.Student student in studentList)
                     {
-                        //listViewStudents.Items.Add(s.Name + s.Number + s.BirthDate);
                         listViewStudents.Items.Add(new ListViewItem(new string[] { $"{student.Number}", $"{student.Name}", $"{student.BirthDate.ToString("dd/MM/yyyy")}" }));
-                        // Console.WriteLine(s.Name);
                     }
                     break;
 
@@ -137,7 +135,14 @@ namespace SomerenUI
                     listViewBeverage.View = View.Details;
                     foreach (SomerenModel.Product p in productList)
                     {
-                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price.ToString("0.00")}",$"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}" }));
+                        string alarm = "FULL";
+                        if (p.Stock < p.Restocklevel)
+                        {
+                            //test
+                           alarm = "REFILL!";
+                        }
+
+                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price.ToString("0.00")}",$"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}", $"{alarm}" }));
                     }
                     break;
             }

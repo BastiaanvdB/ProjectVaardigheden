@@ -74,6 +74,7 @@
             this.RestocklevelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.StockStatusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -153,7 +154,7 @@
             // beverageStripMenuItem1
             // 
             this.beverageStripMenuItem1.Name = "beverageStripMenuItem1";
-            this.beverageStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.beverageStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.beverageStripMenuItem1.Text = "Beverage Storage";
             this.beverageStripMenuItem1.Click += new System.EventHandler(this.beverageStripMenuItem1_Click);
             // 
@@ -226,6 +227,7 @@
             this.studentID,
             this.studentName,
             this.studentDOB});
+            this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
             this.listViewStudents.Location = new System.Drawing.Point(16, 42);
             this.listViewStudents.Name = "listViewStudents";
@@ -241,7 +243,7 @@
             // studentName
             // 
             this.studentName.Text = "Name";
-            this.studentName.Width = 100;
+            this.studentName.Width = 120;
             // 
             // studentDOB
             // 
@@ -283,6 +285,7 @@
             this.listViewTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.teacherID,
             this.teacherName});
+            this.listViewTeachers.GridLines = true;
             this.listViewTeachers.HideSelection = false;
             this.listViewTeachers.Location = new System.Drawing.Point(16, 42);
             this.listViewTeachers.Name = "listViewTeachers";
@@ -339,6 +342,7 @@
             this.roomID,
             this.roomType,
             this.roomCapacity});
+            this.listViewRooms.GridLines = true;
             this.listViewRooms.HideSelection = false;
             this.listViewRooms.Location = new System.Drawing.Point(15, 42);
             this.listViewRooms.Name = "listViewRooms";
@@ -400,7 +404,9 @@
             this.PriceColumn,
             this.VatPercentageColumn,
             this.StockColumn,
-            this.RestocklevelColumn});
+            this.RestocklevelColumn,
+            this.StockStatusColumn});
+            this.listViewBeverage.GridLines = true;
             this.listViewBeverage.HideSelection = false;
             this.listViewBeverage.Location = new System.Drawing.Point(15, 42);
             this.listViewBeverage.Name = "listViewBeverage";
@@ -457,6 +463,11 @@
             this.label3.Size = new System.Drawing.Size(204, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "Beverage storage";
+            // 
+            // StockStatusColumn
+            // 
+            this.StockStatusColumn.Text = "StockStatus";
+            this.StockStatusColumn.Width = 80;
             // 
             // SomerenUI
             // 
@@ -544,6 +555,7 @@
         private System.Windows.Forms.ColumnHeader VatPercentageColumn;
         private System.Windows.Forms.ColumnHeader StockColumn;
         private System.Windows.Forms.ColumnHeader RestocklevelColumn;
+        private System.Windows.Forms.ColumnHeader StockStatusColumn;
     }
 }
 
