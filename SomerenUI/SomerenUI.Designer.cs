@@ -89,6 +89,9 @@
             this.NameTextbox = new System.Windows.Forms.TextBox();
             this.VATTextbox = new System.Windows.Forms.TextBox();
             this.PriceTextbox = new System.Windows.Forms.TextBox();
+            this.SoldTextbox = new System.Windows.Forms.TextBox();
+            this.SoldLabel = new System.Windows.Forms.Label();
+            this.SoldColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -421,6 +424,7 @@
             this.VatPercentageColumn,
             this.StockColumn,
             this.RestocklevelColumn,
+            this.SoldColumn,
             this.StockStatusColumn});
             this.listViewBeverage.FullRowSelect = true;
             this.listViewBeverage.GridLines = true;
@@ -490,6 +494,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.SoldLabel);
+            this.groupBox1.Controls.Add(this.SoldTextbox);
             this.groupBox1.Controls.Add(this.RestockLevelLabel);
             this.groupBox1.Controls.Add(this.StockLabel);
             this.groupBox1.Controls.Add(this.VATLabel);
@@ -506,7 +512,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 355);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(818, 111);
+            this.groupBox1.Size = new System.Drawing.Size(895, 92);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit storage";
@@ -573,7 +579,7 @@
             // 
             // ProductModifyButton
             // 
-            this.ProductModifyButton.Location = new System.Drawing.Point(670, 37);
+            this.ProductModifyButton.Location = new System.Drawing.Point(741, 36);
             this.ProductModifyButton.Name = "ProductModifyButton";
             this.ProductModifyButton.Size = new System.Drawing.Size(129, 38);
             this.ProductModifyButton.TabIndex = 8;
@@ -588,7 +594,6 @@
             this.RestockLevelTextbox.Name = "RestockLevelTextbox";
             this.RestockLevelTextbox.Size = new System.Drawing.Size(85, 22);
             this.RestockLevelTextbox.TabIndex = 13;
-            this.RestockLevelTextbox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // IDTextBox
             // 
@@ -629,6 +634,28 @@
             this.PriceTextbox.Name = "PriceTextbox";
             this.PriceTextbox.Size = new System.Drawing.Size(85, 22);
             this.PriceTextbox.TabIndex = 10;
+            // 
+            // SoldTextbox
+            // 
+            this.SoldTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoldTextbox.Location = new System.Drawing.Point(659, 45);
+            this.SoldTextbox.Name = "SoldTextbox";
+            this.SoldTextbox.Size = new System.Drawing.Size(67, 22);
+            this.SoldTextbox.TabIndex = 22;
+            // 
+            // SoldLabel
+            // 
+            this.SoldLabel.AutoSize = true;
+            this.SoldLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoldLabel.Location = new System.Drawing.Point(676, 29);
+            this.SoldLabel.Name = "SoldLabel";
+            this.SoldLabel.Size = new System.Drawing.Size(32, 15);
+            this.SoldLabel.TabIndex = 23;
+            this.SoldLabel.Text = "Sold";
+            // 
+            // SoldColumn
+            // 
+            this.SoldColumn.Text = "Sold";
             // 
             // SomerenUI
             // 
@@ -733,6 +760,9 @@
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label IDLabel;
+        private System.Windows.Forms.ColumnHeader SoldColumn;
+        private System.Windows.Forms.Label SoldLabel;
+        private System.Windows.Forms.TextBox SoldTextbox;
     }
 }
 

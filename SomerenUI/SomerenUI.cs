@@ -142,7 +142,7 @@ namespace SomerenUI
                            alarm = "REFILL!";
                         }
 
-                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price.ToString("0.00")}",$"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}", $"{alarm}" }));
+                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price.ToString("0.00")}",$"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}", $"{p.Sold}", $"{alarm}" }));
                     }
                     break;
             }
@@ -235,29 +235,43 @@ namespace SomerenUI
 
         private void listViewBeverage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Select from listview
-            var selectitem = listViewBeverage.SelectedItems;
-            int sl = 0;
-            sl = Convert.ToInt32(selectitem[0].Text);
-            ListViewItem lvitem = listViewBeverage.FindItemWithText(Convert.ToString(sl));
-            if (lvitem != null)
+            if(listViewBeverage.SelectedItems.Count > 0)
             {
-                IDTextBox.Text = lvitem.SubItems[0].Text;
-                NameTextbox.Text = lvitem.SubItems[1].Text;
-                PriceTextbox.Text = lvitem.SubItems[2].Text.Replace("€", String.Empty);
-                VATTextbox.Text = lvitem.SubItems[3].Text.Replace("%", String.Empty);
-                StockTextbox.Text = lvitem.SubItems[4].Text;
-                RestockLevelTextbox.Text = lvitem.SubItems[5].Text;
+                ListViewItem item = listViewBeverage.SelectedItems[0];
+                IDTextBox.Text = item.SubItems[0].Text;
+                NameTextbox.Text = item.SubItems[1].Text;
+                PriceTextbox.Text = item.SubItems[2].Text.Replace("€", String.Empty);
+                VATTextbox.Text = item.SubItems[3].Text.Replace("%", String.Empty);
+                StockTextbox.Text = item.SubItems[4].Text;
+                RestockLevelTextbox.Text = item.SubItems[5].Text;
+                SoldTextbox.Text = item.SubItems[6].Text;
             }
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
+            else
+            {
+                IDTextBox.Text = string.Empty;
+                NameTextbox.Text = string.Empty;
+                PriceTextbox.Text = string.Empty;
+                VATTextbox.Text = string.Empty;
+                StockTextbox.Text = string.Empty;
+                RestockLevelTextbox.Text = string.Empty;
+                SoldTextbox.Text = string.Empty;
+            }
         }
 
         private void ProductModifyButton_Click(object sender, EventArgs e)
         {
+            // modify button pressed
+            ListViewItem item = listViewBeverage.SelectedItems[0];
+            if(item != null)
+            {
+                item.SubItems[0].Text = IDTextBox.Text;
+                item.SubItems[1].Text = NameTextbox.Text;
+                item.SubItems[2].Text = "€" + PriceTextbox.Text;
+                item.SubItems[3].Text = VATTextbox.Text + "%";
+                item.SubItems[4].Text = StockTextbox.Text;
+                item.SubItems[5].Text = RestockLevelTextbox.Text;
+                item.SubItems[6].Text = SoldTextbox.Text;
+            }
 
         }
     }
