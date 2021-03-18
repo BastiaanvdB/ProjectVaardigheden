@@ -63,3 +63,13 @@ C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL\obj\Debug\SomerenDAL.dll
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL\obj\Debug\SomerenDAL.pdb
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll.config
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.pdb
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.dll
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.pdb
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CoreCompileInputs.cache
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
