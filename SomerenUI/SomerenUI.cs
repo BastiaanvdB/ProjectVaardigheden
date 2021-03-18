@@ -235,6 +235,29 @@ namespace SomerenUI
 
         private void listViewBeverage_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Select from listview
+            var selectitem = listViewBeverage.SelectedItems;
+            int sl = 0;
+            sl = Convert.ToInt32(selectitem[0].Text);
+            ListViewItem lvitem = listViewBeverage.FindItemWithText(Convert.ToString(sl));
+            if (lvitem != null)
+            {
+                IDTextBox.Text = lvitem.SubItems[0].Text;
+                NameTextbox.Text = lvitem.SubItems[1].Text;
+                PriceTextbox.Text = lvitem.SubItems[2].Text.Replace("€", String.Empty);
+                VATTextbox.Text = lvitem.SubItems[3].Text.Replace("%", String.Empty);
+                StockTextbox.Text = lvitem.SubItems[4].Text;
+                RestockLevelTextbox.Text = lvitem.SubItems[5].Text;
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductModifyButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

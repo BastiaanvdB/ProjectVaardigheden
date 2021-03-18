@@ -72,9 +72,23 @@
             this.VatPercentageColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StockColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RestocklevelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StockStatusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.StockStatusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RestockLevelLabel = new System.Windows.Forms.Label();
+            this.StockLabel = new System.Windows.Forms.Label();
+            this.VATLabel = new System.Windows.Forms.Label();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.IDLabel = new System.Windows.Forms.Label();
+            this.ProductModifyButton = new System.Windows.Forms.Button();
+            this.RestockLevelTextbox = new System.Windows.Forms.TextBox();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.StockTextbox = new System.Windows.Forms.TextBox();
+            this.NameTextbox = new System.Windows.Forms.TextBox();
+            this.VATTextbox = new System.Windows.Forms.TextBox();
+            this.PriceTextbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -86,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnl_Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -391,6 +406,7 @@
             this.pnl_Products.Controls.Add(this.listViewBeverage);
             this.pnl_Products.Controls.Add(this.pictureBox4);
             this.pnl_Products.Controls.Add(this.label3);
+            this.pnl_Products.Controls.Add(this.groupBox1);
             this.pnl_Products.Location = new System.Drawing.Point(9, 27);
             this.pnl_Products.Name = "pnl_Products";
             this.pnl_Products.Size = new System.Drawing.Size(938, 466);
@@ -406,13 +422,16 @@
             this.StockColumn,
             this.RestocklevelColumn,
             this.StockStatusColumn});
+            this.listViewBeverage.FullRowSelect = true;
             this.listViewBeverage.GridLines = true;
             this.listViewBeverage.HideSelection = false;
             this.listViewBeverage.Location = new System.Drawing.Point(15, 42);
+            this.listViewBeverage.MultiSelect = false;
             this.listViewBeverage.Name = "listViewBeverage";
             this.listViewBeverage.Size = new System.Drawing.Size(766, 307);
             this.listViewBeverage.TabIndex = 6;
             this.listViewBeverage.UseCompatibleStateImageBehavior = false;
+            this.listViewBeverage.View = System.Windows.Forms.View.Details;
             this.listViewBeverage.SelectedIndexChanged += new System.EventHandler(this.listViewBeverage_SelectedIndexChanged);
             // 
             // IDColumn
@@ -444,6 +463,11 @@
             this.RestocklevelColumn.Text = "restocklevel";
             this.RestocklevelColumn.Width = 70;
             // 
+            // StockStatusColumn
+            // 
+            this.StockStatusColumn.Text = "StockStatus";
+            this.StockStatusColumn.Width = 80;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::SomerenUI.Properties.Resources.someren;
@@ -464,10 +488,147 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Beverage storage";
             // 
-            // StockStatusColumn
+            // groupBox1
             // 
-            this.StockStatusColumn.Text = "StockStatus";
-            this.StockStatusColumn.Width = 80;
+            this.groupBox1.Controls.Add(this.RestockLevelLabel);
+            this.groupBox1.Controls.Add(this.StockLabel);
+            this.groupBox1.Controls.Add(this.VATLabel);
+            this.groupBox1.Controls.Add(this.PriceLabel);
+            this.groupBox1.Controls.Add(this.NameLabel);
+            this.groupBox1.Controls.Add(this.IDLabel);
+            this.groupBox1.Controls.Add(this.ProductModifyButton);
+            this.groupBox1.Controls.Add(this.RestockLevelTextbox);
+            this.groupBox1.Controls.Add(this.IDTextBox);
+            this.groupBox1.Controls.Add(this.StockTextbox);
+            this.groupBox1.Controls.Add(this.NameTextbox);
+            this.groupBox1.Controls.Add(this.VATTextbox);
+            this.groupBox1.Controls.Add(this.PriceTextbox);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(15, 355);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(818, 111);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Edit storage";
+            // 
+            // RestockLevelLabel
+            // 
+            this.RestockLevelLabel.AutoSize = true;
+            this.RestockLevelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestockLevelLabel.Location = new System.Drawing.Point(559, 28);
+            this.RestockLevelLabel.Name = "RestockLevelLabel";
+            this.RestockLevelLabel.Size = new System.Drawing.Size(83, 15);
+            this.RestockLevelLabel.TabIndex = 21;
+            this.RestockLevelLabel.Text = "Restock Level";
+            // 
+            // StockLabel
+            // 
+            this.StockLabel.AutoSize = true;
+            this.StockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockLabel.Location = new System.Drawing.Point(476, 28);
+            this.StockLabel.Name = "StockLabel";
+            this.StockLabel.Size = new System.Drawing.Size(37, 15);
+            this.StockLabel.TabIndex = 20;
+            this.StockLabel.Text = "Stock";
+            // 
+            // VATLabel
+            // 
+            this.VATLabel.AutoSize = true;
+            this.VATLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VATLabel.Location = new System.Drawing.Point(375, 28);
+            this.VATLabel.Name = "VATLabel";
+            this.VATLabel.Size = new System.Drawing.Size(28, 15);
+            this.VATLabel.TabIndex = 19;
+            this.VATLabel.Text = "VAT";
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceLabel.Location = new System.Drawing.Point(276, 28);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(35, 15);
+            this.PriceLabel.TabIndex = 18;
+            this.PriceLabel.Text = "Price";
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(145, 27);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(41, 15);
+            this.NameLabel.TabIndex = 17;
+            this.NameLabel.Text = "Name";
+            // 
+            // IDLabel
+            // 
+            this.IDLabel.AutoSize = true;
+            this.IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDLabel.Location = new System.Drawing.Point(39, 28);
+            this.IDLabel.Name = "IDLabel";
+            this.IDLabel.Size = new System.Drawing.Size(21, 16);
+            this.IDLabel.TabIndex = 16;
+            this.IDLabel.Text = "ID";
+            // 
+            // ProductModifyButton
+            // 
+            this.ProductModifyButton.Location = new System.Drawing.Point(670, 37);
+            this.ProductModifyButton.Name = "ProductModifyButton";
+            this.ProductModifyButton.Size = new System.Drawing.Size(129, 38);
+            this.ProductModifyButton.TabIndex = 8;
+            this.ProductModifyButton.Text = "Modify";
+            this.ProductModifyButton.UseVisualStyleBackColor = true;
+            this.ProductModifyButton.Click += new System.EventHandler(this.ProductModifyButton_Click);
+            // 
+            // RestockLevelTextbox
+            // 
+            this.RestockLevelTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestockLevelTextbox.Location = new System.Drawing.Point(557, 45);
+            this.RestockLevelTextbox.Name = "RestockLevelTextbox";
+            this.RestockLevelTextbox.Size = new System.Drawing.Size(85, 22);
+            this.RestockLevelTextbox.TabIndex = 13;
+            this.RestockLevelTextbox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTextBox.Location = new System.Drawing.Point(20, 45);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(65, 22);
+            this.IDTextBox.TabIndex = 7;
+            // 
+            // StockTextbox
+            // 
+            this.StockTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockTextbox.Location = new System.Drawing.Point(455, 45);
+            this.StockTextbox.Name = "StockTextbox";
+            this.StockTextbox.Size = new System.Drawing.Size(85, 22);
+            this.StockTextbox.TabIndex = 12;
+            // 
+            // NameTextbox
+            // 
+            this.NameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameTextbox.Location = new System.Drawing.Point(107, 45);
+            this.NameTextbox.Name = "NameTextbox";
+            this.NameTextbox.Size = new System.Drawing.Size(129, 22);
+            this.NameTextbox.TabIndex = 9;
+            // 
+            // VATTextbox
+            // 
+            this.VATTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VATTextbox.Location = new System.Drawing.Point(352, 45);
+            this.VATTextbox.Name = "VATTextbox";
+            this.VATTextbox.Size = new System.Drawing.Size(85, 22);
+            this.VATTextbox.TabIndex = 11;
+            // 
+            // PriceTextbox
+            // 
+            this.PriceTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceTextbox.Location = new System.Drawing.Point(252, 45);
+            this.PriceTextbox.Name = "PriceTextbox";
+            this.PriceTextbox.Size = new System.Drawing.Size(85, 22);
+            this.PriceTextbox.TabIndex = 10;
             // 
             // SomerenUI
             // 
@@ -503,6 +664,8 @@
             this.pnl_Products.ResumeLayout(false);
             this.pnl_Products.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,6 +719,20 @@
         private System.Windows.Forms.ColumnHeader StockColumn;
         private System.Windows.Forms.ColumnHeader RestocklevelColumn;
         private System.Windows.Forms.ColumnHeader StockStatusColumn;
+        private System.Windows.Forms.Button ProductModifyButton;
+        private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.TextBox NameTextbox;
+        private System.Windows.Forms.TextBox PriceTextbox;
+        private System.Windows.Forms.TextBox VATTextbox;
+        private System.Windows.Forms.TextBox RestockLevelTextbox;
+        private System.Windows.Forms.TextBox StockTextbox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label RestockLevelLabel;
+        private System.Windows.Forms.Label StockLabel;
+        private System.Windows.Forms.Label VATLabel;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label IDLabel;
     }
 }
 
