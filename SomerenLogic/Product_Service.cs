@@ -32,7 +32,10 @@ namespace SomerenLogic
                 return products;
                 //throw new Exception("Someren couldn't connect to the database");
             }
-
+        }
+        public void ModifyProduct(Product product)
+        {
+            product_db.DB_Modify_Products();
         }
     }
 }

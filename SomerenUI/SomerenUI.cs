@@ -260,10 +260,14 @@ namespace SomerenUI
 
         private void ProductModifyButton_Click(object sender, EventArgs e)
         {
+            SomerenLogic.Product_Service product_Service = new Product_Service();
+
+
             // modify button pressed
             ListViewItem item = listViewBeverage.SelectedItems[0];
             if(item != null)
             {
+                // Read textbox to listview
                 item.SubItems[0].Text = IDTextBox.Text;
                 item.SubItems[1].Text = NameTextbox.Text;
                 item.SubItems[2].Text = "€" + PriceTextbox.Text;
@@ -271,6 +275,19 @@ namespace SomerenUI
                 item.SubItems[4].Text = StockTextbox.Text;
                 item.SubItems[5].Text = RestockLevelTextbox.Text;
                 item.SubItems[6].Text = SoldTextbox.Text;
+
+                // create edited product
+                Product product = new Product();
+                product.Id = int.Parse(IDTextBox.Text);
+                product.Name = NameTextbox.Text;
+                product.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
+                product.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
+                product.Stock = int.Parse(StockTextbox.Text);
+                product.Restocklevel = int.Parse(RestockLevelTextbox.Text);
+                product.Sold = int.Parse(SoldTextbox.Text);
+
+                // send edited product to database
+                product_Service.ModifyProduct(product);
             }
 
         }

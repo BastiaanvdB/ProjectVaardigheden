@@ -20,6 +20,13 @@ namespace SomerenDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public void DB_Modify_Products()
+        {
+
+        }
+
+
+
         private List<Product> ReadTables(DataTable dataTable)
         {
             List<Product> products = new List<Product>();
