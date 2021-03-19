@@ -74,6 +74,7 @@
             this.IDColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PriceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AgeLimitColmn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.VatPercentageColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StockColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RestocklevelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -129,7 +130,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AgeLimitColmn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -553,6 +553,10 @@
             // 
             this.PriceColumn.Text = "Price";
             // 
+            // AgeLimitColmn
+            // 
+            this.AgeLimitColmn.Text = "Age limit";
+            // 
             // VatPercentageColumn
             // 
             this.VatPercentageColumn.Text = "Vat";
@@ -959,6 +963,7 @@
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11});
+            this.ListViewOrder_Products.FullRowSelect = true;
             this.ListViewOrder_Products.GridLines = true;
             this.ListViewOrder_Products.HideSelection = false;
             this.ListViewOrder_Products.Location = new System.Drawing.Point(488, 48);
@@ -1002,6 +1007,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.ListViewOrder_Students.FullRowSelect = true;
             this.ListViewOrder_Students.GridLines = true;
             this.ListViewOrder_Students.HideSelection = false;
             this.ListViewOrder_Students.Location = new System.Drawing.Point(21, 48);
@@ -1035,22 +1041,18 @@
             // 
             this.columnHeader5.Text = "";
             // 
-            // AgeLimitColmn
-            // 
-            this.AgeLimitColmn.Text = "Age limit";
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnl_Order);
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnl_Order);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
