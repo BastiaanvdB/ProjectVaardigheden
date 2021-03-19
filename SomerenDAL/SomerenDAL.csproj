@@ -43,9 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="Orderdetails_DAO.cs" />
+    <Compile Include="SalesReport_SAO.cs" />
     <Compile Include="Room_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Product_DAO.cs" />
+    <Compile Include="Order_DAO.cs" />
     <Compile Include="Teacher_DAO.cs" />
     <Compile Include="Student_DAO.cs" />
   </ItemGroup>

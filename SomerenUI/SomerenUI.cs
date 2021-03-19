@@ -201,27 +201,34 @@ namespace SomerenUI
 
                     // show product panel
                     pnl_Sales.Show();
-                    ListViewOrder_Students.Items.Clear();
-                    ListViewOrder_Products.Items.Clear();
+                    order_listView.Items.Clear();
 
                     // fill the students listview within the order panel with students
-                   /* SomerenLogic.Student_Service studServ = new SomerenLogic.Student_Service();
-                    List<Student> studList = studServ.GetStudents();
-                    ListViewOrder_Students.View = View.Details;
-                    foreach (SomerenModel.Student student in studList)
+                    SomerenLogic.Order_Service orderService = new SomerenLogic.Order_Service();
+                    List<Order> orderList = orderService.GetOrders();
+
+                    SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
+                    List<Sale_Report> salereportList = saleServ.GetSalesReports();
+
+                    /*SomerenLogic.Orderdetails_Service orderdetailsService = new SomerenLogic.Orderdetails_Service();
+                    List<Orderdetails> orderdList = orderdetailsService.GetOrderdetails();*/
+
+
+
+
+
+                    order_listView.View = View.Details;
+
+                    
+                    foreach (SomerenModel.Sale_Report s in salereportList)
                     {
-                        ListViewOrder_Students.Items.Add(new ListViewItem(new string[] { $"{student.Number}", $"{student.Name}", $"{student.BirthDate.ToString("dd/MM/yyyy")}" }));
+                    
+                        order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+                       
                     }
 
-                    // fill the product listview within the product panel with a list of products
-                    SomerenLogic.Product_Service prodServ = new SomerenLogic.Product_Service();
-                    List<Product> prodList = prodServ.GetProducts();
-                    ListViewOrder_Products.View = View.Details;
-                    foreach (SomerenModel.Product product in prodList)
-                    {
 
-                        ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}" }));
-                    }*/
+
                     break;
             }
 
@@ -380,6 +387,39 @@ namespace SomerenUI
             showPanel("Sales");
         }
 
+        private void btn_sales_Click(object sender, EventArgs e)
+        {
+            order_listView.Items.Clear();
+            SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
+            DateTime CalendarFrom = Convert.ToDateTime(date_from.SelectionStart);
+            DateTime CalendarTo = Convert.ToDateTime(date_to.SelectionStart);
+            if (CalendarTo > CalendarFrom)
+            {
+  
+                
+                List<Sale_Report> saleReportList = saleServ.GetDrinksByDate(CalendarFrom, CalendarTo);
 
+
+
+                //List<Sale_Report> salereportList = saleServ.GetSalesReports();
+
+                order_listView.View = View.Details;
+
+
+                foreach (SomerenModel.Sale_Report s in saleReportList)
+                {
+
+                    order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("The date has to be correct.");
+            }
+
+
+        }
     }
 }

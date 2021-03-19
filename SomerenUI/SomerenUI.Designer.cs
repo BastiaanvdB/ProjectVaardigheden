@@ -111,14 +111,19 @@
             this.VATTextbox = new System.Windows.Forms.TextBox();
             this.PriceTextbox = new System.Windows.Forms.TextBox();
             this.pnl_Sales = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_sales = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.date_from = new System.Windows.Forms.MonthCalendar();
+            this.date_to = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.order_listView = new System.Windows.Forms.ListView();
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -133,6 +138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnl_Sales.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -203,14 +209,14 @@
             // beverageStripMenuItem1
             // 
             this.beverageStripMenuItem1.Name = "beverageStripMenuItem1";
-            this.beverageStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.beverageStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.beverageStripMenuItem1.Text = "Beverage Storage";
             this.beverageStripMenuItem1.Click += new System.EventHandler(this.beverageStripMenuItem1_Click);
             // 
             // omzetrapportageToolStripMenuItem
             // 
             this.omzetrapportageToolStripMenuItem.Name = "omzetrapportageToolStripMenuItem";
-            this.omzetrapportageToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.omzetrapportageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.omzetrapportageToolStripMenuItem.Text = "Omzetrapportage";
             this.omzetrapportageToolStripMenuItem.Click += new System.EventHandler(this.omzetrapportageToolStripMenuItem_Click);
             // 
@@ -818,13 +824,69 @@
             // 
             // pnl_Sales
             // 
-            this.pnl_Sales.Controls.Add(this.monthCalendar1);
+            this.pnl_Sales.Controls.Add(this.groupBox2);
             this.pnl_Sales.Controls.Add(this.label5);
-            this.pnl_Sales.Controls.Add(this.listView2);
+            this.pnl_Sales.Controls.Add(this.order_listView);
             this.pnl_Sales.Location = new System.Drawing.Point(3, 21);
             this.pnl_Sales.Name = "pnl_Sales";
             this.pnl_Sales.Size = new System.Drawing.Size(941, 466);
             this.pnl_Sales.TabIndex = 17;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_sales);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.date_from);
+            this.groupBox2.Controls.Add(this.date_to);
+            this.groupBox2.Location = new System.Drawing.Point(443, 45);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(483, 260);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Date Selector";
+            // 
+            // btn_sales
+            // 
+            this.btn_sales.Location = new System.Drawing.Point(392, 219);
+            this.btn_sales.Name = "btn_sales";
+            this.btn_sales.Size = new System.Drawing.Size(75, 23);
+            this.btn_sales.TabIndex = 8;
+            this.btn_sales.Text = "Get list";
+            this.btn_sales.UseVisualStyleBackColor = true;
+            this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(318, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 29);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "To";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(89, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 29);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "From";
+            // 
+            // date_from
+            // 
+            this.date_from.Location = new System.Drawing.Point(12, 45);
+            this.date_from.Name = "date_from";
+            this.date_from.TabIndex = 3;
+            // 
+            // date_to
+            // 
+            this.date_to.Location = new System.Drawing.Point(244, 45);
+            this.date_to.Name = "date_to";
+            this.date_to.TabIndex = 4;
             // 
             // label5
             // 
@@ -836,50 +898,40 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Sales";
             // 
-            // listView2
+            // order_listView
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.order_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader18,
             this.columnHeader19,
             this.columnHeader20,
-            this.columnHeader21,
-            this.columnHeader22});
-            this.listView2.GridLines = true;
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(21, 48);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(403, 257);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.columnHeader21});
+            this.order_listView.GridLines = true;
+            this.order_listView.HideSelection = false;
+            this.order_listView.Location = new System.Drawing.Point(21, 48);
+            this.order_listView.Name = "order_listView";
+            this.order_listView.Size = new System.Drawing.Size(403, 257);
+            this.order_listView.TabIndex = 0;
+            this.order_listView.UseCompatibleStateImageBehavior = false;
             // 
             // columnHeader18
             // 
-            this.columnHeader18.Text = "Id";
+            this.columnHeader18.Text = "Sales";
             this.columnHeader18.Width = 40;
             // 
             // columnHeader19
             // 
-            this.columnHeader19.Text = "Name";
+            this.columnHeader19.Text = "Revenue";
             this.columnHeader19.Width = 100;
             // 
             // columnHeader20
             // 
-            this.columnHeader20.Text = "Date of Birth";
+            this.columnHeader20.Text = "Customers";
             this.columnHeader20.Width = 75;
             // 
             // columnHeader21
             // 
-            this.columnHeader21.Text = "";
-            // 
-            // columnHeader22
-            // 
-            this.columnHeader22.Text = "";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(470, 48);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 3;
+            this.columnHeader21.Text = "Date";
+            this.columnHeader21.Width = 130;
             // 
             // SomerenUI
             // 
@@ -922,6 +974,8 @@
             this.groupBox1.PerformLayout();
             this.pnl_Sales.ResumeLayout(false);
             this.pnl_Sales.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1012,13 +1066,18 @@
         private System.Windows.Forms.ToolStripMenuItem omzetrapportageToolStripMenuItem;
         private System.Windows.Forms.Panel pnl_Sales;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView order_listView;
         private System.Windows.Forms.ColumnHeader columnHeader18;
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader21;
-        private System.Windows.Forms.ColumnHeader columnHeader22;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar date_from;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_sales;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MonthCalendar date_to;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
