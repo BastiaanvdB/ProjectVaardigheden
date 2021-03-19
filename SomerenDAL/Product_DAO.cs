@@ -27,7 +27,7 @@ namespace SomerenDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
-        Double test = 100.40;
+
         public void DB_Modify_Product(Product product)
         {
             int ageint = product.Age ? 1 : 0;
@@ -39,7 +39,7 @@ namespace SomerenDAL
         public void DB_Add_Product(Product product)
         {
             int ageint = product.Age ? 1 : 0;
-            string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES ({product.Id}, '{product.Name}', {product.Price.ToString("0,00")}, {product.VAT}, {ageint}, {product.Stock}, {product.Restocklevel}, {product.Sold})"; 
+            string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES ({product.Id}, '{product.Name}', {product.Price}, {product.VAT}, {ageint}, {product.Stock}, {product.Restocklevel}, {product.Sold})"; 
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
