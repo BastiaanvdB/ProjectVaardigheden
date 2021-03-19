@@ -20,7 +20,6 @@ namespace SomerenDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-
         public void DB_Delete_Product(int id)
         {
             string query = $"DELETE FROM Products WHERE product_id = {id}";

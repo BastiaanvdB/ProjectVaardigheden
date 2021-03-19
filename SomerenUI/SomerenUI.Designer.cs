@@ -844,13 +844,17 @@
             this.columnHeader12,
             this.columnHeader15,
             this.columnHeader16});
+            this.ListViewTotalOrder_Details.FullRowSelect = true;
+            this.ListViewTotalOrder_Details.GridLines = true;
             this.ListViewTotalOrder_Details.HideSelection = false;
             this.ListViewTotalOrder_Details.Location = new System.Drawing.Point(295, 45);
+            this.ListViewTotalOrder_Details.MultiSelect = false;
             this.ListViewTotalOrder_Details.Name = "ListViewTotalOrder_Details";
             this.ListViewTotalOrder_Details.Size = new System.Drawing.Size(251, 148);
             this.ListViewTotalOrder_Details.TabIndex = 21;
             this.ListViewTotalOrder_Details.UseCompatibleStateImageBehavior = false;
             this.ListViewTotalOrder_Details.View = System.Windows.Forms.View.Details;
+            this.ListViewTotalOrder_Details.SelectedIndexChanged += new System.EventHandler(this.ListViewTotalOrder_Details_SelectedIndexChanged);
             // 
             // columnHeader12
             // 
@@ -859,7 +863,7 @@
             // 
             // columnHeader15
             // 
-            this.columnHeader15.Text = "";
+            this.columnHeader15.Text = "VAT";
             this.columnHeader15.Width = 70;
             // 
             // columnHeader16
@@ -882,9 +886,9 @@
             this.lbl_Total_Price_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Total_Price_Name.Location = new System.Drawing.Point(59, 177);
             this.lbl_Total_Price_Name.Name = "lbl_Total_Price_Name";
-            this.lbl_Total_Price_Name.Size = new System.Drawing.Size(76, 16);
+            this.lbl_Total_Price_Name.Size = new System.Drawing.Size(86, 16);
             this.lbl_Total_Price_Name.TabIndex = 19;
-            this.lbl_Total_Price_Name.Text = "Total Price:";
+            this.lbl_Total_Price_Name.Text = "Total Price: €";
             // 
             // btn_Purchase_Order
             // 
@@ -895,6 +899,7 @@
             this.btn_Purchase_Order.TabIndex = 18;
             this.btn_Purchase_Order.Text = "Purchase";
             this.btn_Purchase_Order.UseVisualStyleBackColor = false;
+            this.btn_Purchase_Order.Click += new System.EventHandler(this.btn_Purchase_Order_Click);
             // 
             // btn_Remove_Product
             // 
@@ -921,6 +926,7 @@
             this.TextBoxStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxStudentName.Location = new System.Drawing.Point(62, 45);
             this.TextBoxStudentName.Name = "TextBoxStudentName";
+            this.TextBoxStudentName.ReadOnly = true;
             this.TextBoxStudentName.Size = new System.Drawing.Size(127, 22);
             this.TextBoxStudentName.TabIndex = 7;
             // 

@@ -172,7 +172,8 @@ namespace SomerenUI
                     pnl_Order.Show();
                     ListViewOrder_Students.Items.Clear();
                     ListViewOrder_Products.Items.Clear();
-                    
+                    NewOrder();
+
                     // fill the students listview within the order panel with students
                     SomerenLogic.Student_Service studServ = new SomerenLogic.Student_Service();
                     List<Student> studList = studServ.GetStudents();
@@ -502,57 +503,97 @@ namespace SomerenUI
 
         private void btn_Add_Product_Click(object sender, EventArgs e)
         {
-            // Read the selected item from the ListView
-
-            {
-                string selectedName = ListViewOrder_Products.SelectedItems[0].SubItems[1].Text;
-                string selectedPrice = ListViewOrder_Products.SelectedItems[0].SubItems[2].Text;
-
-                // Add the item to the total order listview
-                ListViewTotalOrder_Details.Items.Add(new ListViewItem(new string[] { $"{selectedName}", $"   ", $"{selectedPrice}" }));
-            }
-
-            // Calculate the total price
-
-            double total = 0;
-            foreach (ListViewItem item in ListViewTotalOrder_Details.Items)
-            {
-               string Price = item.SubItems[2].Text.Replace("€", string.Empty);
-               double PriceDouble = double.Parse(Price);
-               lbl_Total_Price_Value.Text = (total += PriceDouble).ToString("0.00");
-            }
+            OrderMenu("Add");
         }
 
         private void btn_Remove_Product_Click(object sender, EventArgs e)
         {
-            // Read the selected item from the ListView
-
-            string selectedName = ListViewTotalOrder_Details.SelectedItems[0].SubItems[0].Text;
-            string selectedPrice = ListViewTotalOrder_Details.SelectedItems[0].SubItems[2].Text;
-
-            // Remove the item to the total order listview
-
-            ListViewTotalOrder_Details.SelectedItems[0].Remove();
-
-            // Remove price from total price
-            double price = double.Parse(lbl_Total_Price_Value.Text);
-
-            if (ListViewTotalOrder_Details.Items.Count > 0)
-            {
-                foreach (ListViewItem item in ListViewTotalOrder_Details.Items)
-                {
-                    string Price = item.SubItems[2].Text.Replace("€", string.Empty);
-                    double PriceDouble = double.Parse(Price);
-                    lbl_Total_Price_Value.Text = (price -= PriceDouble).ToString("0.00");
-                }
-            }
-            else
-            {
-                lbl_Total_Price_Value.Text = "";
-            }
-            
+            OrderMenu("Remove");
         }
 
-        
+        private Product AddProductOrder()
+        {
+
+            ListViewItem item = ListViewOrder_Products.SelectedItems[0];
+            Product product = new Product()
+            {
+                Id = int.Parse(item.SubItems[0].Text),
+                Name = item.SubItems[1].Text,
+                Price = decimal.Parse(item.SubItems[2].Text.Replace("€", String.Empty)),
+                VAT = decimal.Parse(item.SubItems[3].Text.Replace("%", String.Empty)),
+            };
+
+            return product;
+        }
+
+        private void NewOrder()
+        {
+            OrderMenu("New");
+        }
+        private List<Product> orderlist;
+        private void OrderMenu(string ordersetting)
+        {
+            switch (ordersetting)
+            {
+                case "Add":
+                    Product product = new Product();
+                    product = AddProductOrder();
+                    this.orderlist.Add(product);
+                    Orderlist();
+                    break;
+                case "New":
+                    this.orderlist = new List<Product>();
+                    ListViewTotalOrder_Details.Items.Clear();
+                    lbl_Total_Price_Value.Text = "0,00";
+                    break;
+                case "Remove":
+                    RemoveFromOrderlist();
+                    break;
+                case "Purchase":
+                    PurchaseOrder();
+                    NewOrder();
+                    break;
+            }
+        }
+
+        private void PurchaseOrder()
+        {
+
+
+
+
+
+        }
+
+        private void RemoveFromOrderlist()
+        {
+            int index = ListViewTotalOrder_Details.SelectedIndices[0];
+            orderlist.RemoveAt(index);
+            Orderlist();
+        }
+
+        private void Orderlist()
+        {
+            ListViewTotalOrder_Details.Items.Clear();
+            decimal totalprice = 0;
+            decimal totalvat = 0;
+            foreach (Product product in orderlist)
+            {
+                ListViewTotalOrder_Details.Items.Add(new ListViewItem(new string[] { $"{product.Name}", $"{product.VAT}%", $"€{product.Price}" }));
+                totalvat += (product.Price / 100) * product.VAT;
+                totalprice += product.Price;
+            }
+            lbl_Total_Price_Value.Text = (totalvat + totalprice).ToString("0.00");
+        }
+
+        private void ListViewTotalOrder_Details_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Purchase_Order_Click(object sender, EventArgs e)
+        {
+            OrderMenu("Purchase");
+        }
     }
 }
