@@ -39,6 +39,11 @@ namespace SomerenLogic
             product_db.DB_Delete_Product(id);
         }
 
+        public void AddProduct(Product product)
+        {
+            product_db.DB_Add_Product(product);
+        }
+
         public void ModifyProduct(Product product)
         {
             product_db.DB_Modify_Product(product);
