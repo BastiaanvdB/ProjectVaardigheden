@@ -166,6 +166,7 @@ namespace SomerenUI
                     pnl_Students.Hide();
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
+                    pnl_Products.Hide();
 
                     // show product panel
                     pnl_Order.Show();
