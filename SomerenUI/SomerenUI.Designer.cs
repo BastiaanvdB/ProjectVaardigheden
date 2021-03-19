@@ -66,10 +66,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_Products = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DeleteRadioButton = new System.Windows.Forms.RadioButton();
+            this.ModifyRadioButton = new System.Windows.Forms.RadioButton();
+            this.AddRadioButton = new System.Windows.Forms.RadioButton();
             this.listViewBeverage = new System.Windows.Forms.ListView();
             this.IDColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PriceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AgeColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.VatPercentageColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StockColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RestocklevelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -78,7 +83,12 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.AgeHigherRadioButton = new System.Windows.Forms.RadioButton();
+            this.AgeLowerRadioButton = new System.Windows.Forms.RadioButton();
+            this.IDLabel = new System.Windows.Forms.Label();
             this.SoldLabel = new System.Windows.Forms.Label();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.SoldTextbox = new System.Windows.Forms.TextBox();
             this.RestockLevelLabel = new System.Windows.Forms.Label();
             this.StockLabel = new System.Windows.Forms.Label();
@@ -107,15 +117,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.IDLabel = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.AgeLowerRadioButton = new System.Windows.Forms.RadioButton();
-            this.AgeHigherRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -126,11 +127,11 @@
             this.pnl_Rooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnl_Products.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.pnl_Order.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.pnl_Order.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -451,12 +452,62 @@
             this.pnl_Products.Size = new System.Drawing.Size(938, 466);
             this.pnl_Products.TabIndex = 8;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.DeleteRadioButton);
+            this.groupBox3.Controls.Add(this.ModifyRadioButton);
+            this.groupBox3.Controls.Add(this.AddRadioButton);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(9, 358);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(74, 102);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Settings";
+            // 
+            // DeleteRadioButton
+            // 
+            this.DeleteRadioButton.AutoSize = true;
+            this.DeleteRadioButton.Location = new System.Drawing.Point(6, 67);
+            this.DeleteRadioButton.Name = "DeleteRadioButton";
+            this.DeleteRadioButton.Size = new System.Drawing.Size(61, 19);
+            this.DeleteRadioButton.TabIndex = 19;
+            this.DeleteRadioButton.TabStop = true;
+            this.DeleteRadioButton.Text = "Delete";
+            this.DeleteRadioButton.UseVisualStyleBackColor = true;
+            this.DeleteRadioButton.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // ModifyRadioButton
+            // 
+            this.ModifyRadioButton.AutoSize = true;
+            this.ModifyRadioButton.Location = new System.Drawing.Point(6, 42);
+            this.ModifyRadioButton.Name = "ModifyRadioButton";
+            this.ModifyRadioButton.Size = new System.Drawing.Size(61, 19);
+            this.ModifyRadioButton.TabIndex = 18;
+            this.ModifyRadioButton.TabStop = true;
+            this.ModifyRadioButton.Text = "Modify";
+            this.ModifyRadioButton.UseVisualStyleBackColor = true;
+            this.ModifyRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // AddRadioButton
+            // 
+            this.AddRadioButton.AutoSize = true;
+            this.AddRadioButton.Location = new System.Drawing.Point(6, 20);
+            this.AddRadioButton.Name = "AddRadioButton";
+            this.AddRadioButton.Size = new System.Drawing.Size(46, 19);
+            this.AddRadioButton.TabIndex = 17;
+            this.AddRadioButton.TabStop = true;
+            this.AddRadioButton.Text = "Add";
+            this.AddRadioButton.UseVisualStyleBackColor = true;
+            this.AddRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // listViewBeverage
             // 
             this.listViewBeverage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDColumn,
             this.NameColumn,
             this.PriceColumn,
+            this.AgeColumn,
             this.VatPercentageColumn,
             this.StockColumn,
             this.RestocklevelColumn,
@@ -487,6 +538,10 @@
             // PriceColumn
             // 
             this.PriceColumn.Text = "Price";
+            // 
+            // AgeColumn
+            // 
+            this.AgeColumn.Text = "Age limit";
             // 
             // VatPercentageColumn
             // 
@@ -558,6 +613,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit storage";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.AgeHigherRadioButton);
+            this.groupBox4.Controls.Add(this.AgeLowerRadioButton);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(402, 23);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(70, 76);
+            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Age limit";
+            // 
+            // AgeHigherRadioButton
+            // 
+            this.AgeHigherRadioButton.AutoSize = true;
+            this.AgeHigherRadioButton.Location = new System.Drawing.Point(6, 47);
+            this.AgeHigherRadioButton.Name = "AgeHigherRadioButton";
+            this.AgeHigherRadioButton.Size = new System.Drawing.Size(43, 17);
+            this.AgeHigherRadioButton.TabIndex = 1;
+            this.AgeHigherRadioButton.TabStop = true;
+            this.AgeHigherRadioButton.Text = ">18";
+            this.AgeHigherRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // AgeLowerRadioButton
+            // 
+            this.AgeLowerRadioButton.AutoSize = true;
+            this.AgeLowerRadioButton.Location = new System.Drawing.Point(6, 22);
+            this.AgeLowerRadioButton.Name = "AgeLowerRadioButton";
+            this.AgeLowerRadioButton.Size = new System.Drawing.Size(43, 17);
+            this.AgeLowerRadioButton.TabIndex = 0;
+            this.AgeLowerRadioButton.TabStop = true;
+            this.AgeLowerRadioButton.Text = "<18";
+            this.AgeLowerRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // IDLabel
+            // 
+            this.IDLabel.AutoSize = true;
+            this.IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDLabel.Location = new System.Drawing.Point(24, 36);
+            this.IDLabel.Name = "IDLabel";
+            this.IDLabel.Size = new System.Drawing.Size(21, 16);
+            this.IDLabel.TabIndex = 16;
+            this.IDLabel.Text = "ID";
+            // 
             // SoldLabel
             // 
             this.SoldLabel.AutoSize = true;
@@ -567,6 +666,14 @@
             this.SoldLabel.Size = new System.Drawing.Size(32, 15);
             this.SoldLabel.TabIndex = 23;
             this.SoldLabel.Text = "Sold";
+            // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTextBox.Location = new System.Drawing.Point(6, 54);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(65, 22);
+            this.IDTextBox.TabIndex = 7;
             // 
             // SoldTextbox
             // 
@@ -789,107 +896,6 @@
             // 
             this.columnHeader5.Text = "";
             // 
-            // IDTextBox
-            // 
-            this.IDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDTextBox.Location = new System.Drawing.Point(6, 54);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(65, 22);
-            this.IDTextBox.TabIndex = 7;
-            // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDLabel.Location = new System.Drawing.Point(24, 36);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(21, 16);
-            this.IDLabel.TabIndex = 16;
-            this.IDLabel.Text = "ID";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(46, 19);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Add";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(9, 358);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(74, 102);
-            this.groupBox3.TabIndex = 24;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Settings";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 19);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Modify";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 67);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(61, 19);
-            this.radioButton3.TabIndex = 19;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Delete";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.AgeHigherRadioButton);
-            this.groupBox4.Controls.Add(this.AgeLowerRadioButton);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(402, 23);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(70, 76);
-            this.groupBox4.TabIndex = 24;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Age limit";
-            // 
-            // AgeLowerRadioButton
-            // 
-            this.AgeLowerRadioButton.AutoSize = true;
-            this.AgeLowerRadioButton.Location = new System.Drawing.Point(6, 22);
-            this.AgeLowerRadioButton.Name = "AgeLowerRadioButton";
-            this.AgeLowerRadioButton.Size = new System.Drawing.Size(43, 17);
-            this.AgeLowerRadioButton.TabIndex = 0;
-            this.AgeLowerRadioButton.TabStop = true;
-            this.AgeLowerRadioButton.Text = "<18";
-            this.AgeLowerRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // AgeHigherRadioButton
-            // 
-            this.AgeHigherRadioButton.AutoSize = true;
-            this.AgeHigherRadioButton.Location = new System.Drawing.Point(6, 47);
-            this.AgeHigherRadioButton.Name = "AgeHigherRadioButton";
-            this.AgeHigherRadioButton.Size = new System.Drawing.Size(43, 17);
-            this.AgeHigherRadioButton.TabIndex = 1;
-            this.AgeHigherRadioButton.TabStop = true;
-            this.AgeHigherRadioButton.Text = ">18";
-            this.AgeHigherRadioButton.UseVisualStyleBackColor = true;
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -924,15 +930,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnl_Products.ResumeLayout(false);
             this.pnl_Products.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnl_Order.ResumeLayout(false);
-            this.pnl_Order.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.pnl_Order.ResumeLayout(false);
+            this.pnl_Order.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1019,14 +1025,15 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton DeleteRadioButton;
+        private System.Windows.Forms.RadioButton ModifyRadioButton;
+        private System.Windows.Forms.RadioButton AddRadioButton;
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton AgeHigherRadioButton;
         private System.Windows.Forms.RadioButton AgeLowerRadioButton;
+        private System.Windows.Forms.ColumnHeader AgeColumn;
     }
 }
 
