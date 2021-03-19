@@ -36,6 +36,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
 
                     // show dashboard
@@ -51,6 +52,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show students panel
                     pnl_Students.Show();
@@ -74,6 +76,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show teachers panel
                     pnl_Teachers.Show();
@@ -97,6 +100,7 @@ namespace SomerenUI
                     pnl_Teachers.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show room panel
                     pnl_Rooms.Show();
@@ -129,6 +133,7 @@ namespace SomerenUI
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show product panel
                     pnl_Products.Show();
@@ -158,6 +163,7 @@ namespace SomerenUI
                     pnl_Students.Hide();
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
+                    pnl_Sales.Hide();
 
                     // show product panel
                     pnl_Order.Show();
@@ -182,6 +188,40 @@ namespace SomerenUI
 
                         ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}"}));
                     }
+                    break;
+
+                case "Sales":
+                    // hide all other panels
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+                    pnl_Students.Hide();
+                    pnl_Teachers.Hide();
+                    pnl_Rooms.Hide();
+                    pnl_Order.Hide();
+
+                    // show product panel
+                    pnl_Sales.Show();
+                    ListViewOrder_Students.Items.Clear();
+                    ListViewOrder_Products.Items.Clear();
+
+                    // fill the students listview within the order panel with students
+                   /* SomerenLogic.Student_Service studServ = new SomerenLogic.Student_Service();
+                    List<Student> studList = studServ.GetStudents();
+                    ListViewOrder_Students.View = View.Details;
+                    foreach (SomerenModel.Student student in studList)
+                    {
+                        ListViewOrder_Students.Items.Add(new ListViewItem(new string[] { $"{student.Number}", $"{student.Name}", $"{student.BirthDate.ToString("dd/MM/yyyy")}" }));
+                    }
+
+                    // fill the product listview within the product panel with a list of products
+                    SomerenLogic.Product_Service prodServ = new SomerenLogic.Product_Service();
+                    List<Product> prodList = prodServ.GetProducts();
+                    ListViewOrder_Products.View = View.Details;
+                    foreach (SomerenModel.Product product in prodList)
+                    {
+
+                        ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}" }));
+                    }*/
                     break;
             }
 
@@ -334,5 +374,12 @@ namespace SomerenUI
         {
             showPanel("Order");
         }
+
+        private void omzetrapportageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Sales");
+        }
+
+
     }
 }
