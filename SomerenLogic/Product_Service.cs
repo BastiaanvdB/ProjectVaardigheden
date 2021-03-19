@@ -33,9 +33,15 @@ namespace SomerenLogic
                 //throw new Exception("Someren couldn't connect to the database");
             }
         }
+
+        public void DeleteProduct(int id)
+        {
+            product_db.DB_Delete_Product(id);
+        }
+
         public void ModifyProduct(Product product)
         {
-            product_db.DB_Modify_Products();
+            product_db.DB_Modify_Product(product);
         }
     }
 }

@@ -85,10 +85,8 @@
             this.VATLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.IDLabel = new System.Windows.Forms.Label();
             this.ProductModifyButton = new System.Windows.Forms.Button();
             this.RestockLevelTextbox = new System.Windows.Forms.TextBox();
-            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.StockTextbox = new System.Windows.Forms.TextBox();
             this.NameTextbox = new System.Windows.Forms.TextBox();
             this.VATTextbox = new System.Windows.Forms.TextBox();
@@ -109,6 +107,15 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.IDLabel = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.AgeLowerRadioButton = new System.Windows.Forms.RadioButton();
+            this.AgeHigherRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -122,6 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnl_Order.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -432,6 +441,7 @@
             // 
             // pnl_Products
             // 
+            this.pnl_Products.Controls.Add(this.groupBox3);
             this.pnl_Products.Controls.Add(this.listViewBeverage);
             this.pnl_Products.Controls.Add(this.pictureBox4);
             this.pnl_Products.Controls.Add(this.label3);
@@ -524,25 +534,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.IDLabel);
             this.groupBox1.Controls.Add(this.SoldLabel);
+            this.groupBox1.Controls.Add(this.IDTextBox);
             this.groupBox1.Controls.Add(this.SoldTextbox);
             this.groupBox1.Controls.Add(this.RestockLevelLabel);
             this.groupBox1.Controls.Add(this.StockLabel);
             this.groupBox1.Controls.Add(this.VATLabel);
             this.groupBox1.Controls.Add(this.PriceLabel);
             this.groupBox1.Controls.Add(this.NameLabel);
-            this.groupBox1.Controls.Add(this.IDLabel);
             this.groupBox1.Controls.Add(this.ProductModifyButton);
             this.groupBox1.Controls.Add(this.RestockLevelTextbox);
-            this.groupBox1.Controls.Add(this.IDTextBox);
             this.groupBox1.Controls.Add(this.StockTextbox);
             this.groupBox1.Controls.Add(this.NameTextbox);
             this.groupBox1.Controls.Add(this.VATTextbox);
             this.groupBox1.Controls.Add(this.PriceTextbox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 355);
+            this.groupBox1.Location = new System.Drawing.Point(89, 355);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(895, 92);
+            this.groupBox1.Size = new System.Drawing.Size(846, 105);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit storage";
@@ -551,7 +562,7 @@
             // 
             this.SoldLabel.AutoSize = true;
             this.SoldLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoldLabel.Location = new System.Drawing.Point(676, 29);
+            this.SoldLabel.Location = new System.Drawing.Point(696, 36);
             this.SoldLabel.Name = "SoldLabel";
             this.SoldLabel.Size = new System.Drawing.Size(32, 15);
             this.SoldLabel.TabIndex = 23;
@@ -560,7 +571,7 @@
             // SoldTextbox
             // 
             this.SoldTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoldTextbox.Location = new System.Drawing.Point(659, 45);
+            this.SoldTextbox.Location = new System.Drawing.Point(678, 55);
             this.SoldTextbox.Name = "SoldTextbox";
             this.SoldTextbox.Size = new System.Drawing.Size(67, 22);
             this.SoldTextbox.TabIndex = 22;
@@ -569,7 +580,7 @@
             // 
             this.RestockLevelLabel.AutoSize = true;
             this.RestockLevelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RestockLevelLabel.Location = new System.Drawing.Point(559, 28);
+            this.RestockLevelLabel.Location = new System.Drawing.Point(572, 37);
             this.RestockLevelLabel.Name = "RestockLevelLabel";
             this.RestockLevelLabel.Size = new System.Drawing.Size(83, 15);
             this.RestockLevelLabel.TabIndex = 21;
@@ -579,7 +590,7 @@
             // 
             this.StockLabel.AutoSize = true;
             this.StockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockLabel.Location = new System.Drawing.Point(476, 28);
+            this.StockLabel.Location = new System.Drawing.Point(497, 36);
             this.StockLabel.Name = "StockLabel";
             this.StockLabel.Size = new System.Drawing.Size(37, 15);
             this.StockLabel.TabIndex = 20;
@@ -589,7 +600,7 @@
             // 
             this.VATLabel.AutoSize = true;
             this.VATLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VATLabel.Location = new System.Drawing.Point(375, 28);
+            this.VATLabel.Location = new System.Drawing.Point(351, 37);
             this.VATLabel.Name = "VATLabel";
             this.VATLabel.Size = new System.Drawing.Size(28, 15);
             this.VATLabel.TabIndex = 19;
@@ -599,7 +610,7 @@
             // 
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLabel.Location = new System.Drawing.Point(276, 28);
+            this.PriceLabel.Location = new System.Drawing.Point(254, 37);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(35, 15);
             this.PriceLabel.TabIndex = 18;
@@ -609,27 +620,17 @@
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(145, 27);
+            this.NameLabel.Location = new System.Drawing.Point(135, 36);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(41, 15);
             this.NameLabel.TabIndex = 17;
             this.NameLabel.Text = "Name";
             // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDLabel.Location = new System.Drawing.Point(39, 28);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(21, 16);
-            this.IDLabel.TabIndex = 16;
-            this.IDLabel.Text = "ID";
-            // 
             // ProductModifyButton
             // 
-            this.ProductModifyButton.Location = new System.Drawing.Point(741, 36);
+            this.ProductModifyButton.Location = new System.Drawing.Point(751, 45);
             this.ProductModifyButton.Name = "ProductModifyButton";
-            this.ProductModifyButton.Size = new System.Drawing.Size(129, 38);
+            this.ProductModifyButton.Size = new System.Drawing.Size(89, 38);
             this.ProductModifyButton.TabIndex = 8;
             this.ProductModifyButton.Text = "Modify";
             this.ProductModifyButton.UseVisualStyleBackColor = true;
@@ -638,23 +639,15 @@
             // RestockLevelTextbox
             // 
             this.RestockLevelTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RestockLevelTextbox.Location = new System.Drawing.Point(557, 45);
+            this.RestockLevelTextbox.Location = new System.Drawing.Point(575, 55);
             this.RestockLevelTextbox.Name = "RestockLevelTextbox";
             this.RestockLevelTextbox.Size = new System.Drawing.Size(85, 22);
             this.RestockLevelTextbox.TabIndex = 13;
             // 
-            // IDTextBox
-            // 
-            this.IDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDTextBox.Location = new System.Drawing.Point(20, 45);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(65, 22);
-            this.IDTextBox.TabIndex = 7;
-            // 
             // StockTextbox
             // 
             this.StockTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockTextbox.Location = new System.Drawing.Point(455, 45);
+            this.StockTextbox.Location = new System.Drawing.Point(475, 54);
             this.StockTextbox.Name = "StockTextbox";
             this.StockTextbox.Size = new System.Drawing.Size(85, 22);
             this.StockTextbox.TabIndex = 12;
@@ -662,7 +655,7 @@
             // NameTextbox
             // 
             this.NameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTextbox.Location = new System.Drawing.Point(107, 45);
+            this.NameTextbox.Location = new System.Drawing.Point(87, 54);
             this.NameTextbox.Name = "NameTextbox";
             this.NameTextbox.Size = new System.Drawing.Size(129, 22);
             this.NameTextbox.TabIndex = 9;
@@ -670,15 +663,15 @@
             // VATTextbox
             // 
             this.VATTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VATTextbox.Location = new System.Drawing.Point(352, 45);
+            this.VATTextbox.Location = new System.Drawing.Point(337, 54);
             this.VATTextbox.Name = "VATTextbox";
-            this.VATTextbox.Size = new System.Drawing.Size(85, 22);
+            this.VATTextbox.Size = new System.Drawing.Size(59, 22);
             this.VATTextbox.TabIndex = 11;
             // 
             // PriceTextbox
             // 
             this.PriceTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceTextbox.Location = new System.Drawing.Point(252, 45);
+            this.PriceTextbox.Location = new System.Drawing.Point(233, 54);
             this.PriceTextbox.Name = "PriceTextbox";
             this.PriceTextbox.Size = new System.Drawing.Size(85, 22);
             this.PriceTextbox.TabIndex = 10;
@@ -796,18 +789,119 @@
             // 
             this.columnHeader5.Text = "";
             // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTextBox.Location = new System.Drawing.Point(6, 54);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(65, 22);
+            this.IDTextBox.TabIndex = 7;
+            // 
+            // IDLabel
+            // 
+            this.IDLabel.AutoSize = true;
+            this.IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDLabel.Location = new System.Drawing.Point(24, 36);
+            this.IDLabel.Name = "IDLabel";
+            this.IDLabel.Size = new System.Drawing.Size(21, 16);
+            this.IDLabel.TabIndex = 16;
+            this.IDLabel.Text = "ID";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 20);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(46, 19);
+            this.radioButton1.TabIndex = 17;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Add";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(9, 358);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(74, 102);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Settings";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 42);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 19);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Modify";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 67);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(61, 19);
+            this.radioButton3.TabIndex = 19;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Delete";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.AgeHigherRadioButton);
+            this.groupBox4.Controls.Add(this.AgeLowerRadioButton);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(402, 23);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(70, 76);
+            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Age limit";
+            // 
+            // AgeLowerRadioButton
+            // 
+            this.AgeLowerRadioButton.AutoSize = true;
+            this.AgeLowerRadioButton.Location = new System.Drawing.Point(6, 22);
+            this.AgeLowerRadioButton.Name = "AgeLowerRadioButton";
+            this.AgeLowerRadioButton.Size = new System.Drawing.Size(43, 17);
+            this.AgeLowerRadioButton.TabIndex = 0;
+            this.AgeLowerRadioButton.TabStop = true;
+            this.AgeLowerRadioButton.Text = "<18";
+            this.AgeLowerRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // AgeHigherRadioButton
+            // 
+            this.AgeHigherRadioButton.AutoSize = true;
+            this.AgeHigherRadioButton.Location = new System.Drawing.Point(6, 47);
+            this.AgeHigherRadioButton.Name = "AgeHigherRadioButton";
+            this.AgeHigherRadioButton.Size = new System.Drawing.Size(43, 17);
+            this.AgeHigherRadioButton.TabIndex = 1;
+            this.AgeHigherRadioButton.TabStop = true;
+            this.AgeHigherRadioButton.Text = ">18";
+            this.AgeHigherRadioButton.UseVisualStyleBackColor = true;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
-            this.Controls.Add(this.pnl_Order);
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnl_Order);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -835,6 +929,10 @@
             this.groupBox1.PerformLayout();
             this.pnl_Order.ResumeLayout(false);
             this.pnl_Order.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -889,7 +987,6 @@
         private System.Windows.Forms.ColumnHeader RestocklevelColumn;
         private System.Windows.Forms.ColumnHeader StockStatusColumn;
         private System.Windows.Forms.Button ProductModifyButton;
-        private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.TextBox NameTextbox;
         private System.Windows.Forms.TextBox PriceTextbox;
         private System.Windows.Forms.TextBox VATTextbox;
@@ -901,7 +998,6 @@
         private System.Windows.Forms.Label VATLabel;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.ColumnHeader SoldColumn;
         private System.Windows.Forms.Label SoldLabel;
         private System.Windows.Forms.TextBox SoldTextbox;
@@ -922,6 +1018,15 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label IDLabel;
+        private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton AgeHigherRadioButton;
+        private System.Windows.Forms.RadioButton AgeLowerRadioButton;
     }
 }
 

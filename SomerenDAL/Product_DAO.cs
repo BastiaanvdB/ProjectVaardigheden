@@ -15,17 +15,34 @@ namespace SomerenDAL
       
         public List<Product> Db_Get_All_Products()
         {
-            string query = "SELECT product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel FROM Products";
+            string query = "SELECT product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold FROM Products";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public void DB_Modify_Products()
+
+        public void DB_Delete_Product(int id)
         {
-
+            string query = $"DELETE FROM Products WHERE product_id = {id}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
         }
-
-
+        Double test = 100.40;
+        public void DB_Modify_Product(Product product)
+        {
+            int ageint = product.Age ? 1 : 0;
+            string query = $"UPDATE Products SET product_name = '{product.Name}', product_price = {decimal.Parse(product.Price.ToString("0,00"))}, product_vatpercentage = {product.VAT}, product_age = {ageint}, product_stock = {product.Stock}, product_restocklevel = {product.Restocklevel}, product_sold = {product.Sold} WHERE product_id = {product.Id}; ";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+        
+        public void DB_Add_Product(Product product)
+        {
+            int ageint = product.Age ? 1 : 0;
+            string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES ({product.Id}, {product.Name.ToString()}, {product.Price}, {product.VAT}, {ageint}, {product.Stock}, {product.Restocklevel}, {product.Sold})"; 
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
 
         private List<Product> ReadTables(DataTable dataTable)
         {

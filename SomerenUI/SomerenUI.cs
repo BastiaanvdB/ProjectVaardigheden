@@ -298,41 +298,102 @@ namespace SomerenUI
 
         private void ProductModifyButton_Click(object sender, EventArgs e)
         {
-            SomerenLogic.Product_Service product_Service = new Product_Service();
-
-
-            // modify button pressed
-            ListViewItem item = listViewBeverage.SelectedItems[0];
-            if(item != null)
-            {
-                // Read textbox to listview
-                item.SubItems[0].Text = IDTextBox.Text;
-                item.SubItems[1].Text = NameTextbox.Text;
-                item.SubItems[2].Text = "€" + PriceTextbox.Text;
-                item.SubItems[3].Text = VATTextbox.Text + "%";
-                item.SubItems[4].Text = StockTextbox.Text;
-                item.SubItems[5].Text = RestockLevelTextbox.Text;
-                item.SubItems[6].Text = SoldTextbox.Text;
-
-                // create edited product
-                Product product = new Product();
-                product.Id = int.Parse(IDTextBox.Text);
-                product.Name = NameTextbox.Text;
-                product.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
-                product.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
-                product.Stock = int.Parse(StockTextbox.Text);
-                product.Restocklevel = int.Parse(RestockLevelTextbox.Text);
-                product.Sold = int.Parse(SoldTextbox.Text);
-
-                // send edited product to database
-                product_Service.ModifyProduct(product);
-            }
-
+            EditStorage(ProductModifyButton.Text);
         }
 
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Order");
+        }
+
+        private void EditStorage(string setting)
+        {
+            SomerenLogic.Product_Service product_Service = new Product_Service();
+            ListViewItem item = listViewBeverage.SelectedItems[0];
+            switch (setting)
+            {
+                case "Delete":
+                    if (item != null)
+                    {
+                        // Read textbox to int
+                      //  int id = int.Parse(IDTextBox.Text);
+
+                        // send delete command to database
+                        product_Service.DeleteProduct(int.Parse(IDTextBox.Text));
+                    }
+                    break;
+                case "Modify":
+                    if (item != null)
+                    {
+                        // Read textbox to listview
+                        item.SubItems[0].Text = IDTextBox.Text;
+                        item.SubItems[1].Text = NameTextbox.Text;
+                        item.SubItems[2].Text = "€" + PriceTextbox.Text;
+                        item.SubItems[3].Text = VATTextbox.Text + "%";
+                        item.SubItems[4].Text = StockTextbox.Text;
+                        item.SubItems[5].Text = RestockLevelTextbox.Text;
+                        item.SubItems[6].Text = SoldTextbox.Text;
+
+                        // create edited product
+                        Product product = new Product();
+                        product.Id = int.Parse(IDTextBox.Text);
+                        product.Name = NameTextbox.Text;
+                        product.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
+                        product.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
+                        product.Stock = int.Parse(StockTextbox.Text);
+                        product.Restocklevel = int.Parse(RestockLevelTextbox.Text);
+                        product.Sold = int.Parse(SoldTextbox.Text);
+
+                        // send edited product to database
+                        product_Service.ModifyProduct(product);
+                    }
+                        break;
+                case "Add":
+
+                    break;
+            }
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            ProductModifyButton.Text = "Add";
+            IDTextBox.Enabled = true;
+            NameTextbox.Enabled = true;
+            PriceTextbox.Enabled = true;
+            VATTextbox.Enabled = true;
+            StockTextbox.Enabled = true;
+            RestockLevelTextbox.Enabled = true;
+            SoldTextbox.Enabled = true;
+            AgeHigherRadioButton.Enabled = true;
+            AgeLowerRadioButton.Enabled = true;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            ProductModifyButton.Text = "Modify";
+            IDTextBox.Enabled = false;
+            NameTextbox.Enabled = true;
+            PriceTextbox.Enabled = true;
+            VATTextbox.Enabled = true;
+            StockTextbox.Enabled = true;
+            RestockLevelTextbox.Enabled = true;
+            SoldTextbox.Enabled = true;
+            AgeHigherRadioButton.Enabled = true;
+            AgeLowerRadioButton.Enabled = true;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            ProductModifyButton.Text = "Delete";
+            NameTextbox.Enabled = false;
+            PriceTextbox.Enabled = false;
+            VATTextbox.Enabled = false;
+            StockTextbox.Enabled = false;
+            RestockLevelTextbox.Enabled = false;
+            SoldTextbox.Enabled = false;
+            AgeHigherRadioButton.Enabled = false;
+            AgeLowerRadioButton.Enabled = false;
         }
     }
 }
