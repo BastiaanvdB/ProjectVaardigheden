@@ -31,7 +31,7 @@ namespace SomerenDAL
         public void DB_Modify_Product(Product product)
         {
             int ageint = product.Age ? 1 : 0;
-            string query = $"UPDATE Products SET product_name = '{product.Name}', product_price = {decimal.Parse(product.Price.ToString("0,00"))}, product_vatpercentage = {product.VAT}, product_age = {ageint}, product_stock = {product.Stock}, product_restocklevel = {product.Restocklevel}, product_sold = {product.Sold} WHERE product_id = {product.Id}; ";
+            string query = $"UPDATE Products SET product_name = '{product.Name}', product_price = {product.Price.ToString("0,00")}, product_vatpercentage = {product.VAT}, product_age = {ageint}, product_stock = {product.Stock}, product_restocklevel = {product.Restocklevel}, product_sold = {product.Sold} WHERE product_id = {product.Id}; ";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
@@ -39,7 +39,7 @@ namespace SomerenDAL
         public void DB_Add_Product(Product product)
         {
             int ageint = product.Age ? 1 : 0;
-            string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES ({product.Id}, '{product.Name}', {decimal.Parse(product.Price.ToString("0,00"))}, {product.VAT}, {ageint}, {product.Stock}, {product.Restocklevel}, {product.Sold})"; 
+            string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES ({product.Id}, '{product.Name}', {product.Price.ToString("0,00")}, {product.VAT}, {ageint}, {product.Stock}, {product.Restocklevel}, {product.Sold})"; 
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
