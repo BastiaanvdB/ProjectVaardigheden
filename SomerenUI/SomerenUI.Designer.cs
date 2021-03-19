@@ -129,6 +129,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AgeLimitColmn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -520,6 +521,7 @@
             this.IDColumn,
             this.NameColumn,
             this.PriceColumn,
+            this.AgeLimitColmn,
             this.VatPercentageColumn,
             this.StockColumn,
             this.RestocklevelColumn,
@@ -1033,6 +1035,10 @@
             // 
             this.columnHeader5.Text = "";
             // 
+            // AgeLimitColmn
+            // 
+            this.AgeLimitColmn.Text = "Age limit";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1185,6 +1191,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader AgeLimitColmn;
     }
 }
 
