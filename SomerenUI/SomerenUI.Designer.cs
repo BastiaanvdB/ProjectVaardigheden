@@ -67,9 +67,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_Products = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.DeleteRadioButton = new System.Windows.Forms.RadioButton();
+            this.ModifyRadioButton = new System.Windows.Forms.RadioButton();
+            this.AddRadioButton = new System.Windows.Forms.RadioButton();
             this.listViewBeverage = new System.Windows.Forms.ListView();
             this.IDColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -467,9 +467,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.DeleteRadioButton);
+            this.groupBox3.Controls.Add(this.ModifyRadioButton);
+            this.groupBox3.Controls.Add(this.AddRadioButton);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(9, 358);
             this.groupBox3.Name = "groupBox3";
@@ -478,41 +478,41 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Settings";
             // 
-            // radioButton3
+            // DeleteRadioButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 67);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(61, 19);
-            this.radioButton3.TabIndex = 19;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Delete";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.DeleteRadioButton.AutoSize = true;
+            this.DeleteRadioButton.Location = new System.Drawing.Point(6, 67);
+            this.DeleteRadioButton.Name = "DeleteRadioButton";
+            this.DeleteRadioButton.Size = new System.Drawing.Size(61, 19);
+            this.DeleteRadioButton.TabIndex = 19;
+            this.DeleteRadioButton.TabStop = true;
+            this.DeleteRadioButton.Text = "Delete";
+            this.DeleteRadioButton.UseVisualStyleBackColor = true;
+            this.DeleteRadioButton.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // radioButton2
+            // ModifyRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 19);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Modify";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.ModifyRadioButton.AutoSize = true;
+            this.ModifyRadioButton.Location = new System.Drawing.Point(6, 42);
+            this.ModifyRadioButton.Name = "ModifyRadioButton";
+            this.ModifyRadioButton.Size = new System.Drawing.Size(61, 19);
+            this.ModifyRadioButton.TabIndex = 18;
+            this.ModifyRadioButton.TabStop = true;
+            this.ModifyRadioButton.Text = "Modify";
+            this.ModifyRadioButton.UseVisualStyleBackColor = true;
+            this.ModifyRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // AddRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(46, 19);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Add";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.AddRadioButton.AutoSize = true;
+            this.AddRadioButton.Location = new System.Drawing.Point(6, 20);
+            this.AddRadioButton.Name = "AddRadioButton";
+            this.AddRadioButton.Size = new System.Drawing.Size(46, 19);
+            this.AddRadioButton.TabIndex = 17;
+            this.AddRadioButton.TabStop = true;
+            this.AddRadioButton.Text = "Add";
+            this.AddRadioButton.UseVisualStyleBackColor = true;
+            this.AddRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // listViewBeverage
             // 
@@ -1038,13 +1038,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
-            this.Controls.Add(this.pnl_Order);
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnl_Order);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -1164,9 +1164,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton DeleteRadioButton;
+        private System.Windows.Forms.RadioButton ModifyRadioButton;
+        private System.Windows.Forms.RadioButton AddRadioButton;
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.GroupBox groupBox4;
