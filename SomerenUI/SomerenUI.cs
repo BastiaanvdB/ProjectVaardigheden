@@ -387,41 +387,6 @@ namespace SomerenUI
                         break;
                 case "Add":
                     
-                        
-
-
-                        // Read textbox to listview
-                        //string age = "";
-                        //int id = int.Parse(IDTextBox.Text);
-                        //string name = NameTextbox.Text;
-                        //decimal price = decimal.Parse(PriceTextbox.Text);
-                        //if (AgeHigherRadioButton.Checked == true)
-                        //{
-                        //    age = ">18";
-                        //}
-                        //else if (AgeLowerRadioButton.Checked == true)
-                        //{
-                        //    age = "<18";
-                        //}
-                        //decimal vat = decimal.Parse(VATTextbox.Text);
-                        //int stock = int.Parse(StockTextbox.Text);
-                        //int restocklevel = int.Parse(RestockLevelTextbox.Text);
-                        //int sold = int.Parse(SoldTextbox.Text);
-
-                        
-                        //string alarm = "FULL";
-                        //if (p.Stock < p.Restocklevel)
-                        //{
-                        //    //test
-                        //    alarm = "REFILL!";
-                        //}
-                        //if (p.Age == true)
-                        //{
-                        //    age = ">18";
-                        //}
-                        //listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{id}", $"{name}", $"€{price.ToString("0.00")}", $"{age}", $"{vat}%", $"{stock}", $"{restocklevel}", $"{sold}", $"{alarm}" }));
-
-
                         // create edited product
                         Product product = new Product();
                         product.Id = int.Parse(IDTextBox.Text);
