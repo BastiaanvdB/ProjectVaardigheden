@@ -36,6 +36,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
 
                     // show dashboard
@@ -51,6 +52,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show students panel
                     pnl_Students.Show();
@@ -74,6 +76,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show teachers panel
                     pnl_Teachers.Show();
@@ -97,6 +100,7 @@ namespace SomerenUI
                     pnl_Teachers.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show room panel
                     pnl_Rooms.Show();
@@ -129,13 +133,11 @@ namespace SomerenUI
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
+                    pnl_Sales.Hide();
 
                     // show product panel
                     pnl_Products.Show();
                     listViewBeverage.Items.Clear();
-
-                    // set pre selected button
-                    ModifyRadioButton.Checked = true;
 
                     // fill the product listview within the product panel with a list of products
                     SomerenLogic.Product_Service productService = new SomerenLogic.Product_Service();
@@ -143,19 +145,14 @@ namespace SomerenUI
                     listViewBeverage.View = View.Details;
                     foreach (SomerenModel.Product p in productList)
                     {
-                        string age = "<18";
                         string alarm = "FULL";
                         if (p.Stock < p.Restocklevel)
                         {
                             //test
                            alarm = "REFILL!";
                         }
-                        if (p.Age == true)
-                        {
-                            age = ">18";
-                        }
 
-                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price}", $"{age}", $"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}", $"{p.Sold}", $"{alarm}" }));
+                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price.ToString("0.00")}",$"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}", $"{p.Sold}", $"{alarm}" }));
                     }
                     break;
 
@@ -166,13 +163,13 @@ namespace SomerenUI
                     pnl_Students.Hide();
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
-                    pnl_Products.Hide();
+                    pnl_Sales.Hide();
 
                     // show product panel
                     pnl_Order.Show();
                     ListViewOrder_Students.Items.Clear();
                     ListViewOrder_Products.Items.Clear();
-                    
+
                     // fill the students listview within the order panel with students
                     SomerenLogic.Student_Service studServ = new SomerenLogic.Student_Service();
                     List<Student> studList = studServ.GetStudents();
@@ -191,6 +188,47 @@ namespace SomerenUI
 
                         ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}"}));
                     }
+                    break;
+
+                case "Sales":
+                    // hide all other panels
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+                    pnl_Students.Hide();
+                    pnl_Teachers.Hide();
+                    pnl_Rooms.Hide();
+                    pnl_Order.Hide();
+
+                    // show product panel
+                    pnl_Sales.Show();
+                    order_listView.Items.Clear();
+
+                    // fill the students listview within the order panel with students
+                    SomerenLogic.Order_Service orderService = new SomerenLogic.Order_Service();
+                    List<Order> orderList = orderService.GetOrders();
+
+                    SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
+                    List<Sale_Report> salereportList = saleServ.GetSalesReports();
+
+                    /*SomerenLogic.Orderdetails_Service orderdetailsService = new SomerenLogic.Orderdetails_Service();
+                    List<Orderdetails> orderdList = orderdetailsService.GetOrderdetails();*/
+
+
+
+
+
+                    order_listView.View = View.Details;
+
+                    
+                    foreach (SomerenModel.Sale_Report s in salereportList)
+                    {
+                    
+                        order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+                       
+                    }
+
+
+
                     break;
             }
 
@@ -288,20 +326,10 @@ namespace SomerenUI
                 IDTextBox.Text = item.SubItems[0].Text;
                 NameTextbox.Text = item.SubItems[1].Text;
                 PriceTextbox.Text = item.SubItems[2].Text.Replace("€", String.Empty);
-                if(item.SubItems[3].Text == ">18")
-                {
-                    AgeLowerRadioButton.Checked = false;
-                    AgeHigherRadioButton.Checked = true;
-                }
-                else
-                {
-                    AgeHigherRadioButton.Checked = false;
-                    AgeLowerRadioButton.Checked = true;
-                }
-                VATTextbox.Text = item.SubItems[4].Text.Replace("%", String.Empty);
-                StockTextbox.Text = item.SubItems[5].Text;
-                RestockLevelTextbox.Text = item.SubItems[6].Text;
-                SoldTextbox.Text = item.SubItems[7].Text;
+                VATTextbox.Text = item.SubItems[3].Text.Replace("%", String.Empty);
+                StockTextbox.Text = item.SubItems[4].Text;
+                RestockLevelTextbox.Text = item.SubItems[5].Text;
+                SoldTextbox.Text = item.SubItems[6].Text;
             }
             else
             {
@@ -317,7 +345,36 @@ namespace SomerenUI
 
         private void ProductModifyButton_Click(object sender, EventArgs e)
         {
-            EditStorage(ProductModifyButton.Text);
+            SomerenLogic.Product_Service product_Service = new Product_Service();
+
+
+            // modify button pressed
+            ListViewItem item = listViewBeverage.SelectedItems[0];
+            if(item != null)
+            {
+                // Read textbox to listview
+                item.SubItems[0].Text = IDTextBox.Text;
+                item.SubItems[1].Text = NameTextbox.Text;
+                item.SubItems[2].Text = "€" + PriceTextbox.Text;
+                item.SubItems[3].Text = VATTextbox.Text + "%";
+                item.SubItems[4].Text = StockTextbox.Text;
+                item.SubItems[5].Text = RestockLevelTextbox.Text;
+                item.SubItems[6].Text = SoldTextbox.Text;
+
+                // create edited product
+                Product product = new Product();
+                product.Id = int.Parse(IDTextBox.Text);
+                product.Name = NameTextbox.Text;
+                product.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
+                product.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
+                product.Stock = int.Parse(StockTextbox.Text);
+                product.Restocklevel = int.Parse(RestockLevelTextbox.Text);
+                product.Sold = int.Parse(SoldTextbox.Text);
+
+                // send edited product to database
+                product_Service.ModifyProduct(product);
+            }
+
         }
 
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -325,234 +382,44 @@ namespace SomerenUI
             showPanel("Order");
         }
 
-        private void EditStorage(string setting)
+        private void omzetrapportageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SomerenLogic.Product_Service product_Service = new Product_Service();
-            
-            switch (setting)
-            {
-                case "Delete":
-                    ListViewItem item = listViewBeverage.SelectedItems[0];
-                    if (item != null)
-                    {
-                        // Read textbox to int
-                      //  int id = int.Parse(IDTextBox.Text);
-
-                        // send delete command to database
-                        product_Service.DeleteProduct(int.Parse(IDTextBox.Text));
-                    }
-                    break;
-                case "Modify":
-                    ListViewItem items = listViewBeverage.SelectedItems[0];
-                    if (items != null)
-                    {
-
-                        // Read textbox to listview
-                        items.SubItems[0].Text = IDTextBox.Text;
-                        items.SubItems[1].Text = NameTextbox.Text;
-                        items.SubItems[2].Text = "€" + PriceTextbox.Text;
-                        if (AgeHigherRadioButton.Checked == true)
-                        {
-                            items.SubItems[3].Text = ">18";
-                        }
-                        else if (AgeLowerRadioButton.Checked == true)
-                        {
-                            items.SubItems[3].Text = "<18";
-                        }
-                        items.SubItems[4].Text = VATTextbox.Text + "%";
-                        items.SubItems[5].Text = StockTextbox.Text;
-                        items.SubItems[6].Text = RestockLevelTextbox.Text;
-                        items.SubItems[7].Text = SoldTextbox.Text;
-
-                        // create edited product
-                        Product newproduct = new Product();
-                        newproduct.Id = int.Parse(IDTextBox.Text);
-                        newproduct.Name = NameTextbox.Text;
-                        newproduct.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
-                        if(AgeHigherRadioButton.Checked == true)
-                        {
-                            newproduct.Age = true;
-                        }
-                        else if (AgeLowerRadioButton.Checked == true)
-                        {
-                            newproduct.Age = false;
-                        }
-                        newproduct.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
-                        newproduct.Stock = int.Parse(StockTextbox.Text);
-                        newproduct.Restocklevel = int.Parse(RestockLevelTextbox.Text);
-                        newproduct.Sold = int.Parse(SoldTextbox.Text);
-
-                        // send edited product to database
-                        product_Service.ModifyProduct(newproduct);
-                    }
-                        break;
-                case "Add":
-                    
-                        // create edited product
-                        Product product = new Product();
-                        product.Id = int.Parse(IDTextBox.Text);
-                        product.Name = NameTextbox.Text;
-                        product.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
-                        product.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
-                        if(AgeHigherRadioButton.Checked == true)
-                        {
-                            product.Age = true;
-                        }
-                        else if(AgeLowerRadioButton.Checked == true)
-                        {
-                            product.Age = false;
-                        }
-                        product.Stock = int.Parse(StockTextbox.Text);
-                        product.Restocklevel = int.Parse(RestockLevelTextbox.Text);
-                        product.Sold = int.Parse(SoldTextbox.Text);
-
-                        // send new product to database
-                        product_Service.AddProduct(product);
-
-                        listViewBeverage.View = View.Details;
-                        
-                        string age = "<18";
-                        string alarm = "FULL";
-                        if (product.Stock < product.Restocklevel)
-                        {
-                           alarm = "REFILL!";
-                        }
-                        if (product.Age == true)
-                        {
-                            age = ">18";
-                        }
-                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price}", $"{age}", $"{product.VAT}%", $"{product.Stock}", $"{product.Restocklevel}", $"{product.Sold}", $"{alarm}" }));
-                        break;
-            }
-
+            showPanel("Sales");
         }
 
-        private void RadioButton(string button)
+        private void btn_sales_Click(object sender, EventArgs e)
         {
-            switch(button)
+            order_listView.Items.Clear();
+            SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
+            DateTime CalendarFrom = Convert.ToDateTime(date_from.SelectionStart);
+            DateTime CalendarTo = Convert.ToDateTime(date_to.SelectionStart);
+            if (CalendarTo > CalendarFrom)
             {
-                case "Add":
-                    ProductModifyButton.Text = "Add";
-                    IDTextBox.Enabled = true;
-                    NameTextbox.Enabled = true;
-                    PriceTextbox.Enabled = true;
-                    VATTextbox.Enabled = true;
-                    StockTextbox.Enabled = true;
-                    RestockLevelTextbox.Enabled = true;
-                    SoldTextbox.Enabled = true;
-                    AgeHigherRadioButton.Enabled = true;
-                    AgeLowerRadioButton.Enabled = true;
-                    break;
-                case "Modify":
-                    ProductModifyButton.Text = "Modify";
-                    IDTextBox.Enabled = false;
-                    NameTextbox.Enabled = true;
-                    PriceTextbox.Enabled = true;
-                    VATTextbox.Enabled = true;
-                    StockTextbox.Enabled = true;
-                    RestockLevelTextbox.Enabled = true;
-                    SoldTextbox.Enabled = true;
-                    AgeHigherRadioButton.Enabled = true;
-                    AgeLowerRadioButton.Enabled = true;
-                    break;
-                case "Delete":
-                    ProductModifyButton.Text = "Delete";
-                    IDTextBox.Enabled = true;
-                    NameTextbox.Enabled = false;
-                    PriceTextbox.Enabled = false;
-                    VATTextbox.Enabled = false;
-                    StockTextbox.Enabled = false;
-                    RestockLevelTextbox.Enabled = false;
-                    SoldTextbox.Enabled = false;
-                    AgeHigherRadioButton.Enabled = false;
-                    AgeLowerRadioButton.Enabled = false;
-                    break;
-            }
-        }
+  
+                
+                List<Sale_Report> saleReportList = saleServ.GetDrinksByDate(CalendarFrom, CalendarTo);
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton("Add");
-        }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton("Modify");
-        }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton("Delete");
-        }
+                //List<Sale_Report> salereportList = saleServ.GetSalesReports();
 
-        private void ListViewOrder_Students_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            //If a student is selected it will show in the 'For:' textbox
+                order_listView.View = View.Details;
 
-            if (ListViewOrder_Students.SelectedItems.Count > 0)
-            {
-                ListViewItem item = ListViewOrder_Students.SelectedItems[0];
-                TextBoxStudentName.Text = item.SubItems[1].Text;
-            }
-            else
-            {
-                TextBoxStudentName.Text = string.Empty;
-            }
-        }
 
-        private void btn_Add_Product_Click(object sender, EventArgs e)
-        {
-            // Read the selected item from the ListView
-
-            {
-                string selectedName = ListViewOrder_Products.SelectedItems[0].SubItems[1].Text;
-                string selectedPrice = ListViewOrder_Products.SelectedItems[0].SubItems[2].Text;
-
-                // Add the item to the total order listview
-                ListViewTotalOrder_Details.Items.Add(new ListViewItem(new string[] { $"{selectedName}", $"   ", $"{selectedPrice}" }));
-            }
-
-            // Calculate the total price
-
-            double total = 0;
-            foreach (ListViewItem item in ListViewTotalOrder_Details.Items)
-            {
-               string Price = item.SubItems[2].Text.Replace("€", string.Empty);
-               double PriceDouble = double.Parse(Price);
-               lbl_Total_Price_Value.Text = (total += PriceDouble).ToString("0.00");
-            }
-        }
-
-        private void btn_Remove_Product_Click(object sender, EventArgs e)
-        {
-            // Read the selected item from the ListView
-
-            string selectedName = ListViewTotalOrder_Details.SelectedItems[0].SubItems[0].Text;
-            string selectedPrice = ListViewTotalOrder_Details.SelectedItems[0].SubItems[2].Text;
-
-            // Remove the item to the total order listview
-
-            ListViewTotalOrder_Details.SelectedItems[0].Remove();
-
-            // Remove price from total price
-            double price = double.Parse(lbl_Total_Price_Value.Text);
-
-            if (ListViewTotalOrder_Details.Items.Count > 0)
-            {
-                foreach (ListViewItem item in ListViewTotalOrder_Details.Items)
+                foreach (SomerenModel.Sale_Report s in saleReportList)
                 {
-                    string Price = item.SubItems[2].Text.Replace("€", string.Empty);
-                    double PriceDouble = double.Parse(Price);
-                    lbl_Total_Price_Value.Text = (price -= PriceDouble).ToString("0.00");
+
+                    order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+
                 }
             }
             else
             {
-                lbl_Total_Price_Value.Text = "";
-            }
-            
-        }
 
-        
+                MessageBox.Show("The date has to be correct.");
+            }
+
+
+        }
     }
 }
