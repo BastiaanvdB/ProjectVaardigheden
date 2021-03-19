@@ -67,14 +67,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_Products = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.DeleteRadioButton = new System.Windows.Forms.RadioButton();
-            this.ModifyRadioButton = new System.Windows.Forms.RadioButton();
-            this.AddRadioButton = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.listViewBeverage = new System.Windows.Forms.ListView();
             this.IDColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PriceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AgeColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.VatPercentageColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StockColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RestocklevelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -117,6 +116,19 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_Order_For_Student = new System.Windows.Forms.Label();
+            this.TextBoxStudentName = new System.Windows.Forms.TextBox();
+            this.btn_Add_Product = new System.Windows.Forms.Button();
+            this.btn_Remove_Product = new System.Windows.Forms.Button();
+            this.btn_Purchase_Order = new System.Windows.Forms.Button();
+            this.lbl_Total_Price_Name = new System.Windows.Forms.Label();
+            this.lbl_Total_Price_Value = new System.Windows.Forms.Label();
+            this.ListViewTotalOrder_Details = new System.Windows.Forms.ListView();
+            this.lbl_Total_Order_List = new System.Windows.Forms.Label();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -132,6 +144,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.pnl_Order.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -384,7 +397,7 @@
             this.pnl_Rooms.Controls.Add(this.listViewRooms);
             this.pnl_Rooms.Controls.Add(this.pictureBox3);
             this.pnl_Rooms.Controls.Add(this.label2);
-            this.pnl_Rooms.Location = new System.Drawing.Point(6, 27);
+            this.pnl_Rooms.Location = new System.Drawing.Point(6, 30);
             this.pnl_Rooms.Name = "pnl_Rooms";
             this.pnl_Rooms.Size = new System.Drawing.Size(938, 466);
             this.pnl_Rooms.TabIndex = 7;
@@ -454,9 +467,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.DeleteRadioButton);
-            this.groupBox3.Controls.Add(this.ModifyRadioButton);
-            this.groupBox3.Controls.Add(this.AddRadioButton);
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(9, 358);
             this.groupBox3.Name = "groupBox3";
@@ -465,41 +478,41 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Settings";
             // 
-            // DeleteRadioButton
+            // radioButton3
             // 
-            this.DeleteRadioButton.AutoSize = true;
-            this.DeleteRadioButton.Location = new System.Drawing.Point(6, 67);
-            this.DeleteRadioButton.Name = "DeleteRadioButton";
-            this.DeleteRadioButton.Size = new System.Drawing.Size(61, 19);
-            this.DeleteRadioButton.TabIndex = 19;
-            this.DeleteRadioButton.TabStop = true;
-            this.DeleteRadioButton.Text = "Delete";
-            this.DeleteRadioButton.UseVisualStyleBackColor = true;
-            this.DeleteRadioButton.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 67);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(61, 19);
+            this.radioButton3.TabIndex = 19;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Delete";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // ModifyRadioButton
+            // radioButton2
             // 
-            this.ModifyRadioButton.AutoSize = true;
-            this.ModifyRadioButton.Location = new System.Drawing.Point(6, 42);
-            this.ModifyRadioButton.Name = "ModifyRadioButton";
-            this.ModifyRadioButton.Size = new System.Drawing.Size(61, 19);
-            this.ModifyRadioButton.TabIndex = 18;
-            this.ModifyRadioButton.TabStop = true;
-            this.ModifyRadioButton.Text = "Modify";
-            this.ModifyRadioButton.UseVisualStyleBackColor = true;
-            this.ModifyRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 42);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 19);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Modify";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // AddRadioButton
+            // radioButton1
             // 
-            this.AddRadioButton.AutoSize = true;
-            this.AddRadioButton.Location = new System.Drawing.Point(6, 20);
-            this.AddRadioButton.Name = "AddRadioButton";
-            this.AddRadioButton.Size = new System.Drawing.Size(46, 19);
-            this.AddRadioButton.TabIndex = 17;
-            this.AddRadioButton.TabStop = true;
-            this.AddRadioButton.Text = "Add";
-            this.AddRadioButton.UseVisualStyleBackColor = true;
-            this.AddRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 20);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(46, 19);
+            this.radioButton1.TabIndex = 17;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Add";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // listViewBeverage
             // 
@@ -507,7 +520,6 @@
             this.IDColumn,
             this.NameColumn,
             this.PriceColumn,
-            this.AgeColumn,
             this.VatPercentageColumn,
             this.StockColumn,
             this.RestocklevelColumn,
@@ -538,10 +550,6 @@
             // PriceColumn
             // 
             this.PriceColumn.Text = "Price";
-            // 
-            // AgeColumn
-            // 
-            this.AgeColumn.Text = "Age limit";
             // 
             // VatPercentageColumn
             // 
@@ -785,11 +793,12 @@
             // 
             // pnl_Order
             // 
+            this.pnl_Order.Controls.Add(this.groupBox2);
             this.pnl_Order.Controls.Add(this.lbl_OrderProducts);
             this.pnl_Order.Controls.Add(this.lbl_Order_Students);
             this.pnl_Order.Controls.Add(this.ListViewOrder_Products);
             this.pnl_Order.Controls.Add(this.ListViewOrder_Students);
-            this.pnl_Order.Location = new System.Drawing.Point(3, 21);
+            this.pnl_Order.Location = new System.Drawing.Point(0, 27);
             this.pnl_Order.Name = "pnl_Order";
             this.pnl_Order.Size = new System.Drawing.Size(941, 466);
             this.pnl_Order.TabIndex = 16;
@@ -827,9 +836,10 @@
             this.ListViewOrder_Products.HideSelection = false;
             this.ListViewOrder_Products.Location = new System.Drawing.Point(488, 48);
             this.ListViewOrder_Products.Name = "ListViewOrder_Products";
-            this.ListViewOrder_Products.Size = new System.Drawing.Size(416, 257);
+            this.ListViewOrder_Products.Size = new System.Drawing.Size(416, 158);
             this.ListViewOrder_Products.TabIndex = 1;
             this.ListViewOrder_Products.UseCompatibleStateImageBehavior = false;
+            this.ListViewOrder_Products.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader6
             // 
@@ -869,9 +879,11 @@
             this.ListViewOrder_Students.HideSelection = false;
             this.ListViewOrder_Students.Location = new System.Drawing.Point(21, 48);
             this.ListViewOrder_Students.Name = "ListViewOrder_Students";
-            this.ListViewOrder_Students.Size = new System.Drawing.Size(403, 257);
+            this.ListViewOrder_Students.Size = new System.Drawing.Size(403, 158);
             this.ListViewOrder_Students.TabIndex = 0;
             this.ListViewOrder_Students.UseCompatibleStateImageBehavior = false;
+            this.ListViewOrder_Students.View = System.Windows.Forms.View.Details;
+            this.ListViewOrder_Students.SelectedIndexChanged += new System.EventHandler(this.ListViewOrder_Students_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -896,18 +908,143 @@
             // 
             this.columnHeader5.Text = "";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbl_Total_Order_List);
+            this.groupBox2.Controls.Add(this.ListViewTotalOrder_Details);
+            this.groupBox2.Controls.Add(this.lbl_Total_Price_Value);
+            this.groupBox2.Controls.Add(this.lbl_Total_Price_Name);
+            this.groupBox2.Controls.Add(this.btn_Purchase_Order);
+            this.groupBox2.Controls.Add(this.btn_Remove_Product);
+            this.groupBox2.Controls.Add(this.lbl_Order_For_Student);
+            this.groupBox2.Controls.Add(this.TextBoxStudentName);
+            this.groupBox2.Controls.Add(this.btn_Add_Product);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(21, 238);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(883, 204);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Order";
+            // 
+            // lbl_Order_For_Student
+            // 
+            this.lbl_Order_For_Student.AutoSize = true;
+            this.lbl_Order_For_Student.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Order_For_Student.Location = new System.Drawing.Point(59, 26);
+            this.lbl_Order_For_Student.Name = "lbl_Order_For_Student";
+            this.lbl_Order_For_Student.Size = new System.Drawing.Size(31, 16);
+            this.lbl_Order_For_Student.TabIndex = 16;
+            this.lbl_Order_For_Student.Text = "For:";
+            // 
+            // TextBoxStudentName
+            // 
+            this.TextBoxStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxStudentName.Location = new System.Drawing.Point(62, 45);
+            this.TextBoxStudentName.Name = "TextBoxStudentName";
+            this.TextBoxStudentName.Size = new System.Drawing.Size(127, 22);
+            this.TextBoxStudentName.TabIndex = 7;
+            // 
+            // btn_Add_Product
+            // 
+            this.btn_Add_Product.Location = new System.Drawing.Point(699, 45);
+            this.btn_Add_Product.Name = "btn_Add_Product";
+            this.btn_Add_Product.Size = new System.Drawing.Size(126, 38);
+            this.btn_Add_Product.TabIndex = 8;
+            this.btn_Add_Product.Text = "Add";
+            this.btn_Add_Product.UseVisualStyleBackColor = true;
+            this.btn_Add_Product.Click += new System.EventHandler(this.btn_Add_Product_Click);
+            // 
+            // btn_Remove_Product
+            // 
+            this.btn_Remove_Product.Location = new System.Drawing.Point(699, 92);
+            this.btn_Remove_Product.Name = "btn_Remove_Product";
+            this.btn_Remove_Product.Size = new System.Drawing.Size(126, 38);
+            this.btn_Remove_Product.TabIndex = 17;
+            this.btn_Remove_Product.Text = "Remove";
+            this.btn_Remove_Product.UseVisualStyleBackColor = true;
+            this.btn_Remove_Product.Click += new System.EventHandler(this.btn_Remove_Product_Click);
+            // 
+            // btn_Purchase_Order
+            // 
+            this.btn_Purchase_Order.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_Purchase_Order.Location = new System.Drawing.Point(699, 155);
+            this.btn_Purchase_Order.Name = "btn_Purchase_Order";
+            this.btn_Purchase_Order.Size = new System.Drawing.Size(126, 38);
+            this.btn_Purchase_Order.TabIndex = 18;
+            this.btn_Purchase_Order.Text = "Purchase";
+            this.btn_Purchase_Order.UseVisualStyleBackColor = false;
+            // 
+            // lbl_Total_Price_Name
+            // 
+            this.lbl_Total_Price_Name.AutoSize = true;
+            this.lbl_Total_Price_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Total_Price_Name.Location = new System.Drawing.Point(59, 177);
+            this.lbl_Total_Price_Name.Name = "lbl_Total_Price_Name";
+            this.lbl_Total_Price_Name.Size = new System.Drawing.Size(76, 16);
+            this.lbl_Total_Price_Name.TabIndex = 19;
+            this.lbl_Total_Price_Name.Text = "Total Price:";
+            // 
+            // lbl_Total_Price_Value
+            // 
+            this.lbl_Total_Price_Value.AutoSize = true;
+            this.lbl_Total_Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Total_Price_Value.Location = new System.Drawing.Point(141, 177);
+            this.lbl_Total_Price_Value.Name = "lbl_Total_Price_Value";
+            this.lbl_Total_Price_Value.Size = new System.Drawing.Size(20, 16);
+            this.lbl_Total_Price_Value.TabIndex = 20;
+            this.lbl_Total_Price_Value.Text = "....";
+            // 
+            // ListViewTotalOrder_Details
+            // 
+            this.ListViewTotalOrder_Details.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader15,
+            this.columnHeader16});
+            this.ListViewTotalOrder_Details.HideSelection = false;
+            this.ListViewTotalOrder_Details.Location = new System.Drawing.Point(295, 45);
+            this.ListViewTotalOrder_Details.Name = "ListViewTotalOrder_Details";
+            this.ListViewTotalOrder_Details.Size = new System.Drawing.Size(251, 148);
+            this.ListViewTotalOrder_Details.TabIndex = 21;
+            this.ListViewTotalOrder_Details.UseCompatibleStateImageBehavior = false;
+            this.ListViewTotalOrder_Details.View = System.Windows.Forms.View.Details;
+            // 
+            // lbl_Total_Order_List
+            // 
+            this.lbl_Total_Order_List.AutoSize = true;
+            this.lbl_Total_Order_List.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Total_Order_List.Location = new System.Drawing.Point(292, 26);
+            this.lbl_Total_Order_List.Name = "lbl_Total_Order_List";
+            this.lbl_Total_Order_List.Size = new System.Drawing.Size(79, 16);
+            this.lbl_Total_Order_List.TabIndex = 22;
+            this.lbl_Total_Order_List.Text = "Total Order:";
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Product name";
+            this.columnHeader12.Width = 116;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "";
+            this.columnHeader15.Width = 70;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Price";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_Order);
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnl_Order);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -939,6 +1076,8 @@
             this.groupBox4.PerformLayout();
             this.pnl_Order.ResumeLayout(false);
             this.pnl_Order.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,15 +1164,27 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton DeleteRadioButton;
-        private System.Windows.Forms.RadioButton ModifyRadioButton;
-        private System.Windows.Forms.RadioButton AddRadioButton;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton AgeHigherRadioButton;
         private System.Windows.Forms.RadioButton AgeLowerRadioButton;
-        private System.Windows.Forms.ColumnHeader AgeColumn;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lbl_Total_Order_List;
+        private System.Windows.Forms.ListView ListViewTotalOrder_Details;
+        private System.Windows.Forms.Label lbl_Total_Price_Value;
+        private System.Windows.Forms.Label lbl_Total_Price_Name;
+        private System.Windows.Forms.Button btn_Purchase_Order;
+        private System.Windows.Forms.Button btn_Remove_Product;
+        private System.Windows.Forms.Label lbl_Order_For_Student;
+        private System.Windows.Forms.TextBox TextBoxStudentName;
+        private System.Windows.Forms.Button btn_Add_Product;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
     }
 }
 

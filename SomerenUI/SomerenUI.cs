@@ -518,5 +518,43 @@ namespace SomerenUI
         {
             RadioButton("Delete");
         }
+
+        private void ListViewOrder_Students_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If a student is selected it will show in the 'For:' textbox
+
+            if (ListViewOrder_Students.SelectedItems.Count > 0)
+            {
+                ListViewItem item = ListViewOrder_Students.SelectedItems[0];
+                TextBoxStudentName.Text = item.SubItems[1].Text;
+            }
+            else
+            {
+                TextBoxStudentName.Text = string.Empty;
+            }
+        }
+
+        private void btn_Add_Product_Click(object sender, EventArgs e)
+        {
+            // Read the selected item from the ListView
+
+            string selectedName = ListViewOrder_Products.SelectedItems[0].SubItems[1].Text;
+            string selectedPrice = ListViewOrder_Products.SelectedItems[0].SubItems[2].Text;
+
+            // Add the item to the total order listview
+            ListViewTotalOrder_Details.Items.Add(new ListViewItem(new string[] { $"{selectedName}", $"   ", $"{selectedPrice}" }));
+        }
+
+        private void btn_Remove_Product_Click(object sender, EventArgs e)
+        {
+            // Read the selected item from the ListView
+
+            string selectedName = ListViewTotalOrder_Details.SelectedItems[0].SubItems[0].Text;
+            string selectedPrice = ListViewTotalOrder_Details.SelectedItems[0].SubItems[2].Text;
+
+            // Remove the item to the total order listview
+
+            ListViewTotalOrder_Details.Items.Clear();
+        }
     }
 }
