@@ -397,7 +397,7 @@ namespace SomerenUI
         }
 
         private void ListViewOrder_Students_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             //If a student is selected it will show in the 'For:' textbox
 
             if (ListViewOrder_Students.SelectedItems.Count > 0)
@@ -415,11 +415,23 @@ namespace SomerenUI
         {
             // Read the selected item from the ListView
 
-            string selectedName = ListViewOrder_Products.SelectedItems[0].SubItems[1].Text;
-            string selectedPrice = ListViewOrder_Products.SelectedItems[0].SubItems[2].Text;
+            {
+                string selectedName = ListViewOrder_Products.SelectedItems[0].SubItems[1].Text;
+                string selectedPrice = ListViewOrder_Products.SelectedItems[0].SubItems[2].Text;
 
-            // Add the item to the total order listview
-            ListViewTotalOrder_Details.Items.Add(new ListViewItem(new string[] { $"{selectedName}", $"   ", $"{selectedPrice}" }));
+                // Add the item to the total order listview
+                ListViewTotalOrder_Details.Items.Add(new ListViewItem(new string[] { $"{selectedName}", $"   ", $"{selectedPrice}" }));
+            }
+
+            // Calculate the total price
+
+            double total = 0;
+            foreach (ListViewItem item in ListViewTotalOrder_Details.Items)
+            {
+               string Price = item.SubItems[2].Text.Replace("€", string.Empty);
+               double PriceDouble = double.Parse(Price);
+               lbl_Total_Price_Value.Text = (total += PriceDouble).ToString("0.00");
+            }
         }
 
         private void btn_Remove_Product_Click(object sender, EventArgs e)
@@ -431,7 +443,27 @@ namespace SomerenUI
 
             // Remove the item to the total order listview
 
-            ListViewTotalOrder_Details.Items.Clear();
+            ListViewTotalOrder_Details.SelectedItems[0].Remove();
+
+            // Remove price from total price
+            double price = double.Parse(lbl_Total_Price_Value.Text);
+
+            if (ListViewTotalOrder_Details.Items.Count > 0)
+            {
+                foreach (ListViewItem item in ListViewTotalOrder_Details.Items)
+                {
+                    string Price = item.SubItems[2].Text.Replace("€", string.Empty);
+                    double PriceDouble = double.Parse(Price);
+                    lbl_Total_Price_Value.Text = (price -= PriceDouble).ToString("0.00");
+                }
+            }
+            else
+            {
+                lbl_Total_Price_Value.Text = "";
+            }
+            
         }
+
+        
     }
 }
