@@ -52,6 +52,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    Pnl_Sales.Hide();
 
                     // show students panel
                     pnl_Students.Show();
@@ -102,6 +103,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    Pnl_Sales.Hide();
 
                     // show teachers panel
                     pnl_Teachers.Show();
@@ -125,6 +127,7 @@ namespace SomerenUI
                     pnl_Teachers.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    Pnl_Sales.Hide();
 
                     // show room panel
                     pnl_Rooms.Show();
@@ -157,6 +160,7 @@ namespace SomerenUI
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
+                    Pnl_Sales.Hide();
 
                     // show product panel
                     pnl_Products.Show();
@@ -195,6 +199,7 @@ namespace SomerenUI
                     pnl_Teachers.Hide();
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
+                    Pnl_Sales.Hide();
 
                     // show product panel
                     pnl_Order.Show();
