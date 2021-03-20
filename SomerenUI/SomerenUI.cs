@@ -573,6 +573,7 @@ namespace SomerenUI
                     this.orderlist = new List<Product>();
                     ListViewTotalOrder_Details.Items.Clear();
                     lbl_Total_Price_Value.Text = "0,00";
+                    VATDisplayLBL.Text = "0,00";
                     break;
                 case "Remove":
                     RemoveFromOrderlist();
@@ -586,7 +587,7 @@ namespace SomerenUI
 
         private void PurchaseOrder()
         {
-
+            // send order to database
 
 
 
@@ -611,6 +612,7 @@ namespace SomerenUI
                 totalvat += (product.Price / 100) * product.VAT;
                 totalprice += product.Price;
             }
+            VATDisplayLBL.Text = totalvat.ToString("0.00");
             lbl_Total_Price_Value.Text = (totalvat + totalprice).ToString("0.00");
         }
 

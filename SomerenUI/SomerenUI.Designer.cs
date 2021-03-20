@@ -133,18 +133,21 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pnl_Sales = new System.Windows.Forms.Panel();
-            this.order_listView = new System.Windows.Forms.ListView();
-            this.date_from = new System.Windows.Forms.MonthCalendar();
-            this.date_to = new System.Windows.Forms.MonthCalendar();
-            this.btn_sales = new System.Windows.Forms.Button();
-            this.Date = new System.Windows.Forms.GroupBox();
             this.Saleslbl = new System.Windows.Forms.Label();
-            this.fromlbl = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.GroupBox();
             this.tolbl = new System.Windows.Forms.Label();
+            this.fromlbl = new System.Windows.Forms.Label();
+            this.date_from = new System.Windows.Forms.MonthCalendar();
+            this.btn_sales = new System.Windows.Forms.Button();
+            this.date_to = new System.Windows.Forms.MonthCalendar();
+            this.order_listView = new System.Windows.Forms.ListView();
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.VATDisplayLBL = new System.Windows.Forms.Label();
+            this.VATlbl = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -163,6 +166,7 @@
             this.groupBox2.SuspendLayout();
             this.Pnl_Sales.SuspendLayout();
             this.Date.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -234,21 +238,21 @@
             // beverageStripMenuItem1
             // 
             this.beverageStripMenuItem1.Name = "beverageStripMenuItem1";
-            this.beverageStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.beverageStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.beverageStripMenuItem1.Text = "Beverage Storage";
             this.beverageStripMenuItem1.Click += new System.EventHandler(this.beverageStripMenuItem1_Click);
             // 
             // salesReportToolStripMenuItem
             // 
             this.salesReportToolStripMenuItem.Name = "salesReportToolStripMenuItem";
-            this.salesReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesReportToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.salesReportToolStripMenuItem.Text = "Sales report";
             this.salesReportToolStripMenuItem.Click += new System.EventHandler(this.salesReportToolStripMenuItem_Click);
             // 
             // orderToolStripMenuItem1
             // 
             this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
-            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.orderToolStripMenuItem1.Text = "Order";
             this.orderToolStripMenuItem1.Click += new System.EventHandler(this.orderToolStripMenuItem1_Click);
             // 
@@ -842,10 +846,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.lbl_Total_Order_List);
             this.groupBox2.Controls.Add(this.ListViewTotalOrder_Details);
-            this.groupBox2.Controls.Add(this.lbl_Total_Price_Value);
-            this.groupBox2.Controls.Add(this.lbl_Total_Price_Name);
             this.groupBox2.Controls.Add(this.btn_Purchase_Order);
             this.groupBox2.Controls.Add(this.btn_Remove_Product);
             this.groupBox2.Controls.Add(this.lbl_Order_For_Student);
@@ -881,7 +884,7 @@
             this.ListViewTotalOrder_Details.Location = new System.Drawing.Point(295, 45);
             this.ListViewTotalOrder_Details.MultiSelect = false;
             this.ListViewTotalOrder_Details.Name = "ListViewTotalOrder_Details";
-            this.ListViewTotalOrder_Details.Size = new System.Drawing.Size(251, 148);
+            this.ListViewTotalOrder_Details.Size = new System.Drawing.Size(336, 148);
             this.ListViewTotalOrder_Details.TabIndex = 21;
             this.ListViewTotalOrder_Details.UseCompatibleStateImageBehavior = false;
             this.ListViewTotalOrder_Details.View = System.Windows.Forms.View.Details;
@@ -890,7 +893,7 @@
             // columnHeader12
             // 
             this.columnHeader12.Text = "Product name";
-            this.columnHeader12.Width = 116;
+            this.columnHeader12.Width = 150;
             // 
             // columnHeader15
             // 
@@ -900,12 +903,13 @@
             // columnHeader16
             // 
             this.columnHeader16.Text = "Price";
+            this.columnHeader16.Width = 80;
             // 
             // lbl_Total_Price_Value
             // 
             this.lbl_Total_Price_Value.AutoSize = true;
             this.lbl_Total_Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Total_Price_Value.Location = new System.Drawing.Point(141, 177);
+            this.lbl_Total_Price_Value.Location = new System.Drawing.Point(107, 61);
             this.lbl_Total_Price_Value.Name = "lbl_Total_Price_Value";
             this.lbl_Total_Price_Value.Size = new System.Drawing.Size(20, 16);
             this.lbl_Total_Price_Value.TabIndex = 20;
@@ -915,7 +919,7 @@
             // 
             this.lbl_Total_Price_Name.AutoSize = true;
             this.lbl_Total_Price_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Total_Price_Name.Location = new System.Drawing.Point(59, 177);
+            this.lbl_Total_Price_Name.Location = new System.Drawing.Point(24, 61);
             this.lbl_Total_Price_Name.Name = "lbl_Total_Price_Name";
             this.lbl_Total_Price_Name.Size = new System.Drawing.Size(86, 16);
             this.lbl_Total_Price_Name.TabIndex = 19;
@@ -924,9 +928,9 @@
             // btn_Purchase_Order
             // 
             this.btn_Purchase_Order.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_Purchase_Order.Location = new System.Drawing.Point(699, 155);
+            this.btn_Purchase_Order.Location = new System.Drawing.Point(683, 135);
             this.btn_Purchase_Order.Name = "btn_Purchase_Order";
-            this.btn_Purchase_Order.Size = new System.Drawing.Size(126, 38);
+            this.btn_Purchase_Order.Size = new System.Drawing.Size(162, 55);
             this.btn_Purchase_Order.TabIndex = 18;
             this.btn_Purchase_Order.Text = "Purchase";
             this.btn_Purchase_Order.UseVisualStyleBackColor = false;
@@ -934,7 +938,7 @@
             // 
             // btn_Remove_Product
             // 
-            this.btn_Remove_Product.Location = new System.Drawing.Point(699, 92);
+            this.btn_Remove_Product.Location = new System.Drawing.Point(699, 89);
             this.btn_Remove_Product.Name = "btn_Remove_Product";
             this.btn_Remove_Product.Size = new System.Drawing.Size(126, 38);
             this.btn_Remove_Product.TabIndex = 17;
@@ -1088,42 +1092,15 @@
             this.Pnl_Sales.Size = new System.Drawing.Size(926, 457);
             this.Pnl_Sales.TabIndex = 17;
             // 
-            // order_listView
+            // Saleslbl
             // 
-            this.order_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader17,
-            this.columnHeader18});
-            this.order_listView.HideSelection = false;
-            this.order_listView.Location = new System.Drawing.Point(25, 36);
-            this.order_listView.Name = "order_listView";
-            this.order_listView.Size = new System.Drawing.Size(337, 251);
-            this.order_listView.TabIndex = 0;
-            this.order_listView.UseCompatibleStateImageBehavior = false;
-            this.order_listView.SelectedIndexChanged += new System.EventHandler(this.order_listView_SelectedIndexChanged);
-            // 
-            // date_from
-            // 
-            this.date_from.Location = new System.Drawing.Point(31, 38);
-            this.date_from.Name = "date_from";
-            this.date_from.TabIndex = 1;
-            // 
-            // date_to
-            // 
-            this.date_to.Location = new System.Drawing.Point(318, 38);
-            this.date_to.Name = "date_to";
-            this.date_to.TabIndex = 2;
-            // 
-            // btn_sales
-            // 
-            this.btn_sales.Location = new System.Drawing.Point(414, 213);
-            this.btn_sales.Name = "btn_sales";
-            this.btn_sales.Size = new System.Drawing.Size(75, 23);
-            this.btn_sales.TabIndex = 3;
-            this.btn_sales.Text = "Get list";
-            this.btn_sales.UseVisualStyleBackColor = true;
-            this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);
+            this.Saleslbl.AutoSize = true;
+            this.Saleslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saleslbl.Location = new System.Drawing.Point(34, 13);
+            this.Saleslbl.Name = "Saleslbl";
+            this.Saleslbl.Size = new System.Drawing.Size(54, 20);
+            this.Saleslbl.TabIndex = 5;
+            this.Saleslbl.Text = "Sales";
             // 
             // Date
             // 
@@ -1139,15 +1116,15 @@
             this.Date.TabStop = false;
             this.Date.Text = "Date selector";
             // 
-            // Saleslbl
+            // tolbl
             // 
-            this.Saleslbl.AutoSize = true;
-            this.Saleslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Saleslbl.Location = new System.Drawing.Point(34, 13);
-            this.Saleslbl.Name = "Saleslbl";
-            this.Saleslbl.Size = new System.Drawing.Size(54, 20);
-            this.Saleslbl.TabIndex = 5;
-            this.Saleslbl.Text = "Sales";
+            this.tolbl.AutoSize = true;
+            this.tolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tolbl.Location = new System.Drawing.Point(340, 17);
+            this.tolbl.Name = "tolbl";
+            this.tolbl.Size = new System.Drawing.Size(29, 20);
+            this.tolbl.TabIndex = 5;
+            this.tolbl.Text = "To";
             // 
             // fromlbl
             // 
@@ -1159,15 +1136,42 @@
             this.fromlbl.TabIndex = 4;
             this.fromlbl.Text = "From";
             // 
-            // tolbl
+            // date_from
             // 
-            this.tolbl.AutoSize = true;
-            this.tolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tolbl.Location = new System.Drawing.Point(340, 17);
-            this.tolbl.Name = "tolbl";
-            this.tolbl.Size = new System.Drawing.Size(29, 20);
-            this.tolbl.TabIndex = 5;
-            this.tolbl.Text = "To";
+            this.date_from.Location = new System.Drawing.Point(31, 38);
+            this.date_from.Name = "date_from";
+            this.date_from.TabIndex = 1;
+            // 
+            // btn_sales
+            // 
+            this.btn_sales.Location = new System.Drawing.Point(414, 213);
+            this.btn_sales.Name = "btn_sales";
+            this.btn_sales.Size = new System.Drawing.Size(75, 23);
+            this.btn_sales.TabIndex = 3;
+            this.btn_sales.Text = "Get list";
+            this.btn_sales.UseVisualStyleBackColor = true;
+            this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);
+            // 
+            // date_to
+            // 
+            this.date_to.Location = new System.Drawing.Point(318, 38);
+            this.date_to.Name = "date_to";
+            this.date_to.TabIndex = 2;
+            // 
+            // order_listView
+            // 
+            this.order_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader17,
+            this.columnHeader18});
+            this.order_listView.HideSelection = false;
+            this.order_listView.Location = new System.Drawing.Point(25, 36);
+            this.order_listView.Name = "order_listView";
+            this.order_listView.Size = new System.Drawing.Size(337, 251);
+            this.order_listView.TabIndex = 0;
+            this.order_listView.UseCompatibleStateImageBehavior = false;
+            this.order_listView.SelectedIndexChanged += new System.EventHandler(this.order_listView_SelectedIndexChanged);
             // 
             // columnHeader13
             // 
@@ -1187,12 +1191,44 @@
             this.columnHeader18.Text = "Date";
             this.columnHeader18.Width = 100;
             // 
+            // VATDisplayLBL
+            // 
+            this.VATDisplayLBL.AutoSize = true;
+            this.VATDisplayLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VATDisplayLBL.Location = new System.Drawing.Point(107, 39);
+            this.VATDisplayLBL.Name = "VATDisplayLBL";
+            this.VATDisplayLBL.Size = new System.Drawing.Size(20, 16);
+            this.VATDisplayLBL.TabIndex = 23;
+            this.VATDisplayLBL.Text = "....";
+            // 
+            // VATlbl
+            // 
+            this.VATlbl.AutoSize = true;
+            this.VATlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VATlbl.Location = new System.Drawing.Point(24, 39);
+            this.VATlbl.Name = "VATlbl";
+            this.VATlbl.Size = new System.Drawing.Size(85, 16);
+            this.VATlbl.TabIndex = 24;
+            this.VATlbl.Text = "Total VAT:  €";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.VATlbl);
+            this.groupBox5.Controls.Add(this.VATDisplayLBL);
+            this.groupBox5.Controls.Add(this.lbl_Total_Price_Name);
+            this.groupBox5.Controls.Add(this.lbl_Total_Price_Value);
+            this.groupBox5.Location = new System.Drawing.Point(62, 93);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 100);
+            this.groupBox5.TabIndex = 25;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Price details";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
-            this.Controls.Add(this.Pnl_Sales);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Rooms);
@@ -1200,6 +1236,7 @@
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.pnl_Order);
+            this.Controls.Add(this.Pnl_Sales);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -1237,6 +1274,8 @@
             this.Pnl_Sales.PerformLayout();
             this.Date.ResumeLayout(false);
             this.Date.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1360,6 +1399,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.Label VATlbl;
+        private System.Windows.Forms.Label VATDisplayLBL;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 
