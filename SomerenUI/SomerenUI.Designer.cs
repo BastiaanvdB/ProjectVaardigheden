@@ -37,12 +37,14 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beverageStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
@@ -130,6 +132,19 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Pnl_Sales = new System.Windows.Forms.Panel();
+            this.order_listView = new System.Windows.Forms.ListView();
+            this.date_from = new System.Windows.Forms.MonthCalendar();
+            this.date_to = new System.Windows.Forms.MonthCalendar();
+            this.btn_sales = new System.Windows.Forms.Button();
+            this.Date = new System.Windows.Forms.GroupBox();
+            this.Saleslbl = new System.Windows.Forms.Label();
+            this.fromlbl = new System.Windows.Forms.Label();
+            this.tolbl = new System.Windows.Forms.Label();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -146,6 +161,8 @@
             this.groupBox4.SuspendLayout();
             this.pnl_Order.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.Pnl_Sales.SuspendLayout();
+            this.Date.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -166,8 +183,8 @@
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
-            this.teachersToolStripMenuItem,
-            this.orderToolStripMenuItem});
+            this.orderToolStripMenuItem,
+            this.teachersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(962, 24);
@@ -207,17 +224,33 @@
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.beverageStripMenuItem1});
+            this.beverageStripMenuItem1,
+            this.salesReportToolStripMenuItem,
+            this.orderToolStripMenuItem1});
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
-            this.barToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.barToolStripMenuItem.Text = "Students";
+            this.barToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.barToolStripMenuItem.Text = "Management";
             // 
             // beverageStripMenuItem1
             // 
             this.beverageStripMenuItem1.Name = "beverageStripMenuItem1";
-            this.beverageStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.beverageStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.beverageStripMenuItem1.Text = "Beverage Storage";
             this.beverageStripMenuItem1.Click += new System.EventHandler(this.beverageStripMenuItem1_Click);
+            // 
+            // salesReportToolStripMenuItem
+            // 
+            this.salesReportToolStripMenuItem.Name = "salesReportToolStripMenuItem";
+            this.salesReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesReportToolStripMenuItem.Text = "Sales report";
+            this.salesReportToolStripMenuItem.Click += new System.EventHandler(this.salesReportToolStripMenuItem_Click);
+            // 
+            // orderToolStripMenuItem1
+            // 
+            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
+            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem1.Text = "Order";
+            this.orderToolStripMenuItem1.Click += new System.EventHandler(this.orderToolStripMenuItem1_Click);
             // 
             // studentsToolStripMenuItem
             // 
@@ -246,19 +279,17 @@
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            // 
             // teachersToolStripMenuItem
             // 
             this.teachersToolStripMenuItem.Name = "teachersToolStripMenuItem";
             this.teachersToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.teachersToolStripMenuItem.Text = "Teachers";
             this.teachersToolStripMenuItem.Click += new System.EventHandler(this.teachersToolStripMenuItem_Click);
-            // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.orderToolStripMenuItem.Text = "Order";
-            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -1047,18 +1078,128 @@
             // 
             this.columnHeader5.Text = "";
             // 
+            // Pnl_Sales
+            // 
+            this.Pnl_Sales.Controls.Add(this.Saleslbl);
+            this.Pnl_Sales.Controls.Add(this.Date);
+            this.Pnl_Sales.Controls.Add(this.order_listView);
+            this.Pnl_Sales.Location = new System.Drawing.Point(3, 21);
+            this.Pnl_Sales.Name = "Pnl_Sales";
+            this.Pnl_Sales.Size = new System.Drawing.Size(926, 457);
+            this.Pnl_Sales.TabIndex = 17;
+            // 
+            // order_listView
+            // 
+            this.order_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader17,
+            this.columnHeader18});
+            this.order_listView.HideSelection = false;
+            this.order_listView.Location = new System.Drawing.Point(25, 36);
+            this.order_listView.Name = "order_listView";
+            this.order_listView.Size = new System.Drawing.Size(337, 251);
+            this.order_listView.TabIndex = 0;
+            this.order_listView.UseCompatibleStateImageBehavior = false;
+            this.order_listView.SelectedIndexChanged += new System.EventHandler(this.order_listView_SelectedIndexChanged);
+            // 
+            // date_from
+            // 
+            this.date_from.Location = new System.Drawing.Point(31, 38);
+            this.date_from.Name = "date_from";
+            this.date_from.TabIndex = 1;
+            // 
+            // date_to
+            // 
+            this.date_to.Location = new System.Drawing.Point(318, 38);
+            this.date_to.Name = "date_to";
+            this.date_to.TabIndex = 2;
+            // 
+            // btn_sales
+            // 
+            this.btn_sales.Location = new System.Drawing.Point(414, 213);
+            this.btn_sales.Name = "btn_sales";
+            this.btn_sales.Size = new System.Drawing.Size(75, 23);
+            this.btn_sales.TabIndex = 3;
+            this.btn_sales.Text = "Get list";
+            this.btn_sales.UseVisualStyleBackColor = true;
+            this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);
+            // 
+            // Date
+            // 
+            this.Date.Controls.Add(this.tolbl);
+            this.Date.Controls.Add(this.fromlbl);
+            this.Date.Controls.Add(this.date_from);
+            this.Date.Controls.Add(this.btn_sales);
+            this.Date.Controls.Add(this.date_to);
+            this.Date.Location = new System.Drawing.Point(412, 22);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(517, 255);
+            this.Date.TabIndex = 4;
+            this.Date.TabStop = false;
+            this.Date.Text = "Date selector";
+            // 
+            // Saleslbl
+            // 
+            this.Saleslbl.AutoSize = true;
+            this.Saleslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saleslbl.Location = new System.Drawing.Point(34, 13);
+            this.Saleslbl.Name = "Saleslbl";
+            this.Saleslbl.Size = new System.Drawing.Size(54, 20);
+            this.Saleslbl.TabIndex = 5;
+            this.Saleslbl.Text = "Sales";
+            // 
+            // fromlbl
+            // 
+            this.fromlbl.AutoSize = true;
+            this.fromlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromlbl.Location = new System.Drawing.Point(135, 17);
+            this.fromlbl.Name = "fromlbl";
+            this.fromlbl.Size = new System.Drawing.Size(50, 20);
+            this.fromlbl.TabIndex = 4;
+            this.fromlbl.Text = "From";
+            // 
+            // tolbl
+            // 
+            this.tolbl.AutoSize = true;
+            this.tolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tolbl.Location = new System.Drawing.Point(340, 17);
+            this.tolbl.Name = "tolbl";
+            this.tolbl.Size = new System.Drawing.Size(29, 20);
+            this.tolbl.TabIndex = 5;
+            this.tolbl.Text = "To";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Sales";
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Revenue";
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Customers";
+            this.columnHeader17.Width = 80;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Date";
+            this.columnHeader18.Width = 100;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.Pnl_Sales);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnl_Order);
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
+            this.Controls.Add(this.pnl_Order);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -1092,6 +1233,10 @@
             this.pnl_Order.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.Pnl_Sales.ResumeLayout(false);
+            this.Pnl_Sales.PerformLayout();
+            this.Date.ResumeLayout(false);
+            this.Date.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1200,6 +1345,21 @@
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader AgeLimitColmn;
+        private System.Windows.Forms.ToolStripMenuItem salesReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
+        private System.Windows.Forms.Panel Pnl_Sales;
+        private System.Windows.Forms.MonthCalendar date_to;
+        private System.Windows.Forms.MonthCalendar date_from;
+        private System.Windows.Forms.ListView order_listView;
+        private System.Windows.Forms.Label Saleslbl;
+        private System.Windows.Forms.GroupBox Date;
+        private System.Windows.Forms.Label tolbl;
+        private System.Windows.Forms.Label fromlbl;
+        private System.Windows.Forms.Button btn_sales;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
     }
 }
 

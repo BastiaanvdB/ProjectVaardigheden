@@ -36,6 +36,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     pnl_Order.Hide();
+                    Pnl_Sales.Hide();
 
 
                     // show dashboard
@@ -65,7 +66,34 @@ namespace SomerenUI
                         listViewStudents.Items.Add(new ListViewItem(new string[] { $"{student.Number}", $"{student.Name}", $"{student.BirthDate.ToString("dd/MM/yyyy")}" }));
                     }
                     break;
+                case "Sales":
+                    // hide all other panels
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+                    pnl_Students.Hide();
+                    pnl_Teachers.Hide();
+                    pnl_Rooms.Hide();
+                    pnl_Order.Hide();
+                    pnl_Products.Hide();
+                    // show product panel
+                    Pnl_Sales.Show();
+                    order_listView.Items.Clear();
 
+
+
+                    SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
+                    List<Sale_Report> salereportList = saleServ.GetSalesReports();
+
+                    order_listView.View = View.Details;
+
+
+                    foreach (SomerenModel.Sale_Report s in salereportList)
+                    {
+
+                        order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+
+                    }
+                    break;
                 case "Teachers":
                     // hide all other panels
                     pnl_Dashboard.Hide();
@@ -155,7 +183,7 @@ namespace SomerenUI
                             age = ">18";
                         }
 
-                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price}", $"{age}", $"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}", $"{p.Sold}", $"{alarm}" }));
+                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{p.Id}", $"{p.Name}", $"€{p.Price.ToString("0.00")}", $"{age}", $"{p.VAT}%", $"{p.Stock}", $"{p.Restocklevel}", $"{p.Sold}", $"{alarm}" }));
                     }
                     break;
 
@@ -319,11 +347,6 @@ namespace SomerenUI
         private void ProductModifyButton_Click(object sender, EventArgs e)
         {
             EditStorage(ProductModifyButton.Text);
-        }
-
-        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("Order");
         }
 
         private void EditStorage(string setting)
@@ -594,6 +617,54 @@ namespace SomerenUI
         private void btn_Purchase_Order_Click(object sender, EventArgs e)
         {
             OrderMenu("Purchase");
+        }
+
+        private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showPanel("Order");
+        }
+
+        private void btn_sales_Click(object sender, EventArgs e)
+        {
+            order_listView.Items.Clear();
+            SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
+            DateTime CalendarFrom = Convert.ToDateTime(date_from.SelectionStart);
+            DateTime CalendarTo = Convert.ToDateTime(date_to.SelectionStart);
+            if (CalendarTo > CalendarFrom)
+            {
+
+
+                List<Sale_Report> saleReportList = saleServ.GetDrinksByDate(CalendarFrom, CalendarTo);
+
+
+
+                //List<Sale_Report> salereportList = saleServ.GetSalesReports();
+
+                order_listView.View = View.Details;
+
+
+                foreach (SomerenModel.Sale_Report s in saleReportList)
+                {
+
+                    order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("The date has to be correct.");
+            }
+        }
+
+        private void salesReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Sales");
+        }
+
+        private void order_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
