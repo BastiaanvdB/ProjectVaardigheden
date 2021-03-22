@@ -85,6 +85,10 @@ namespace SomerenUI
                     SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
                     List<Sale_Report> salereportList = saleServ.GetSalesReports();
 
+                    date_from.MaxDate = DateTime.Now;
+                    date_to.MaxDate = DateTime.Now;
+
+
                     order_listView.View = View.Details;
 
 
@@ -579,15 +583,31 @@ namespace SomerenUI
                     RemoveFromOrderlist();
                     break;
                 case "Purchase":
-                    PurchaseOrder();
+                    PurchaseOrder(this.orderlist);
                     NewOrder();
                     break;
             }
         }
 
-        private void PurchaseOrder()
+        private void PurchaseOrder(List<Product> pL)
         {
             // send order to database
+
+            
+            
+
+            
+            ListViewItem stuItem = ListViewOrder_Students.SelectedItems[0];
+            ListViewItem proItem = ListViewOrder_Products.SelectedItems[0];
+
+            int sNr = int.Parse(stuItem.SubItems[0].Text);
+            int prodId = int.Parse(proItem.SubItems[0].Text);
+            int orderQuantity = pL.Count();
+            SomerenLogic.Order_Service orderServ = new SomerenLogic.Order_Service();
+
+
+            orderServ.Insert_OrderDetails(prodId, orderQuantity);
+            orderServ.Insert_Order(sNr);
 
 
 
@@ -635,8 +655,10 @@ namespace SomerenUI
         {
             order_listView.Items.Clear();
             SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
+           
             DateTime CalendarFrom = Convert.ToDateTime(date_from.SelectionStart);
             DateTime CalendarTo = Convert.ToDateTime(date_to.SelectionStart);
+            
             if (CalendarTo > CalendarFrom)
             {
 

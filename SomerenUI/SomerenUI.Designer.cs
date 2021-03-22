@@ -43,7 +43,6 @@
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
@@ -105,13 +104,16 @@
             this.PriceTextbox = new System.Windows.Forms.TextBox();
             this.pnl_Order = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.VATlbl = new System.Windows.Forms.Label();
+            this.VATDisplayLBL = new System.Windows.Forms.Label();
+            this.lbl_Total_Price_Name = new System.Windows.Forms.Label();
+            this.lbl_Total_Price_Value = new System.Windows.Forms.Label();
             this.lbl_Total_Order_List = new System.Windows.Forms.Label();
             this.ListViewTotalOrder_Details = new System.Windows.Forms.ListView();
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbl_Total_Price_Value = new System.Windows.Forms.Label();
-            this.lbl_Total_Price_Name = new System.Windows.Forms.Label();
             this.btn_Purchase_Order = new System.Windows.Forms.Button();
             this.btn_Remove_Product = new System.Windows.Forms.Button();
             this.lbl_Order_For_Student = new System.Windows.Forms.Label();
@@ -145,9 +147,6 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.VATDisplayLBL = new System.Windows.Forms.Label();
-            this.VATlbl = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -164,9 +163,9 @@
             this.groupBox4.SuspendLayout();
             this.pnl_Order.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.Pnl_Sales.SuspendLayout();
             this.Date.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -187,7 +186,6 @@
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
-            this.orderToolStripMenuItem,
             this.teachersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -282,11 +280,6 @@
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
-            // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
             // 
             // teachersToolStripMenuItem
             // 
@@ -862,6 +855,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.VATlbl);
+            this.groupBox5.Controls.Add(this.VATDisplayLBL);
+            this.groupBox5.Controls.Add(this.lbl_Total_Price_Name);
+            this.groupBox5.Controls.Add(this.lbl_Total_Price_Value);
+            this.groupBox5.Location = new System.Drawing.Point(62, 93);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 100);
+            this.groupBox5.TabIndex = 25;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Price details";
+            // 
+            // VATlbl
+            // 
+            this.VATlbl.AutoSize = true;
+            this.VATlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VATlbl.Location = new System.Drawing.Point(24, 39);
+            this.VATlbl.Name = "VATlbl";
+            this.VATlbl.Size = new System.Drawing.Size(85, 16);
+            this.VATlbl.TabIndex = 24;
+            this.VATlbl.Text = "Total VAT:  €";
+            // 
+            // VATDisplayLBL
+            // 
+            this.VATDisplayLBL.AutoSize = true;
+            this.VATDisplayLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VATDisplayLBL.Location = new System.Drawing.Point(107, 39);
+            this.VATDisplayLBL.Name = "VATDisplayLBL";
+            this.VATDisplayLBL.Size = new System.Drawing.Size(20, 16);
+            this.VATDisplayLBL.TabIndex = 23;
+            this.VATDisplayLBL.Text = "....";
+            // 
+            // lbl_Total_Price_Name
+            // 
+            this.lbl_Total_Price_Name.AutoSize = true;
+            this.lbl_Total_Price_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Total_Price_Name.Location = new System.Drawing.Point(24, 61);
+            this.lbl_Total_Price_Name.Name = "lbl_Total_Price_Name";
+            this.lbl_Total_Price_Name.Size = new System.Drawing.Size(86, 16);
+            this.lbl_Total_Price_Name.TabIndex = 19;
+            this.lbl_Total_Price_Name.Text = "Total Price: €";
+            // 
+            // lbl_Total_Price_Value
+            // 
+            this.lbl_Total_Price_Value.AutoSize = true;
+            this.lbl_Total_Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Total_Price_Value.Location = new System.Drawing.Point(107, 61);
+            this.lbl_Total_Price_Value.Name = "lbl_Total_Price_Value";
+            this.lbl_Total_Price_Value.Size = new System.Drawing.Size(20, 16);
+            this.lbl_Total_Price_Value.TabIndex = 20;
+            this.lbl_Total_Price_Value.Text = "....";
+            // 
             // lbl_Total_Order_List
             // 
             this.lbl_Total_Order_List.AutoSize = true;
@@ -904,26 +950,6 @@
             // 
             this.columnHeader16.Text = "Price";
             this.columnHeader16.Width = 80;
-            // 
-            // lbl_Total_Price_Value
-            // 
-            this.lbl_Total_Price_Value.AutoSize = true;
-            this.lbl_Total_Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Total_Price_Value.Location = new System.Drawing.Point(107, 61);
-            this.lbl_Total_Price_Value.Name = "lbl_Total_Price_Value";
-            this.lbl_Total_Price_Value.Size = new System.Drawing.Size(20, 16);
-            this.lbl_Total_Price_Value.TabIndex = 20;
-            this.lbl_Total_Price_Value.Text = "....";
-            // 
-            // lbl_Total_Price_Name
-            // 
-            this.lbl_Total_Price_Name.AutoSize = true;
-            this.lbl_Total_Price_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Total_Price_Name.Location = new System.Drawing.Point(24, 61);
-            this.lbl_Total_Price_Name.Name = "lbl_Total_Price_Name";
-            this.lbl_Total_Price_Name.Size = new System.Drawing.Size(86, 16);
-            this.lbl_Total_Price_Name.TabIndex = 19;
-            this.lbl_Total_Price_Name.Text = "Total Price: €";
             // 
             // btn_Purchase_Order
             // 
@@ -1191,39 +1217,6 @@
             this.columnHeader18.Text = "Date";
             this.columnHeader18.Width = 100;
             // 
-            // VATDisplayLBL
-            // 
-            this.VATDisplayLBL.AutoSize = true;
-            this.VATDisplayLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VATDisplayLBL.Location = new System.Drawing.Point(107, 39);
-            this.VATDisplayLBL.Name = "VATDisplayLBL";
-            this.VATDisplayLBL.Size = new System.Drawing.Size(20, 16);
-            this.VATDisplayLBL.TabIndex = 23;
-            this.VATDisplayLBL.Text = "....";
-            // 
-            // VATlbl
-            // 
-            this.VATlbl.AutoSize = true;
-            this.VATlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VATlbl.Location = new System.Drawing.Point(24, 39);
-            this.VATlbl.Name = "VATlbl";
-            this.VATlbl.Size = new System.Drawing.Size(85, 16);
-            this.VATlbl.TabIndex = 24;
-            this.VATlbl.Text = "Total VAT:  €";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.VATlbl);
-            this.groupBox5.Controls.Add(this.VATDisplayLBL);
-            this.groupBox5.Controls.Add(this.lbl_Total_Price_Name);
-            this.groupBox5.Controls.Add(this.lbl_Total_Price_Value);
-            this.groupBox5.Location = new System.Drawing.Point(62, 93);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 100);
-            this.groupBox5.TabIndex = 25;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Price details";
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1270,12 +1263,12 @@
             this.pnl_Order.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.Pnl_Sales.ResumeLayout(false);
             this.Pnl_Sales.PerformLayout();
             this.Date.ResumeLayout(false);
             this.Date.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1344,7 +1337,6 @@
         private System.Windows.Forms.ColumnHeader SoldColumn;
         private System.Windows.Forms.Label SoldLabel;
         private System.Windows.Forms.TextBox SoldTextbox;
-        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
         private System.Windows.Forms.Panel pnl_Order;
         private System.Windows.Forms.ListView ListViewOrder_Products;
         private System.Windows.Forms.ListView ListViewOrder_Students;
