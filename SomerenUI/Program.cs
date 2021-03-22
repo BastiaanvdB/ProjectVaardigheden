@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace SomerenUI
 {
     static class Program
@@ -17,7 +16,6 @@ namespace SomerenUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SomerenUI());
-            
         }
     }
 }

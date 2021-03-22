@@ -22,24 +22,45 @@ namespace SomerenDAL
 
         public void DB_Delete_Product(int id)
         {
-            string query = $"DELETE FROM Products WHERE product_id = {id}";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = $"DELETE FROM Products WHERE product_id = @Id";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Id", SqlDbType.Int) { Value = id }
+            };
             ExecuteEditQuery(query, sqlParameters);
         }
 
         public void DB_Modify_Product(Product product)
         {
-            int ageint = product.Age ? 1 : 0;
-            string query = $"UPDATE Products SET product_name = '{product.Name}', product_price = {product.Price.ToString("0,00")}, product_vatpercentage = {product.VAT}, product_age = {ageint}, product_stock = {product.Stock}, product_restocklevel = {product.Restocklevel}, product_sold = {product.Sold} WHERE product_id = {product.Id}; ";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = $"UPDATE Products SET product_name=@Name, product_price=@Price, product_vatpercentage=@Vat, product_age=@Age, product_stock=@Stock, product_restocklevel=@Restock, product_sold=@Sold WHERE product_id = @Id";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Id", SqlDbType.Int) { Value = product.Id },
+                new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = product.Name},
+                new SqlParameter("@Price", SqlDbType.Money) { Value = product.Price},
+                new SqlParameter("@Vat", SqlDbType.Decimal) { Value = product.VAT },
+                new SqlParameter("@Age", SqlDbType.Bit) { Value = product.Age },
+                new SqlParameter("@Stock", SqlDbType.Int) { Value = product.Stock },
+                new SqlParameter("@Restock", SqlDbType.Int) { Value = product.Restocklevel },
+                new SqlParameter("@Sold", SqlDbType.Int) { Value = product.Sold }
+            };
             ExecuteEditQuery(query, sqlParameters);
         }
         
         public void DB_Add_Product(Product product)
         {
-            int ageint = product.Age ? 1 : 0;
-            string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES ({product.Id}, '{product.Name}', {product.Price}, {product.VAT}, {ageint}, {product.Stock}, {product.Restocklevel}, {product.Sold})"; 
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES (@Id, @Name, @Price, @Vat, @Age, @Stock, @Restock, @Sold)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Id", SqlDbType.Int) { Value = product.Id },
+                new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = product.Name},
+                new SqlParameter("@Price", SqlDbType.Money) { Value = product.Price},
+                new SqlParameter("@Vat", SqlDbType.Decimal) { Value = product.VAT },
+                new SqlParameter("@Age", SqlDbType.Bit) { Value = product.Age },
+                new SqlParameter("@Stock", SqlDbType.Int) { Value = product.Stock },
+                new SqlParameter("@Restock", SqlDbType.Int) { Value = product.Restocklevel },
+                new SqlParameter("@Sold", SqlDbType.Int) { Value = product.Sold }
+            };
             ExecuteEditQuery(query, sqlParameters);
         }
 
