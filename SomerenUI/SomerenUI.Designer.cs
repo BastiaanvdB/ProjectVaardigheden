@@ -143,11 +143,11 @@
             this.btn_sales = new System.Windows.Forms.Button();
             this.date_to = new System.Windows.Forms.MonthCalendar();
             this.order_listView = new System.Windows.Forms.ListView();
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -1193,39 +1193,38 @@
             this.columnHeader14,
             this.columnHeader17,
             this.columnHeader18});
+            this.order_listView.FullRowSelect = true;
+            this.order_listView.GridLines = true;
             this.order_listView.HideSelection = false;
             this.order_listView.Location = new System.Drawing.Point(25, 36);
             this.order_listView.Name = "order_listView";
-            this.order_listView.Size = new System.Drawing.Size(337, 251);
+            this.order_listView.Size = new System.Drawing.Size(364, 251);
             this.order_listView.TabIndex = 0;
             this.order_listView.UseCompatibleStateImageBehavior = false;
+            this.order_listView.View = System.Windows.Forms.View.Details;
             this.order_listView.SelectedIndexChanged += new System.EventHandler(this.order_listView_SelectedIndexChanged);
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Id";
             // 
             // columnHeader13
             // 
-            this.columnHeader13.DisplayIndex = 0;
             this.columnHeader13.Text = "Sales";
             // 
             // columnHeader14
             // 
-            this.columnHeader14.DisplayIndex = 1;
             this.columnHeader14.Text = "Revenue";
             // 
             // columnHeader17
             // 
-            this.columnHeader17.DisplayIndex = 2;
             this.columnHeader17.Text = "Customers";
             this.columnHeader17.Width = 80;
             // 
             // columnHeader18
             // 
-            this.columnHeader18.DisplayIndex = 3;
             this.columnHeader18.Text = "Date";
             this.columnHeader18.Width = 100;
-            // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Text = "Id";
             // 
             // SomerenUI
             // 

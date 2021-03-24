@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Data;
 
 namespace SomerenDAL
 {
@@ -16,16 +17,24 @@ namespace SomerenDAL
         {
             // DateTime orderDate = DateTime.Now;
 
-            string query = $"INSERT INTO OrderDetails ( product_id, orderdetails_quantity) VALUES( {prodId}, {prodQt})";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = $"INSERT INTO OrderDetails ( product_id, orderdetails_quantity) VALUES( @prodId, @prodQt)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@prodId", SqlDbType.Int) { Value = prodId },
+                new SqlParameter("@prodQt", SqlDbType.Int) { Value = prodQt }
+            };
             ExecuteEditQuery(query, sqlParameters);
         }
         public void DB_Modify_Order(int studId)
         {
             DateTime orderDate = DateTime.Now;
 
-            string query = $"INSERT INTO Orders ( student_id, voucher_id,  order_datetime, order_paystatus) VALUES({studId}, 1, convert(datetime, '{orderDate.Year}/{orderDate.Month}/{orderDate.Day}'), 0)";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = $"INSERT INTO Orders ( student_id, voucher_id,  order_datetime, order_paystatus) VALUES(@studentId, 1, convert(datetime, '{orderDate.Year}/{orderDate.Month}/{orderDate.Day}'), 0)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@studentId", SqlDbType.Int) { Value = studId },
+                //new SqlParameter("@orderDate", SqlDbType.DateTime) { Value = orderDate }
+            };
             ExecuteEditQuery(query, sqlParameters);
         }
 
@@ -40,8 +49,12 @@ namespace SomerenDAL
 
             foreach (var p in pLDupes)
             {
-                string query = $"INSERT INTO OrderDetails ( order_id, product_id, orderdetails_quantity) SELECT MAX(o.order_id), ( {p.Id}), ({p.Count}) FROM Orders As o";
-                SqlParameter[] sqlParameters = new SqlParameter[0];
+                string query = $"INSERT INTO OrderDetails ( order_id, product_id, orderdetails_quantity) SELECT MAX(o.order_id), ( @pId), (@pCount) FROM Orders As o";
+                SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@pId", SqlDbType.Int) { Value = p.Id },
+                new SqlParameter("@pCount", SqlDbType.Int) { Value = p.Count }
+            };
                 ExecuteEditQuery(query, sqlParameters);
             }
         }
