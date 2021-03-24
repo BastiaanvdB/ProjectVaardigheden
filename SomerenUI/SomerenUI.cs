@@ -229,10 +229,12 @@ namespace SomerenUI
 
                         ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}"}));
                     }
+                
                     break;
             }
 
         }
+    
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -601,15 +603,18 @@ namespace SomerenUI
             ListViewItem proItem = ListViewOrder_Products.SelectedItems[0];
             //order parameters
             int sNr = int.Parse(stuItem.SubItems[0].Text);
-            int prodId = int.Parse(proItem.SubItems[0].Text);
-            int orderQuantity = pL.Count();
+
+          
+
             SomerenLogic.Order_Service orderServ = new SomerenLogic.Order_Service();
 
             //order insert
             orderServ.Insert_Order(sNr);
 
-           orderServ.Insert_OrderDetails_WithList(pL);
+            orderServ.Insert_OrderDetails_WithList(pL);
+            orderServ.Update_Productstock_WithOrderList(pL);
 
+            
 
 
 

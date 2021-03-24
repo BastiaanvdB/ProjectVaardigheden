@@ -1136,7 +1136,7 @@
             this.Date.Controls.Add(this.date_from);
             this.Date.Controls.Add(this.btn_sales);
             this.Date.Controls.Add(this.date_to);
-            this.Date.Location = new System.Drawing.Point(412, 22);
+            this.Date.Location = new System.Drawing.Point(395, 28);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(517, 255);
             this.Date.TabIndex = 4;
