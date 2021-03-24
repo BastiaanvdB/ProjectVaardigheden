@@ -15,7 +15,6 @@ namespace SomerenUI
 {
     public partial class SomerenUI : Form
     {
-
         public SomerenUI()
         {
             InitializeComponent();
@@ -38,6 +37,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
+
 
                     // show dashboard
                     pnl_Dashboard.Show();
@@ -76,10 +76,11 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
                     pnl_Products.Hide();
-
                     // show product panel
                     Pnl_Sales.Show();
                     order_listView.Items.Clear();
+
+
 
                     SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
                     List<Sale_Report> salereportList = saleServ.GetSalesReports();
