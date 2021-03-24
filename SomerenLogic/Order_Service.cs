@@ -23,6 +23,11 @@ namespace SomerenLogic
             order_db.DB_Modify_OrderDetails_WithList(pL);
         }
 
+        public void Update_Productstock_WithOrderList(List<Product> pL)
+        {
+            order_db.DB_Modify_ProductStock_WithOrder(pL);
+        }
+
 
     }
 }
