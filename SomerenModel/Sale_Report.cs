@@ -8,12 +8,11 @@ namespace SomerenModel
 {
     public class Sale_Report
     {
+        public int OrderId { get; set; }
         public DateTime Date { get; set; }
         public int Sales { get; set; }
         public decimal Revenue { get; set; }
         public int Customers { get; set; }
-
-
 
     }
 }

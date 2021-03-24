@@ -147,6 +147,7 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -1187,6 +1188,7 @@
             // order_listView
             // 
             this.order_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader19,
             this.columnHeader13,
             this.columnHeader14,
             this.columnHeader17,
@@ -1201,21 +1203,29 @@
             // 
             // columnHeader13
             // 
+            this.columnHeader13.DisplayIndex = 0;
             this.columnHeader13.Text = "Sales";
             // 
             // columnHeader14
             // 
+            this.columnHeader14.DisplayIndex = 1;
             this.columnHeader14.Text = "Revenue";
             // 
             // columnHeader17
             // 
+            this.columnHeader17.DisplayIndex = 2;
             this.columnHeader17.Text = "Customers";
             this.columnHeader17.Width = 80;
             // 
             // columnHeader18
             // 
+            this.columnHeader18.DisplayIndex = 3;
             this.columnHeader18.Text = "Date";
             this.columnHeader18.Width = 100;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Id";
             // 
             // SomerenUI
             // 
@@ -1223,13 +1233,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.Pnl_Sales);
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.pnl_Order);
-            this.Controls.Add(this.Pnl_Sales);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -1394,6 +1404,7 @@
         private System.Windows.Forms.Label VATlbl;
         private System.Windows.Forms.Label VATDisplayLBL;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
     }
 }
 

@@ -18,6 +18,11 @@ namespace SomerenLogic
             order_db.DB_Modify_Order(studId);
         }
 
-      
+        public void Insert_OrderDetails_WithList (List<Product> pL)
+        {
+            order_db.DB_Modify_OrderDetails_WithList(pL);
+        }
+
+
     }
 }

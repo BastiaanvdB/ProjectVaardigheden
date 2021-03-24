@@ -95,7 +95,7 @@ namespace SomerenUI
                     foreach (SomerenModel.Sale_Report s in salereportList)
                     {
 
-                        order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+                        order_listView.Items.Add(new ListViewItem(new string[] { $"{s.OrderId}", $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
 
                     }
                     break;
@@ -599,15 +599,18 @@ namespace SomerenUI
             
             ListViewItem stuItem = ListViewOrder_Students.SelectedItems[0];
             ListViewItem proItem = ListViewOrder_Products.SelectedItems[0];
-
+            //order parameters
             int sNr = int.Parse(stuItem.SubItems[0].Text);
             int prodId = int.Parse(proItem.SubItems[0].Text);
             int orderQuantity = pL.Count();
             SomerenLogic.Order_Service orderServ = new SomerenLogic.Order_Service();
 
-
-            orderServ.Insert_OrderDetails(prodId, orderQuantity);
+            //order insert
             orderServ.Insert_Order(sNr);
+
+           orderServ.Insert_OrderDetails_WithList(pL);
+
+
 
 
 
@@ -669,13 +672,13 @@ namespace SomerenUI
 
                 //List<Sale_Report> salereportList = saleServ.GetSalesReports();
 
-                order_listView.View = View.Details;
+               // order_listView.View = View.Details;
 
 
                 foreach (SomerenModel.Sale_Report s in saleReportList)
                 {
 
-                    order_listView.Items.Add(new ListViewItem(new string[] { $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+                    order_listView.Items.Add(new ListViewItem(new string[] { $"{s.OrderId}", $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
 
                 }
             }
