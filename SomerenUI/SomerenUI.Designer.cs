@@ -331,7 +331,6 @@
             this.listViewStudents.Size = new System.Drawing.Size(766, 307);
             this.listViewStudents.TabIndex = 5;
             this.listViewStudents.UseCompatibleStateImageBehavior = false;
-            this.listViewStudents.SelectedIndexChanged += new System.EventHandler(this.listViewStudents_SelectedIndexChanged);
             // 
             // studentID
             // 
@@ -389,7 +388,6 @@
             this.listViewTeachers.Size = new System.Drawing.Size(766, 307);
             this.listViewTeachers.TabIndex = 5;
             this.listViewTeachers.UseCompatibleStateImageBehavior = false;
-            this.listViewTeachers.SelectedIndexChanged += new System.EventHandler(this.listViewTeachers_SelectedIndexChanged);
             // 
             // teacherID
             // 
@@ -409,7 +407,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(130, 123);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label1
             // 
@@ -420,7 +417,6 @@
             this.label1.Size = new System.Drawing.Size(115, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Teachers";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // pnl_Rooms
             // 
@@ -431,7 +427,6 @@
             this.pnl_Rooms.Name = "pnl_Rooms";
             this.pnl_Rooms.Size = new System.Drawing.Size(938, 466);
             this.pnl_Rooms.TabIndex = 7;
-            this.pnl_Rooms.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // listViewRooms
             // 
@@ -446,7 +441,6 @@
             this.listViewRooms.Size = new System.Drawing.Size(766, 307);
             this.listViewRooms.TabIndex = 6;
             this.listViewRooms.UseCompatibleStateImageBehavior = false;
-            this.listViewRooms.SelectedIndexChanged += new System.EventHandler(this.listViewRooms_SelectedIndexChanged);
             // 
             // roomID
             // 
@@ -481,7 +475,6 @@
             this.label2.Size = new System.Drawing.Size(90, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Rooms";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pnl_Products
             // 
@@ -935,7 +928,6 @@
             this.ListViewTotalOrder_Details.TabIndex = 21;
             this.ListViewTotalOrder_Details.UseCompatibleStateImageBehavior = false;
             this.ListViewTotalOrder_Details.View = System.Windows.Forms.View.Details;
-            this.ListViewTotalOrder_Details.SelectedIndexChanged += new System.EventHandler(this.ListViewTotalOrder_Details_SelectedIndexChanged);
             // 
             // columnHeader12
             // 
@@ -1116,7 +1108,7 @@
             this.Pnl_Sales.Controls.Add(this.order_listView);
             this.Pnl_Sales.Location = new System.Drawing.Point(3, 21);
             this.Pnl_Sales.Name = "Pnl_Sales";
-            this.Pnl_Sales.Size = new System.Drawing.Size(926, 457);
+            this.Pnl_Sales.Size = new System.Drawing.Size(935, 457);
             this.Pnl_Sales.TabIndex = 17;
             // 
             // Saleslbl
@@ -1202,7 +1194,6 @@
             this.order_listView.TabIndex = 0;
             this.order_listView.UseCompatibleStateImageBehavior = false;
             this.order_listView.View = System.Windows.Forms.View.Details;
-            this.order_listView.SelectedIndexChanged += new System.EventHandler(this.order_listView_SelectedIndexChanged);
             // 
             // columnHeader19
             // 

@@ -95,7 +95,7 @@ namespace SomerenUI
                     foreach (SomerenModel.Sale_Report s in salereportList)
                     {
 
-                        order_listView.Items.Add(new ListViewItem(new string[] { $"{s.OrderId}", $"{s.Sales}", $"{s.Revenue}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
+                        order_listView.Items.Add(new ListViewItem(new string[] { $"{s.OrderId}", $"{s.Sales}", $"{s.Revenue.ToString("0.00")}", $"{s.Customers}", $"{s.Date.ToString("dd/MM/yyyy")}" }));
 
                     }
                     break;
@@ -279,39 +279,6 @@ namespace SomerenUI
             showPanel("Rooms");
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void listViewRooms_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
 
         private void beverageStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -592,10 +559,6 @@ namespace SomerenUI
         private void PurchaseOrder(List<Product> pL)
         {
             // send order to database
-
-            
-            
-
             
             ListViewItem stuItem = ListViewOrder_Students.SelectedItems[0];
             ListViewItem proItem = ListViewOrder_Products.SelectedItems[0];
@@ -609,12 +572,6 @@ namespace SomerenUI
             orderServ.Insert_Order(sNr);
 
            orderServ.Insert_OrderDetails_WithList(pL);
-
-
-
-
-
-
         }
 
         private void RemoveFromOrderlist()
@@ -637,11 +594,6 @@ namespace SomerenUI
             }
             VATDisplayLBL.Text = totalvat.ToString("0.00");
             lbl_Total_Price_Value.Text = (totalvat + totalprice).ToString("0.00");
-        }
-
-        private void ListViewTotalOrder_Details_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_Purchase_Order_Click(object sender, EventArgs e)
@@ -694,9 +646,5 @@ namespace SomerenUI
             showPanel("Sales");
         }
 
-        private void order_listView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
