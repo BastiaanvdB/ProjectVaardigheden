@@ -42,6 +42,7 @@
             this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
@@ -135,6 +136,20 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pnl_Sales = new System.Windows.Forms.Panel();
+            this.pnl_Supervisors = new System.Windows.Forms.Panel();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.SupervisorListview = new System.Windows.Forms.ListView();
+            this.IDcolum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TeacherIdColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TeacherNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.TeacherActivityListView = new System.Windows.Forms.ListView();
+            this.IDTeacher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NameTeacher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.AddSupervisorbtn = new System.Windows.Forms.Button();
+            this.RemoveSupervisorbtn = new System.Windows.Forms.Button();
+            this.RefreshListbtn = new System.Windows.Forms.Button();
             this.Saleslbl = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.GroupBox();
             this.tolbl = new System.Windows.Forms.Label();
@@ -166,6 +181,10 @@
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Pnl_Sales.SuspendLayout();
+            this.pnl_Supervisors.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.Date.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -271,9 +290,18 @@
             // 
             // activitiesToolStripMenuItem
             // 
+            this.activitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.supervisorsToolStripMenuItem});
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
             this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.activitiesToolStripMenuItem.Text = "Activities";
+            // 
+            // supervisorsToolStripMenuItem
+            // 
+            this.supervisorsToolStripMenuItem.Name = "supervisorsToolStripMenuItem";
+            this.supervisorsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.supervisorsToolStripMenuItem.Text = "Supervisors";
+            this.supervisorsToolStripMenuItem.Click += new System.EventHandler(this.supervisorsToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
@@ -1103,6 +1131,7 @@
             // 
             // Pnl_Sales
             // 
+            this.Pnl_Sales.Controls.Add(this.pnl_Supervisors);
             this.Pnl_Sales.Controls.Add(this.Saleslbl);
             this.Pnl_Sales.Controls.Add(this.Date);
             this.Pnl_Sales.Controls.Add(this.order_listView);
@@ -1110,6 +1139,131 @@
             this.Pnl_Sales.Name = "Pnl_Sales";
             this.Pnl_Sales.Size = new System.Drawing.Size(935, 457);
             this.Pnl_Sales.TabIndex = 17;
+            // 
+            // pnl_Supervisors
+            // 
+            this.pnl_Supervisors.Controls.Add(this.groupBox7);
+            this.pnl_Supervisors.Controls.Add(this.groupBox8);
+            this.pnl_Supervisors.Controls.Add(this.groupBox6);
+            this.pnl_Supervisors.Location = new System.Drawing.Point(15, 16);
+            this.pnl_Supervisors.Name = "pnl_Supervisors";
+            this.pnl_Supervisors.Size = new System.Drawing.Size(907, 435);
+            this.pnl_Supervisors.TabIndex = 6;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.SupervisorListview);
+            this.groupBox8.Location = new System.Drawing.Point(573, 46);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(330, 348);
+            this.groupBox8.TabIndex = 7;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Activity Supervisors";
+            // 
+            // SupervisorListview
+            // 
+            this.SupervisorListview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IDcolum,
+            this.TeacherIdColumn,
+            this.TeacherNameColumn});
+            this.SupervisorListview.FullRowSelect = true;
+            this.SupervisorListview.GridLines = true;
+            this.SupervisorListview.HideSelection = false;
+            this.SupervisorListview.Location = new System.Drawing.Point(19, 27);
+            this.SupervisorListview.Name = "SupervisorListview";
+            this.SupervisorListview.Size = new System.Drawing.Size(293, 301);
+            this.SupervisorListview.TabIndex = 1;
+            this.SupervisorListview.UseCompatibleStateImageBehavior = false;
+            this.SupervisorListview.View = System.Windows.Forms.View.Details;
+            // 
+            // IDcolum
+            // 
+            this.IDcolum.Text = "ID";
+            // 
+            // TeacherIdColumn
+            // 
+            this.TeacherIdColumn.Text = "TeacherId";
+            this.TeacherIdColumn.Width = 70;
+            // 
+            // TeacherNameColumn
+            // 
+            this.TeacherNameColumn.Text = "TeacherName";
+            this.TeacherNameColumn.Width = 120;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.TeacherActivityListView);
+            this.groupBox7.Location = new System.Drawing.Point(35, 48);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(330, 355);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Teachers";
+            // 
+            // TeacherActivityListView
+            // 
+            this.TeacherActivityListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IDTeacher,
+            this.NameTeacher});
+            this.TeacherActivityListView.FullRowSelect = true;
+            this.TeacherActivityListView.GridLines = true;
+            this.TeacherActivityListView.HideSelection = false;
+            this.TeacherActivityListView.Location = new System.Drawing.Point(20, 24);
+            this.TeacherActivityListView.Name = "TeacherActivityListView";
+            this.TeacherActivityListView.Size = new System.Drawing.Size(290, 309);
+            this.TeacherActivityListView.TabIndex = 0;
+            this.TeacherActivityListView.UseCompatibleStateImageBehavior = false;
+            this.TeacherActivityListView.View = System.Windows.Forms.View.Details;
+            // 
+            // IDTeacher
+            // 
+            this.IDTeacher.Text = "ID";
+            // 
+            // NameTeacher
+            // 
+            this.NameTeacher.Text = "Name";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.AddSupervisorbtn);
+            this.groupBox6.Controls.Add(this.RemoveSupervisorbtn);
+            this.groupBox6.Controls.Add(this.RefreshListbtn);
+            this.groupBox6.Location = new System.Drawing.Point(380, 117);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(179, 219);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Controls";
+            // 
+            // AddSupervisorbtn
+            // 
+            this.AddSupervisorbtn.Location = new System.Drawing.Point(45, 97);
+            this.AddSupervisorbtn.Name = "AddSupervisorbtn";
+            this.AddSupervisorbtn.Size = new System.Drawing.Size(100, 34);
+            this.AddSupervisorbtn.TabIndex = 3;
+            this.AddSupervisorbtn.Text = "Add";
+            this.AddSupervisorbtn.UseVisualStyleBackColor = true;
+            this.AddSupervisorbtn.Click += new System.EventHandler(this.AddSupervisorbtn_Click);
+            // 
+            // RemoveSupervisorbtn
+            // 
+            this.RemoveSupervisorbtn.Location = new System.Drawing.Point(45, 156);
+            this.RemoveSupervisorbtn.Name = "RemoveSupervisorbtn";
+            this.RemoveSupervisorbtn.Size = new System.Drawing.Size(100, 34);
+            this.RemoveSupervisorbtn.TabIndex = 4;
+            this.RemoveSupervisorbtn.Text = "Remove";
+            this.RemoveSupervisorbtn.UseVisualStyleBackColor = true;
+            this.RemoveSupervisorbtn.Click += new System.EventHandler(this.RemoveSupervisorbtn_Click);
+            // 
+            // RefreshListbtn
+            // 
+            this.RefreshListbtn.Location = new System.Drawing.Point(45, 30);
+            this.RefreshListbtn.Name = "RefreshListbtn";
+            this.RefreshListbtn.Size = new System.Drawing.Size(100, 34);
+            this.RefreshListbtn.TabIndex = 2;
+            this.RefreshListbtn.Text = "Refresh List";
+            this.RefreshListbtn.UseVisualStyleBackColor = true;
+            this.RefreshListbtn.Click += new System.EventHandler(this.RefreshListbtn_Click);
             // 
             // Saleslbl
             // 
@@ -1267,6 +1421,10 @@
             this.groupBox5.PerformLayout();
             this.Pnl_Sales.ResumeLayout(false);
             this.Pnl_Sales.PerformLayout();
+            this.pnl_Supervisors.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.Date.ResumeLayout(false);
             this.Date.PerformLayout();
             this.ResumeLayout(false);
@@ -1395,6 +1553,21 @@
         private System.Windows.Forms.Label VATDisplayLBL;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.Panel pnl_Supervisors;
+        private System.Windows.Forms.ListView SupervisorListview;
+        private System.Windows.Forms.ListView TeacherActivityListView;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.ColumnHeader IDcolum;
+        private System.Windows.Forms.ColumnHeader TeacherIdColumn;
+        private System.Windows.Forms.ColumnHeader TeacherNameColumn;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.ColumnHeader IDTeacher;
+        private System.Windows.Forms.ColumnHeader NameTeacher;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button AddSupervisorbtn;
+        private System.Windows.Forms.Button RemoveSupervisorbtn;
+        private System.Windows.Forms.Button RefreshListbtn;
+        private System.Windows.Forms.ToolStripMenuItem supervisorsToolStripMenuItem;
     }
 }
 

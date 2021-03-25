@@ -37,7 +37,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
-
+                    pnl_Supervisors.Hide();
 
                     // show dashboard
                     pnl_Dashboard.Show();
@@ -53,6 +53,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
+                    pnl_Supervisors.Hide();
 
                     // show students panel
                     pnl_Students.Show();
@@ -76,11 +77,10 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
                     pnl_Products.Hide();
+                    pnl_Supervisors.Hide();
                     // show product panel
                     Pnl_Sales.Show();
                     order_listView.Items.Clear();
-
-
 
                     SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
                     List<Sale_Report> salereportList = saleServ.GetSalesReports();
@@ -88,9 +88,7 @@ namespace SomerenUI
                     date_from.MaxDate = DateTime.Now;
                     date_to.MaxDate = DateTime.Now;
 
-
                     order_listView.View = View.Details;
-
 
                     foreach (SomerenModel.Sale_Report s in salereportList)
                     {
@@ -108,6 +106,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
+                    pnl_Supervisors.Hide();
 
                     // show teachers panel
                     pnl_Teachers.Show();
@@ -132,6 +131,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
+                    pnl_Supervisors.Hide();
 
                     // show room panel
                     pnl_Rooms.Show();
@@ -165,6 +165,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
+                    pnl_Supervisors.Hide();
 
                     // show product panel
                     pnl_Products.Show();
@@ -204,6 +205,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     Pnl_Sales.Hide();
+                    pnl_Supervisors.Hide();
 
                     // show product panel
                     pnl_Order.Show();
@@ -230,6 +232,32 @@ namespace SomerenUI
                         ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}"}));
                     }
                     break;
+
+                case "Supervisors":
+                    // hide all other panels
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+
+                    pnl_Students.Hide();
+
+                    pnl_Teachers.Hide();
+
+                    pnl_Rooms.Hide();
+
+                    pnl_Products.Hide();
+
+                    Pnl_Sales.Hide();
+
+                    pnl_Order.Hide();
+
+
+                    // show product panel
+                    pnl_Supervisors.Show();
+
+                    // fill lists
+                    FillListsActivitySupervisor();
+                    break;
+
             }
 
         }
@@ -646,5 +674,66 @@ namespace SomerenUI
             showPanel("Sales");
         }
 
+        private void ActivitySupervisorMenu(string settingmenu)
+        {
+            switch(settingmenu)
+            {
+                case "Refresh":
+                    FillListsActivitySupervisor();
+                    break;
+                case "Add":
+                    AddToSupervisor();
+                    break;
+                case "Remove":
+                    RemoveSupervisor();
+                    break;
+            }
+        }
+
+        private void FillListsActivitySupervisor()
+        {
+            // clear and fill the teachers listview within the teachers panel with a list of teachers
+            listViewTeachers.Items.Clear();
+            SomerenLogic.Teacher_Service teachService = new SomerenLogic.Teacher_Service();
+            List<Teacher> teacherList = teachService.GetTeachers();
+            TeacherActivityListView.View = View.Details;
+            foreach (SomerenModel.Teacher teacher in teacherList)
+            {
+                TeacherActivityListView.Items.Add(new ListViewItem(new string[] { $"{teacher.Number}", $"{teacher.Name}" }));
+            }
+
+            // clear and fill the supervisor listview within the supervisors panel with a list of supervisors
+
+        }
+
+        private void RemoveSupervisor()
+        {
+
+        }
+
+        private void AddToSupervisor()
+        {
+
+        }
+
+        private void AddSupervisorbtn_Click(object sender, EventArgs e)
+        {
+            ActivitySupervisorMenu("Add");
+        }
+
+        private void RemoveSupervisorbtn_Click(object sender, EventArgs e)
+        {
+            ActivitySupervisorMenu("Remove");
+        }
+
+        private void RefreshListbtn_Click(object sender, EventArgs e)
+        {
+            ActivitySupervisorMenu("Refresh");
+        }
+
+        private void supervisorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Supervisors");
+        }
     }
 }
