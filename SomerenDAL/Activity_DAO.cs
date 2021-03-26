@@ -30,28 +30,27 @@ namespace SomerenDAL
 
         public void DB_Modify_Activity(Activity activity)
         {
-            //string query = $"UPDATE Products SET product_name=@Name, product_price=@Price, product_vatpercentage=@Vat, product_age=@Age, product_stock=@Stock, product_restocklevel=@Restock, product_sold=@Sold WHERE product_id = @Id";
-            //SqlParameter[] sqlParameters =
-            //{
-            //    new SqlParameter("@Id", SqlDbType.Int) { Value = product.Id },
-            //    new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = product.Name},
-            //    new SqlParameter("@Price", SqlDbType.Money) { Value = product.Price},
-            //    new SqlParameter("@Vat", SqlDbType.Decimal) { Value = product.VAT 
-            //};
-            //ExecuteEditQuery(query, sqlParameters);
+            string query = $"UPDATE Activity SET activity_description=@description, activity_datetime_start=@starttime, activity_datetime_end=@endtime WHERE activity_id = @id";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id", SqlDbType.Int) { Value = activity.Id},
+                new SqlParameter("@description", SqlDbType.VarChar, 255) { Value = activity.Description},
+                new SqlParameter("@starttime", SqlDbType.DateTime) { Value = activity.StartTime},
+                new SqlParameter("@endtime", SqlDbType.DateTime) { Value = activity.EndTime }
+            };
+            ExecuteEditQuery(query, sqlParameters);
         }
 
         public void DB_Add_Activity(Activity activity)
         {
-            //string query = $"INSERT INTO Products (product_id, product_name, product_price, product_vatpercentage, product_age, product_stock, product_restocklevel, product_sold) VALUES (@Id, @Name, @Price, @Vat, @Age, @Stock, @Restock, @Sold)";
-            //SqlParameter[] sqlParameters =
-            //{
-            //    new SqlParameter("@Id", SqlDbType.Int) { Value = product.Id },
-            //    new SqlParameter("@Name", SqlDbType.VarChar, 50) { Value = product.Name},
-            //    new SqlParameter("@Price", SqlDbType.Money) { Value = product.Price},
-            //    new SqlParameter("@Vat", SqlDbType.Decimal) { Value = product.VAT }
-            //};
-            //ExecuteEditQuery(query, sqlParameters);
+            string query = $"INSERT INTO Activity (activity_description, activity_datetime_start, activity_datetime_end) VALUES (@description, @starttime, @endtime)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@description", SqlDbType.VarChar, 255) { Value = activity.Description},
+                new SqlParameter("@starttime", SqlDbType.DateTime) { Value = activity.StartTime},
+                new SqlParameter("@endtime", SqlDbType.DateTime) { Value = activity.EndTime }
+            };
+            ExecuteEditQuery(query, sqlParameters);
         }
 
         private List<Activity> ReadTables(DataTable dataTable)
@@ -71,14 +70,5 @@ namespace SomerenDAL
             }
             return activities;
         }
-
-
-
-
-
-
-
-
-
     }
 }
