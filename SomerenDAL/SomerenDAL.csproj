@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="Activity_DAO.cs" />
     <Compile Include="Order_DAO.cs" />
     <Compile Include="Room_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
