@@ -136,16 +136,16 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pnl_Sales = new System.Windows.Forms.Panel();
-            this.pnl_Supervisors = new System.Windows.Forms.Panel();
+            this.Pnl_Supervisors = new System.Windows.Forms.Panel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.TeacherActivityListView = new System.Windows.Forms.ListView();
+            this.IDTeacher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NameTeacher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.SupervisorListview = new System.Windows.Forms.ListView();
             this.IDcolum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TeacherIdColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TeacherNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.TeacherActivityListView = new System.Windows.Forms.ListView();
-            this.IDTeacher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NameTeacher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.AddSupervisorbtn = new System.Windows.Forms.Button();
             this.RemoveSupervisorbtn = new System.Windows.Forms.Button();
@@ -181,9 +181,9 @@
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Pnl_Sales.SuspendLayout();
-            this.pnl_Supervisors.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.Pnl_Supervisors.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.Date.SuspendLayout();
             this.SuspendLayout();
@@ -1131,7 +1131,6 @@
             // 
             // Pnl_Sales
             // 
-            this.Pnl_Sales.Controls.Add(this.pnl_Supervisors);
             this.Pnl_Sales.Controls.Add(this.Saleslbl);
             this.Pnl_Sales.Controls.Add(this.Date);
             this.Pnl_Sales.Controls.Add(this.order_listView);
@@ -1140,15 +1139,49 @@
             this.Pnl_Sales.Size = new System.Drawing.Size(935, 457);
             this.Pnl_Sales.TabIndex = 17;
             // 
-            // pnl_Supervisors
+            // Pnl_Supervisors
             // 
-            this.pnl_Supervisors.Controls.Add(this.groupBox7);
-            this.pnl_Supervisors.Controls.Add(this.groupBox8);
-            this.pnl_Supervisors.Controls.Add(this.groupBox6);
-            this.pnl_Supervisors.Location = new System.Drawing.Point(15, 16);
-            this.pnl_Supervisors.Name = "pnl_Supervisors";
-            this.pnl_Supervisors.Size = new System.Drawing.Size(907, 435);
-            this.pnl_Supervisors.TabIndex = 6;
+            this.Pnl_Supervisors.Controls.Add(this.groupBox7);
+            this.Pnl_Supervisors.Controls.Add(this.groupBox8);
+            this.Pnl_Supervisors.Controls.Add(this.groupBox6);
+            this.Pnl_Supervisors.Location = new System.Drawing.Point(3, 24);
+            this.Pnl_Supervisors.Name = "Pnl_Supervisors";
+            this.Pnl_Supervisors.Size = new System.Drawing.Size(950, 454);
+            this.Pnl_Supervisors.TabIndex = 6;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.TeacherActivityListView);
+            this.groupBox7.Location = new System.Drawing.Point(35, 48);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(330, 355);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Teachers";
+            // 
+            // TeacherActivityListView
+            // 
+            this.TeacherActivityListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IDTeacher,
+            this.NameTeacher});
+            this.TeacherActivityListView.FullRowSelect = true;
+            this.TeacherActivityListView.GridLines = true;
+            this.TeacherActivityListView.HideSelection = false;
+            this.TeacherActivityListView.Location = new System.Drawing.Point(20, 24);
+            this.TeacherActivityListView.Name = "TeacherActivityListView";
+            this.TeacherActivityListView.Size = new System.Drawing.Size(290, 309);
+            this.TeacherActivityListView.TabIndex = 0;
+            this.TeacherActivityListView.UseCompatibleStateImageBehavior = false;
+            this.TeacherActivityListView.View = System.Windows.Forms.View.Details;
+            // 
+            // IDTeacher
+            // 
+            this.IDTeacher.Text = "ID";
+            // 
+            // NameTeacher
+            // 
+            this.NameTeacher.Text = "Name";
+            this.NameTeacher.Width = 110;
             // 
             // groupBox8
             // 
@@ -1189,39 +1222,6 @@
             // 
             this.TeacherNameColumn.Text = "TeacherName";
             this.TeacherNameColumn.Width = 120;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.TeacherActivityListView);
-            this.groupBox7.Location = new System.Drawing.Point(35, 48);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(330, 355);
-            this.groupBox7.TabIndex = 6;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Teachers";
-            // 
-            // TeacherActivityListView
-            // 
-            this.TeacherActivityListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.IDTeacher,
-            this.NameTeacher});
-            this.TeacherActivityListView.FullRowSelect = true;
-            this.TeacherActivityListView.GridLines = true;
-            this.TeacherActivityListView.HideSelection = false;
-            this.TeacherActivityListView.Location = new System.Drawing.Point(20, 24);
-            this.TeacherActivityListView.Name = "TeacherActivityListView";
-            this.TeacherActivityListView.Size = new System.Drawing.Size(290, 309);
-            this.TeacherActivityListView.TabIndex = 0;
-            this.TeacherActivityListView.UseCompatibleStateImageBehavior = false;
-            this.TeacherActivityListView.View = System.Windows.Forms.View.Details;
-            // 
-            // IDTeacher
-            // 
-            this.IDTeacher.Text = "ID";
-            // 
-            // NameTeacher
-            // 
-            this.NameTeacher.Text = "Name";
             // 
             // groupBox6
             // 
@@ -1376,6 +1376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.Pnl_Supervisors);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Pnl_Sales);
             this.Controls.Add(this.pnl_Products);
@@ -1421,9 +1422,9 @@
             this.groupBox5.PerformLayout();
             this.Pnl_Sales.ResumeLayout(false);
             this.Pnl_Sales.PerformLayout();
-            this.pnl_Supervisors.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
+            this.Pnl_Supervisors.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.Date.ResumeLayout(false);
             this.Date.PerformLayout();
@@ -1553,7 +1554,7 @@
         private System.Windows.Forms.Label VATDisplayLBL;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ColumnHeader columnHeader19;
-        private System.Windows.Forms.Panel pnl_Supervisors;
+        private System.Windows.Forms.Panel Pnl_Supervisors;
         private System.Windows.Forms.ListView SupervisorListview;
         private System.Windows.Forms.ListView TeacherActivityListView;
         private System.Windows.Forms.GroupBox groupBox8;

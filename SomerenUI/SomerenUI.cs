@@ -37,7 +37,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
-                    pnl_Supervisors.Hide();
+                    Pnl_Supervisors.Hide();
 
                     // show dashboard
                     pnl_Dashboard.Show();
@@ -53,7 +53,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
-                    pnl_Supervisors.Hide();
+                    Pnl_Supervisors.Hide();
 
                     // show students panel
                     pnl_Students.Show();
@@ -77,7 +77,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
                     pnl_Products.Hide();
-                    pnl_Supervisors.Hide();
+                    Pnl_Supervisors.Hide();
                     // show product panel
                     Pnl_Sales.Show();
                     order_listView.Items.Clear();
@@ -106,7 +106,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
-                    pnl_Supervisors.Hide();
+                    Pnl_Supervisors.Hide();
 
                     // show teachers panel
                     pnl_Teachers.Show();
@@ -131,7 +131,7 @@ namespace SomerenUI
                     pnl_Products.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
-                    pnl_Supervisors.Hide();
+                    Pnl_Supervisors.Hide();
 
                     // show room panel
                     pnl_Rooms.Show();
@@ -165,7 +165,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
-                    pnl_Supervisors.Hide();
+                    Pnl_Supervisors.Hide();
 
                     // show product panel
                     pnl_Products.Show();
@@ -205,7 +205,7 @@ namespace SomerenUI
                     pnl_Rooms.Hide();
                     pnl_Products.Hide();
                     Pnl_Sales.Hide();
-                    pnl_Supervisors.Hide();
+                    Pnl_Supervisors.Hide();
 
                     // show product panel
                     pnl_Order.Show();
@@ -232,7 +232,6 @@ namespace SomerenUI
                         ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}"}));
                     }
                     break;
-
                 case "Supervisors":
                     // hide all other panels
                     pnl_Dashboard.Hide();
@@ -252,7 +251,7 @@ namespace SomerenUI
 
 
                     // show product panel
-                    pnl_Supervisors.Show();
+                    Pnl_Supervisors.Show();
 
                     // fill lists
                     FillListsActivitySupervisor();
