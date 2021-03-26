@@ -11,10 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace SomerenUI
 {
+    
     public partial class SomerenUI : Form
     {
+        private bool m_DragInProgress;
         public SomerenUI()
         {
             InitializeComponent();
@@ -99,6 +102,41 @@ namespace SomerenUI
 
                     }
                     break;
+                case "Schedule":
+                    // hide all other panels
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+                    pnl_Students.Hide();
+                    pnl_Teachers.Hide();
+                    pnl_Rooms.Hide();
+                    pnl_Order.Hide();
+                    pnl_Products.Hide();
+                    Pnl_Sales.Hide();
+                    // show product panel
+                    pnl_Schedule.Show();
+                    listViewDate1.Items.Clear();
+                    listViewDate2.Items.Clear();
+                    listView_Schedule.Items.Clear();
+
+
+
+                    SomerenLogic.Schedule_Service scheduleServ = new SomerenLogic.Schedule_Service();
+                    List<Schedule> scheduleList = scheduleServ.GetSchedules();
+
+
+
+                    listViewDate1.View = View.Details;
+                    listView_Schedule.View = View.Details;
+
+
+                    foreach (SomerenModel.Schedule s in scheduleList)
+                    {
+
+                        listView_Schedule.Items.Add(new ListViewItem(new string[] { $"{s.ActivitySupervisorName}", $"{s.ActivityDescription}", $"{s.Datestart.DayOfWeek} - {s.Datestart.TimeOfDay}", $"{s.Dateend.DayOfWeek} - {s.Dateend.TimeOfDay}" }));
+
+                    }
+                    break;
+
                 case "Teachers":
                     // hide all other panels
                     pnl_Dashboard.Hide();
@@ -224,6 +262,7 @@ namespace SomerenUI
                     SomerenLogic.Product_Service prodServ = new SomerenLogic.Product_Service();
                     List<Product> prodList = prodServ.GetProducts();
                     ListViewOrder_Products.View = View.Details;
+                    
                     foreach (SomerenModel.Product product in prodList)
                     {                      
 
@@ -233,7 +272,10 @@ namespace SomerenUI
             }
 
         }
-
+        private void listViewRefresh(Schedule s)
+        {
+            //listViewDate1.Items.Add(new ListViewItem(new string[] { $"{s.ActivitySupervisorName}", $"{s.ActivityDescription}", $"{s.Datestart.DayOfWeek} - {s.Datestart.TimeOfDay}", $"{s.Dateend.DayOfWeek} - {s.Dateend.TimeOfDay}" }));
+        }
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
            //
@@ -646,5 +688,92 @@ namespace SomerenUI
             showPanel("Sales");
         }
 
+        private void activitiesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showPanel("Schedule");
+        }
+     
+        private void listview_Schedule_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+
+            // create array or collection for all selected items
+           
+            // pass the items to move...
+            listView_Schedule.DoDragDrop(e.Item, DragDropEffects.Move);
+
+        }
+        private void listView_Schedule_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void listViewDateEnter_DragEnter(object sender, DragEventArgs e)
+        {
+           
+            
+          
+        }
+
+        private void listView_Schedule_DragDrop(object sender, DragEventArgs e)
+        {
+            if (listViewDate1.Items.Count == 0)
+            {
+                var items = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
+                // LVI obj can only belong to one LVI, remove
+                listView_Schedule.Items.Remove(items);
+                listViewDate1.Items.Add(items);
+            }
+            else
+            {
+                MessageBox.Show("Only 1 item can be added in the dragdrop");
+            }
+        }
+
+        private void listView_Schedule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView_Schedule_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void listViewDate1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void listViewDate1_DragOver(object sender, DragEventArgs e)
+        {
+            
+                e.Effect = DragDropEffects.Move;
+            
+        }
+
+        private void listViewDate2_DragDrop(object sender, DragEventArgs e)
+        {
+            if (listViewDate2.Items.Count == 0)
+            {
+                var items = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
+                // LVI obj can only belong to one LVI, remove
+                listView_Schedule.Items.Remove(items);
+                listViewDate2.Items.Add(items);
+            }
+            else
+            {
+                MessageBox.Show("Only 1 item can be added in the dragdrop");
+            }
+        }
+
+        private void listViewDate2_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void btn_swapSchedule_Click(object sender, EventArgs e)
+        {
+            showPanel("Schedule");
+        }
     }
 }

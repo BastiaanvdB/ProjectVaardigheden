@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Data;
 
+
 namespace SomerenDAL
 {
     public class Order_DAO : Base
@@ -16,7 +17,7 @@ namespace SomerenDAL
         public void DB_Modify_OrderDetails(int prodQt, int prodId)
         {
             // DateTime orderDate = DateTime.Now;
-
+            
             string query = $"INSERT INTO OrderDetails ( product_id, orderdetails_quantity) VALUES( @prodId, @prodQt)";
             SqlParameter[] sqlParameters =
             {

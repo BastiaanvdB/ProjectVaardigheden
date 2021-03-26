@@ -44,6 +44,7 @@
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activitiesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
@@ -148,6 +149,27 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pnl_Schedule = new System.Windows.Forms.Panel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.listViewDate2 = new System.Windows.Forms.ListView();
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_swapSchedule = new System.Windows.Forms.Button();
+            this.listViewDate1 = new System.Windows.Forms.ListView();
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Schedule = new System.Windows.Forms.Label();
+            this.listView_Schedule = new System.Windows.Forms.ListView();
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -167,6 +189,8 @@
             this.groupBox5.SuspendLayout();
             this.Pnl_Sales.SuspendLayout();
             this.Date.SuspendLayout();
+            this.pnl_Schedule.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -187,7 +211,8 @@
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
-            this.teachersToolStripMenuItem});
+            this.teachersToolStripMenuItem,
+            this.activitiesToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(962, 24);
@@ -288,6 +313,13 @@
             this.teachersToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.teachersToolStripMenuItem.Text = "Teachers";
             this.teachersToolStripMenuItem.Click += new System.EventHandler(this.teachersToolStripMenuItem_Click);
+            // 
+            // activitiesToolStripMenuItem1
+            // 
+            this.activitiesToolStripMenuItem1.Name = "activitiesToolStripMenuItem1";
+            this.activitiesToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.activitiesToolStripMenuItem1.Text = "Schedule";
+            this.activitiesToolStripMenuItem1.Click += new System.EventHandler(this.activitiesToolStripMenuItem1_Click);
             // 
             // pnl_Dashboard
             // 
@@ -1217,11 +1249,196 @@
             this.columnHeader18.Text = "Date";
             this.columnHeader18.Width = 100;
             // 
+            // pnl_Schedule
+            // 
+            this.pnl_Schedule.Controls.Add(this.groupBox6);
+            this.pnl_Schedule.Controls.Add(this.Schedule);
+            this.pnl_Schedule.Controls.Add(this.listView_Schedule);
+            this.pnl_Schedule.Location = new System.Drawing.Point(0, 24);
+            this.pnl_Schedule.Name = "pnl_Schedule";
+            this.pnl_Schedule.Size = new System.Drawing.Size(935, 457);
+            this.pnl_Schedule.TabIndex = 18;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.listViewDate2);
+            this.groupBox6.Controls.Add(this.btn_swapSchedule);
+            this.groupBox6.Controls.Add(this.listViewDate1);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Location = new System.Drawing.Point(477, 36);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(432, 381);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Date swapper";
+            // 
+            // listViewDate2
+            // 
+            this.listViewDate2.AllowDrop = true;
+            this.listViewDate2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader28,
+            this.columnHeader29,
+            this.columnHeader30,
+            this.columnHeader31});
+            this.listViewDate2.HideSelection = false;
+            this.listViewDate2.Location = new System.Drawing.Point(26, 206);
+            this.listViewDate2.Name = "listViewDate2";
+            this.listViewDate2.Size = new System.Drawing.Size(384, 121);
+            this.listViewDate2.TabIndex = 12;
+            this.listViewDate2.UseCompatibleStateImageBehavior = false;
+            this.listViewDate2.View = System.Windows.Forms.View.Details;
+            this.listViewDate2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listViewDate2_DragDrop);
+            this.listViewDate2.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewDate2_DragOver);
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "Supervisor";
+            this.columnHeader28.Width = 100;
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "Activity";
+            this.columnHeader29.Width = 100;
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "Start";
+            this.columnHeader30.Width = 100;
+            // 
+            // columnHeader31
+            // 
+            this.columnHeader31.Text = "End";
+            this.columnHeader31.Width = 100;
+            // 
+            // btn_swapSchedule
+            // 
+            this.btn_swapSchedule.Location = new System.Drawing.Point(26, 333);
+            this.btn_swapSchedule.Name = "btn_swapSchedule";
+            this.btn_swapSchedule.Size = new System.Drawing.Size(96, 28);
+            this.btn_swapSchedule.TabIndex = 11;
+            this.btn_swapSchedule.Text = "Swap";
+            this.btn_swapSchedule.UseVisualStyleBackColor = true;
+            this.btn_swapSchedule.Click += new System.EventHandler(this.btn_swapSchedule_Click);
+            // 
+            // listViewDate1
+            // 
+            this.listViewDate1.AllowDrop = true;
+            this.listViewDate1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26,
+            this.columnHeader27});
+            this.listViewDate1.HideSelection = false;
+            this.listViewDate1.Location = new System.Drawing.Point(28, 52);
+            this.listViewDate1.Name = "listViewDate1";
+            this.listViewDate1.Size = new System.Drawing.Size(384, 121);
+            this.listViewDate1.TabIndex = 9;
+            this.listViewDate1.UseCompatibleStateImageBehavior = false;
+            this.listViewDate1.View = System.Windows.Forms.View.Details;
+            this.listViewDate1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_Schedule_DragDrop);
+            this.listViewDate1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragEnter);
+            this.listViewDate1.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragOver);
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Supervisor";
+            this.columnHeader24.Width = 100;
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Activity";
+            this.columnHeader25.Width = 100;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Start";
+            this.columnHeader26.Width = 100;
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "End";
+            this.columnHeader27.Width = 100;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Date 2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Date 1";
+            // 
+            // Schedule
+            // 
+            this.Schedule.AutoSize = true;
+            this.Schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Schedule.Location = new System.Drawing.Point(24, 13);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(84, 20);
+            this.Schedule.TabIndex = 5;
+            this.Schedule.Text = "Schedule";
+            // 
+            // listView_Schedule
+            // 
+            this.listView_Schedule.AllowDrop = true;
+            this.listView_Schedule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
+            this.listView_Schedule.FullRowSelect = true;
+            this.listView_Schedule.GridLines = true;
+            this.listView_Schedule.HideSelection = false;
+            this.listView_Schedule.Location = new System.Drawing.Point(25, 36);
+            this.listView_Schedule.MultiSelect = false;
+            this.listView_Schedule.Name = "listView_Schedule";
+            this.listView_Schedule.Size = new System.Drawing.Size(433, 381);
+            this.listView_Schedule.TabIndex = 0;
+            this.listView_Schedule.UseCompatibleStateImageBehavior = false;
+            this.listView_Schedule.View = System.Windows.Forms.View.Details;
+            this.listView_Schedule.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listview_Schedule_ItemDrag);
+            this.listView_Schedule.SelectedIndexChanged += new System.EventHandler(this.listView_Schedule_SelectedIndexChanged);
+            this.listView_Schedule.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_Schedule_DragDrop);
+            this.listView_Schedule.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listView_Schedule_MouseMove);
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Supervisor";
+            this.columnHeader20.Width = 115;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Activity";
+            this.columnHeader21.Width = 100;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Start date";
+            this.columnHeader22.Width = 110;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "End Date";
+            this.columnHeader23.Width = 110;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_Schedule);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Pnl_Sales);
             this.Controls.Add(this.pnl_Products);
@@ -1269,6 +1486,10 @@
             this.Pnl_Sales.PerformLayout();
             this.Date.ResumeLayout(false);
             this.Date.PerformLayout();
+            this.pnl_Schedule.ResumeLayout(false);
+            this.pnl_Schedule.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1395,6 +1616,28 @@
         private System.Windows.Forms.Label VATDisplayLBL;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.Panel pnl_Schedule;
+        private System.Windows.Forms.Label Schedule;
+        private System.Windows.Forms.ListView listView_Schedule;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ToolStripMenuItem activitiesToolStripMenuItem1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btn_swapSchedule;
+        private System.Windows.Forms.ListView listViewDate1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
+        private System.Windows.Forms.ColumnHeader columnHeader27;
+        private System.Windows.Forms.ListView listViewDate2;
+        private System.Windows.Forms.ColumnHeader columnHeader28;
+        private System.Windows.Forms.ColumnHeader columnHeader29;
+        private System.Windows.Forms.ColumnHeader columnHeader30;
+        private System.Windows.Forms.ColumnHeader columnHeader31;
     }
 }
 
