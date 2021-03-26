@@ -37,8 +37,12 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csproj.CoreCompileInputs.cache
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.pdb
+<<<<<<< HEAD
 C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenModel\bin\Debug\SomerenModel.dll
 C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenModel\bin\Debug\SomerenModel.pdb
 C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csproj.CoreCompileInputs.cache
 C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.dll
 C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.pdb
+=======
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
+>>>>>>> e16bab42ae6b30aae35cc4a6004979cafdd11f14

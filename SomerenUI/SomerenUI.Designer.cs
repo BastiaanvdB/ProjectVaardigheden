@@ -164,6 +164,7 @@
             this.AddSupervisorbtn = new System.Windows.Forms.Button();
             this.RemoveSupervisorbtn = new System.Windows.Forms.Button();
             this.RefreshListbtn = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.Pnl_Activity_List = new System.Windows.Forms.Panel();
             this.lbl_Act_Enter_Eminute = new System.Windows.Forms.Label();
             this.lbl_Act_Enter_Ehour = new System.Windows.Forms.Label();
@@ -202,6 +203,13 @@
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Rbn_Modify_Activity = new System.Windows.Forms.RadioButton();
+=======
+            this.ActivityId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Activitygroup = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.ActivityComboBox = new System.Windows.Forms.ComboBox();
+            this.ActivityName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+>>>>>>> e16bab42ae6b30aae35cc4a6004979cafdd11f14
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -225,9 +233,13 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
+<<<<<<< HEAD
             this.Pnl_Activity_List.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
+=======
+            this.Activitygroup.SuspendLayout();
+>>>>>>> e16bab42ae6b30aae35cc4a6004979cafdd11f14
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -1310,7 +1322,7 @@
             this.groupBox7.Controls.Add(this.TeacherActivityListView);
             this.groupBox7.Location = new System.Drawing.Point(35, 48);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(330, 355);
+            this.groupBox7.Size = new System.Drawing.Size(218, 355);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Teachers";
@@ -1324,8 +1336,9 @@
             this.TeacherActivityListView.GridLines = true;
             this.TeacherActivityListView.HideSelection = false;
             this.TeacherActivityListView.Location = new System.Drawing.Point(20, 24);
+            this.TeacherActivityListView.MultiSelect = false;
             this.TeacherActivityListView.Name = "TeacherActivityListView";
-            this.TeacherActivityListView.Size = new System.Drawing.Size(290, 309);
+            this.TeacherActivityListView.Size = new System.Drawing.Size(177, 309);
             this.TeacherActivityListView.TabIndex = 0;
             this.TeacherActivityListView.UseCompatibleStateImageBehavior = false;
             this.TeacherActivityListView.View = System.Windows.Forms.View.Details;
@@ -1342,9 +1355,9 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.SupervisorListview);
-            this.groupBox8.Location = new System.Drawing.Point(573, 46);
+            this.groupBox8.Location = new System.Drawing.Point(444, 46);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(330, 348);
+            this.groupBox8.Size = new System.Drawing.Size(485, 348);
             this.groupBox8.TabIndex = 7;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Activity Supervisors";
@@ -1354,13 +1367,16 @@
             this.SupervisorListview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDcolum,
             this.TeacherIdColumn,
-            this.TeacherNameColumn});
+            this.TeacherNameColumn,
+            this.ActivityId,
+            this.ActivityName});
             this.SupervisorListview.FullRowSelect = true;
             this.SupervisorListview.GridLines = true;
             this.SupervisorListview.HideSelection = false;
             this.SupervisorListview.Location = new System.Drawing.Point(19, 27);
+            this.SupervisorListview.MultiSelect = false;
             this.SupervisorListview.Name = "SupervisorListview";
-            this.SupervisorListview.Size = new System.Drawing.Size(293, 301);
+            this.SupervisorListview.Size = new System.Drawing.Size(460, 301);
             this.SupervisorListview.TabIndex = 1;
             this.SupervisorListview.UseCompatibleStateImageBehavior = false;
             this.SupervisorListview.View = System.Windows.Forms.View.Details;
@@ -1381,12 +1397,13 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.Activitygroup);
             this.groupBox6.Controls.Add(this.AddSupervisorbtn);
             this.groupBox6.Controls.Add(this.RemoveSupervisorbtn);
             this.groupBox6.Controls.Add(this.RefreshListbtn);
-            this.groupBox6.Location = new System.Drawing.Point(380, 117);
+            this.groupBox6.Location = new System.Drawing.Point(259, 82);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(179, 219);
+            this.groupBox6.Size = new System.Drawing.Size(179, 286);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Controls";
@@ -1421,6 +1438,7 @@
             this.RefreshListbtn.UseVisualStyleBackColor = true;
             this.RefreshListbtn.Click += new System.EventHandler(this.RefreshListbtn_Click);
             // 
+<<<<<<< HEAD
             // Pnl_Activity_List
             // 
             this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Eminute);
@@ -1770,6 +1788,35 @@
             this.Rbn_Modify_Activity.Text = "Modify";
             this.Rbn_Modify_Activity.UseVisualStyleBackColor = true;
             this.Rbn_Modify_Activity.CheckedChanged += new System.EventHandler(this.Rbn_Modify_Activity_CheckedChanged_1);
+=======
+            // ActivityId
+            // 
+            this.ActivityId.Text = "Activity ID";
+            // 
+            // Activitygroup
+            // 
+            this.Activitygroup.Controls.Add(this.ActivityComboBox);
+            this.Activitygroup.Location = new System.Drawing.Point(15, 211);
+            this.Activitygroup.Name = "Activitygroup";
+            this.Activitygroup.Size = new System.Drawing.Size(152, 61);
+            this.Activitygroup.TabIndex = 5;
+            this.Activitygroup.TabStop = false;
+            this.Activitygroup.Text = "Activity";
+            // 
+            // ActivityComboBox
+            // 
+            this.ActivityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ActivityComboBox.FormattingEnabled = true;
+            this.ActivityComboBox.Location = new System.Drawing.Point(6, 23);
+            this.ActivityComboBox.Name = "ActivityComboBox";
+            this.ActivityComboBox.Size = new System.Drawing.Size(139, 21);
+            this.ActivityComboBox.TabIndex = 0;
+            // 
+            // ActivityName
+            // 
+            this.ActivityName.Text = "ActivityName";
+            this.ActivityName.Width = 120;
+>>>>>>> e16bab42ae6b30aae35cc4a6004979cafdd11f14
             // 
             // SomerenUI
             // 
@@ -1829,11 +1876,15 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
+<<<<<<< HEAD
             this.Pnl_Activity_List.ResumeLayout(false);
             this.Pnl_Activity_List.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox9.ResumeLayout(false);
+=======
+            this.Activitygroup.ResumeLayout(false);
+>>>>>>> e16bab42ae6b30aae35cc4a6004979cafdd11f14
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1975,6 +2026,7 @@
         private System.Windows.Forms.Button RemoveSupervisorbtn;
         private System.Windows.Forms.Button RefreshListbtn;
         private System.Windows.Forms.ToolStripMenuItem supervisorsToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem activityListToolStripMenuItem;
         private System.Windows.Forms.Panel Pnl_Activity_List;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -2014,6 +2066,13 @@
         private System.Windows.Forms.Label lbl_Act_Enter_Month;
         private System.Windows.Forms.Label lbl_Act_Enter_Day;
         private System.Windows.Forms.RadioButton Rbn_Modify_Activity;
+=======
+        private System.Windows.Forms.ColumnHeader ActivityId;
+        private System.Windows.Forms.GroupBox Activitygroup;
+        private System.Windows.Forms.ComboBox ActivityComboBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ColumnHeader ActivityName;
+>>>>>>> e16bab42ae6b30aae35cc4a6004979cafdd11f14
     }
 }
 
