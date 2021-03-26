@@ -43,6 +43,7 @@
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activityListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
@@ -136,6 +137,19 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pnl_Sales = new System.Windows.Forms.Panel();
+            this.Saleslbl = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.GroupBox();
+            this.tolbl = new System.Windows.Forms.Label();
+            this.fromlbl = new System.Windows.Forms.Label();
+            this.date_from = new System.Windows.Forms.MonthCalendar();
+            this.btn_sales = new System.Windows.Forms.Button();
+            this.date_to = new System.Windows.Forms.MonthCalendar();
+            this.order_listView = new System.Windows.Forms.ListView();
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pnl_Supervisors = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.TeacherActivityListView = new System.Windows.Forms.ListView();
@@ -150,19 +164,44 @@
             this.AddSupervisorbtn = new System.Windows.Forms.Button();
             this.RemoveSupervisorbtn = new System.Windows.Forms.Button();
             this.RefreshListbtn = new System.Windows.Forms.Button();
-            this.Saleslbl = new System.Windows.Forms.Label();
-            this.Date = new System.Windows.Forms.GroupBox();
-            this.tolbl = new System.Windows.Forms.Label();
-            this.fromlbl = new System.Windows.Forms.Label();
-            this.date_from = new System.Windows.Forms.MonthCalendar();
-            this.btn_sales = new System.Windows.Forms.Button();
-            this.date_to = new System.Windows.Forms.MonthCalendar();
-            this.order_listView = new System.Windows.Forms.ListView();
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Pnl_Activity_List = new System.Windows.Forms.Panel();
+            this.lbl_Act_Enter_Eminute = new System.Windows.Forms.Label();
+            this.lbl_Act_Enter_Ehour = new System.Windows.Forms.Label();
+            this.TextBox_Act_Eminute = new System.Windows.Forms.TextBox();
+            this.TextBox_Act_Ehour = new System.Windows.Forms.TextBox();
+            this.TextBox_Act_Eyear = new System.Windows.Forms.TextBox();
+            this.TextBox_Act_Emonth = new System.Windows.Forms.TextBox();
+            this.lbl_Act_Enter_Eyear = new System.Windows.Forms.Label();
+            this.lbl_Act_Enter_Emonth = new System.Windows.Forms.Label();
+            this.lbl_Act_Enter_Eday = new System.Windows.Forms.Label();
+            this.TextBox_Act_Eday = new System.Windows.Forms.TextBox();
+            this.lbl_Act_Enter_Min = new System.Windows.Forms.Label();
+            this.lbl_Act_Enter_Hour = new System.Windows.Forms.Label();
+            this.TextBox_Act_Sminute = new System.Windows.Forms.TextBox();
+            this.TextBox_Act_Shour = new System.Windows.Forms.TextBox();
+            this.TextBox_Act_Syear = new System.Windows.Forms.TextBox();
+            this.TextBox_Act_Smonth = new System.Windows.Forms.TextBox();
+            this.lbl_Act_Enter_Year = new System.Windows.Forms.Label();
+            this.lbl_Act_Enter_Month = new System.Windows.Forms.Label();
+            this.lbl_Act_Enter_Day = new System.Windows.Forms.Label();
+            this.btn_Act_Confirm = new System.Windows.Forms.Button();
+            this.TextBox_Act_Sday = new System.Windows.Forms.TextBox();
+            this.TextBox_Activity_Description = new System.Windows.Forms.TextBox();
+            this.TextBox_Activity_Id = new System.Windows.Forms.TextBox();
+            this.lbl_Act_End_Date = new System.Windows.Forms.Label();
+            this.lbl_Act_Start_Date = new System.Windows.Forms.Label();
+            this.lbl_Act_Description = new System.Windows.Forms.Label();
+            this.lbl_Act_Id = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.Rbn_Remove_Activity = new System.Windows.Forms.RadioButton();
+            this.Rbn_Add_Activity = new System.Windows.Forms.RadioButton();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.LV_Activity_List = new System.Windows.Forms.ListView();
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Rbn_Modify_Activity = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -181,11 +220,14 @@
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Pnl_Sales.SuspendLayout();
+            this.Date.SuspendLayout();
             this.Pnl_Supervisors.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.Date.SuspendLayout();
+            this.Pnl_Activity_List.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -291,7 +333,8 @@
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.supervisorsToolStripMenuItem});
+            this.supervisorsToolStripMenuItem,
+            this.activityListToolStripMenuItem});
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
             this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.activitiesToolStripMenuItem.Text = "Activities";
@@ -302,6 +345,13 @@
             this.supervisorsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.supervisorsToolStripMenuItem.Text = "Supervisors";
             this.supervisorsToolStripMenuItem.Click += new System.EventHandler(this.supervisorsToolStripMenuItem_Click);
+            // 
+            // activityListToolStripMenuItem
+            // 
+            this.activityListToolStripMenuItem.Name = "activityListToolStripMenuItem";
+            this.activityListToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.activityListToolStripMenuItem.Text = "Activity list";
+            this.activityListToolStripMenuItem.Click += new System.EventHandler(this.activityListToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
@@ -1139,6 +1189,112 @@
             this.Pnl_Sales.Size = new System.Drawing.Size(935, 457);
             this.Pnl_Sales.TabIndex = 17;
             // 
+            // Saleslbl
+            // 
+            this.Saleslbl.AutoSize = true;
+            this.Saleslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saleslbl.Location = new System.Drawing.Point(34, 13);
+            this.Saleslbl.Name = "Saleslbl";
+            this.Saleslbl.Size = new System.Drawing.Size(54, 20);
+            this.Saleslbl.TabIndex = 5;
+            this.Saleslbl.Text = "Sales";
+            // 
+            // Date
+            // 
+            this.Date.Controls.Add(this.tolbl);
+            this.Date.Controls.Add(this.fromlbl);
+            this.Date.Controls.Add(this.date_from);
+            this.Date.Controls.Add(this.btn_sales);
+            this.Date.Controls.Add(this.date_to);
+            this.Date.Location = new System.Drawing.Point(395, 28);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(517, 255);
+            this.Date.TabIndex = 4;
+            this.Date.TabStop = false;
+            this.Date.Text = "Date selector";
+            // 
+            // tolbl
+            // 
+            this.tolbl.AutoSize = true;
+            this.tolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tolbl.Location = new System.Drawing.Point(340, 17);
+            this.tolbl.Name = "tolbl";
+            this.tolbl.Size = new System.Drawing.Size(29, 20);
+            this.tolbl.TabIndex = 5;
+            this.tolbl.Text = "To";
+            // 
+            // fromlbl
+            // 
+            this.fromlbl.AutoSize = true;
+            this.fromlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromlbl.Location = new System.Drawing.Point(135, 17);
+            this.fromlbl.Name = "fromlbl";
+            this.fromlbl.Size = new System.Drawing.Size(50, 20);
+            this.fromlbl.TabIndex = 4;
+            this.fromlbl.Text = "From";
+            // 
+            // date_from
+            // 
+            this.date_from.Location = new System.Drawing.Point(31, 38);
+            this.date_from.Name = "date_from";
+            this.date_from.TabIndex = 1;
+            // 
+            // btn_sales
+            // 
+            this.btn_sales.Location = new System.Drawing.Point(414, 213);
+            this.btn_sales.Name = "btn_sales";
+            this.btn_sales.Size = new System.Drawing.Size(75, 23);
+            this.btn_sales.TabIndex = 3;
+            this.btn_sales.Text = "Get list";
+            this.btn_sales.UseVisualStyleBackColor = true;
+            this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);
+            // 
+            // date_to
+            // 
+            this.date_to.Location = new System.Drawing.Point(318, 38);
+            this.date_to.Name = "date_to";
+            this.date_to.TabIndex = 2;
+            // 
+            // order_listView
+            // 
+            this.order_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader19,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader17,
+            this.columnHeader18});
+            this.order_listView.FullRowSelect = true;
+            this.order_listView.GridLines = true;
+            this.order_listView.HideSelection = false;
+            this.order_listView.Location = new System.Drawing.Point(25, 36);
+            this.order_listView.Name = "order_listView";
+            this.order_listView.Size = new System.Drawing.Size(364, 251);
+            this.order_listView.TabIndex = 0;
+            this.order_listView.UseCompatibleStateImageBehavior = false;
+            this.order_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Id";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Sales";
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Revenue";
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Customers";
+            this.columnHeader17.Width = 80;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Date";
+            this.columnHeader18.Width = 100;
+            // 
             // Pnl_Supervisors
             // 
             this.Pnl_Supervisors.Controls.Add(this.groupBox7);
@@ -1265,117 +1421,362 @@
             this.RefreshListbtn.UseVisualStyleBackColor = true;
             this.RefreshListbtn.Click += new System.EventHandler(this.RefreshListbtn_Click);
             // 
-            // Saleslbl
+            // Pnl_Activity_List
             // 
-            this.Saleslbl.AutoSize = true;
-            this.Saleslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Saleslbl.Location = new System.Drawing.Point(34, 13);
-            this.Saleslbl.Name = "Saleslbl";
-            this.Saleslbl.Size = new System.Drawing.Size(54, 20);
-            this.Saleslbl.TabIndex = 5;
-            this.Saleslbl.Text = "Sales";
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Eminute);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Ehour);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Eminute);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Ehour);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Eyear);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Emonth);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Eyear);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Emonth);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Eday);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Eday);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Min);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Hour);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Sminute);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Shour);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Syear);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Smonth);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Year);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Month);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Enter_Day);
+            this.Pnl_Activity_List.Controls.Add(this.btn_Act_Confirm);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Act_Sday);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Activity_Description);
+            this.Pnl_Activity_List.Controls.Add(this.TextBox_Activity_Id);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_End_Date);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Start_Date);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Description);
+            this.Pnl_Activity_List.Controls.Add(this.lbl_Act_Id);
+            this.Pnl_Activity_List.Controls.Add(this.groupBox10);
+            this.Pnl_Activity_List.Controls.Add(this.groupBox9);
+            this.Pnl_Activity_List.Location = new System.Drawing.Point(3, 18);
+            this.Pnl_Activity_List.Name = "Pnl_Activity_List";
+            this.Pnl_Activity_List.Size = new System.Drawing.Size(944, 466);
+            this.Pnl_Activity_List.TabIndex = 1;
             // 
-            // Date
+            // lbl_Act_Enter_Eminute
             // 
-            this.Date.Controls.Add(this.tolbl);
-            this.Date.Controls.Add(this.fromlbl);
-            this.Date.Controls.Add(this.date_from);
-            this.Date.Controls.Add(this.btn_sales);
-            this.Date.Controls.Add(this.date_to);
-            this.Date.Location = new System.Drawing.Point(395, 28);
-            this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(517, 255);
-            this.Date.TabIndex = 4;
-            this.Date.TabStop = false;
-            this.Date.Text = "Date selector";
+            this.lbl_Act_Enter_Eminute.AutoSize = true;
+            this.lbl_Act_Enter_Eminute.Location = new System.Drawing.Point(589, 449);
+            this.lbl_Act_Enter_Eminute.Name = "lbl_Act_Enter_Eminute";
+            this.lbl_Act_Enter_Eminute.Size = new System.Drawing.Size(42, 13);
+            this.lbl_Act_Enter_Eminute.TabIndex = 33;
+            this.lbl_Act_Enter_Eminute.Text = "Minute:";
             // 
-            // tolbl
+            // lbl_Act_Enter_Ehour
             // 
-            this.tolbl.AutoSize = true;
-            this.tolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tolbl.Location = new System.Drawing.Point(340, 17);
-            this.tolbl.Name = "tolbl";
-            this.tolbl.Size = new System.Drawing.Size(29, 20);
-            this.tolbl.TabIndex = 5;
-            this.tolbl.Text = "To";
+            this.lbl_Act_Enter_Ehour.AutoSize = true;
+            this.lbl_Act_Enter_Ehour.Location = new System.Drawing.Point(589, 425);
+            this.lbl_Act_Enter_Ehour.Name = "lbl_Act_Enter_Ehour";
+            this.lbl_Act_Enter_Ehour.Size = new System.Drawing.Size(33, 13);
+            this.lbl_Act_Enter_Ehour.TabIndex = 32;
+            this.lbl_Act_Enter_Ehour.Text = "Hour:";
             // 
-            // fromlbl
+            // TextBox_Act_Eminute
             // 
-            this.fromlbl.AutoSize = true;
-            this.fromlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fromlbl.Location = new System.Drawing.Point(135, 17);
-            this.fromlbl.Name = "fromlbl";
-            this.fromlbl.Size = new System.Drawing.Size(50, 20);
-            this.fromlbl.TabIndex = 4;
-            this.fromlbl.Text = "From";
+            this.TextBox_Act_Eminute.Location = new System.Drawing.Point(634, 446);
+            this.TextBox_Act_Eminute.Name = "TextBox_Act_Eminute";
+            this.TextBox_Act_Eminute.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Eminute.TabIndex = 31;
             // 
-            // date_from
+            // TextBox_Act_Ehour
             // 
-            this.date_from.Location = new System.Drawing.Point(31, 38);
-            this.date_from.Name = "date_from";
-            this.date_from.TabIndex = 1;
+            this.TextBox_Act_Ehour.Location = new System.Drawing.Point(634, 422);
+            this.TextBox_Act_Ehour.Name = "TextBox_Act_Ehour";
+            this.TextBox_Act_Ehour.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Ehour.TabIndex = 30;
             // 
-            // btn_sales
+            // TextBox_Act_Eyear
             // 
-            this.btn_sales.Location = new System.Drawing.Point(414, 213);
-            this.btn_sales.Name = "btn_sales";
-            this.btn_sales.Size = new System.Drawing.Size(75, 23);
-            this.btn_sales.TabIndex = 3;
-            this.btn_sales.Text = "Get list";
-            this.btn_sales.UseVisualStyleBackColor = true;
-            this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);
+            this.TextBox_Act_Eyear.Location = new System.Drawing.Point(634, 396);
+            this.TextBox_Act_Eyear.Name = "TextBox_Act_Eyear";
+            this.TextBox_Act_Eyear.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Eyear.TabIndex = 29;
             // 
-            // date_to
+            // TextBox_Act_Emonth
             // 
-            this.date_to.Location = new System.Drawing.Point(318, 38);
-            this.date_to.Name = "date_to";
-            this.date_to.TabIndex = 2;
+            this.TextBox_Act_Emonth.Location = new System.Drawing.Point(634, 371);
+            this.TextBox_Act_Emonth.Name = "TextBox_Act_Emonth";
+            this.TextBox_Act_Emonth.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Emonth.TabIndex = 28;
             // 
-            // order_listView
+            // lbl_Act_Enter_Eyear
             // 
-            this.order_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader19,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader17,
-            this.columnHeader18});
-            this.order_listView.FullRowSelect = true;
-            this.order_listView.GridLines = true;
-            this.order_listView.HideSelection = false;
-            this.order_listView.Location = new System.Drawing.Point(25, 36);
-            this.order_listView.Name = "order_listView";
-            this.order_listView.Size = new System.Drawing.Size(364, 251);
-            this.order_listView.TabIndex = 0;
-            this.order_listView.UseCompatibleStateImageBehavior = false;
-            this.order_listView.View = System.Windows.Forms.View.Details;
+            this.lbl_Act_Enter_Eyear.AutoSize = true;
+            this.lbl_Act_Enter_Eyear.Location = new System.Drawing.Point(589, 400);
+            this.lbl_Act_Enter_Eyear.Name = "lbl_Act_Enter_Eyear";
+            this.lbl_Act_Enter_Eyear.Size = new System.Drawing.Size(32, 13);
+            this.lbl_Act_Enter_Eyear.TabIndex = 27;
+            this.lbl_Act_Enter_Eyear.Text = "Year:";
             // 
-            // columnHeader19
+            // lbl_Act_Enter_Emonth
             // 
-            this.columnHeader19.Text = "Id";
+            this.lbl_Act_Enter_Emonth.AutoSize = true;
+            this.lbl_Act_Enter_Emonth.Location = new System.Drawing.Point(589, 374);
+            this.lbl_Act_Enter_Emonth.Name = "lbl_Act_Enter_Emonth";
+            this.lbl_Act_Enter_Emonth.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Act_Enter_Emonth.TabIndex = 26;
+            this.lbl_Act_Enter_Emonth.Text = "Month:";
             // 
-            // columnHeader13
+            // lbl_Act_Enter_Eday
             // 
-            this.columnHeader13.Text = "Sales";
+            this.lbl_Act_Enter_Eday.AutoSize = true;
+            this.lbl_Act_Enter_Eday.Location = new System.Drawing.Point(589, 350);
+            this.lbl_Act_Enter_Eday.Name = "lbl_Act_Enter_Eday";
+            this.lbl_Act_Enter_Eday.Size = new System.Drawing.Size(29, 13);
+            this.lbl_Act_Enter_Eday.TabIndex = 25;
+            this.lbl_Act_Enter_Eday.Text = "Day:";
             // 
-            // columnHeader14
+            // TextBox_Act_Eday
             // 
-            this.columnHeader14.Text = "Revenue";
+            this.TextBox_Act_Eday.Location = new System.Drawing.Point(634, 347);
+            this.TextBox_Act_Eday.Name = "TextBox_Act_Eday";
+            this.TextBox_Act_Eday.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Eday.TabIndex = 24;
             // 
-            // columnHeader17
+            // lbl_Act_Enter_Min
             // 
-            this.columnHeader17.Text = "Customers";
-            this.columnHeader17.Width = 80;
+            this.lbl_Act_Enter_Min.AutoSize = true;
+            this.lbl_Act_Enter_Min.Location = new System.Drawing.Point(452, 449);
+            this.lbl_Act_Enter_Min.Name = "lbl_Act_Enter_Min";
+            this.lbl_Act_Enter_Min.Size = new System.Drawing.Size(42, 13);
+            this.lbl_Act_Enter_Min.TabIndex = 23;
+            this.lbl_Act_Enter_Min.Text = "Minute:";
             // 
-            // columnHeader18
+            // lbl_Act_Enter_Hour
             // 
-            this.columnHeader18.Text = "Date";
-            this.columnHeader18.Width = 100;
+            this.lbl_Act_Enter_Hour.AutoSize = true;
+            this.lbl_Act_Enter_Hour.Location = new System.Drawing.Point(452, 425);
+            this.lbl_Act_Enter_Hour.Name = "lbl_Act_Enter_Hour";
+            this.lbl_Act_Enter_Hour.Size = new System.Drawing.Size(33, 13);
+            this.lbl_Act_Enter_Hour.TabIndex = 22;
+            this.lbl_Act_Enter_Hour.Text = "Hour:";
+            // 
+            // TextBox_Act_Sminute
+            // 
+            this.TextBox_Act_Sminute.Location = new System.Drawing.Point(497, 446);
+            this.TextBox_Act_Sminute.Name = "TextBox_Act_Sminute";
+            this.TextBox_Act_Sminute.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Sminute.TabIndex = 21;
+            // 
+            // TextBox_Act_Shour
+            // 
+            this.TextBox_Act_Shour.Location = new System.Drawing.Point(497, 422);
+            this.TextBox_Act_Shour.Name = "TextBox_Act_Shour";
+            this.TextBox_Act_Shour.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Shour.TabIndex = 20;
+            // 
+            // TextBox_Act_Syear
+            // 
+            this.TextBox_Act_Syear.Location = new System.Drawing.Point(497, 396);
+            this.TextBox_Act_Syear.Name = "TextBox_Act_Syear";
+            this.TextBox_Act_Syear.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Syear.TabIndex = 19;
+            // 
+            // TextBox_Act_Smonth
+            // 
+            this.TextBox_Act_Smonth.Location = new System.Drawing.Point(497, 371);
+            this.TextBox_Act_Smonth.Name = "TextBox_Act_Smonth";
+            this.TextBox_Act_Smonth.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Smonth.TabIndex = 18;
+            // 
+            // lbl_Act_Enter_Year
+            // 
+            this.lbl_Act_Enter_Year.AutoSize = true;
+            this.lbl_Act_Enter_Year.Location = new System.Drawing.Point(452, 400);
+            this.lbl_Act_Enter_Year.Name = "lbl_Act_Enter_Year";
+            this.lbl_Act_Enter_Year.Size = new System.Drawing.Size(32, 13);
+            this.lbl_Act_Enter_Year.TabIndex = 17;
+            this.lbl_Act_Enter_Year.Text = "Year:";
+            // 
+            // lbl_Act_Enter_Month
+            // 
+            this.lbl_Act_Enter_Month.AutoSize = true;
+            this.lbl_Act_Enter_Month.Location = new System.Drawing.Point(452, 374);
+            this.lbl_Act_Enter_Month.Name = "lbl_Act_Enter_Month";
+            this.lbl_Act_Enter_Month.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Act_Enter_Month.TabIndex = 16;
+            this.lbl_Act_Enter_Month.Text = "Month:";
+            // 
+            // lbl_Act_Enter_Day
+            // 
+            this.lbl_Act_Enter_Day.AutoSize = true;
+            this.lbl_Act_Enter_Day.Location = new System.Drawing.Point(452, 350);
+            this.lbl_Act_Enter_Day.Name = "lbl_Act_Enter_Day";
+            this.lbl_Act_Enter_Day.Size = new System.Drawing.Size(29, 13);
+            this.lbl_Act_Enter_Day.TabIndex = 15;
+            this.lbl_Act_Enter_Day.Text = "Day:";
+            // 
+            // btn_Act_Confirm
+            // 
+            this.btn_Act_Confirm.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_Act_Confirm.Location = new System.Drawing.Point(767, 335);
+            this.btn_Act_Confirm.Name = "btn_Act_Confirm";
+            this.btn_Act_Confirm.Size = new System.Drawing.Size(84, 42);
+            this.btn_Act_Confirm.TabIndex = 14;
+            this.btn_Act_Confirm.UseVisualStyleBackColor = false;
+            this.btn_Act_Confirm.Click += new System.EventHandler(this.btn_Act_Confirm_Click);
+            // 
+            // TextBox_Act_Sday
+            // 
+            this.TextBox_Act_Sday.Location = new System.Drawing.Point(497, 347);
+            this.TextBox_Act_Sday.Name = "TextBox_Act_Sday";
+            this.TextBox_Act_Sday.Size = new System.Drawing.Size(54, 20);
+            this.TextBox_Act_Sday.TabIndex = 12;
+            // 
+            // TextBox_Activity_Description
+            // 
+            this.TextBox_Activity_Description.Location = new System.Drawing.Point(313, 348);
+            this.TextBox_Activity_Description.Name = "TextBox_Activity_Description";
+            this.TextBox_Activity_Description.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_Activity_Description.TabIndex = 11;
+            // 
+            // TextBox_Activity_Id
+            // 
+            this.TextBox_Activity_Id.Location = new System.Drawing.Point(227, 347);
+            this.TextBox_Activity_Id.Name = "TextBox_Activity_Id";
+            this.TextBox_Activity_Id.Size = new System.Drawing.Size(38, 20);
+            this.TextBox_Activity_Id.TabIndex = 10;
+            // 
+            // lbl_Act_End_Date
+            // 
+            this.lbl_Act_End_Date.AutoSize = true;
+            this.lbl_Act_End_Date.Location = new System.Drawing.Point(589, 325);
+            this.lbl_Act_End_Date.Name = "lbl_Act_End_Date";
+            this.lbl_Act_End_Date.Size = new System.Drawing.Size(53, 13);
+            this.lbl_Act_End_Date.TabIndex = 9;
+            this.lbl_Act_End_Date.Text = "End date:";
+            // 
+            // lbl_Act_Start_Date
+            // 
+            this.lbl_Act_Start_Date.AutoSize = true;
+            this.lbl_Act_Start_Date.Location = new System.Drawing.Point(450, 327);
+            this.lbl_Act_Start_Date.Name = "lbl_Act_Start_Date";
+            this.lbl_Act_Start_Date.Size = new System.Drawing.Size(56, 13);
+            this.lbl_Act_Start_Date.TabIndex = 8;
+            this.lbl_Act_Start_Date.Text = "Start date:";
+            // 
+            // lbl_Act_Description
+            // 
+            this.lbl_Act_Description.AutoSize = true;
+            this.lbl_Act_Description.Location = new System.Drawing.Point(310, 327);
+            this.lbl_Act_Description.Name = "lbl_Act_Description";
+            this.lbl_Act_Description.Size = new System.Drawing.Size(63, 13);
+            this.lbl_Act_Description.TabIndex = 7;
+            this.lbl_Act_Description.Text = "Description:";
+            // 
+            // lbl_Act_Id
+            // 
+            this.lbl_Act_Id.AutoSize = true;
+            this.lbl_Act_Id.Location = new System.Drawing.Point(224, 329);
+            this.lbl_Act_Id.Name = "lbl_Act_Id";
+            this.lbl_Act_Id.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Act_Id.TabIndex = 6;
+            this.lbl_Act_Id.Text = "Id:";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.Rbn_Modify_Activity);
+            this.groupBox10.Controls.Add(this.Rbn_Remove_Activity);
+            this.groupBox10.Controls.Add(this.Rbn_Add_Activity);
+            this.groupBox10.Location = new System.Drawing.Point(110, 303);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(80, 88);
+            this.groupBox10.TabIndex = 5;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Settings";
+            // 
+            // Rbn_Remove_Activity
+            // 
+            this.Rbn_Remove_Activity.AutoSize = true;
+            this.Rbn_Remove_Activity.Location = new System.Drawing.Point(12, 67);
+            this.Rbn_Remove_Activity.Name = "Rbn_Remove_Activity";
+            this.Rbn_Remove_Activity.Size = new System.Drawing.Size(65, 17);
+            this.Rbn_Remove_Activity.TabIndex = 4;
+            this.Rbn_Remove_Activity.Text = "Remove";
+            this.Rbn_Remove_Activity.UseVisualStyleBackColor = true;
+            this.Rbn_Remove_Activity.CheckedChanged += new System.EventHandler(this.Rbn_Remove_Activity_CheckedChanged);
+            // 
+            // Rbn_Add_Activity
+            // 
+            this.Rbn_Add_Activity.AutoSize = true;
+            this.Rbn_Add_Activity.Location = new System.Drawing.Point(12, 22);
+            this.Rbn_Add_Activity.Name = "Rbn_Add_Activity";
+            this.Rbn_Add_Activity.Size = new System.Drawing.Size(44, 17);
+            this.Rbn_Add_Activity.TabIndex = 2;
+            this.Rbn_Add_Activity.Text = "Add";
+            this.Rbn_Add_Activity.UseVisualStyleBackColor = true;
+            this.Rbn_Add_Activity.CheckedChanged += new System.EventHandler(this.Rbn_Add_Activity_CheckedChanged);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.LV_Activity_List);
+            this.groupBox9.Location = new System.Drawing.Point(110, 10);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(741, 257);
+            this.groupBox9.TabIndex = 1;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Activities";
+            // 
+            // LV_Activity_List
+            // 
+            this.LV_Activity_List.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
+            this.LV_Activity_List.FullRowSelect = true;
+            this.LV_Activity_List.GridLines = true;
+            this.LV_Activity_List.HideSelection = false;
+            this.LV_Activity_List.Location = new System.Drawing.Point(12, 26);
+            this.LV_Activity_List.MultiSelect = false;
+            this.LV_Activity_List.Name = "LV_Activity_List";
+            this.LV_Activity_List.Size = new System.Drawing.Size(715, 219);
+            this.LV_Activity_List.TabIndex = 0;
+            this.LV_Activity_List.UseCompatibleStateImageBehavior = false;
+            this.LV_Activity_List.View = System.Windows.Forms.View.Details;
+            this.LV_Activity_List.SelectedIndexChanged += new System.EventHandler(this.LV_Activity_List_SelectedIndexChanged);
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Id";
+            this.columnHeader20.Width = 40;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Description";
+            this.columnHeader21.Width = 120;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Start date";
+            this.columnHeader22.Width = 100;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "End date";
+            this.columnHeader23.Width = 100;
+            // 
+            // Rbn_Modify_Activity
+            // 
+            this.Rbn_Modify_Activity.AutoSize = true;
+            this.Rbn_Modify_Activity.Location = new System.Drawing.Point(12, 45);
+            this.Rbn_Modify_Activity.Name = "Rbn_Modify_Activity";
+            this.Rbn_Modify_Activity.Size = new System.Drawing.Size(56, 17);
+            this.Rbn_Modify_Activity.TabIndex = 5;
+            this.Rbn_Modify_Activity.Text = "Modify";
+            this.Rbn_Modify_Activity.UseVisualStyleBackColor = true;
+            this.Rbn_Modify_Activity.CheckedChanged += new System.EventHandler(this.Rbn_Modify_Activity_CheckedChanged_1);
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.Pnl_Activity_List);
             this.Controls.Add(this.Pnl_Supervisors);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Pnl_Sales);
@@ -1422,12 +1823,17 @@
             this.groupBox5.PerformLayout();
             this.Pnl_Sales.ResumeLayout(false);
             this.Pnl_Sales.PerformLayout();
+            this.Date.ResumeLayout(false);
+            this.Date.PerformLayout();
             this.Pnl_Supervisors.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
-            this.Date.ResumeLayout(false);
-            this.Date.PerformLayout();
+            this.Pnl_Activity_List.ResumeLayout(false);
+            this.Pnl_Activity_List.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1569,6 +1975,45 @@
         private System.Windows.Forms.Button RemoveSupervisorbtn;
         private System.Windows.Forms.Button RefreshListbtn;
         private System.Windows.Forms.ToolStripMenuItem supervisorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem activityListToolStripMenuItem;
+        private System.Windows.Forms.Panel Pnl_Activity_List;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.ListView LV_Activity_List;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.Button btn_Act_Confirm;
+        private System.Windows.Forms.TextBox TextBox_Act_Sday;
+        private System.Windows.Forms.TextBox TextBox_Activity_Description;
+        private System.Windows.Forms.TextBox TextBox_Activity_Id;
+        private System.Windows.Forms.Label lbl_Act_End_Date;
+        private System.Windows.Forms.Label lbl_Act_Start_Date;
+        private System.Windows.Forms.Label lbl_Act_Description;
+        private System.Windows.Forms.Label lbl_Act_Id;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.RadioButton Rbn_Remove_Activity;
+        private System.Windows.Forms.RadioButton Rbn_Add_Activity;
+        private System.Windows.Forms.Label lbl_Act_Enter_Eminute;
+        private System.Windows.Forms.Label lbl_Act_Enter_Ehour;
+        private System.Windows.Forms.TextBox TextBox_Act_Eminute;
+        private System.Windows.Forms.TextBox TextBox_Act_Ehour;
+        private System.Windows.Forms.TextBox TextBox_Act_Eyear;
+        private System.Windows.Forms.TextBox TextBox_Act_Emonth;
+        private System.Windows.Forms.Label lbl_Act_Enter_Eyear;
+        private System.Windows.Forms.Label lbl_Act_Enter_Emonth;
+        private System.Windows.Forms.Label lbl_Act_Enter_Eday;
+        private System.Windows.Forms.TextBox TextBox_Act_Eday;
+        private System.Windows.Forms.Label lbl_Act_Enter_Min;
+        private System.Windows.Forms.Label lbl_Act_Enter_Hour;
+        private System.Windows.Forms.TextBox TextBox_Act_Sminute;
+        private System.Windows.Forms.TextBox TextBox_Act_Shour;
+        private System.Windows.Forms.TextBox TextBox_Act_Syear;
+        private System.Windows.Forms.TextBox TextBox_Act_Smonth;
+        private System.Windows.Forms.Label lbl_Act_Enter_Year;
+        private System.Windows.Forms.Label lbl_Act_Enter_Month;
+        private System.Windows.Forms.Label lbl_Act_Enter_Day;
+        private System.Windows.Forms.RadioButton Rbn_Modify_Activity;
     }
 }
 

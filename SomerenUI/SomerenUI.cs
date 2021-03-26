@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,7 @@ namespace SomerenUI
                     pnl_Order.Hide();
                     Pnl_Sales.Hide();
                     Pnl_Supervisors.Hide();
+                    Pnl_Activity_List.Hide();
 
                     // show dashboard
                     pnl_Dashboard.Show();
@@ -255,6 +257,26 @@ namespace SomerenUI
 
                     // fill lists
                     FillListsActivitySupervisor();
+                    break;
+
+                case "Activity_List":
+                    // hide all other panels
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+                    pnl_Students.Hide();
+                    pnl_Teachers.Hide();
+                    pnl_Rooms.Hide();
+                    pnl_Products.Hide();
+                    Pnl_Sales.Hide();
+                    pnl_Order.Hide();
+                    Pnl_Supervisors.Hide();
+
+                    // show product panel
+                    Pnl_Activity_List.Show();
+
+                    // fill lists
+                    Fill_Activity_List();
+
                     break;
 
             }
@@ -733,6 +755,198 @@ namespace SomerenUI
         private void supervisorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Supervisors");
+        }
+
+        private void activityListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Activity_List");
+        }
+
+        private void btn_Act_Confirm_Click(object sender, EventArgs e)
+        {
+            Modify_Activity(btn_Act_Confirm.Text);
+        }
+
+        private void Modify_Activity(string setting)
+        {
+            SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+            // string StartTime = $"{TextBox_Act_Sday}/{TextBox_Act_Smonth}/{TextBox_Act_Syear} {TextBox_Act_Shour}:{TextBox_Act_Sminute}";
+            // string EndTime = $"{TextBox_Act_Eday}/{TextBox_Act_Emonth}/{TextBox_Act_Eyear} {TextBox_Act_Ehour}:{TextBox_Act_Eminute}";
+
+            int Sday = int.Parse(TextBox_Act_Sday.Text);
+            int Smonth = int.Parse(TextBox_Act_Smonth.Text);
+            int Syear = int.Parse(TextBox_Act_Syear.Text);
+            int Shour = int.Parse(TextBox_Act_Shour.Text);
+            int Sminute = int.Parse(TextBox_Act_Sminute.Text);
+            int Eday = int.Parse(TextBox_Act_Eday.Text);
+            int Emonth = int.Parse(TextBox_Act_Emonth.Text);
+            int Eyear = int.Parse(TextBox_Act_Eyear.Text);
+            int Ehour = int.Parse(TextBox_Act_Ehour.Text);
+            int Eminute = int.Parse(TextBox_Act_Eminute.Text);
+
+
+            DateTime SdateTime = new DateTime(2021, 03, 27, 5, 10, 20);
+            DateTime EdateTime = new DateTime(2021, 03, 27, 5, 10, 20);
+            switch (setting)
+            {
+                case "Delete":
+                    ListViewItem item = LV_Activity_List.SelectedItems[0];
+                    if (item != null)
+                    {
+                        // send delete command to database
+                        activity_Service.DeleteActivity(int.Parse(TextBox_Activity_Id.Text));
+                    }
+                    break;
+                case "Modify":
+                    ListViewItem items = LV_Activity_List.SelectedItems[0];
+                    if (items != null)
+                    {
+                        
+
+                        // create edited product
+                        Activity newactivity = new Activity();
+                        newactivity.Id = int.Parse(TextBox_Activity_Id.Text);
+                        newactivity.Description = TextBox_Activity_Description.Text;
+                        newactivity.StartTime = SdateTime;
+                       // newactivity.EndTime = EdateTime;
+
+
+                        // send edited product to database
+                        activity_Service.ModifyActivity(newactivity);
+                    }
+                    break;
+                case "Add":
+
+                    // create edited product
+                    Activity activity = new Activity();
+                    activity.Id = int.Parse(TextBox_Activity_Id.Text);
+                    activity.Description = TextBox_Activity_Description.Text;
+                    activity.StartTime = SdateTime;
+                   // activity.EndTime = EdateTime;
+
+                    // send new product to database
+                    activity_Service.AddActivity(activity);
+
+                    LV_Activity_List.View = View.Details;
+                    LV_Activity_List.Items.Add(new ListViewItem(new string[] { $"{activity.Id}", $"{activity.Description}", $"{activity.StartTime.ToString("dd/MM/yyyy HH:mm")}", $"{activity.EndTime.ToString("dd/MM/yyyy HH:mm")}" }));
+                    break;
+            }
+
+        }
+
+        private void Radio_Activity_Button(string button)
+        {
+            switch (button)
+            {
+                case "Act_Add":
+                    btn_Act_Confirm.Text = "Add";
+                    TextBox_Activity_Id.Enabled = true;
+                    TextBox_Activity_Description.Enabled = true;
+                    TextBox_Act_Sday.Enabled = true;
+                    TextBox_Act_Smonth.Enabled = true;
+                    TextBox_Act_Syear.Enabled = true;
+                    TextBox_Act_Sminute.Enabled = true;
+                    TextBox_Act_Shour.Enabled = true;
+                    TextBox_Act_Eday.Enabled = true;
+                    TextBox_Act_Emonth.Enabled = true;
+                    TextBox_Act_Eyear.Enabled = true;
+                    TextBox_Act_Eminute.Enabled = true;
+                    TextBox_Act_Ehour.Enabled = true;
+
+                    break;
+                case "Act_Modify":
+                    btn_Act_Confirm.Text = "Modify";
+                    TextBox_Activity_Id.Enabled = false;
+                    TextBox_Activity_Description.Enabled = true;
+                    TextBox_Act_Sday.Enabled = true;
+                    TextBox_Act_Smonth.Enabled = true;
+                    TextBox_Act_Syear.Enabled = true;
+                    TextBox_Act_Sminute.Enabled = true;
+                    TextBox_Act_Shour.Enabled = true;
+                    TextBox_Act_Eday.Enabled = true;
+                    TextBox_Act_Emonth.Enabled = true;
+                    TextBox_Act_Eyear.Enabled = true;
+                    TextBox_Act_Eminute.Enabled = true;
+                    TextBox_Act_Ehour.Enabled = true;
+                    break;
+                case "Act_Delete":
+                    btn_Act_Confirm.Text = "Delete";
+                    TextBox_Activity_Id.Enabled = true;
+                    TextBox_Activity_Description.Enabled = false;
+                    TextBox_Act_Sday.Enabled = false;
+                    TextBox_Act_Smonth.Enabled = false;
+                    TextBox_Act_Syear.Enabled = false;
+                    TextBox_Act_Sminute.Enabled = false;
+                    TextBox_Act_Shour.Enabled = false;
+                    TextBox_Act_Eday.Enabled = false;
+                    TextBox_Act_Emonth.Enabled = false;
+                    TextBox_Act_Eyear.Enabled = false;
+                    TextBox_Act_Eminute.Enabled = false;
+                    TextBox_Act_Ehour.Enabled = false;
+                    break;
+            }
+        }
+
+        private void Rbn_Add_Activity_CheckedChanged(object sender, EventArgs e)
+        {
+            Radio_Activity_Button("Act_Add");
+        }
+
+        private void Rbn_Modify_Activity_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Rbn_Remove_Activity_CheckedChanged(object sender, EventArgs e)
+        {
+            Radio_Activity_Button("Act_Delete");
+        }
+
+        private void LV_Activity_List_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Modify_Activity();            
+           
+        }
+
+        private void Modify_Activity()
+        {
+            
+            if (LV_Activity_List.SelectedItems.Count > 0)
+            {
+                SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+                List<Activity> activities = activity_Service.GetActivities();
+                int index = LV_Activity_List.SelectedIndices[0];
+                Activity activity = activities[index];
+
+                TextBox_Activity_Id.Text = activity.Id.ToString();
+                TextBox_Activity_Description.Text = activity.Description;
+                TextBox_Act_Sday.Text = activity.StartTime.Day.ToString();
+                TextBox_Act_Smonth.Text = activity.StartTime.Month.ToString();
+                TextBox_Act_Syear.Text = activity.StartTime.Year.ToString();
+                TextBox_Act_Sminute.Text = activity.StartTime.Minute.ToString();
+                TextBox_Act_Shour.Text = activity.StartTime.Hour.ToString();
+                TextBox_Act_Eday.Text = activity.StartTime.Day.ToString();
+                TextBox_Act_Emonth.Text = activity.StartTime.Month.ToString();
+                TextBox_Act_Eyear.Text = activity.StartTime.Year.ToString();
+                TextBox_Act_Eminute.Text = activity.StartTime.Minute.ToString();
+                TextBox_Act_Ehour.Text = activity.StartTime.Hour.ToString();
+            }
+        }
+
+        private void Fill_Activity_List()
+        {
+            SomerenLogic.Activity_Service activServ = new SomerenLogic.Activity_Service();
+            List<Activity> actList = activServ.GetActivities();
+            LV_Activity_List.View = View.Details;
+            foreach (SomerenModel.Activity activity in actList)
+            {
+                LV_Activity_List.Items.Add(new ListViewItem(new string[] { $"{activity.Id}", $"{activity.Description}", $"{activity.StartTime.ToString("dd/MM/yyyy HH:mm")}", $"{activity.EndTime.ToString("dd/MM/yyyy HH:mm")}" }));
+            }
+        }
+
+        private void Rbn_Modify_Activity_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Radio_Activity_Button("Act_Modify");
         }
     }
 }

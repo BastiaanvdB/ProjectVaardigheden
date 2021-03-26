@@ -63,8 +63,8 @@ namespace SomerenDAL
                 {
                     Id = (int)dr["activity_id"],
                     Description = (String)(dr["activity_description"].ToString()),
-                    StartTime = (DateTime)dr["product_price"],
-                    EndTime = (DateTime)dr["product_vatpercentage"]
+                    StartTime = (DateTime)dr["activity_datetime_start"],
+                    EndTime = (DateTime)dr["activity_datetime_end"]
                 };
                 activities.Add(activity);
             }
