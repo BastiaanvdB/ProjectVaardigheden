@@ -692,7 +692,7 @@ namespace SomerenUI
         private void FillListsActivitySupervisor()
         {
             // clear and fill the teachers listview within the teachers panel with a list of teachers
-            listViewTeachers.Items.Clear();
+            TeacherActivityListView.Items.Clear();
             SomerenLogic.Teacher_Service teachService = new SomerenLogic.Teacher_Service();
             List<Teacher> teacherList = teachService.GetTeachers();
             TeacherActivityListView.View = View.Details;
@@ -700,19 +700,71 @@ namespace SomerenUI
             {
                 TeacherActivityListView.Items.Add(new ListViewItem(new string[] { $"{teacher.Number}", $"{teacher.Name}" }));
             }
+            TeacherActivityListView.Items[0].Selected = true;
+            TeacherActivityListView.Items[0].Focused = true;
+
 
             // clear and fill the supervisor listview within the supervisors panel with a list of supervisors
+            SupervisorListview.Items.Clear();
+            SomerenLogic.ActivitySupervisor_Service supervisor_Service = new SomerenLogic.ActivitySupervisor_Service();
+            List<ActivitySupervisor> activitySupervisors = supervisor_Service.GetActivitySupervisor();
+            SupervisorListview.View = View.Details;
+            foreach (SomerenModel.ActivitySupervisor supervisor in activitySupervisors)
+            {
+                SupervisorListview.Items.Add(new ListViewItem(new string[] { $"{supervisor.SupervisorId}", $"{supervisor.TeacherId}", $"{supervisor.TeacherName}", $"{supervisor.ActivityId}", $"{supervisor.ActivityName}" }));
+            }
+            SupervisorListview.Items[0].Selected = true;
+            SupervisorListview.Items[0].Focused = true;
 
+            // Fill combobox with activities
+            FillActivityCombobox();
+        }
+
+        private void FillActivityCombobox()
+        {
+            SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+            List<Activity> activities = activity_Service.GetActivities();
+            ActivityComboBox.Items.Clear();
+            foreach (Activity activity in activities)
+            {
+                ActivityComboBox.Items.Add(activity.Description);
+            }
+            ActivityComboBox.SelectedIndex = 0;
+        }
+
+        private int ActivityComboBoxSelect()
+        {
+            SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+            List<Activity> activities = activity_Service.GetActivities();
+            return (activities[ActivityComboBox.SelectedIndex].Id);
         }
 
         private void RemoveSupervisor()
         {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete a supervisor?", "Removing Supervisor", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SomerenLogic.ActivitySupervisor_Service activitySupervisor_Service = new ActivitySupervisor_Service();
+                List<ActivitySupervisor> activitySupervisors = activitySupervisor_Service.GetActivitySupervisor();
+                int index = SupervisorListview.SelectedIndices[0];
+                activitySupervisor_Service.DeleteActivitySupervisory(activitySupervisors[index].SupervisorId);
+                ActivitySupervisorMenu("Refresh");
+            }
+            else if (dialogResult == DialogResult.No)
+            {
 
+            }
         }
 
         private void AddToSupervisor()
         {
-
+            SomerenLogic.ActivitySupervisor_Service activitySupervisor_Service = new ActivitySupervisor_Service();
+            SomerenLogic.Teacher_Service teacher_Service = new Teacher_Service();
+            List<Teacher> teacherlist = teacher_Service.GetTeachers();
+            int activityId = ActivityComboBoxSelect();
+            int teacherindex = TeacherActivityListView.SelectedIndices[0];
+            activitySupervisor_Service.AddActivitySupervisor(teacherlist[teacherindex].Number, activityId);
+            ActivitySupervisorMenu("Refresh");
         }
 
         private void AddSupervisorbtn_Click(object sender, EventArgs e)
