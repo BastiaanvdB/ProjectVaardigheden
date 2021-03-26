@@ -14,45 +14,39 @@ namespace SomerenLogic
 
         public List<Activity> GetActivities()
         {
-            //try
-            //{
+            try
+            {
                 List<Activity> activitylist = activity_DAO.Db_Get_All_Activities();
                 return activitylist;
-            //}
-            //catch (Exception)
-            //{
-            //    // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
-            //    List<Product> products = new List<Product>();
-            //    /*
-            //    Product a = new Product();
-            //    a.Name = "Mr. Test Product";
-            //    a.Number = 123456;
-            //    products.Add(a);
-            //    Product b = new Product();
-            //    b.Name = "Mrs. Test Product";
-            //    b.Number = 654321;
-            //    products.Add(b);*/
-            //    //return products;
-            //    //throw new Exception("Someren couldn't connect to the database");
-            //}
+            }
+            catch (Exception)
+            {
+                // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
+                List<Activity> activities = new List<Activity>();
+
+                Activity a = new Activity();
+                a.Id = 345;
+                a.Description = "No connection - Test activity";
+                a.StartTime = new DateTime(2022, 03, 22, 10, 30, 00);
+                a.EndTime = new DateTime(2022, 03, 22, 12, 30, 00);
+                activities.Add(a);
+                return activities;
+            }
+}
+
+        public void DeleteActivity(int id)
+        {
+            activity_DAO.DB_Delete_Activity(id);
         }
 
-        //public void DeleteProduct(int id)
-        //{
-        //    product_db.DB_Delete_Product(id);
-        //}
+        public void AddActivity(Activity activity)
+        {
+            activity_DAO.DB_Add_Activity(activity);
+        }
 
-        //public void AddProduct(Product product)
-        //{
-        //    product_db.DB_Add_Product(product);
-        //}
-
-        //public void ModifyProduct(Product product)
-        //{
-        //    product_db.DB_Modify_Product(product);
-        //}
-
-
-
+        public void ModifyActivity(Activity activity)
+        {
+            activity_DAO.DB_Modify_Activity(activity);
+        }
     }
 }
