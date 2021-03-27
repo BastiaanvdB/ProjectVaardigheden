@@ -14,8 +14,8 @@ namespace SomerenDAL
 
         public List<Schedule> Db_Get_All_Schedules()
         {
-
-            string query = "SELECT  a.activity_id, ar.activity_supervisor_id, t.teacher_name , a.activity_description, a.activity_datetime_start, a.activity_datetime_end, t.teacher_id from Activity as a INNER JOIN ActivitySupervisor as ar ON a.activity_id = ar.activity_id INNER JOIN ActivityParticipant as ap ON a.activity_id = ap.activity_id INNER JOIN Teacher as t on ar.teacher_id = t.teacher_id INNER JOIN Student as s on ap.student_id = s.student_id ORDER BY a.activity_datetime_start ASC";
+            string query_old = "SELECT  a.activity_id, ar.activity_supervisor_id, t.teacher_name , a.activity_description, a.activity_datetime_start, a.activity_datetime_end, t.teacher_id from Activity as a INNER JOIN ActivitySupervisor as ar ON a.activity_id = ar.activity_id INNER JOIN ActivityParticipant as ap ON a.activity_id = ap.activity_id INNER JOIN Teacher as t on ar.teacher_id = t.teacher_id INNER JOIN Student as s on ap.student_id = s.student_id ORDER BY a.activity_datetime_start ASC";
+            string query = "SELECT  a.activity_id, ISNULL(STRING_AGG(t.teacher_name, ', '), 'null') as teacher_name ,COUNT(s.student_id) as students, MAX(a.activity_description) as activity_description, MAX(a.activity_datetime_start) as activity_datetime_start,MAX(a.activity_datetime_end) as activity_datetime_end from Activity as a LEFT JOIN ActivitySupervisor as ar ON a.activity_id = ar.activity_id LEFT JOIN ActivityParticipant as ap ON a.activity_id = ap.activity_id LEFT JOIN Teacher as t on ar.teacher_id = t.teacher_id LEFT JOIN Student as s on ap.student_id = s.student_id group by a.activity_id";
 
 
             SqlParameter[] sqlParameters = new SqlParameter[0];
@@ -25,12 +25,12 @@ namespace SomerenDAL
         {
 
             int id1 = int.Parse(s1.SubItems[0].Text);
-            DateTime ds1 = DateTime.Parse(s1.SubItems[3].Text);
-            DateTime de1 = DateTime.Parse(s1.SubItems[4].Text);
+            DateTime ds1 = DateTime.Parse(s1.SubItems[4].Text);
+            DateTime de1 = DateTime.Parse(s1.SubItems[5].Text);
 
             int id2 = int.Parse(s2.SubItems[0].Text);
-            DateTime ds2 = DateTime.Parse(s2.SubItems[3].Text);
-            DateTime de2 = DateTime.Parse(s2.SubItems[4].Text);
+            DateTime ds2 = DateTime.Parse(s2.SubItems[4].Text);
+            DateTime de2 = DateTime.Parse(s2.SubItems[5].Text);
 
             Console.WriteLine(ds1.Day + ds1.Month + ds1.Year);
 
@@ -62,14 +62,19 @@ namespace SomerenDAL
                 Schedule sch = new Schedule()
                 {
                     Id = (int)dr["activity_id"],
-                    ActivitySupervisorId = (int)dr["activity_supervisor_id"],
                     ActivitySupervisorName = (string)dr["teacher_name"],
+                    Students = (int)dr["students"],
+
                     ActivityDescription = (string)dr["activity_description"],
                     Datestart = (DateTime)dr["activity_datetime_start"],
                     Dateend = (DateTime)dr["activity_datetime_end"],
-                    TeacherId = (int)dr["teacher_id"]
+
 
                 };
+                if (sch.ActivitySupervisorName == "null")
+                {
+                    sch.ActivitySupervisorName = "No Supervisor";
+                }
                 scheduleList.Add(sch);
             }
             return scheduleList;

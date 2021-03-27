@@ -134,11 +134,8 @@ namespace SomerenUI
                     listView_Schedule.View = View.Details;
                     foreach (SomerenModel.Schedule s in scheduleList)
                     {
-                        if(s.TeacherId == null)
-                        {
-                            s.ActivitySupervisorName = "No Supervisor";
-                        }
-                        listView_Schedule.Items.Add(new ListViewItem(new string[] { $"{s.Id}", $"{s.ActivitySupervisorName}", $"{s.ActivityDescription}", $"{s.Datestart}", $"{s.Dateend}" }));
+
+                        listView_Schedule.Items.Add(new ListViewItem(new string[] { $"{s.Id}", $"{s.ActivitySupervisorName}", $"{ s.Students }", $"{s.ActivityDescription}", $"{s.Datestart}", $"{s.Dateend}" }));
 
                     }
                     break;
