@@ -780,8 +780,8 @@ namespace SomerenUI
             {
                 SupervisorListview.Items.Add(new ListViewItem(new string[] { $"{supervisor.SupervisorId}", $"{supervisor.TeacherId}", $"{supervisor.TeacherName}", $"{supervisor.ActivityId}", $"{supervisor.ActivityName}" }));
             }
-            SupervisorListview.Items[0].Selected = true;
-            SupervisorListview.Items[0].Focused = true;
+            //SupervisorListview.Items[0].Selected = true;
+            //SupervisorListview.Items[0].Focused = true;
 
             // Fill combobox with activities
             FillActivityCombobox();
@@ -1052,31 +1052,8 @@ namespace SomerenUI
         {
             SomerenLogic.Activity_Service activity_Service = new Activity_Service();
 
-            //string startmonth = TextBox_Act_Smonth.Text;
-            //if (int.Parse(TextBox_Act_Smonth.Text) < 10)
-            //{
-            //    startmonth = "0" + startmonth;
-            //}
-            //string endmonth = TextBox_Act_Emonth.Text;
-            //if (int.Parse(TextBox_Act_Emonth.Text) < 10)
-            //{
-            //    endmonth = "0" + endmonth;
-            //}
-
             string StartTime = $"{TextBox_Act_Sday.Text}/{TextBox_Act_Smonth.Text}/{TextBox_Act_Syear.Text} {TextBox_Act_Shour.Text}:{TextBox_Act_Sminute.Text}:00";
             string EndTime = $"{TextBox_Act_Eday.Text}/{TextBox_Act_Emonth.Text}/{TextBox_Act_Eyear.Text} {TextBox_Act_Ehour.Text}:{TextBox_Act_Eminute.Text}:00";
-
-            //int Sday = int.Parse(TextBox_Act_Sday.Text);
-            //int Smonth = int.Parse(TextBox_Act_Smonth.Text);
-            //int Syear = int.Parse(TextBox_Act_Syear.Text);
-            //int Shour = int.Parse(TextBox_Act_Shour.Text);
-            //int Sminute = int.Parse(TextBox_Act_Sminute.Text);
-            //int Eday = int.Parse(TextBox_Act_Eday.Text);
-            //int Emonth = int.Parse(TextBox_Act_Emonth.Text);
-            //int Eyear = int.Parse(TextBox_Act_Eyear.Text);
-            //int Ehour = int.Parse(TextBox_Act_Ehour.Text);
-            //int Eminute = int.Parse(TextBox_Act_Eminute.Text);
-
 
             DateTime SdateTime = DateTime.Parse(StartTime);
             DateTime EdateTime = DateTime.Parse(EndTime);
@@ -1150,6 +1127,81 @@ namespace SomerenUI
         private void btn_Act_Confirm_Click(object sender, EventArgs e)
         {
             Modify_Activity(btn_Act_Confirm.Text);
+        }
+
+
+        private void FillModifyCombobox()
+        {
+            if (SupervisorListview.SelectedItems.Count != 0)
+            {
+                SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+                SomerenLogic.ActivitySupervisor_Service activitySupervisor_Service = new ActivitySupervisor_Service();
+                int comboindex = 0;
+
+                List<ActivitySupervisor> activitySupervisors = activitySupervisor_Service.GetActivitySupervisor();
+                List<Activity> activities = activity_Service.GetActivities();
+                
+                ActivitySupervisor supervisor = activitySupervisors[SupervisorListview.SelectedIndices[0]];
+
+                for (int i = 0; i < activities.Count; i++)
+                {
+                    if (supervisor.ActivityId == activities[i].Id)
+                    {
+                        comboindex = i;
+                        break;
+                    }
+                }
+
+                ModifyComboBox.Items.Clear();
+                foreach (Activity activity in activities)
+                {
+                    ModifyComboBox.Items.Add(activity.Description);
+                }
+                ModifyComboBox.SelectedIndex = comboindex;
+            }
+        }
+
+        private void ModifySupervisor()
+        {
+            if (SupervisorListview.SelectedItems.Count != 0)
+            {
+                SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+                SomerenLogic.ActivitySupervisor_Service activitySupervisor_Service = new ActivitySupervisor_Service();
+                List<ActivitySupervisor> activitySupervisors = activitySupervisor_Service.GetActivitySupervisor();
+                ActivitySupervisor supervisor = activitySupervisors[SupervisorListview.SelectedIndices[0]];
+
+                Activity activity = ModifyComboBoxSelect();
+
+                ActivitySupervisor activitySupervisor = new ActivitySupervisor
+                {
+                    SupervisorId = supervisor.SupervisorId,
+                    ActivityId = activity.Id,
+                    ActivityName = activity.Description,
+                    TeacherName = supervisor.TeacherName,
+                    TeacherId = supervisor.TeacherId
+                };
+
+                activitySupervisor_Service.ModifyActivitySupervisor(activitySupervisor);
+                ActivitySupervisorMenu("Refresh");
+            }
+        }
+
+        private Activity ModifyComboBoxSelect()
+        {
+            SomerenLogic.Activity_Service activity_Service = new Activity_Service();
+            List<Activity> activities = activity_Service.GetActivities();
+            return activities[ModifyComboBox.SelectedIndex];
+        }
+
+
+        private void ModifySupervisorbtn_Click(object sender, EventArgs e)
+        {
+            ModifySupervisor();
+        }
+
+        private void SupervisorListview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillModifyCombobox();
         }
     }
 }

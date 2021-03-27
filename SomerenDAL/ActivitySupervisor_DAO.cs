@@ -31,12 +31,11 @@ namespace SomerenDAL
 
         public void DB_Modify_ActivitySupervisors(ActivitySupervisor activitySupervisor)
         {
-            string query = $"UPDATE ActivitySupervisor SET activity_id=@activityid, teacher_id=@teacherid WHERE activity_supervisor_id = @supervisorid";
+            string query = $"UPDATE ActivitySupervisor SET activity_id=@activityid WHERE activity_supervisor_id = @supervisorid";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@supervisorid", SqlDbType.Int) { Value = activitySupervisor.SupervisorId},
                 new SqlParameter("@activityid", SqlDbType.Int) { Value = activitySupervisor.ActivityId},
-                new SqlParameter("@teacherid", SqlDbType.Int) { Value = activitySupervisor.TeacherId}
             };
             ExecuteEditQuery(query, sqlParameters);
         }
