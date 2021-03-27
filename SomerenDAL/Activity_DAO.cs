@@ -30,20 +30,23 @@ namespace SomerenDAL
 
         public void DB_Modify_Activity(Activity activity)
         {
-            string query = $"UPDATE Activity SET activity_description=@description, activity_datetime_start=@starttime, activity_datetime_end=@endtime WHERE activity_id = @id";
+            //string starttime = activity.StartTime.ToString("yyyy/mm/dd HH:mm:ss");
+            //string endtime = activity.EndTime.ToString("yyyy/mm/dd HH:mm:ss");
+
+            string query = $"UPDATE Activity SET activity_description=@description, activity_datetime_start=convert(datetime, @starttime), activity_datetime_end=convert(datetime, @endtime) WHERE activity_id = @id";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@id", SqlDbType.Int) { Value = activity.Id},
                 new SqlParameter("@description", SqlDbType.VarChar, 255) { Value = activity.Description},
                 new SqlParameter("@starttime", SqlDbType.DateTime) { Value = activity.StartTime},
-                new SqlParameter("@endtime", SqlDbType.DateTime) { Value = activity.EndTime }
+                new SqlParameter("@endtime", SqlDbType.DateTime) { Value = activity.EndTime}
             };
             ExecuteEditQuery(query, sqlParameters);
         }
 
         public void DB_Add_Activity(Activity activity)
         {
-            string query = $"INSERT INTO Activity (activity_description, activity_datetime_start, activity_datetime_end) VALUES (@description, @starttime, @endtime)";
+            string query = $"INSERT INTO Activity (activity_description, activity_datetime_start, activity_datetime_end) VALUES (@description, convert(datetime, @starttime), convert(datetime, @endtime))";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@description", SqlDbType.VarChar, 255) { Value = activity.Description},

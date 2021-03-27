@@ -48,6 +48,7 @@
     <Compile Include="Rooms_Service.cs" />
     <Compile Include="Product_Service.cs" />
     <Compile Include="SalesReport_Service.cs" />
+    <Compile Include="Schedule_service.cs" />
     <Compile Include="Teacher_Service.cs" />
     <Compile Include="Student_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

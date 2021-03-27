@@ -53,6 +53,16 @@ C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL\obj\Debug\SomerenDAL.dll
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenDAL\obj\Debug\SomerenDAL.pdb
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll.config
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.pdb
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.dll
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.pdb
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CoreCompileInputs.cache
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
+C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
 C:\Users\basti\Desktop\merge ssql\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll.config
 C:\Users\basti\Desktop\merge ssql\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll
 C:\Users\basti\Desktop\merge ssql\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.pdb
@@ -73,13 +83,13 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll.config
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.pdb
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.dll
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.pdb
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CoreCompileInputs.cache
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
-C:\Users\Zico\Desktop\Project database\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll.config
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.pdb
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.dll
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.pdb
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
+C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
