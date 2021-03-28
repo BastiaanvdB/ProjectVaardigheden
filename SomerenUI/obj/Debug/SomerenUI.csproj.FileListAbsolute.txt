@@ -183,4 +183,3 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenUI\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenUI\bin\Debug\Interop.WMPLib.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenUI\bin\Debug\Magic.pdb
-C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.LoginUI.resources

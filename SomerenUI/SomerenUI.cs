@@ -23,30 +23,48 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
-
-            LoginUI loginUI = new LoginUI();
-
-            loginUI.Show();
-            // Hide Grey out menu
-
-
-
-
-
-
-            StartMagic magictest = new StartMagic();
-            magictest.Start();
-
-
-            // if password is correct
-            showPanel("Dashboard");
+            LoginMenu("Login");
         }
 
+        private void LoginMenu(string loginsetting)
+        {
+            switch (loginsetting)
+            {
+                case "Login":
+                    // hide other panels
+                    pnl_Students.Hide();
+                    pnl_Teachers.Hide();
+                    pnl_Rooms.Hide();
+                    pnl_Products.Hide();
+                    pnl_Order.Hide();
+                    Pnl_Sales.Hide();
+                    Pnl_Supervisors.Hide();
+                    pnl_Schedule.Hide();
+                    Pnl_Activity_List.Hide();
+                    pnl_Dashboard.Hide();
+                    img_Dashboard.Hide();
+                    menuStrip1.Enabled = false;
+                    // show login
+                    pnl_login.Show();
+
+
+                    break;
+                case "Register":
+
+                    break;
+                case "ResetPassword":
+
+                    break;
+                case "Bypass":
+                    // verwijdern als we klaar zijn
+
+
+                    break;
 
 
 
-
-
+            }
+        }
 
 
         private void showPanel(string panelName)

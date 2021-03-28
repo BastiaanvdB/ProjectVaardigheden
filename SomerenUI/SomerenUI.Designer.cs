@@ -173,6 +173,32 @@
             this.RemoveSupervisorbtn = new System.Windows.Forms.Button();
             this.RefreshListbtn = new System.Windows.Forms.Button();
             this.pnl_Schedule = new System.Windows.Forms.Panel();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.listViewDate2 = new System.Windows.Forms.ListView();
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewDate1 = new System.Windows.Forms.ListView();
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_swapSchedule = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Schedule = new System.Windows.Forms.Label();
+            this.listView_Schedule = new System.Windows.Forms.ListView();
+            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Pnl_Activity_List = new System.Windows.Forms.Panel();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -213,32 +239,7 @@
             this.activitylistDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.activitylistStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.activitylistEndDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewDate2 = new System.Windows.Forms.ListView();
-            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.listViewDate1 = new System.Windows.Forms.ListView();
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_swapSchedule = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Schedule = new System.Windows.Forms.Label();
-            this.listView_Schedule = new System.Windows.Forms.ListView();
-            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pnl_login = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -265,13 +266,13 @@
             this.groupBox6.SuspendLayout();
             this.Activitygroup.SuspendLayout();
             this.pnl_Schedule.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.Pnl_Activity_List.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -1548,6 +1549,220 @@
             this.pnl_Schedule.Size = new System.Drawing.Size(935, 438);
             this.pnl_Schedule.TabIndex = 19;
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.listViewDate2);
+            this.groupBox9.Controls.Add(this.listViewDate1);
+            this.groupBox9.Controls.Add(this.btn_swapSchedule);
+            this.groupBox9.Controls.Add(this.label5);
+            this.groupBox9.Controls.Add(this.label4);
+            this.groupBox9.Location = new System.Drawing.Point(478, 40);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(432, 381);
+            this.groupBox9.TabIndex = 9;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Date swapper";
+            // 
+            // listViewDate2
+            // 
+            this.listViewDate2.AllowDrop = true;
+            this.listViewDate2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader30,
+            this.columnHeader31,
+            this.columnHeader33,
+            this.columnHeader34,
+            this.columnHeader36,
+            this.columnHeader37});
+            this.listViewDate2.FullRowSelect = true;
+            this.listViewDate2.GridLines = true;
+            this.listViewDate2.HideSelection = false;
+            this.listViewDate2.Location = new System.Drawing.Point(6, 203);
+            this.listViewDate2.MultiSelect = false;
+            this.listViewDate2.Name = "listViewDate2";
+            this.listViewDate2.Size = new System.Drawing.Size(418, 106);
+            this.listViewDate2.TabIndex = 12;
+            this.listViewDate2.UseCompatibleStateImageBehavior = false;
+            this.listViewDate2.View = System.Windows.Forms.View.Details;
+            this.listViewDate2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listViewDate2_DragDrop);
+            this.listViewDate2.DragEnter += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragEnter);
+            this.listViewDate2.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragOver);
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "ID";
+            this.columnHeader30.Width = 30;
+            // 
+            // columnHeader31
+            // 
+            this.columnHeader31.Text = "Supervisors";
+            this.columnHeader31.Width = 115;
+            // 
+            // columnHeader33
+            // 
+            this.columnHeader33.Text = "Participants";
+            this.columnHeader33.Width = 45;
+            // 
+            // columnHeader34
+            // 
+            this.columnHeader34.Text = "Activity";
+            this.columnHeader34.Width = 100;
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Text = "Start date";
+            this.columnHeader36.Width = 110;
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "End Date";
+            this.columnHeader37.Width = 110;
+            // 
+            // listViewDate1
+            // 
+            this.listViewDate1.AllowDrop = true;
+            this.listViewDate1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26,
+            this.columnHeader27,
+            this.columnHeader28,
+            this.columnHeader29});
+            this.listViewDate1.FullRowSelect = true;
+            this.listViewDate1.GridLines = true;
+            this.listViewDate1.HideSelection = false;
+            this.listViewDate1.Location = new System.Drawing.Point(6, 52);
+            this.listViewDate1.MultiSelect = false;
+            this.listViewDate1.Name = "listViewDate1";
+            this.listViewDate1.Size = new System.Drawing.Size(418, 111);
+            this.listViewDate1.TabIndex = 7;
+            this.listViewDate1.UseCompatibleStateImageBehavior = false;
+            this.listViewDate1.View = System.Windows.Forms.View.Details;
+            this.listViewDate1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_Schedule_DragDrop);
+            this.listViewDate1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragEnter);
+            this.listViewDate1.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragOver);
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "ID";
+            this.columnHeader24.Width = 30;
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Supervisors";
+            this.columnHeader25.Width = 115;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Participants";
+            this.columnHeader26.Width = 45;
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "Activity";
+            this.columnHeader27.Width = 100;
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "Start date";
+            this.columnHeader28.Width = 110;
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "End Date";
+            this.columnHeader29.Width = 110;
+            // 
+            // btn_swapSchedule
+            // 
+            this.btn_swapSchedule.Location = new System.Drawing.Point(26, 333);
+            this.btn_swapSchedule.Name = "btn_swapSchedule";
+            this.btn_swapSchedule.Size = new System.Drawing.Size(96, 28);
+            this.btn_swapSchedule.TabIndex = 11;
+            this.btn_swapSchedule.Text = "Swap";
+            this.btn_swapSchedule.UseVisualStyleBackColor = true;
+            this.btn_swapSchedule.Click += new System.EventHandler(this.btn_swapSchedule_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Date 2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Date 1";
+            // 
+            // Schedule
+            // 
+            this.Schedule.AutoSize = true;
+            this.Schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Schedule.Location = new System.Drawing.Point(25, 17);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(84, 20);
+            this.Schedule.TabIndex = 8;
+            this.Schedule.Text = "Schedule";
+            // 
+            // listView_Schedule
+            // 
+            this.listView_Schedule.AllowDrop = true;
+            this.listView_Schedule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader32,
+            this.columnHeader20,
+            this.columnHeader35,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
+            this.listView_Schedule.FullRowSelect = true;
+            this.listView_Schedule.GridLines = true;
+            this.listView_Schedule.HideSelection = false;
+            this.listView_Schedule.Location = new System.Drawing.Point(26, 40);
+            this.listView_Schedule.MultiSelect = false;
+            this.listView_Schedule.Name = "listView_Schedule";
+            this.listView_Schedule.Size = new System.Drawing.Size(433, 381);
+            this.listView_Schedule.TabIndex = 7;
+            this.listView_Schedule.UseCompatibleStateImageBehavior = false;
+            this.listView_Schedule.View = System.Windows.Forms.View.Details;
+            this.listView_Schedule.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listview_Schedule_ItemDrag);
+            // 
+            // columnHeader32
+            // 
+            this.columnHeader32.Text = "ID";
+            this.columnHeader32.Width = 30;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Supervisors";
+            this.columnHeader20.Width = 115;
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "Participants";
+            this.columnHeader35.Width = 45;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Activity";
+            this.columnHeader21.Width = 100;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Start date";
+            this.columnHeader22.Width = 110;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "End Date";
+            this.columnHeader23.Width = 110;
+            // 
             // Pnl_Activity_List
             // 
             this.Pnl_Activity_List.Controls.Add(this.groupBox12);
@@ -1911,225 +2126,19 @@
             this.activitylistEndDate.Text = "End date";
             this.activitylistEndDate.Width = 110;
             // 
-            // listViewDate2
+            // pnl_login
             // 
-            this.listViewDate2.AllowDrop = true;
-            this.listViewDate2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader30,
-            this.columnHeader31,
-            this.columnHeader33,
-            this.columnHeader34,
-            this.columnHeader36,
-            this.columnHeader37});
-            this.listViewDate2.FullRowSelect = true;
-            this.listViewDate2.GridLines = true;
-            this.listViewDate2.HideSelection = false;
-            this.listViewDate2.Location = new System.Drawing.Point(6, 203);
-            this.listViewDate2.MultiSelect = false;
-            this.listViewDate2.Name = "listViewDate2";
-            this.listViewDate2.Size = new System.Drawing.Size(418, 106);
-            this.listViewDate2.TabIndex = 12;
-            this.listViewDate2.UseCompatibleStateImageBehavior = false;
-            this.listViewDate2.View = System.Windows.Forms.View.Details;
-            this.listViewDate2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listViewDate2_DragDrop);
-            this.listViewDate2.DragEnter += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragEnter);
-            this.listViewDate2.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragOver);
-            // 
-            // columnHeader30
-            // 
-            this.columnHeader30.Text = "ID";
-            this.columnHeader30.Width = 30;
-            // 
-            // columnHeader31
-            // 
-            this.columnHeader31.Text = "Supervisors";
-            this.columnHeader31.Width = 115;
-            // 
-            // columnHeader33
-            // 
-            this.columnHeader33.Text = "Participants";
-            this.columnHeader33.Width = 45;
-            // 
-            // columnHeader34
-            // 
-            this.columnHeader34.Text = "Activity";
-            this.columnHeader34.Width = 100;
-            // 
-            // columnHeader36
-            // 
-            this.columnHeader36.Text = "Start date";
-            this.columnHeader36.Width = 110;
-            // 
-            // columnHeader37
-            // 
-            this.columnHeader37.Text = "End Date";
-            this.columnHeader37.Width = 110;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Date 2";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.listViewDate2);
-            this.groupBox9.Controls.Add(this.listViewDate1);
-            this.groupBox9.Controls.Add(this.btn_swapSchedule);
-            this.groupBox9.Controls.Add(this.label5);
-            this.groupBox9.Controls.Add(this.label4);
-            this.groupBox9.Location = new System.Drawing.Point(478, 40);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(432, 381);
-            this.groupBox9.TabIndex = 9;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Date swapper";
-            // 
-            // listViewDate1
-            // 
-            this.listViewDate1.AllowDrop = true;
-            this.listViewDate1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader24,
-            this.columnHeader25,
-            this.columnHeader26,
-            this.columnHeader27,
-            this.columnHeader28,
-            this.columnHeader29});
-            this.listViewDate1.FullRowSelect = true;
-            this.listViewDate1.GridLines = true;
-            this.listViewDate1.HideSelection = false;
-            this.listViewDate1.Location = new System.Drawing.Point(6, 52);
-            this.listViewDate1.MultiSelect = false;
-            this.listViewDate1.Name = "listViewDate1";
-            this.listViewDate1.Size = new System.Drawing.Size(418, 111);
-            this.listViewDate1.TabIndex = 7;
-            this.listViewDate1.UseCompatibleStateImageBehavior = false;
-            this.listViewDate1.View = System.Windows.Forms.View.Details;
-            this.listViewDate1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_Schedule_DragDrop);
-            this.listViewDate1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragEnter);
-            this.listViewDate1.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewDate1_DragOver);
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "ID";
-            this.columnHeader24.Width = 30;
-            // 
-            // columnHeader25
-            // 
-            this.columnHeader25.Text = "Supervisors";
-            this.columnHeader25.Width = 115;
-            // 
-            // columnHeader26
-            // 
-            this.columnHeader26.Text = "Participants";
-            this.columnHeader26.Width = 45;
-            // 
-            // columnHeader27
-            // 
-            this.columnHeader27.Text = "Activity";
-            this.columnHeader27.Width = 100;
-            // 
-            // columnHeader28
-            // 
-            this.columnHeader28.Text = "Start date";
-            this.columnHeader28.Width = 110;
-            // 
-            // columnHeader29
-            // 
-            this.columnHeader29.Text = "End Date";
-            this.columnHeader29.Width = 110;
-            // 
-            // btn_swapSchedule
-            // 
-            this.btn_swapSchedule.Location = new System.Drawing.Point(26, 333);
-            this.btn_swapSchedule.Name = "btn_swapSchedule";
-            this.btn_swapSchedule.Size = new System.Drawing.Size(96, 28);
-            this.btn_swapSchedule.TabIndex = 11;
-            this.btn_swapSchedule.Text = "Swap";
-            this.btn_swapSchedule.UseVisualStyleBackColor = true;
-            this.btn_swapSchedule.Click += new System.EventHandler(this.btn_swapSchedule_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Date 1";
-            // 
-            // Schedule
-            // 
-            this.Schedule.AutoSize = true;
-            this.Schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Schedule.Location = new System.Drawing.Point(25, 17);
-            this.Schedule.Name = "Schedule";
-            this.Schedule.Size = new System.Drawing.Size(84, 20);
-            this.Schedule.TabIndex = 8;
-            this.Schedule.Text = "Schedule";
-            // 
-            // listView_Schedule
-            // 
-            this.listView_Schedule.AllowDrop = true;
-            this.listView_Schedule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader32,
-            this.columnHeader20,
-            this.columnHeader35,
-            this.columnHeader21,
-            this.columnHeader22,
-            this.columnHeader23});
-            this.listView_Schedule.FullRowSelect = true;
-            this.listView_Schedule.GridLines = true;
-            this.listView_Schedule.HideSelection = false;
-            this.listView_Schedule.Location = new System.Drawing.Point(26, 40);
-            this.listView_Schedule.MultiSelect = false;
-            this.listView_Schedule.Name = "listView_Schedule";
-            this.listView_Schedule.Size = new System.Drawing.Size(433, 381);
-            this.listView_Schedule.TabIndex = 7;
-            this.listView_Schedule.UseCompatibleStateImageBehavior = false;
-            this.listView_Schedule.View = System.Windows.Forms.View.Details;
-            this.listView_Schedule.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listview_Schedule_ItemDrag);
-            // 
-            // columnHeader32
-            // 
-            this.columnHeader32.Text = "ID";
-            this.columnHeader32.Width = 30;
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Text = "Supervisors";
-            this.columnHeader20.Width = 115;
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Text = "Participants";
-            this.columnHeader35.Width = 45;
-            // 
-            // columnHeader21
-            // 
-            this.columnHeader21.Text = "Activity";
-            this.columnHeader21.Width = 100;
-            // 
-            // columnHeader22
-            // 
-            this.columnHeader22.Text = "Start date";
-            this.columnHeader22.Width = 110;
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "End Date";
-            this.columnHeader23.Width = 110;
+            this.pnl_login.Location = new System.Drawing.Point(0, 21);
+            this.pnl_login.Name = "pnl_login";
+            this.pnl_login.Size = new System.Drawing.Size(962, 483);
+            this.pnl_login.TabIndex = 10;
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_login);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnl_Schedule);
             this.Controls.Add(this.Pnl_Supervisors);
@@ -2188,6 +2197,8 @@
             this.Activitygroup.ResumeLayout(false);
             this.pnl_Schedule.ResumeLayout(false);
             this.pnl_Schedule.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.Pnl_Activity_List.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
@@ -2198,8 +2209,6 @@
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.groupBox10.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2417,6 +2426,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.Panel pnl_login;
     }
 }
 
