@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Magic;
 
 namespace SomerenUI
 {
@@ -19,11 +19,15 @@ namespace SomerenUI
         public SomerenUI()
         {
             InitializeComponent();
+            
+
         }
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
             showPanel("Dashboard");
+            StartMagic magictest = new StartMagic();
+            magictest.Start();
         }
 
         private void showPanel(string panelName)
