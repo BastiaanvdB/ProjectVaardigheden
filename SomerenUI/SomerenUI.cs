@@ -23,10 +23,31 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
-            showPanel("Dashboard");
+
+            LoginUI loginUI = new LoginUI();
+
+            loginUI.Show();
+            // Hide Grey out menu
+
+
+
+
+
+
             StartMagic magictest = new StartMagic();
             magictest.Start();
+
+
+            // if password is correct
+            showPanel("Dashboard");
         }
+
+
+
+
+
+
+
 
         private void showPanel(string panelName)
         {

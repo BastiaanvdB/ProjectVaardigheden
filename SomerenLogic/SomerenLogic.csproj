@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ActivitySupervisor_Service.cs" />
     <Compile Include="Activity_Service.cs" />
+    <Compile Include="User_Service.cs" />
     <Compile Include="Order_Service.cs" />
     <Compile Include="Rooms_Service.cs" />
     <Compile Include="Product_Service.cs" />
