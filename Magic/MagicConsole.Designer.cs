@@ -42,11 +42,12 @@ namespace Magic
             this.magiclist.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.magiclist.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.magiclist.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.magiclist.Location = new System.Drawing.Point(-2, -18);
+            this.magiclist.HideSelection = false;
+            this.magiclist.Location = new System.Drawing.Point(-2, -24);
             this.magiclist.MultiSelect = false;
             this.magiclist.Name = "magiclist";
             this.magiclist.Scrollable = false;
-            this.magiclist.Size = new System.Drawing.Size(860, 360);
+            this.magiclist.Size = new System.Drawing.Size(860, 366);
             this.magiclist.TabIndex = 0;
             this.magiclist.UseCompatibleStateImageBehavior = false;
             this.magiclist.View = System.Windows.Forms.View.Details;

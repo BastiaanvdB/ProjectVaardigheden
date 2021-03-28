@@ -12,3 +12,17 @@ C:\Users\basti\Desktop\magic\ProjectVaardigheden\Magic\obj\Debug\Magic.csproj.Co
 C:\Users\basti\Desktop\magic\ProjectVaardigheden\Magic\obj\Debug\Magic.dll
 C:\Users\basti\Desktop\magic\ProjectVaardigheden\Magic\obj\Debug\Magic.pdb
 C:\Users\basti\Desktop\magic\ProjectVaardigheden\Magic\obj\Debug\Magic.MagicConsole.resources
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\bin\Debug\Magic.dll
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\bin\Debug\Magic.pdb
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\bin\Debug\Interop.WMPLib.dll
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.csprojAssemblyReference.cache
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Interop.WMPLib.dll
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.csproj.ResolveComReference.cache
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.Magic.resources
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.MagicConsole.resources
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.csproj.GenerateResource.cache
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.dll
+C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\Magic\obj\Debug\Magic.pdb

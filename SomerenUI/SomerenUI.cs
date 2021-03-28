@@ -19,8 +19,6 @@ namespace SomerenUI
         public SomerenUI()
         {
             InitializeComponent();
-            
-
         }
 
         private void SomerenUI_Load(object sender, EventArgs e)

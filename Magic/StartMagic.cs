@@ -20,8 +20,6 @@ namespace Magic
             magic.Show();
         }
 
-
-
         private void StartConsole()
         {
             MagicConsole magicConsole = new MagicConsole();
