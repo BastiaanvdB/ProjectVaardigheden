@@ -240,13 +240,20 @@
             this.activitylistStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.activitylistEndDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_login = new System.Windows.Forms.Panel();
+            this.LoginGroupBox = new System.Windows.Forms.GroupBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.LoginLabel = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.LoginGroupBox = new System.Windows.Forms.GroupBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.RegisterGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResetGroupBox = new System.Windows.Forms.GroupBox();
+            this.SignInBTN = new System.Windows.Forms.Button();
+            this.RegisterBTN = new System.Windows.Forms.Button();
+            this.ResetBTN = new System.Windows.Forms.Button();
+            this.labelRegistration = new System.Windows.Forms.Label();
+            this.labelResetPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -282,6 +289,8 @@
             this.groupBox10.SuspendLayout();
             this.pnl_login.SuspendLayout();
             this.LoginGroupBox.SuspendLayout();
+            this.RegisterGroupBox.SuspendLayout();
+            this.ResetGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -2137,11 +2146,39 @@
             // 
             // pnl_login
             // 
+            this.pnl_login.Controls.Add(this.ResetBTN);
+            this.pnl_login.Controls.Add(this.ResetGroupBox);
+            this.pnl_login.Controls.Add(this.RegisterBTN);
+            this.pnl_login.Controls.Add(this.SignInBTN);
+            this.pnl_login.Controls.Add(this.RegisterGroupBox);
             this.pnl_login.Controls.Add(this.LoginGroupBox);
             this.pnl_login.Location = new System.Drawing.Point(0, 21);
             this.pnl_login.Name = "pnl_login";
             this.pnl_login.Size = new System.Drawing.Size(962, 483);
             this.pnl_login.TabIndex = 10;
+            // 
+            // LoginGroupBox
+            // 
+            this.LoginGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LoginGroupBox.Controls.Add(this.textBoxUsername);
+            this.LoginGroupBox.Controls.Add(this.LoginBtn);
+            this.LoginGroupBox.Controls.Add(this.LoginLabel);
+            this.LoginGroupBox.Controls.Add(this.label18);
+            this.LoginGroupBox.Controls.Add(this.label19);
+            this.LoginGroupBox.Controls.Add(this.textBoxPassword);
+            this.LoginGroupBox.Location = new System.Drawing.Point(368, 98);
+            this.LoginGroupBox.Name = "LoginGroupBox";
+            this.LoginGroupBox.Size = new System.Drawing.Size(200, 282);
+            this.LoginGroupBox.TabIndex = 6;
+            this.LoginGroupBox.TabStop = false;
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.Location = new System.Drawing.Point(22, 89);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(159, 21);
+            this.textBoxUsername.TabIndex = 2;
             // 
             // LoginBtn
             // 
@@ -2163,22 +2200,6 @@
             this.LoginLabel.TabIndex = 1;
             this.LoginLabel.Text = "Login";
             // 
-            // textBoxUsername
-            // 
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(22, 89);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(159, 21);
-            this.textBoxUsername.TabIndex = 2;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(22, 142);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(159, 21);
-            this.textBoxPassword.TabIndex = 3;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -2197,20 +2218,83 @@
             this.label19.TabIndex = 5;
             this.label19.Text = "Password:";
             // 
-            // LoginGroupBox
+            // textBoxPassword
             // 
-            this.LoginGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LoginGroupBox.Controls.Add(this.textBoxUsername);
-            this.LoginGroupBox.Controls.Add(this.LoginBtn);
-            this.LoginGroupBox.Controls.Add(this.LoginLabel);
-            this.LoginGroupBox.Controls.Add(this.label18);
-            this.LoginGroupBox.Controls.Add(this.label19);
-            this.LoginGroupBox.Controls.Add(this.textBoxPassword);
-            this.LoginGroupBox.Location = new System.Drawing.Point(368, 98);
-            this.LoginGroupBox.Name = "LoginGroupBox";
-            this.LoginGroupBox.Size = new System.Drawing.Size(200, 282);
-            this.LoginGroupBox.TabIndex = 6;
-            this.LoginGroupBox.TabStop = false;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(22, 142);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(159, 21);
+            this.textBoxPassword.TabIndex = 3;
+            // 
+            // RegisterGroupBox
+            // 
+            this.RegisterGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.RegisterGroupBox.Controls.Add(this.labelRegistration);
+            this.RegisterGroupBox.Location = new System.Drawing.Point(44, 95);
+            this.RegisterGroupBox.Name = "RegisterGroupBox";
+            this.RegisterGroupBox.Size = new System.Drawing.Size(249, 296);
+            this.RegisterGroupBox.TabIndex = 7;
+            this.RegisterGroupBox.TabStop = false;
+            // 
+            // ResetGroupBox
+            // 
+            this.ResetGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ResetGroupBox.Controls.Add(this.labelResetPassword);
+            this.ResetGroupBox.Location = new System.Drawing.Point(647, 91);
+            this.ResetGroupBox.Name = "ResetGroupBox";
+            this.ResetGroupBox.Size = new System.Drawing.Size(249, 296);
+            this.ResetGroupBox.TabIndex = 8;
+            this.ResetGroupBox.TabStop = false;
+            // 
+            // SignInBTN
+            // 
+            this.SignInBTN.Location = new System.Drawing.Point(426, 47);
+            this.SignInBTN.Name = "SignInBTN";
+            this.SignInBTN.Size = new System.Drawing.Size(98, 23);
+            this.SignInBTN.TabIndex = 9;
+            this.SignInBTN.Text = "Sign in";
+            this.SignInBTN.UseVisualStyleBackColor = true;
+            this.SignInBTN.Click += new System.EventHandler(this.SignInBTN_Click);
+            // 
+            // RegisterBTN
+            // 
+            this.RegisterBTN.Location = new System.Drawing.Point(537, 48);
+            this.RegisterBTN.Name = "RegisterBTN";
+            this.RegisterBTN.Size = new System.Drawing.Size(98, 23);
+            this.RegisterBTN.TabIndex = 10;
+            this.RegisterBTN.Text = "Register";
+            this.RegisterBTN.UseVisualStyleBackColor = true;
+            this.RegisterBTN.Click += new System.EventHandler(this.RegisterBTN_Click);
+            // 
+            // ResetBTN
+            // 
+            this.ResetBTN.Location = new System.Drawing.Point(294, 45);
+            this.ResetBTN.Name = "ResetBTN";
+            this.ResetBTN.Size = new System.Drawing.Size(98, 23);
+            this.ResetBTN.TabIndex = 11;
+            this.ResetBTN.Text = "Reset password";
+            this.ResetBTN.UseVisualStyleBackColor = true;
+            this.ResetBTN.Click += new System.EventHandler(this.ResetBTN_Click);
+            // 
+            // labelRegistration
+            // 
+            this.labelRegistration.AutoSize = true;
+            this.labelRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegistration.Location = new System.Drawing.Point(37, 16);
+            this.labelRegistration.Name = "labelRegistration";
+            this.labelRegistration.Size = new System.Drawing.Size(183, 33);
+            this.labelRegistration.TabIndex = 0;
+            this.labelRegistration.Text = "Registration";
+            // 
+            // labelResetPassword
+            // 
+            this.labelResetPassword.AutoSize = true;
+            this.labelResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResetPassword.Location = new System.Drawing.Point(1, 13);
+            this.labelResetPassword.Name = "labelResetPassword";
+            this.labelResetPassword.Size = new System.Drawing.Size(224, 31);
+            this.labelResetPassword.TabIndex = 0;
+            this.labelResetPassword.Text = "Reset password";
             // 
             // SomerenUI
             // 
@@ -2291,6 +2375,10 @@
             this.pnl_login.ResumeLayout(false);
             this.LoginGroupBox.ResumeLayout(false);
             this.LoginGroupBox.PerformLayout();
+            this.RegisterGroupBox.ResumeLayout(false);
+            this.RegisterGroupBox.PerformLayout();
+            this.ResetGroupBox.ResumeLayout(false);
+            this.ResetGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2516,6 +2604,13 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.GroupBox RegisterGroupBox;
+        private System.Windows.Forms.GroupBox ResetGroupBox;
+        private System.Windows.Forms.Button ResetBTN;
+        private System.Windows.Forms.Button RegisterBTN;
+        private System.Windows.Forms.Button SignInBTN;
+        private System.Windows.Forms.Label labelRegistration;
+        private System.Windows.Forms.Label labelResetPassword;
     }
 }
 

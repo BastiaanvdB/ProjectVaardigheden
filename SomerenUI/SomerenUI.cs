@@ -23,7 +23,7 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
-            // hide other panels
+            // hide other panels and boxes
             pnl_Students.Hide();
             pnl_Teachers.Hide();
             pnl_Rooms.Hide();
@@ -36,6 +36,8 @@ namespace SomerenUI
             pnl_Dashboard.Hide();
             img_Dashboard.Hide();
             menuStrip1.Enabled = false;
+            RegisterGroupBox.Hide();
+            ResetGroupBox.Hide();
 
             // login screen
             pnl_login.Show();
@@ -48,26 +50,29 @@ namespace SomerenUI
             switch (loginsetting)
             {
                 case "Login":
-                    // hide other panels
-                    pnl_Students.Hide();
-                    pnl_Teachers.Hide();
-                    pnl_Rooms.Hide();
-                    pnl_Products.Hide();
-                    pnl_Order.Hide();
-                    Pnl_Sales.Hide();
-                    Pnl_Supervisors.Hide();
-                    pnl_Schedule.Hide();
-                    Pnl_Activity_List.Hide();
-                    pnl_Dashboard.Hide();
-                    img_Dashboard.Hide();
+                    // hide other boxes
+                    RegisterGroupBox.Hide();
+                    ResetGroupBox.Hide();
+                    // show box
+                    LoginGroupBox.Show();
 
-                    
-
+                  
                     break;
                 case "Register":
+                    // hide other boxes
+                    ResetGroupBox.Hide();
+                    LoginGroupBox.Hide();
+                    // show box
+                    RegisterGroupBox.Show();
 
                     break;
                 case "ResetPassword":
+                    // hide other boxes
+                    LoginGroupBox.Hide();
+                    RegisterGroupBox.Hide();
+                    // show box
+                    ResetGroupBox.Show();
+
 
                     break;
                 case "Wrong":
@@ -87,11 +92,36 @@ namespace SomerenUI
 
 
 
-
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            LoginMenu("Wrong");
+            //LoginMenu("Login");
         }
+
+        private void SignInBTN_Click(object sender, EventArgs e)
+        {
+            LoginMenu("Login");
+        }
+
+        private void ResetBTN_Click(object sender, EventArgs e)
+        {
+            LoginMenu("ResetPassword");
+        }
+
+        private void RegisterBTN_Click(object sender, EventArgs e)
+        {
+            LoginMenu("Register");
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         private void showPanel(string panelName)
         {
