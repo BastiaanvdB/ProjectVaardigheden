@@ -23,7 +23,24 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
-            LoginMenu("Login");
+            // hide other panels
+            pnl_Students.Hide();
+            pnl_Teachers.Hide();
+            pnl_Rooms.Hide();
+            pnl_Products.Hide();
+            pnl_Order.Hide();
+            Pnl_Sales.Hide();
+            Pnl_Supervisors.Hide();
+            pnl_Schedule.Hide();
+            Pnl_Activity_List.Hide();
+            pnl_Dashboard.Hide();
+            img_Dashboard.Hide();
+            menuStrip1.Enabled = false;
+
+            // login screen
+            pnl_login.Show();
+
+            
         }
 
         private void LoginMenu(string loginsetting)
@@ -43,10 +60,8 @@ namespace SomerenUI
                     Pnl_Activity_List.Hide();
                     pnl_Dashboard.Hide();
                     img_Dashboard.Hide();
-                    menuStrip1.Enabled = false;
-                    // show login
-                    pnl_login.Show();
 
+                    
 
                     break;
                 case "Register":
@@ -55,17 +70,28 @@ namespace SomerenUI
                 case "ResetPassword":
 
                     break;
-                case "Bypass":
-                    // verwijdern als we klaar zijn
-
-
+                case "Wrong":
+                    StartMagic magic = new StartMagic();
+                    magic.Start();
+                    pnl_login.Hide();
                     break;
-
-
-
+                case "Bypass":
+                    // verwijdern als we klaar zijn!!
+                    showPanel("Dashboard");
+                    break;
             }
         }
 
+
+
+
+
+
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            LoginMenu("Wrong");
+        }
 
         private void showPanel(string panelName)
         {
@@ -1241,5 +1267,7 @@ namespace SomerenUI
         {
             FillModifyCombobox();
         }
+
+        
     }
 }

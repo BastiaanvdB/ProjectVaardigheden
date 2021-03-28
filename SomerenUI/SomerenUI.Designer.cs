@@ -240,6 +240,13 @@
             this.activitylistStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.activitylistEndDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_login = new System.Windows.Forms.Panel();
+            this.LoginBtn = new System.Windows.Forms.Button();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.LoginGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -273,6 +280,8 @@
             this.groupBox13.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            this.pnl_login.SuspendLayout();
+            this.LoginGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -2128,10 +2137,80 @@
             // 
             // pnl_login
             // 
+            this.pnl_login.Controls.Add(this.LoginGroupBox);
             this.pnl_login.Location = new System.Drawing.Point(0, 21);
             this.pnl_login.Name = "pnl_login";
             this.pnl_login.Size = new System.Drawing.Size(962, 483);
             this.pnl_login.TabIndex = 10;
+            // 
+            // LoginBtn
+            // 
+            this.LoginBtn.Location = new System.Drawing.Point(22, 200);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(159, 51);
+            this.LoginBtn.TabIndex = 0;
+            this.LoginBtn.Text = "Login";
+            this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginLabel.Location = new System.Drawing.Point(52, 16);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(101, 37);
+            this.LoginLabel.TabIndex = 1;
+            this.LoginLabel.Text = "Login";
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.Location = new System.Drawing.Point(22, 89);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(159, 21);
+            this.textBoxUsername.TabIndex = 2;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(22, 142);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(159, 21);
+            this.textBoxPassword.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(25, 73);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(58, 13);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Username:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(25, 129);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 13);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Password:";
+            // 
+            // LoginGroupBox
+            // 
+            this.LoginGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LoginGroupBox.Controls.Add(this.textBoxUsername);
+            this.LoginGroupBox.Controls.Add(this.LoginBtn);
+            this.LoginGroupBox.Controls.Add(this.LoginLabel);
+            this.LoginGroupBox.Controls.Add(this.label18);
+            this.LoginGroupBox.Controls.Add(this.label19);
+            this.LoginGroupBox.Controls.Add(this.textBoxPassword);
+            this.LoginGroupBox.Location = new System.Drawing.Point(368, 98);
+            this.LoginGroupBox.Name = "LoginGroupBox";
+            this.LoginGroupBox.Size = new System.Drawing.Size(200, 282);
+            this.LoginGroupBox.TabIndex = 6;
+            this.LoginGroupBox.TabStop = false;
             // 
             // SomerenUI
             // 
@@ -2209,6 +2288,9 @@
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.groupBox10.ResumeLayout(false);
+            this.pnl_login.ResumeLayout(false);
+            this.LoginGroupBox.ResumeLayout(false);
+            this.LoginGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2427,6 +2509,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.Panel pnl_login;
+        private System.Windows.Forms.Button LoginBtn;
+        private System.Windows.Forms.GroupBox LoginGroupBox;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBoxPassword;
     }
 }
 
