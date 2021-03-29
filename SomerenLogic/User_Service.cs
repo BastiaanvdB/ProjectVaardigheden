@@ -10,11 +10,11 @@ namespace SomerenLogic
 {
     public class User_Service
     {
-        Order_DAO user_db = new Order_DAO();
+        User_DAO user_db = new User_DAO();
 
-        public bool UserLogin(User user)
+        public bool UserLoginAuth(string Username, string Password)
         {
-            return user_db
+            return user_db.Db_Login_Check_User(Username, Password);
         }
 
     }

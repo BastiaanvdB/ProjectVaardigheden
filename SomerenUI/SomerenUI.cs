@@ -55,8 +55,15 @@ namespace SomerenUI
                     ResetGroupBox.Hide();
                     // show box
                     LoginGroupBox.Show();
-
-                  
+                    
+                    break;
+                case "LoginUser":
+                    RegisterGroupBox.Hide();
+                    ResetGroupBox.Hide();
+                    LoginGroupBox.Hide();
+                    menuStrip1.Enabled = true;
+                    pnl_login.Hide();
+                    showPanel("Dashboard");
                     break;
                 case "Register":
                     // hide other boxes
@@ -72,8 +79,6 @@ namespace SomerenUI
                     RegisterGroupBox.Hide();
                     // show box
                     ResetGroupBox.Show();
-
-
                     break;
                 case "Wrong":
                     StartMagic magic = new StartMagic();
@@ -87,14 +92,42 @@ namespace SomerenUI
             }
         }
 
+        private void LoginUser()
+        {
+            User_Service user_Service = new User_Service();
+            bool logincheck = false;
+            if ((textBoxUsername.Text.Length > 0) && (textBoxPassword.Text.Length > 0))
+            {
+                logincheck = user_Service.UserLoginAuth(textBoxUsername.Text, textBoxPassword.Text);
 
+                if (logincheck == true)
+                {
+                    LoginMenu("LoginUser");
+                }
+                else
+                {
+                    //MessageBox.Show("Username or password is not correct!", "Someren Login Issue",
+                    //MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //textBoxUsername.Clear();
+                    //textBoxPassword.Clear();
 
-
-
+                    // little joke
+                    StartMagic magic = new StartMagic();
+                    magic.Start();
+                    textBoxUsername.Clear();
+                    textBoxPassword.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in a Username or Password", "Someren Login Issue",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            //LoginMenu("Login");
+            LoginUser();
         }
 
         private void SignInBTN_Click(object sender, EventArgs e)
@@ -111,15 +144,6 @@ namespace SomerenUI
         {
             LoginMenu("Register");
         }
-
-
-
-
-
-
-
-
-
 
 
 
