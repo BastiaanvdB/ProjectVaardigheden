@@ -31,6 +31,11 @@ namespace SomerenLogic
         {
             return user_db.DB_Register_User(user);
         }
+        
+        public bool CheckIfExist(string Username)
+        {
+            return user_db.DB_Check_Already_Registrated(Username);
+        }
 
     }
 }

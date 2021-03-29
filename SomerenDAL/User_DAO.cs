@@ -35,6 +35,18 @@ namespace SomerenDAL
             return ReadLicenseAuth(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public bool DB_Check_Already_Registrated(String Username)
+        {
+            string query = "SELECT COUNT(user_username) AS 'check_user' FROM Users WHERE user_username = @Username";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = Username}
+            };
+
+            return AlreadyRegistrated(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+
         public bool DB_Register_User(User user)
         {
             string query = $"INSERT INTO Users (user_firstname, user_lastname, user_username, user_password, user_admin_status, license_key, user_secrect_question, user_secrect_answer) VALUES (@Firstname, @Lastname, @Username, @Password, @AdminStatus, @License, @SecrectQuestion, @SecrectAnswer)";
@@ -44,13 +56,13 @@ namespace SomerenDAL
                 new SqlParameter("@Lastname", SqlDbType.VarChar, 50) { Value = user.Lastname},
                 new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = user.Username},
                 new SqlParameter("@Password", SqlDbType.NVarChar, 50) { Value = user.Password },
-                new SqlParameter("@AdminStatus", SqlDbType.Bit) { Value = 0 },
+                new SqlParameter("@AdminStatus", SqlDbType.Bit) { Value = user.AdminStatus },
                 new SqlParameter("@License", SqlDbType.NVarChar, 50) { Value = user.License},
                 new SqlParameter("@SecrectQuestion", SqlDbType.NVarChar, 50) { Value = user.SecrectQuestion},
                 new SqlParameter("@SecrectAnswer", SqlDbType.NVarChar, 50) { Value = user.SecretAnswer}
             };
             ExecuteEditQuery(query, sqlParameters);
-            return Db_Login_Check_User(user.Firstname, user.Password);
+            return Db_Login_Check_User(user.Username, user.Password);
         }
 
         public User DB_Get_User(string Username, string Password)
@@ -64,6 +76,17 @@ namespace SomerenDAL
 
 
             return ReadUser(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private bool AlreadyRegistrated(DataTable dataTable)
+        {
+            int username = 1;
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                username = (int)dr["check_user"];
+
+            }
+            return username != 0;
         }
 
         private User ReadUser(DataTable dataTable)
@@ -100,7 +123,7 @@ namespace SomerenDAL
 
         private bool ReadUserAuth(DataTable dataTable)
         {
-            int auth = 0;
+            int auth = 1;
             foreach (DataRow dr in dataTable.Rows)
             {
                 auth = (int)dr["user_auth"];

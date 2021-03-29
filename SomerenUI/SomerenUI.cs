@@ -69,9 +69,10 @@ namespace SomerenUI
                     // hide other boxes
                     ResetGroupBox.Hide();
                     LoginGroupBox.Hide();
+                    ResetRegistration();
                     // show box
+                    RegSerialGroupbox.Show();
                     RegisterGroupBox.Show();
-
                     break;
                 case "ResetPassword":
                     // hide other boxes
@@ -92,10 +93,102 @@ namespace SomerenUI
             }
         }
 
+        private void CheckSerial()
+        {
+            User_Service user_Service = new User_Service();
+            
+            if(RegLicenseTextbox.Text.Length > 0)
+            {
+                bool LicenseAuth = user_Service.LicenseCheck(RegLicenseTextbox.Text);
+                if (LicenseAuth == true)
+                {
+                    RegSerialGroupbox.Hide();
+                    MessageBox.Show("Activation was succesful, proceed with registration", "Someren Activation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid license", "Someren Activation Issue",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a license", "Someren Activation Issue",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        private void ResetRegistration()
+        {
+            RegFirstnameTextbox.Clear();
+            RegLastnameTextbox.Clear();
+            RegUsernameTextbox.Clear();
+            RegPasswordTextbox.Clear();
+            RegLicenseTextbox.Clear();
+            RegQuestionTextbox.Clear();
+            RegAnswerTextbox.Clear();
+        }
+
+        private void RegisterUser()
+        {
+            User_Service user_Service = new User_Service();
+
+            if((RegFirstnameTextbox.Text.Length > 0) && (RegLastnameTextbox.Text.Length > 0) && (RegUsernameTextbox.Text.Length > 0) && (RegPasswordTextbox.Text.Length > 0) && (RegQuestionTextbox.Text.Length > 0) && (RegAnswerTextbox.Text.Length > 0))
+            {
+                bool UserExist = user_Service.CheckIfExist(RegUsernameTextbox.Text);
+                if (UserExist == false)
+                {
+                    User user = new User
+                    {
+                        Firstname = RegFirstnameTextbox.Text,
+                        Lastname = RegLastnameTextbox.Text,
+                        Username = RegUsernameTextbox.Text,
+                        Password = RegPasswordTextbox.Text,
+                        License = RegLicenseTextbox.Text,
+                        SecrectQuestion = RegQuestionTextbox.Text,
+                        SecretAnswer = RegAnswerTextbox.Text
+                    };
+
+                    bool RegistrationConfirm = user_Service.UserRegistration(user);
+
+                    if (RegistrationConfirm == false)
+                    {
+                        textBoxUsername.Text = RegUsernameTextbox.Text;
+                        RegisterGroupBox.Hide();
+                        LoginMenu("Login");
+                        MessageBox.Show("Registration was succesful, proceed with login!", "Someren Registration",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong, please try again", "Someren Registration Issue",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    RegUsernameTextbox.Clear();
+                    MessageBox.Show("There is already someone registrated by that username, use a other username and try again", "Someren Registration Issue",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all information", "Someren Registration Issue",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+        }
+
         private void LoginUser()
         {
             User_Service user_Service = new User_Service();
             bool logincheck = false;
+
             if ((textBoxUsername.Text.Length > 0) && (textBoxPassword.Text.Length > 0))
             {
                 logincheck = user_Service.UserLoginAuth(textBoxUsername.Text, textBoxPassword.Text);
@@ -106,12 +199,7 @@ namespace SomerenUI
                 }
                 else
                 {
-                    //MessageBox.Show("Username or password is not correct!", "Someren Login Issue",
-                    //MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //textBoxUsername.Clear();
-                    //textBoxPassword.Clear();
-
-                    // little joke
+                    // 'Life finds a way' - Ian Malcolm 
                     StartMagic magic = new StartMagic();
                     magic.Start();
                     textBoxUsername.Clear();
@@ -123,6 +211,16 @@ namespace SomerenUI
                 MessageBox.Show("Please fill in a Username or Password", "Someren Login Issue",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void RegRegisterBTN_Click(object sender, EventArgs e)
+        {
+            RegisterUser();
+        }
+
+        private void RegActivateBTN_Click(object sender, EventArgs e)
+        {
+            CheckSerial();
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)

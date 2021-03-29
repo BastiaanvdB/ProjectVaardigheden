@@ -243,10 +243,17 @@
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.ResetBTN = new System.Windows.Forms.Button();
             this.RegisterBTN = new System.Windows.Forms.Button();
+            this.SignInBTN = new System.Windows.Forms.Button();
             this.ResetGroupBox = new System.Windows.Forms.GroupBox();
             this.labelResetPassword = new System.Windows.Forms.Label();
-            this.SignInBTN = new System.Windows.Forms.Button();
             this.RegisterGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.RegQuestionTextbox = new System.Windows.Forms.TextBox();
+            this.RegAnswerTextbox = new System.Windows.Forms.TextBox();
+            this.RegPasswordTextbox = new System.Windows.Forms.TextBox();
+            this.RegUsernameTextbox = new System.Windows.Forms.TextBox();
+            this.RegLastnameTextbox = new System.Windows.Forms.TextBox();
+            this.RegFirstnameTextbox = new System.Windows.Forms.TextBox();
             this.labelRegistration = new System.Windows.Forms.Label();
             this.LoginGroupBox = new System.Windows.Forms.GroupBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
@@ -256,6 +263,18 @@
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.RegRegisterBTN = new System.Windows.Forms.Button();
+            this.RegSerialGroupbox = new System.Windows.Forms.GroupBox();
+            this.RegLicenseTextbox = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.RegActivateBTN = new System.Windows.Forms.Button();
+            this.LicenseLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -293,7 +312,9 @@
             this.groupBox16.SuspendLayout();
             this.ResetGroupBox.SuspendLayout();
             this.RegisterGroupBox.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.LoginGroupBox.SuspendLayout();
+            this.RegSerialGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -2190,6 +2211,16 @@
             this.RegisterBTN.UseVisualStyleBackColor = true;
             this.RegisterBTN.Click += new System.EventHandler(this.RegisterBTN_Click);
             // 
+            // SignInBTN
+            // 
+            this.SignInBTN.Location = new System.Drawing.Point(257, 26);
+            this.SignInBTN.Name = "SignInBTN";
+            this.SignInBTN.Size = new System.Drawing.Size(98, 23);
+            this.SignInBTN.TabIndex = 9;
+            this.SignInBTN.Text = "Sign in";
+            this.SignInBTN.UseVisualStyleBackColor = true;
+            this.SignInBTN.Click += new System.EventHandler(this.SignInBTN_Click);
+            // 
             // ResetGroupBox
             // 
             this.ResetGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -2210,25 +2241,81 @@
             this.labelResetPassword.TabIndex = 0;
             this.labelResetPassword.Text = "Reset password";
             // 
-            // SignInBTN
-            // 
-            this.SignInBTN.Location = new System.Drawing.Point(257, 26);
-            this.SignInBTN.Name = "SignInBTN";
-            this.SignInBTN.Size = new System.Drawing.Size(98, 23);
-            this.SignInBTN.TabIndex = 9;
-            this.SignInBTN.Text = "Sign in";
-            this.SignInBTN.UseVisualStyleBackColor = true;
-            this.SignInBTN.Click += new System.EventHandler(this.SignInBTN_Click);
-            // 
             // RegisterGroupBox
             // 
             this.RegisterGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.RegisterGroupBox.Controls.Add(this.RegSerialGroupbox);
+            this.RegisterGroupBox.Controls.Add(this.RegRegisterBTN);
+            this.RegisterGroupBox.Controls.Add(this.label25);
+            this.RegisterGroupBox.Controls.Add(this.label24);
+            this.RegisterGroupBox.Controls.Add(this.label23);
+            this.RegisterGroupBox.Controls.Add(this.label22);
+            this.RegisterGroupBox.Controls.Add(this.groupBox17);
+            this.RegisterGroupBox.Controls.Add(this.RegPasswordTextbox);
+            this.RegisterGroupBox.Controls.Add(this.RegUsernameTextbox);
+            this.RegisterGroupBox.Controls.Add(this.RegLastnameTextbox);
+            this.RegisterGroupBox.Controls.Add(this.RegFirstnameTextbox);
             this.RegisterGroupBox.Controls.Add(this.labelRegistration);
-            this.RegisterGroupBox.Location = new System.Drawing.Point(44, 95);
+            this.RegisterGroupBox.Location = new System.Drawing.Point(342, 82);
             this.RegisterGroupBox.Name = "RegisterGroupBox";
-            this.RegisterGroupBox.Size = new System.Drawing.Size(249, 296);
+            this.RegisterGroupBox.Size = new System.Drawing.Size(249, 362);
             this.RegisterGroupBox.TabIndex = 7;
             this.RegisterGroupBox.TabStop = false;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.label21);
+            this.groupBox17.Controls.Add(this.label20);
+            this.groupBox17.Controls.Add(this.RegQuestionTextbox);
+            this.groupBox17.Controls.Add(this.RegAnswerTextbox);
+            this.groupBox17.Location = new System.Drawing.Point(27, 216);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(200, 100);
+            this.groupBox17.TabIndex = 7;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Account Recovery";
+            // 
+            // RegQuestionTextbox
+            // 
+            this.RegQuestionTextbox.Location = new System.Drawing.Point(21, 30);
+            this.RegQuestionTextbox.Name = "RegQuestionTextbox";
+            this.RegQuestionTextbox.Size = new System.Drawing.Size(153, 20);
+            this.RegQuestionTextbox.TabIndex = 5;
+            // 
+            // RegAnswerTextbox
+            // 
+            this.RegAnswerTextbox.Location = new System.Drawing.Point(21, 65);
+            this.RegAnswerTextbox.Name = "RegAnswerTextbox";
+            this.RegAnswerTextbox.Size = new System.Drawing.Size(153, 20);
+            this.RegAnswerTextbox.TabIndex = 6;
+            // 
+            // RegPasswordTextbox
+            // 
+            this.RegPasswordTextbox.Location = new System.Drawing.Point(48, 187);
+            this.RegPasswordTextbox.Name = "RegPasswordTextbox";
+            this.RegPasswordTextbox.Size = new System.Drawing.Size(153, 20);
+            this.RegPasswordTextbox.TabIndex = 4;
+            // 
+            // RegUsernameTextbox
+            // 
+            this.RegUsernameTextbox.Location = new System.Drawing.Point(48, 146);
+            this.RegUsernameTextbox.Name = "RegUsernameTextbox";
+            this.RegUsernameTextbox.Size = new System.Drawing.Size(153, 20);
+            this.RegUsernameTextbox.TabIndex = 3;
+            // 
+            // RegLastnameTextbox
+            // 
+            this.RegLastnameTextbox.Location = new System.Drawing.Point(48, 107);
+            this.RegLastnameTextbox.Name = "RegLastnameTextbox";
+            this.RegLastnameTextbox.Size = new System.Drawing.Size(153, 20);
+            this.RegLastnameTextbox.TabIndex = 2;
+            // 
+            // RegFirstnameTextbox
+            // 
+            this.RegFirstnameTextbox.Location = new System.Drawing.Point(48, 69);
+            this.RegFirstnameTextbox.Name = "RegFirstnameTextbox";
+            this.RegFirstnameTextbox.Size = new System.Drawing.Size(153, 20);
+            this.RegFirstnameTextbox.TabIndex = 1;
             // 
             // labelRegistration
             // 
@@ -2308,6 +2395,118 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(159, 21);
             this.textBoxPassword.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(22, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(45, 13);
+            this.label20.TabIndex = 7;
+            this.label20.Text = "Answer:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(22, 16);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 13);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "Question:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(54, 53);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(55, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Firstname:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(54, 91);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(56, 13);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Lastname:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(52, 132);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(58, 13);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Username:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(49, 175);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(56, 13);
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Password:";
+            // 
+            // RegRegisterBTN
+            // 
+            this.RegRegisterBTN.Location = new System.Drawing.Point(24, 322);
+            this.RegRegisterBTN.Name = "RegRegisterBTN";
+            this.RegRegisterBTN.Size = new System.Drawing.Size(203, 35);
+            this.RegRegisterBTN.TabIndex = 12;
+            this.RegRegisterBTN.Text = "Register";
+            this.RegRegisterBTN.UseVisualStyleBackColor = true;
+            this.RegRegisterBTN.Click += new System.EventHandler(this.RegRegisterBTN_Click);
+            // 
+            // RegSerialGroupbox
+            // 
+            this.RegSerialGroupbox.Controls.Add(this.LicenseLabel);
+            this.RegSerialGroupbox.Controls.Add(this.RegActivateBTN);
+            this.RegSerialGroupbox.Controls.Add(this.label26);
+            this.RegSerialGroupbox.Controls.Add(this.RegLicenseTextbox);
+            this.RegSerialGroupbox.Location = new System.Drawing.Point(7, 9);
+            this.RegSerialGroupbox.Name = "RegSerialGroupbox";
+            this.RegSerialGroupbox.Size = new System.Drawing.Size(236, 349);
+            this.RegSerialGroupbox.TabIndex = 13;
+            this.RegSerialGroupbox.TabStop = false;
+            // 
+            // RegLicenseTextbox
+            // 
+            this.RegLicenseTextbox.Location = new System.Drawing.Point(13, 139);
+            this.RegLicenseTextbox.Name = "RegLicenseTextbox";
+            this.RegLicenseTextbox.Size = new System.Drawing.Size(213, 20);
+            this.RegLicenseTextbox.TabIndex = 0;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(14, 123);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Enter license:";
+            // 
+            // RegActivateBTN
+            // 
+            this.RegActivateBTN.Location = new System.Drawing.Point(48, 183);
+            this.RegActivateBTN.Name = "RegActivateBTN";
+            this.RegActivateBTN.Size = new System.Drawing.Size(129, 38);
+            this.RegActivateBTN.TabIndex = 2;
+            this.RegActivateBTN.Text = "Activate";
+            this.RegActivateBTN.UseVisualStyleBackColor = true;
+            this.RegActivateBTN.Click += new System.EventHandler(this.RegActivateBTN_Click);
+            // 
+            // LicenseLabel
+            // 
+            this.LicenseLabel.AutoSize = true;
+            this.LicenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LicenseLabel.Location = new System.Drawing.Point(50, 41);
+            this.LicenseLabel.Name = "LicenseLabel";
+            this.LicenseLabel.Size = new System.Drawing.Size(115, 31);
+            this.LicenseLabel.TabIndex = 3;
+            this.LicenseLabel.Text = "License";
             // 
             // SomerenUI
             // 
@@ -2391,8 +2590,12 @@
             this.ResetGroupBox.PerformLayout();
             this.RegisterGroupBox.ResumeLayout(false);
             this.RegisterGroupBox.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.LoginGroupBox.ResumeLayout(false);
             this.LoginGroupBox.PerformLayout();
+            this.RegSerialGroupbox.ResumeLayout(false);
+            this.RegSerialGroupbox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2627,6 +2830,25 @@
         private System.Windows.Forms.Label labelResetPassword;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.TextBox RegQuestionTextbox;
+        private System.Windows.Forms.TextBox RegAnswerTextbox;
+        private System.Windows.Forms.TextBox RegPasswordTextbox;
+        private System.Windows.Forms.TextBox RegUsernameTextbox;
+        private System.Windows.Forms.TextBox RegLastnameTextbox;
+        private System.Windows.Forms.TextBox RegFirstnameTextbox;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.GroupBox RegSerialGroupbox;
+        private System.Windows.Forms.Label LicenseLabel;
+        private System.Windows.Forms.Button RegActivateBTN;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox RegLicenseTextbox;
+        private System.Windows.Forms.Button RegRegisterBTN;
     }
 }
 
