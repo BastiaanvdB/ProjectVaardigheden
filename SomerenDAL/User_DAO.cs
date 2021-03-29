@@ -14,22 +14,96 @@ namespace SomerenDAL
     {
         public bool Db_Login_Check_User(string Username, string Password)
         {
-            string query = "SELECT COUNT(user_id) AS 'auth' FROM Users WHERE user_username = @Username AND user_password = @Password";
+            string query = "SELECT COUNT(user_id) AS 'user_auth' FROM Users WHERE user_username = @Username AND user_password = @Password";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = Username},
                 new SqlParameter("@Password", SqlDbType.NVarChar, 50) { Value = Password}
             };
 
-            return ReadAuth(ExecuteSelectQuery(query, sqlParameters));
+            return ReadUserAuth(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private bool ReadAuth(DataTable dataTable)
+        public bool DB_License_Check(string License)
+        {
+            string query = "SELECT COUNT(license_key) AS 'license_auth' FROM License WHERE license_key = @License";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@License", SqlDbType.NVarChar, 50) { Value = License}
+            };
+
+            return ReadLicenseAuth(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public bool DB_Register_User(User user)
+        {
+            string query = $"INSERT INTO Users (user_firstname, user_lastname, user_username, user_password, user_admin_status, license_key, user_secrect_question, user_secrect_answer) VALUES (@Firstname, @Lastname, @Username, @Password, @AdminStatus, @License, @SecrectQuestion, @SecrectAnswer)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Firstname", SqlDbType.VarChar, 50) { Value = user.Firstname },
+                new SqlParameter("@Lastname", SqlDbType.VarChar, 50) { Value = user.Lastname},
+                new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = user.Username},
+                new SqlParameter("@Password", SqlDbType.NVarChar, 50) { Value = user.Password },
+                new SqlParameter("@AdminStatus", SqlDbType.Bit) { Value = 0 },
+                new SqlParameter("@License", SqlDbType.NVarChar, 50) { Value = user.License},
+                new SqlParameter("@SecrectQuestion", SqlDbType.NVarChar, 50) { Value = user.SecrectQuestion},
+                new SqlParameter("@SecrectAnswer", SqlDbType.NVarChar, 50) { Value = user.SecretAnswer}
+            };
+            ExecuteEditQuery(query, sqlParameters);
+            return Db_Login_Check_User(user.Firstname, user.Password);
+        }
+
+        public User DB_Get_User(string Username, string Password)
+        {
+            string query = "SELECT user_firstname, user_lastname, user_username, user_password, user_admin_status, license_key, user_secrect_question, user_secrect_answer FROM Users WHERE user_username = @Username AND user_password = @Password";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = Username},
+                new SqlParameter("@Password", SqlDbType.NVarChar, 50) { Value = Password}
+            };
+
+
+            return ReadUser(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private User ReadUser(DataTable dataTable)
+        {
+            User user = null;
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                user = new User
+                {
+                    Firstname = (string)dr["user_firstname"],
+                    Lastname = (string)dr["user_lastname"],
+                    Username = (string)dr["user_username"],
+                    Password = (string)dr["user_password"],
+                    AdminStatus = (bool)dr["user_admin_status"],
+                    License = (string)dr["license_key"],
+                    SecrectQuestion = (string)dr["user_secrect_question"],
+                    SecretAnswer = (string)dr["user_secrect_answer"]
+                };
+            }
+            return user;
+
+        }
+
+        private bool ReadLicenseAuth(DataTable dataTable)
         {
             int auth = 0;
             foreach (DataRow dr in dataTable.Rows)
             {
-                auth = (int)dr["auth"];
+                auth = (int)dr["license_auth"];
+
+            }
+            return auth != 0;
+        }
+
+        private bool ReadUserAuth(DataTable dataTable)
+        {
+            int auth = 0;
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                auth = (int)dr["user_auth"];
 
             }
             return auth != 0;

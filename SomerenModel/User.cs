@@ -14,5 +14,8 @@ namespace SomerenModel
         public String Password { get; set; }
         public String License { get; set; }
         public bool AdminStatus { get; set; }
+        public string SecrectQuestion { get; set; }
+        public string SecretAnswer { get; set; }
+
     }
 }
