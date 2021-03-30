@@ -37,5 +37,10 @@ namespace SomerenLogic
             return user_db.DB_Check_Already_Registrated(Username);
         }
 
+        public bool CheckAdminStatus(string Username, string Password)
+        {
+            return user_db.DB_Check_Admin_Status(Username, Password);
+        }
+
     }
 }

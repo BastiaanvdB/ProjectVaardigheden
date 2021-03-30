@@ -46,6 +46,17 @@ namespace SomerenDAL
             return AlreadyRegistrated(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public bool DB_Check_Admin_Status(string Username, string Password)
+        {
+            string query = "SELECT user_admin_status FROM Users WHERE user_username = @Username AND user_password = @Password";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = Username},
+                new SqlParameter("@Password", SqlDbType.NVarChar, 50) { Value = Password}
+            };
+
+            return ReadAdminStatus(ExecuteSelectQuery(query, sqlParameters));
+        }
 
         public bool DB_Register_User(User user)
         {
@@ -73,10 +84,19 @@ namespace SomerenDAL
                 new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = Username},
                 new SqlParameter("@Password", SqlDbType.NVarChar, 50) { Value = Password}
             };
-
-
             return ReadUser(ExecuteSelectQuery(query, sqlParameters));
         }
+
+        private bool ReadAdminStatus(DataTable dataTable)
+        {
+            bool AdminStatus = false;
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                AdminStatus = (bool)dr["user_admin_status"];
+            }
+            return AdminStatus;
+        }
+
 
         private bool AlreadyRegistrated(DataTable dataTable)
         {
@@ -84,7 +104,6 @@ namespace SomerenDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 username = (int)dr["check_user"];
-
             }
             return username != 0;
         }
@@ -107,7 +126,6 @@ namespace SomerenDAL
                 };
             }
             return user;
-
         }
 
         private bool ReadLicenseAuth(DataTable dataTable)
@@ -116,7 +134,6 @@ namespace SomerenDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 auth = (int)dr["license_auth"];
-
             }
             return auth != 0;
         }
@@ -127,7 +144,6 @@ namespace SomerenDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 auth = (int)dr["user_auth"];
-
             }
             return auth != 0;
         }

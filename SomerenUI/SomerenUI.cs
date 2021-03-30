@@ -57,14 +57,19 @@ namespace SomerenUI
                     LoginGroupBox.Show();
                     
                     break;
-                case "LoginUser":
-                    RegisterGroupBox.Hide();
-                    ResetGroupBox.Hide();
-                    LoginGroupBox.Hide();
-                    menuStrip1.Enabled = true;
-                    pnl_login.Hide();
-                    showPanel("Dashboard");
-                    break;
+                //case "LoginTypeChoose":
+
+                //    if()
+
+
+
+                //    RegisterGroupBox.Hide();
+                //    ResetGroupBox.Hide();
+                //    LoginGroupBox.Hide();
+                //    menuStrip1.Enabled = true;
+                //    pnl_login.Hide();
+                //    showPanel("Dashboard");
+                //    break;
                 case "Register":
                     // hide other boxes
                     ResetGroupBox.Hide();
@@ -118,7 +123,6 @@ namespace SomerenUI
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         private void ResetRegistration()
         {
@@ -180,8 +184,6 @@ namespace SomerenUI
                 MessageBox.Show("Please fill all information", "Someren Registration Issue",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
         }
 
         private void LoginUser()
@@ -195,7 +197,7 @@ namespace SomerenUI
 
                 if (logincheck == true)
                 {
-                    LoginMenu("LoginUser");
+                    LoginType(user_Service.CheckAdminStatus(textBoxUsername.Text, textBoxPassword.Text));
                 }
                 else
                 {
@@ -212,6 +214,60 @@ namespace SomerenUI
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void LoginType(bool AdminStatus) 
+        {
+            RegisterGroupBox.Hide();
+            ResetGroupBox.Hide();
+            LoginGroupBox.Hide();
+            menuStrip1.Enabled = true;
+            pnl_login.Hide();
+            if (AdminStatus == true)
+            {
+                // admin login
+                AdminLogin();
+            }
+            else
+            {
+                // user login
+                UserLogin();
+            }
+        }
+
+        private void AdminLogin()
+        {
+            // admin settings
+            AdminPanelGroupBox.Show();
+            groupBoxSupervisorModify.Show();
+            groupBoxSupervisorControls.Show();
+            groupBoxScheduleSwap.Show();
+            groupBoxActivityValues.Show();
+            groupBoxActivitySettings.Show();
+            groupBoxEditStorage.Show();
+            groupBoxStorageSettings.Show();
+            groupBoxCreateOrder.Show();
+
+            // go to program
+            showPanel("Dashboard");
+        }
+
+        private void UserLogin()
+        {
+            // user settings
+            AdminPanelGroupBox.Hide();
+            groupBoxSupervisorModify.Hide();
+            groupBoxSupervisorControls.Hide();
+            groupBoxScheduleSwap.Hide();
+            groupBoxActivityValues.Hide();
+            groupBoxActivitySettings.Hide();
+            groupBoxEditStorage.Hide();
+            groupBoxStorageSettings.Hide();
+            groupBoxCreateOrder.Hide();
+
+            // go to program
+            showPanel("Dashboard");
+        }
+
 
         private void RegRegisterBTN_Click(object sender, EventArgs e)
         {

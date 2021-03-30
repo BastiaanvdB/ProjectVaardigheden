@@ -70,7 +70,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_Products = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxStorageSettings = new System.Windows.Forms.GroupBox();
             this.DeleteRadioButton = new System.Windows.Forms.RadioButton();
             this.ModifyRadioButton = new System.Windows.Forms.RadioButton();
             this.AddRadioButton = new System.Windows.Forms.RadioButton();
@@ -86,7 +86,7 @@
             this.StockStatusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEditStorage = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.AgeHigherRadioButton = new System.Windows.Forms.RadioButton();
             this.AgeLowerRadioButton = new System.Windows.Forms.RadioButton();
@@ -106,7 +106,7 @@
             this.VATTextbox = new System.Windows.Forms.TextBox();
             this.PriceTextbox = new System.Windows.Forms.TextBox();
             this.pnl_Order = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCreateOrder = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.VATlbl = new System.Windows.Forms.Label();
             this.VATDisplayLBL = new System.Windows.Forms.Label();
@@ -152,7 +152,7 @@
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pnl_Supervisors = new System.Windows.Forms.Panel();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSupervisorModify = new System.Windows.Forms.GroupBox();
             this.ModifyComboBox = new System.Windows.Forms.ComboBox();
             this.ModifySupervisorbtn = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -166,14 +166,14 @@
             this.TeacherNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ActivityId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ActivityName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSupervisorControls = new System.Windows.Forms.GroupBox();
             this.Activitygroup = new System.Windows.Forms.GroupBox();
             this.ActivityComboBox = new System.Windows.Forms.ComboBox();
             this.AddSupervisorbtn = new System.Windows.Forms.Button();
             this.RemoveSupervisorbtn = new System.Windows.Forms.Button();
             this.RefreshListbtn = new System.Windows.Forms.Button();
             this.pnl_Schedule = new System.Windows.Forms.Panel();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.groupBoxScheduleSwap = new System.Windows.Forms.GroupBox();
             this.listViewDate2 = new System.Windows.Forms.ListView();
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -201,7 +201,7 @@
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Pnl_Activity_List = new System.Windows.Forms.Panel();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.groupBoxActivityValues = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
@@ -229,7 +229,7 @@
             this.btn_Act_Confirm = new System.Windows.Forms.Button();
             this.TextBox_Activity_Description = new System.Windows.Forms.TextBox();
             this.TextBox_Activity_Id = new System.Windows.Forms.TextBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBoxActivitySettings = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -247,7 +247,19 @@
             this.ResetGroupBox = new System.Windows.Forms.GroupBox();
             this.labelResetPassword = new System.Windows.Forms.Label();
             this.RegisterGroupBox = new System.Windows.Forms.GroupBox();
+            this.RegSerialGroupbox = new System.Windows.Forms.GroupBox();
+            this.LicenseLabel = new System.Windows.Forms.Label();
+            this.RegActivateBTN = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.RegLicenseTextbox = new System.Windows.Forms.TextBox();
+            this.RegRegisterBTN = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.RegQuestionTextbox = new System.Windows.Forms.TextBox();
             this.RegAnswerTextbox = new System.Windows.Forms.TextBox();
             this.RegPasswordTextbox = new System.Windows.Forms.TextBox();
@@ -263,18 +275,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.RegRegisterBTN = new System.Windows.Forms.Button();
-            this.RegSerialGroupbox = new System.Windows.Forms.GroupBox();
-            this.RegLicenseTextbox = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.RegActivateBTN = new System.Windows.Forms.Button();
-            this.LicenseLabel = new System.Windows.Forms.Label();
+            this.AdminPanelGroupBox = new System.Windows.Forms.GroupBox();
+            this.AdminRequestListView = new System.Windows.Forms.ListView();
+            this.label27 = new System.Windows.Forms.Label();
+            this.AdminReqAcceptBTN = new System.Windows.Forms.Button();
+            this.AdminReqDenyBTN = new System.Windows.Forms.Button();
+            this.columnUserId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -285,36 +292,37 @@
             this.pnl_Rooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnl_Products.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxStorageSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxEditStorage.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.pnl_Order.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxCreateOrder.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Pnl_Sales.SuspendLayout();
             this.Date.SuspendLayout();
             this.Pnl_Supervisors.SuspendLayout();
-            this.groupBox15.SuspendLayout();
+            this.groupBoxSupervisorModify.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.groupBoxSupervisorControls.SuspendLayout();
             this.Activitygroup.SuspendLayout();
             this.pnl_Schedule.SuspendLayout();
-            this.groupBox9.SuspendLayout();
+            this.groupBoxScheduleSwap.SuspendLayout();
             this.Pnl_Activity_List.SuspendLayout();
-            this.groupBox12.SuspendLayout();
+            this.groupBoxActivityValues.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.groupBoxActivitySettings.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.pnl_login.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.ResetGroupBox.SuspendLayout();
             this.RegisterGroupBox.SuspendLayout();
+            this.RegSerialGroupbox.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.LoginGroupBox.SuspendLayout();
-            this.RegSerialGroupbox.SuspendLayout();
+            this.AdminPanelGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -464,6 +472,7 @@
             // 
             // pnl_Dashboard
             // 
+            this.pnl_Dashboard.Controls.Add(this.AdminPanelGroupBox);
             this.pnl_Dashboard.Controls.Add(this.lbl_Dashboard);
             this.pnl_Dashboard.Controls.Add(this.img_Dashboard);
             this.pnl_Dashboard.Location = new System.Drawing.Point(12, 27);
@@ -651,28 +660,28 @@
             // 
             // pnl_Products
             // 
-            this.pnl_Products.Controls.Add(this.groupBox3);
+            this.pnl_Products.Controls.Add(this.groupBoxStorageSettings);
             this.pnl_Products.Controls.Add(this.listViewBeverage);
             this.pnl_Products.Controls.Add(this.pictureBox4);
             this.pnl_Products.Controls.Add(this.label3);
-            this.pnl_Products.Controls.Add(this.groupBox1);
+            this.pnl_Products.Controls.Add(this.groupBoxEditStorage);
             this.pnl_Products.Location = new System.Drawing.Point(3, 24);
             this.pnl_Products.Name = "pnl_Products";
             this.pnl_Products.Size = new System.Drawing.Size(938, 466);
             this.pnl_Products.TabIndex = 8;
             // 
-            // groupBox3
+            // groupBoxStorageSettings
             // 
-            this.groupBox3.Controls.Add(this.DeleteRadioButton);
-            this.groupBox3.Controls.Add(this.ModifyRadioButton);
-            this.groupBox3.Controls.Add(this.AddRadioButton);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(9, 358);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(74, 102);
-            this.groupBox3.TabIndex = 24;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Settings";
+            this.groupBoxStorageSettings.Controls.Add(this.DeleteRadioButton);
+            this.groupBoxStorageSettings.Controls.Add(this.ModifyRadioButton);
+            this.groupBoxStorageSettings.Controls.Add(this.AddRadioButton);
+            this.groupBoxStorageSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxStorageSettings.Location = new System.Drawing.Point(9, 358);
+            this.groupBoxStorageSettings.Name = "groupBoxStorageSettings";
+            this.groupBoxStorageSettings.Size = new System.Drawing.Size(74, 102);
+            this.groupBoxStorageSettings.TabIndex = 24;
+            this.groupBoxStorageSettings.TabStop = false;
+            this.groupBoxStorageSettings.Text = "Settings";
             // 
             // DeleteRadioButton
             // 
@@ -796,31 +805,31 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Beverage storage";
             // 
-            // groupBox1
+            // groupBoxEditStorage
             // 
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.IDLabel);
-            this.groupBox1.Controls.Add(this.SoldLabel);
-            this.groupBox1.Controls.Add(this.IDTextBox);
-            this.groupBox1.Controls.Add(this.SoldTextbox);
-            this.groupBox1.Controls.Add(this.RestockLevelLabel);
-            this.groupBox1.Controls.Add(this.StockLabel);
-            this.groupBox1.Controls.Add(this.VATLabel);
-            this.groupBox1.Controls.Add(this.PriceLabel);
-            this.groupBox1.Controls.Add(this.NameLabel);
-            this.groupBox1.Controls.Add(this.ProductModifyButton);
-            this.groupBox1.Controls.Add(this.RestockLevelTextbox);
-            this.groupBox1.Controls.Add(this.StockTextbox);
-            this.groupBox1.Controls.Add(this.NameTextbox);
-            this.groupBox1.Controls.Add(this.VATTextbox);
-            this.groupBox1.Controls.Add(this.PriceTextbox);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(89, 355);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(846, 105);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Edit storage";
+            this.groupBoxEditStorage.Controls.Add(this.groupBox4);
+            this.groupBoxEditStorage.Controls.Add(this.IDLabel);
+            this.groupBoxEditStorage.Controls.Add(this.SoldLabel);
+            this.groupBoxEditStorage.Controls.Add(this.IDTextBox);
+            this.groupBoxEditStorage.Controls.Add(this.SoldTextbox);
+            this.groupBoxEditStorage.Controls.Add(this.RestockLevelLabel);
+            this.groupBoxEditStorage.Controls.Add(this.StockLabel);
+            this.groupBoxEditStorage.Controls.Add(this.VATLabel);
+            this.groupBoxEditStorage.Controls.Add(this.PriceLabel);
+            this.groupBoxEditStorage.Controls.Add(this.NameLabel);
+            this.groupBoxEditStorage.Controls.Add(this.ProductModifyButton);
+            this.groupBoxEditStorage.Controls.Add(this.RestockLevelTextbox);
+            this.groupBoxEditStorage.Controls.Add(this.StockTextbox);
+            this.groupBoxEditStorage.Controls.Add(this.NameTextbox);
+            this.groupBoxEditStorage.Controls.Add(this.VATTextbox);
+            this.groupBoxEditStorage.Controls.Add(this.PriceTextbox);
+            this.groupBoxEditStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxEditStorage.Location = new System.Drawing.Point(89, 355);
+            this.groupBoxEditStorage.Name = "groupBoxEditStorage";
+            this.groupBoxEditStorage.Size = new System.Drawing.Size(846, 105);
+            this.groupBoxEditStorage.TabIndex = 15;
+            this.groupBoxEditStorage.TabStop = false;
+            this.groupBoxEditStorage.Text = "Edit storage";
             // 
             // groupBox4
             // 
@@ -994,7 +1003,7 @@
             // 
             // pnl_Order
             // 
-            this.pnl_Order.Controls.Add(this.groupBox2);
+            this.pnl_Order.Controls.Add(this.groupBoxCreateOrder);
             this.pnl_Order.Controls.Add(this.lbl_OrderProducts);
             this.pnl_Order.Controls.Add(this.lbl_Order_Students);
             this.pnl_Order.Controls.Add(this.ListViewOrder_Products);
@@ -1004,23 +1013,23 @@
             this.pnl_Order.Size = new System.Drawing.Size(941, 466);
             this.pnl_Order.TabIndex = 16;
             // 
-            // groupBox2
+            // groupBoxCreateOrder
             // 
-            this.groupBox2.Controls.Add(this.groupBox5);
-            this.groupBox2.Controls.Add(this.lbl_Total_Order_List);
-            this.groupBox2.Controls.Add(this.ListViewTotalOrder_Details);
-            this.groupBox2.Controls.Add(this.btn_Purchase_Order);
-            this.groupBox2.Controls.Add(this.btn_Remove_Product);
-            this.groupBox2.Controls.Add(this.lbl_Order_For_Student);
-            this.groupBox2.Controls.Add(this.TextBoxStudentName);
-            this.groupBox2.Controls.Add(this.btn_Add_Product);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(21, 238);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(883, 204);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Order";
+            this.groupBoxCreateOrder.Controls.Add(this.groupBox5);
+            this.groupBoxCreateOrder.Controls.Add(this.lbl_Total_Order_List);
+            this.groupBoxCreateOrder.Controls.Add(this.ListViewTotalOrder_Details);
+            this.groupBoxCreateOrder.Controls.Add(this.btn_Purchase_Order);
+            this.groupBoxCreateOrder.Controls.Add(this.btn_Remove_Product);
+            this.groupBoxCreateOrder.Controls.Add(this.lbl_Order_For_Student);
+            this.groupBoxCreateOrder.Controls.Add(this.TextBoxStudentName);
+            this.groupBoxCreateOrder.Controls.Add(this.btn_Add_Product);
+            this.groupBoxCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCreateOrder.Location = new System.Drawing.Point(21, 238);
+            this.groupBoxCreateOrder.Name = "groupBoxCreateOrder";
+            this.groupBoxCreateOrder.Size = new System.Drawing.Size(883, 204);
+            this.groupBoxCreateOrder.TabIndex = 16;
+            this.groupBoxCreateOrder.TabStop = false;
+            this.groupBoxCreateOrder.Text = "Order";
             // 
             // groupBox5
             // 
@@ -1392,25 +1401,25 @@
             // 
             // Pnl_Supervisors
             // 
-            this.Pnl_Supervisors.Controls.Add(this.groupBox15);
+            this.Pnl_Supervisors.Controls.Add(this.groupBoxSupervisorModify);
             this.Pnl_Supervisors.Controls.Add(this.groupBox7);
             this.Pnl_Supervisors.Controls.Add(this.groupBox8);
-            this.Pnl_Supervisors.Controls.Add(this.groupBox6);
+            this.Pnl_Supervisors.Controls.Add(this.groupBoxSupervisorControls);
             this.Pnl_Supervisors.Location = new System.Drawing.Point(3, 24);
             this.Pnl_Supervisors.Name = "Pnl_Supervisors";
             this.Pnl_Supervisors.Size = new System.Drawing.Size(950, 454);
             this.Pnl_Supervisors.TabIndex = 6;
             // 
-            // groupBox15
+            // groupBoxSupervisorModify
             // 
-            this.groupBox15.Controls.Add(this.ModifyComboBox);
-            this.groupBox15.Controls.Add(this.ModifySupervisorbtn);
-            this.groupBox15.Location = new System.Drawing.Point(260, 305);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(178, 96);
-            this.groupBox15.TabIndex = 8;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Modify";
+            this.groupBoxSupervisorModify.Controls.Add(this.ModifyComboBox);
+            this.groupBoxSupervisorModify.Controls.Add(this.ModifySupervisorbtn);
+            this.groupBoxSupervisorModify.Location = new System.Drawing.Point(260, 305);
+            this.groupBoxSupervisorModify.Name = "groupBoxSupervisorModify";
+            this.groupBoxSupervisorModify.Size = new System.Drawing.Size(178, 96);
+            this.groupBoxSupervisorModify.TabIndex = 8;
+            this.groupBoxSupervisorModify.TabStop = false;
+            this.groupBoxSupervisorModify.Text = "Modify";
             // 
             // ModifyComboBox
             // 
@@ -1519,18 +1528,18 @@
             this.ActivityName.Text = "ActivityName";
             this.ActivityName.Width = 120;
             // 
-            // groupBox6
+            // groupBoxSupervisorControls
             // 
-            this.groupBox6.Controls.Add(this.Activitygroup);
-            this.groupBox6.Controls.Add(this.AddSupervisorbtn);
-            this.groupBox6.Controls.Add(this.RemoveSupervisorbtn);
-            this.groupBox6.Controls.Add(this.RefreshListbtn);
-            this.groupBox6.Location = new System.Drawing.Point(259, 51);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(179, 248);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Controls";
+            this.groupBoxSupervisorControls.Controls.Add(this.Activitygroup);
+            this.groupBoxSupervisorControls.Controls.Add(this.AddSupervisorbtn);
+            this.groupBoxSupervisorControls.Controls.Add(this.RemoveSupervisorbtn);
+            this.groupBoxSupervisorControls.Controls.Add(this.RefreshListbtn);
+            this.groupBoxSupervisorControls.Location = new System.Drawing.Point(259, 51);
+            this.groupBoxSupervisorControls.Name = "groupBoxSupervisorControls";
+            this.groupBoxSupervisorControls.Size = new System.Drawing.Size(179, 248);
+            this.groupBoxSupervisorControls.TabIndex = 5;
+            this.groupBoxSupervisorControls.TabStop = false;
+            this.groupBoxSupervisorControls.Text = "Controls";
             // 
             // Activitygroup
             // 
@@ -1583,7 +1592,7 @@
             // 
             // pnl_Schedule
             // 
-            this.pnl_Schedule.Controls.Add(this.groupBox9);
+            this.pnl_Schedule.Controls.Add(this.groupBoxScheduleSwap);
             this.pnl_Schedule.Controls.Add(this.Schedule);
             this.pnl_Schedule.Controls.Add(this.listView_Schedule);
             this.pnl_Schedule.Location = new System.Drawing.Point(3, 34);
@@ -1591,19 +1600,19 @@
             this.pnl_Schedule.Size = new System.Drawing.Size(935, 438);
             this.pnl_Schedule.TabIndex = 19;
             // 
-            // groupBox9
+            // groupBoxScheduleSwap
             // 
-            this.groupBox9.Controls.Add(this.listViewDate2);
-            this.groupBox9.Controls.Add(this.listViewDate1);
-            this.groupBox9.Controls.Add(this.btn_swapSchedule);
-            this.groupBox9.Controls.Add(this.label5);
-            this.groupBox9.Controls.Add(this.label4);
-            this.groupBox9.Location = new System.Drawing.Point(478, 40);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(432, 381);
-            this.groupBox9.TabIndex = 9;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Date swapper";
+            this.groupBoxScheduleSwap.Controls.Add(this.listViewDate2);
+            this.groupBoxScheduleSwap.Controls.Add(this.listViewDate1);
+            this.groupBoxScheduleSwap.Controls.Add(this.btn_swapSchedule);
+            this.groupBoxScheduleSwap.Controls.Add(this.label5);
+            this.groupBoxScheduleSwap.Controls.Add(this.label4);
+            this.groupBoxScheduleSwap.Location = new System.Drawing.Point(478, 40);
+            this.groupBoxScheduleSwap.Name = "groupBoxScheduleSwap";
+            this.groupBoxScheduleSwap.Size = new System.Drawing.Size(432, 381);
+            this.groupBoxScheduleSwap.TabIndex = 9;
+            this.groupBoxScheduleSwap.TabStop = false;
+            this.groupBoxScheduleSwap.Text = "Date swapper";
             // 
             // listViewDate2
             // 
@@ -1807,29 +1816,29 @@
             // 
             // Pnl_Activity_List
             // 
-            this.Pnl_Activity_List.Controls.Add(this.groupBox12);
-            this.Pnl_Activity_List.Controls.Add(this.groupBox11);
+            this.Pnl_Activity_List.Controls.Add(this.groupBoxActivityValues);
+            this.Pnl_Activity_List.Controls.Add(this.groupBoxActivitySettings);
             this.Pnl_Activity_List.Controls.Add(this.groupBox10);
             this.Pnl_Activity_List.Location = new System.Drawing.Point(3, 21);
             this.Pnl_Activity_List.Name = "Pnl_Activity_List";
             this.Pnl_Activity_List.Size = new System.Drawing.Size(929, 483);
             this.Pnl_Activity_List.TabIndex = 7;
             // 
-            // groupBox12
+            // groupBoxActivityValues
             // 
-            this.groupBox12.Controls.Add(this.label17);
-            this.groupBox12.Controls.Add(this.label16);
-            this.groupBox12.Controls.Add(this.groupBox14);
-            this.groupBox12.Controls.Add(this.groupBox13);
-            this.groupBox12.Controls.Add(this.btn_Act_Confirm);
-            this.groupBox12.Controls.Add(this.TextBox_Activity_Description);
-            this.groupBox12.Controls.Add(this.TextBox_Activity_Id);
-            this.groupBox12.Location = new System.Drawing.Point(213, 308);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(595, 164);
-            this.groupBox12.TabIndex = 3;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Activity values";
+            this.groupBoxActivityValues.Controls.Add(this.label17);
+            this.groupBoxActivityValues.Controls.Add(this.label16);
+            this.groupBoxActivityValues.Controls.Add(this.groupBox14);
+            this.groupBoxActivityValues.Controls.Add(this.groupBox13);
+            this.groupBoxActivityValues.Controls.Add(this.btn_Act_Confirm);
+            this.groupBoxActivityValues.Controls.Add(this.TextBox_Activity_Description);
+            this.groupBoxActivityValues.Controls.Add(this.TextBox_Activity_Id);
+            this.groupBoxActivityValues.Location = new System.Drawing.Point(213, 308);
+            this.groupBoxActivityValues.Name = "groupBoxActivityValues";
+            this.groupBoxActivityValues.Size = new System.Drawing.Size(595, 164);
+            this.groupBoxActivityValues.TabIndex = 3;
+            this.groupBoxActivityValues.TabStop = false;
+            this.groupBoxActivityValues.Text = "Activity values";
             // 
             // label17
             // 
@@ -2071,17 +2080,17 @@
             this.TextBox_Activity_Id.Size = new System.Drawing.Size(57, 20);
             this.TextBox_Activity_Id.TabIndex = 0;
             // 
-            // groupBox11
+            // groupBoxActivitySettings
             // 
-            this.groupBox11.Controls.Add(this.radioButton3);
-            this.groupBox11.Controls.Add(this.radioButton2);
-            this.groupBox11.Controls.Add(this.radioButton1);
-            this.groupBox11.Location = new System.Drawing.Point(98, 308);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(94, 109);
-            this.groupBox11.TabIndex = 2;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Settings";
+            this.groupBoxActivitySettings.Controls.Add(this.radioButton3);
+            this.groupBoxActivitySettings.Controls.Add(this.radioButton2);
+            this.groupBoxActivitySettings.Controls.Add(this.radioButton1);
+            this.groupBoxActivitySettings.Location = new System.Drawing.Point(98, 308);
+            this.groupBoxActivitySettings.Name = "groupBoxActivitySettings";
+            this.groupBoxActivitySettings.Size = new System.Drawing.Size(94, 109);
+            this.groupBoxActivitySettings.TabIndex = 2;
+            this.groupBoxActivitySettings.TabStop = false;
+            this.groupBoxActivitySettings.Text = "Settings";
             // 
             // radioButton3
             // 
@@ -2262,6 +2271,100 @@
             this.RegisterGroupBox.TabIndex = 7;
             this.RegisterGroupBox.TabStop = false;
             // 
+            // RegSerialGroupbox
+            // 
+            this.RegSerialGroupbox.Controls.Add(this.LicenseLabel);
+            this.RegSerialGroupbox.Controls.Add(this.RegActivateBTN);
+            this.RegSerialGroupbox.Controls.Add(this.label26);
+            this.RegSerialGroupbox.Controls.Add(this.RegLicenseTextbox);
+            this.RegSerialGroupbox.Location = new System.Drawing.Point(7, 9);
+            this.RegSerialGroupbox.Name = "RegSerialGroupbox";
+            this.RegSerialGroupbox.Size = new System.Drawing.Size(236, 349);
+            this.RegSerialGroupbox.TabIndex = 13;
+            this.RegSerialGroupbox.TabStop = false;
+            // 
+            // LicenseLabel
+            // 
+            this.LicenseLabel.AutoSize = true;
+            this.LicenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LicenseLabel.Location = new System.Drawing.Point(50, 41);
+            this.LicenseLabel.Name = "LicenseLabel";
+            this.LicenseLabel.Size = new System.Drawing.Size(115, 31);
+            this.LicenseLabel.TabIndex = 3;
+            this.LicenseLabel.Text = "License";
+            // 
+            // RegActivateBTN
+            // 
+            this.RegActivateBTN.Location = new System.Drawing.Point(48, 183);
+            this.RegActivateBTN.Name = "RegActivateBTN";
+            this.RegActivateBTN.Size = new System.Drawing.Size(129, 38);
+            this.RegActivateBTN.TabIndex = 2;
+            this.RegActivateBTN.Text = "Activate";
+            this.RegActivateBTN.UseVisualStyleBackColor = true;
+            this.RegActivateBTN.Click += new System.EventHandler(this.RegActivateBTN_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(14, 123);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Enter license:";
+            // 
+            // RegLicenseTextbox
+            // 
+            this.RegLicenseTextbox.Location = new System.Drawing.Point(13, 139);
+            this.RegLicenseTextbox.Name = "RegLicenseTextbox";
+            this.RegLicenseTextbox.Size = new System.Drawing.Size(213, 20);
+            this.RegLicenseTextbox.TabIndex = 0;
+            // 
+            // RegRegisterBTN
+            // 
+            this.RegRegisterBTN.Location = new System.Drawing.Point(24, 322);
+            this.RegRegisterBTN.Name = "RegRegisterBTN";
+            this.RegRegisterBTN.Size = new System.Drawing.Size(203, 35);
+            this.RegRegisterBTN.TabIndex = 12;
+            this.RegRegisterBTN.Text = "Register";
+            this.RegRegisterBTN.UseVisualStyleBackColor = true;
+            this.RegRegisterBTN.Click += new System.EventHandler(this.RegRegisterBTN_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(49, 175);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(56, 13);
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Password:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(52, 132);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(58, 13);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Username:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(54, 91);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(56, 13);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Lastname:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(54, 53);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(55, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Firstname:";
+            // 
             // groupBox17
             // 
             this.groupBox17.Controls.Add(this.label21);
@@ -2274,6 +2377,24 @@
             this.groupBox17.TabIndex = 7;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Account Recovery";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(22, 16);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 13);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "Question:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(22, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(45, 13);
+            this.label20.TabIndex = 7;
+            this.label20.Text = "Answer:";
             // 
             // RegQuestionTextbox
             // 
@@ -2396,125 +2517,78 @@
             this.textBoxPassword.Size = new System.Drawing.Size(159, 21);
             this.textBoxPassword.TabIndex = 3;
             // 
-            // label20
+            // AdminPanelGroupBox
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(22, 53);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(45, 13);
-            this.label20.TabIndex = 7;
-            this.label20.Text = "Answer:";
+            this.AdminPanelGroupBox.Controls.Add(this.AdminReqDenyBTN);
+            this.AdminPanelGroupBox.Controls.Add(this.AdminReqAcceptBTN);
+            this.AdminPanelGroupBox.Controls.Add(this.label27);
+            this.AdminPanelGroupBox.Controls.Add(this.AdminRequestListView);
+            this.AdminPanelGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminPanelGroupBox.Location = new System.Drawing.Point(26, 67);
+            this.AdminPanelGroupBox.Name = "AdminPanelGroupBox";
+            this.AdminPanelGroupBox.Size = new System.Drawing.Size(582, 378);
+            this.AdminPanelGroupBox.TabIndex = 2;
+            this.AdminPanelGroupBox.TabStop = false;
+            this.AdminPanelGroupBox.Text = "Admin panel";
             // 
-            // label21
+            // AdminRequestListView
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(22, 16);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(52, 13);
-            this.label21.TabIndex = 8;
-            this.label21.Text = "Question:";
+            this.AdminRequestListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnUserId,
+            this.columnUsername});
+            this.AdminRequestListView.FullRowSelect = true;
+            this.AdminRequestListView.GridLines = true;
+            this.AdminRequestListView.HideSelection = false;
+            this.AdminRequestListView.Location = new System.Drawing.Point(13, 62);
+            this.AdminRequestListView.MultiSelect = false;
+            this.AdminRequestListView.Name = "AdminRequestListView";
+            this.AdminRequestListView.Size = new System.Drawing.Size(184, 246);
+            this.AdminRequestListView.TabIndex = 0;
+            this.AdminRequestListView.UseCompatibleStateImageBehavior = false;
             // 
-            // label22
+            // label27
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(54, 53);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 13);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "Firstname:";
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(35, 43);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(137, 16);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "AdminStatus Request";
             // 
-            // label23
+            // AdminReqAcceptBTN
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(54, 91);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(56, 13);
-            this.label23.TabIndex = 9;
-            this.label23.Text = "Lastname:";
+            this.AdminReqAcceptBTN.Location = new System.Drawing.Point(13, 322);
+            this.AdminReqAcceptBTN.Name = "AdminReqAcceptBTN";
+            this.AdminReqAcceptBTN.Size = new System.Drawing.Size(78, 23);
+            this.AdminReqAcceptBTN.TabIndex = 2;
+            this.AdminReqAcceptBTN.Text = "Accept";
+            this.AdminReqAcceptBTN.UseVisualStyleBackColor = true;
             // 
-            // label24
+            // AdminReqDenyBTN
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(52, 132);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(58, 13);
-            this.label24.TabIndex = 10;
-            this.label24.Text = "Username:";
+            this.AdminReqDenyBTN.Location = new System.Drawing.Point(119, 322);
+            this.AdminReqDenyBTN.Name = "AdminReqDenyBTN";
+            this.AdminReqDenyBTN.Size = new System.Drawing.Size(78, 23);
+            this.AdminReqDenyBTN.TabIndex = 3;
+            this.AdminReqDenyBTN.Text = "Deny";
+            this.AdminReqDenyBTN.UseVisualStyleBackColor = true;
             // 
-            // label25
+            // columnUserId
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(49, 175);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(56, 13);
-            this.label25.TabIndex = 11;
-            this.label25.Text = "Password:";
+            this.columnUserId.Text = "ID";
             // 
-            // RegRegisterBTN
+            // columnUsername
             // 
-            this.RegRegisterBTN.Location = new System.Drawing.Point(24, 322);
-            this.RegRegisterBTN.Name = "RegRegisterBTN";
-            this.RegRegisterBTN.Size = new System.Drawing.Size(203, 35);
-            this.RegRegisterBTN.TabIndex = 12;
-            this.RegRegisterBTN.Text = "Register";
-            this.RegRegisterBTN.UseVisualStyleBackColor = true;
-            this.RegRegisterBTN.Click += new System.EventHandler(this.RegRegisterBTN_Click);
-            // 
-            // RegSerialGroupbox
-            // 
-            this.RegSerialGroupbox.Controls.Add(this.LicenseLabel);
-            this.RegSerialGroupbox.Controls.Add(this.RegActivateBTN);
-            this.RegSerialGroupbox.Controls.Add(this.label26);
-            this.RegSerialGroupbox.Controls.Add(this.RegLicenseTextbox);
-            this.RegSerialGroupbox.Location = new System.Drawing.Point(7, 9);
-            this.RegSerialGroupbox.Name = "RegSerialGroupbox";
-            this.RegSerialGroupbox.Size = new System.Drawing.Size(236, 349);
-            this.RegSerialGroupbox.TabIndex = 13;
-            this.RegSerialGroupbox.TabStop = false;
-            // 
-            // RegLicenseTextbox
-            // 
-            this.RegLicenseTextbox.Location = new System.Drawing.Point(13, 139);
-            this.RegLicenseTextbox.Name = "RegLicenseTextbox";
-            this.RegLicenseTextbox.Size = new System.Drawing.Size(213, 20);
-            this.RegLicenseTextbox.TabIndex = 0;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(14, 123);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(71, 13);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Enter license:";
-            // 
-            // RegActivateBTN
-            // 
-            this.RegActivateBTN.Location = new System.Drawing.Point(48, 183);
-            this.RegActivateBTN.Name = "RegActivateBTN";
-            this.RegActivateBTN.Size = new System.Drawing.Size(129, 38);
-            this.RegActivateBTN.TabIndex = 2;
-            this.RegActivateBTN.Text = "Activate";
-            this.RegActivateBTN.UseVisualStyleBackColor = true;
-            this.RegActivateBTN.Click += new System.EventHandler(this.RegActivateBTN_Click);
-            // 
-            // LicenseLabel
-            // 
-            this.LicenseLabel.AutoSize = true;
-            this.LicenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LicenseLabel.Location = new System.Drawing.Point(50, 41);
-            this.LicenseLabel.Name = "LicenseLabel";
-            this.LicenseLabel.Size = new System.Drawing.Size(115, 31);
-            this.LicenseLabel.TabIndex = 3;
-            this.LicenseLabel.Text = "License";
+            this.columnUsername.Text = "Username";
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
-            this.Controls.Add(this.pnl_login);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnl_Order);
+            this.Controls.Add(this.pnl_login);
             this.Controls.Add(this.pnl_Schedule);
             this.Controls.Add(this.Pnl_Supervisors);
             this.Controls.Add(this.Pnl_Activity_List);
@@ -2524,7 +2598,6 @@
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
-            this.Controls.Add(this.pnl_Order);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -2547,17 +2620,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnl_Products.ResumeLayout(false);
             this.pnl_Products.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBoxStorageSettings.ResumeLayout(false);
+            this.groupBoxStorageSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxEditStorage.ResumeLayout(false);
+            this.groupBoxEditStorage.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.pnl_Order.ResumeLayout(false);
             this.pnl_Order.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxCreateOrder.ResumeLayout(false);
+            this.groupBoxCreateOrder.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.Pnl_Sales.ResumeLayout(false);
@@ -2565,24 +2638,24 @@
             this.Date.ResumeLayout(false);
             this.Date.PerformLayout();
             this.Pnl_Supervisors.ResumeLayout(false);
-            this.groupBox15.ResumeLayout(false);
+            this.groupBoxSupervisorModify.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
+            this.groupBoxSupervisorControls.ResumeLayout(false);
             this.Activitygroup.ResumeLayout(false);
             this.pnl_Schedule.ResumeLayout(false);
             this.pnl_Schedule.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
+            this.groupBoxScheduleSwap.ResumeLayout(false);
+            this.groupBoxScheduleSwap.PerformLayout();
             this.Pnl_Activity_List.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
+            this.groupBoxActivityValues.ResumeLayout(false);
+            this.groupBoxActivityValues.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.groupBoxActivitySettings.ResumeLayout(false);
+            this.groupBoxActivitySettings.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.pnl_login.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
@@ -2590,12 +2663,14 @@
             this.ResetGroupBox.PerformLayout();
             this.RegisterGroupBox.ResumeLayout(false);
             this.RegisterGroupBox.PerformLayout();
+            this.RegSerialGroupbox.ResumeLayout(false);
+            this.RegSerialGroupbox.PerformLayout();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.LoginGroupBox.ResumeLayout(false);
             this.LoginGroupBox.PerformLayout();
-            this.RegSerialGroupbox.ResumeLayout(false);
-            this.RegSerialGroupbox.PerformLayout();
+            this.AdminPanelGroupBox.ResumeLayout(false);
+            this.AdminPanelGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2655,7 +2730,7 @@
         private System.Windows.Forms.TextBox VATTextbox;
         private System.Windows.Forms.TextBox RestockLevelTextbox;
         private System.Windows.Forms.TextBox StockTextbox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxEditStorage;
         private System.Windows.Forms.Label RestockLevelLabel;
         private System.Windows.Forms.Label StockLabel;
         private System.Windows.Forms.Label VATLabel;
@@ -2680,7 +2755,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxStorageSettings;
         private System.Windows.Forms.RadioButton DeleteRadioButton;
         private System.Windows.Forms.RadioButton ModifyRadioButton;
         private System.Windows.Forms.RadioButton AddRadioButton;
@@ -2689,7 +2764,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton AgeHigherRadioButton;
         private System.Windows.Forms.RadioButton AgeLowerRadioButton;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxCreateOrder;
         private System.Windows.Forms.Label lbl_Total_Order_List;
         private System.Windows.Forms.ListView ListViewTotalOrder_Details;
         private System.Windows.Forms.Label lbl_Total_Price_Value;
@@ -2732,7 +2807,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.ColumnHeader IDTeacher;
         private System.Windows.Forms.ColumnHeader NameTeacher;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBoxSupervisorControls;
         private System.Windows.Forms.Button AddSupervisorbtn;
         private System.Windows.Forms.Button RemoveSupervisorbtn;
         private System.Windows.Forms.Button RefreshListbtn;
@@ -2751,8 +2826,8 @@
         private System.Windows.Forms.ColumnHeader activitylistDescription;
         private System.Windows.Forms.ColumnHeader activitylistStartDate;
         private System.Windows.Forms.ColumnHeader activitylistEndDate;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.GroupBox groupBoxActivityValues;
+        private System.Windows.Forms.GroupBox groupBoxActivitySettings;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox TextBox_Act_Ehour;
         private System.Windows.Forms.TextBox TextBox_Act_Eminute;
@@ -2784,10 +2859,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBoxSupervisorModify;
         private System.Windows.Forms.ComboBox ModifyComboBox;
         private System.Windows.Forms.Button ModifySupervisorbtn;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox groupBoxScheduleSwap;
         private System.Windows.Forms.ListView listViewDate2;
         private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.ColumnHeader columnHeader31;
@@ -2849,6 +2924,13 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox RegLicenseTextbox;
         private System.Windows.Forms.Button RegRegisterBTN;
+        private System.Windows.Forms.GroupBox AdminPanelGroupBox;
+        private System.Windows.Forms.Button AdminReqDenyBTN;
+        private System.Windows.Forms.Button AdminReqAcceptBTN;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ListView AdminRequestListView;
+        private System.Windows.Forms.ColumnHeader columnUserId;
+        private System.Windows.Forms.ColumnHeader columnUsername;
     }
 }
 
