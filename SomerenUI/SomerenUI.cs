@@ -16,6 +16,9 @@ namespace SomerenUI
 {
     public partial class SomerenUI : Form
     {
+        private bool AdminStatus = false;
+
+
         public SomerenUI()
         {
             InitializeComponent();
@@ -246,7 +249,9 @@ namespace SomerenUI
             groupBoxEditStorage.Show();
             groupBoxStorageSettings.Show();
             groupBoxCreateOrder.Show();
-
+            this.AdminStatus = true;
+            groupBoxAskAdmin.Hide();
+            AdminPanelGroupBox.Show();
             // go to program
             showPanel("Dashboard");
         }
@@ -263,11 +268,93 @@ namespace SomerenUI
             groupBoxEditStorage.Hide();
             groupBoxStorageSettings.Hide();
             groupBoxCreateOrder.Hide();
-
+            this.AdminStatus = false;
+            groupBoxAskAdmin.Show();
+            AdminPanelGroupBox.Hide();
             // go to program
             showPanel("Dashboard");
         }
 
+
+        private void DenyAdminRequest()
+        {
+            if (AdminRequestListView.SelectedItems.Count != 0)
+            {
+                SomerenLogic.User_Service user_Service = new User_Service();
+                List<AdminRequest> requests = user_Service.GetRequests();
+                if (requests.Count > 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Press Yes to confirm removal", "Someren Admin Requests", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        user_Service.RemoveRequest(requests[AdminRequestListView.SelectedIndices[0]].AdminRequestId);
+                        FillRequestView();
+                    }
+                }
+            }
+        }
+
+        private void AcceptAdminRequest()
+        {
+            if (AdminRequestListView.SelectedItems.Count != 0)
+            {
+                SomerenLogic.User_Service user_Service = new User_Service();
+                List<AdminRequest> requests = user_Service.GetRequests();
+                if (requests.Count > 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Press Yes to confirm", "Someren Admin Requests", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        user_Service.MakeUserAdmin(requests[AdminRequestListView.SelectedIndices[0]].Username);
+                        user_Service.RemoveRequest(requests[AdminRequestListView.SelectedIndices[0]].AdminRequestId);
+                        FillRequestView();
+                    }
+                    
+                }
+            }
+        }
+
+        private void CreateAdminRequest()
+        {
+            SomerenLogic.User_Service user_Service = new User_Service();
+
+            bool RequestPending = user_Service.CreateAdminRequest(textBoxUsername.Text);
+            if (RequestPending == false)
+            {
+                MessageBox.Show("A request has been made", "Someren Admin Request",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("You already created a request, wait patiently!", "Someren Admin Request",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void FillRequestView()
+        {
+            SomerenLogic.User_Service user_Service = new User_Service();
+            List<AdminRequest> requests = user_Service.GetRequests();
+            AdminRequestListView.Items.Clear();
+            AdminRequestListView.View = View.Details;
+            foreach (SomerenModel.AdminRequest request in requests)
+            {
+                AdminRequestListView.Items.Add(new ListViewItem(new string[] { $"{request.AdminRequestId}", $"{request.Username}", $"{request.UserId}" }));
+            }
+            if(requests.Count > 0)
+            {
+                if(requests.Count == 1)
+                {
+                    MessageBox.Show($"There is {requests.Count} Admin Request", "Someren Admin Requests",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"There are {requests.Count} Admin Requests", "Someren Admin Requests",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
 
         private void RegRegisterBTN_Click(object sender, EventArgs e)
         {
@@ -299,7 +386,20 @@ namespace SomerenUI
             LoginMenu("Register");
         }
 
+        private void AdminReqAcceptBTN_Click(object sender, EventArgs e)
+        {
+            AcceptAdminRequest();
+        }
 
+        private void AskAdminBTN_Click(object sender, EventArgs e)
+        {
+            CreateAdminRequest();
+        }
+
+        private void AdminReqDenyBTN_Click(object sender, EventArgs e)
+        {
+            DenyAdminRequest();
+        }
 
         private void showPanel(string panelName)
         {
@@ -321,6 +421,14 @@ namespace SomerenUI
                     // show dashboard
                     pnl_Dashboard.Show();
                     img_Dashboard.Show();
+
+
+                    // fill admin request view
+                    
+                    if (AdminStatus == true)
+                    {
+                        FillRequestView();
+                    }
                     break;
 
                 case "Students":

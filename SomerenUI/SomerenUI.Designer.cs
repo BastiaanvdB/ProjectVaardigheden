@@ -48,6 +48,13 @@
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
+            this.AdminPanelGroupBox = new System.Windows.Forms.GroupBox();
+            this.AdminReqDenyBTN = new System.Windows.Forms.Button();
+            this.AdminReqAcceptBTN = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.AdminRequestListView = new System.Windows.Forms.ListView();
+            this.columnUserId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
             this.listViewStudents = new System.Windows.Forms.ListView();
@@ -275,16 +282,14 @@
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.AdminPanelGroupBox = new System.Windows.Forms.GroupBox();
-            this.AdminRequestListView = new System.Windows.Forms.ListView();
-            this.label27 = new System.Windows.Forms.Label();
-            this.AdminReqAcceptBTN = new System.Windows.Forms.Button();
-            this.AdminReqDenyBTN = new System.Windows.Forms.Button();
-            this.columnUserId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderuserid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.groupBoxAskAdmin = new System.Windows.Forms.GroupBox();
+            this.AskAdminBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
+            this.AdminPanelGroupBox.SuspendLayout();
             this.pnl_Students.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Teachers.SuspendLayout();
@@ -322,7 +327,7 @@
             this.RegSerialGroupbox.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.LoginGroupBox.SuspendLayout();
-            this.AdminPanelGroupBox.SuspendLayout();
+            this.groupBoxAskAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -472,6 +477,7 @@
             // 
             // pnl_Dashboard
             // 
+            this.pnl_Dashboard.Controls.Add(this.groupBoxAskAdmin);
             this.pnl_Dashboard.Controls.Add(this.AdminPanelGroupBox);
             this.pnl_Dashboard.Controls.Add(this.lbl_Dashboard);
             this.pnl_Dashboard.Controls.Add(this.img_Dashboard);
@@ -479,6 +485,74 @@
             this.pnl_Dashboard.Name = "pnl_Dashboard";
             this.pnl_Dashboard.Size = new System.Drawing.Size(938, 466);
             this.pnl_Dashboard.TabIndex = 2;
+            // 
+            // AdminPanelGroupBox
+            // 
+            this.AdminPanelGroupBox.Controls.Add(this.AdminReqDenyBTN);
+            this.AdminPanelGroupBox.Controls.Add(this.AdminReqAcceptBTN);
+            this.AdminPanelGroupBox.Controls.Add(this.label27);
+            this.AdminPanelGroupBox.Controls.Add(this.AdminRequestListView);
+            this.AdminPanelGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminPanelGroupBox.Location = new System.Drawing.Point(219, 50);
+            this.AdminPanelGroupBox.Name = "AdminPanelGroupBox";
+            this.AdminPanelGroupBox.Size = new System.Drawing.Size(376, 378);
+            this.AdminPanelGroupBox.TabIndex = 2;
+            this.AdminPanelGroupBox.TabStop = false;
+            this.AdminPanelGroupBox.Text = "Admin panel";
+            // 
+            // AdminReqDenyBTN
+            // 
+            this.AdminReqDenyBTN.Location = new System.Drawing.Point(209, 327);
+            this.AdminReqDenyBTN.Name = "AdminReqDenyBTN";
+            this.AdminReqDenyBTN.Size = new System.Drawing.Size(113, 35);
+            this.AdminReqDenyBTN.TabIndex = 3;
+            this.AdminReqDenyBTN.Text = "Deny";
+            this.AdminReqDenyBTN.UseVisualStyleBackColor = true;
+            this.AdminReqDenyBTN.Click += new System.EventHandler(this.AdminReqDenyBTN_Click);
+            // 
+            // AdminReqAcceptBTN
+            // 
+            this.AdminReqAcceptBTN.Location = new System.Drawing.Point(32, 327);
+            this.AdminReqAcceptBTN.Name = "AdminReqAcceptBTN";
+            this.AdminReqAcceptBTN.Size = new System.Drawing.Size(113, 34);
+            this.AdminReqAcceptBTN.TabIndex = 2;
+            this.AdminReqAcceptBTN.Text = "Accept";
+            this.AdminReqAcceptBTN.UseVisualStyleBackColor = true;
+            this.AdminReqAcceptBTN.Click += new System.EventHandler(this.AdminReqAcceptBTN_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(35, 43);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(137, 16);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "AdminStatus Request";
+            // 
+            // AdminRequestListView
+            // 
+            this.AdminRequestListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnUserId,
+            this.columnUsername,
+            this.columnHeaderuserid});
+            this.AdminRequestListView.FullRowSelect = true;
+            this.AdminRequestListView.GridLines = true;
+            this.AdminRequestListView.HideSelection = false;
+            this.AdminRequestListView.Location = new System.Drawing.Point(13, 62);
+            this.AdminRequestListView.MultiSelect = false;
+            this.AdminRequestListView.Name = "AdminRequestListView";
+            this.AdminRequestListView.Size = new System.Drawing.Size(333, 246);
+            this.AdminRequestListView.TabIndex = 0;
+            this.AdminRequestListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnUserId
+            // 
+            this.columnUserId.Text = "ID";
+            // 
+            // columnUsername
+            // 
+            this.columnUsername.Text = "Username";
+            this.columnUsername.Width = 210;
             // 
             // lbl_Dashboard
             // 
@@ -2517,69 +2591,30 @@
             this.textBoxPassword.Size = new System.Drawing.Size(159, 21);
             this.textBoxPassword.TabIndex = 3;
             // 
-            // AdminPanelGroupBox
+            // columnHeaderuserid
             // 
-            this.AdminPanelGroupBox.Controls.Add(this.AdminReqDenyBTN);
-            this.AdminPanelGroupBox.Controls.Add(this.AdminReqAcceptBTN);
-            this.AdminPanelGroupBox.Controls.Add(this.label27);
-            this.AdminPanelGroupBox.Controls.Add(this.AdminRequestListView);
-            this.AdminPanelGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminPanelGroupBox.Location = new System.Drawing.Point(26, 67);
-            this.AdminPanelGroupBox.Name = "AdminPanelGroupBox";
-            this.AdminPanelGroupBox.Size = new System.Drawing.Size(582, 378);
-            this.AdminPanelGroupBox.TabIndex = 2;
-            this.AdminPanelGroupBox.TabStop = false;
-            this.AdminPanelGroupBox.Text = "Admin panel";
+            this.columnHeaderuserid.Text = "UserID";
             // 
-            // AdminRequestListView
+            // groupBoxAskAdmin
             // 
-            this.AdminRequestListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnUserId,
-            this.columnUsername});
-            this.AdminRequestListView.FullRowSelect = true;
-            this.AdminRequestListView.GridLines = true;
-            this.AdminRequestListView.HideSelection = false;
-            this.AdminRequestListView.Location = new System.Drawing.Point(13, 62);
-            this.AdminRequestListView.MultiSelect = false;
-            this.AdminRequestListView.Name = "AdminRequestListView";
-            this.AdminRequestListView.Size = new System.Drawing.Size(184, 246);
-            this.AdminRequestListView.TabIndex = 0;
-            this.AdminRequestListView.UseCompatibleStateImageBehavior = false;
+            this.groupBoxAskAdmin.Controls.Add(this.AskAdminBTN);
+            this.groupBoxAskAdmin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.groupBoxAskAdmin.Location = new System.Drawing.Point(13, 43);
+            this.groupBoxAskAdmin.Name = "groupBoxAskAdmin";
+            this.groupBoxAskAdmin.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxAskAdmin.TabIndex = 3;
+            this.groupBoxAskAdmin.TabStop = false;
+            this.groupBoxAskAdmin.Text = "Ask for admin privileges";
             // 
-            // label27
+            // AskAdminBTN
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(35, 43);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(137, 16);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "AdminStatus Request";
-            // 
-            // AdminReqAcceptBTN
-            // 
-            this.AdminReqAcceptBTN.Location = new System.Drawing.Point(13, 322);
-            this.AdminReqAcceptBTN.Name = "AdminReqAcceptBTN";
-            this.AdminReqAcceptBTN.Size = new System.Drawing.Size(78, 23);
-            this.AdminReqAcceptBTN.TabIndex = 2;
-            this.AdminReqAcceptBTN.Text = "Accept";
-            this.AdminReqAcceptBTN.UseVisualStyleBackColor = true;
-            // 
-            // AdminReqDenyBTN
-            // 
-            this.AdminReqDenyBTN.Location = new System.Drawing.Point(119, 322);
-            this.AdminReqDenyBTN.Name = "AdminReqDenyBTN";
-            this.AdminReqDenyBTN.Size = new System.Drawing.Size(78, 23);
-            this.AdminReqDenyBTN.TabIndex = 3;
-            this.AdminReqDenyBTN.Text = "Deny";
-            this.AdminReqDenyBTN.UseVisualStyleBackColor = true;
-            // 
-            // columnUserId
-            // 
-            this.columnUserId.Text = "ID";
-            // 
-            // columnUsername
-            // 
-            this.columnUsername.Text = "Username";
+            this.AskAdminBTN.Location = new System.Drawing.Point(49, 36);
+            this.AskAdminBTN.Name = "AskAdminBTN";
+            this.AskAdminBTN.Size = new System.Drawing.Size(87, 28);
+            this.AskAdminBTN.TabIndex = 0;
+            this.AskAdminBTN.Text = "Ask";
+            this.AskAdminBTN.UseVisualStyleBackColor = true;
+            this.AskAdminBTN.Click += new System.EventHandler(this.AskAdminBTN_Click);
             // 
             // SomerenUI
             // 
@@ -2587,6 +2622,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.pnl_Order);
             this.Controls.Add(this.pnl_login);
             this.Controls.Add(this.pnl_Schedule);
@@ -2597,7 +2633,6 @@
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
-            this.Controls.Add(this.pnl_Dashboard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -2609,6 +2644,8 @@
             this.menuStrip1.PerformLayout();
             this.pnl_Dashboard.ResumeLayout(false);
             this.pnl_Dashboard.PerformLayout();
+            this.AdminPanelGroupBox.ResumeLayout(false);
+            this.AdminPanelGroupBox.PerformLayout();
             this.pnl_Students.ResumeLayout(false);
             this.pnl_Students.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2669,8 +2706,7 @@
             this.groupBox17.PerformLayout();
             this.LoginGroupBox.ResumeLayout(false);
             this.LoginGroupBox.PerformLayout();
-            this.AdminPanelGroupBox.ResumeLayout(false);
-            this.AdminPanelGroupBox.PerformLayout();
+            this.groupBoxAskAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2931,6 +2967,10 @@
         private System.Windows.Forms.ListView AdminRequestListView;
         private System.Windows.Forms.ColumnHeader columnUserId;
         private System.Windows.Forms.ColumnHeader columnUsername;
+        private System.Windows.Forms.ColumnHeader columnHeaderuserid;
+        private System.Windows.Forms.GroupBox groupBoxAskAdmin;
+        private System.Windows.Forms.Button AskAdminBTN;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
     }
 }
 

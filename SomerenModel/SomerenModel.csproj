@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="ActivitySupervisor.cs" />
+    <Compile Include="AdminRequest.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

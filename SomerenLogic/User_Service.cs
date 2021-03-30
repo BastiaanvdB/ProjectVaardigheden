@@ -42,5 +42,24 @@ namespace SomerenLogic
             return user_db.DB_Check_Admin_Status(Username, Password);
         }
 
+        public List<AdminRequest> GetRequests()
+        {
+            return user_db.DB_Get_Admin_Requests();
+        }
+
+        public void RemoveRequest(int RequestId)
+        {
+            user_db.DB_Remove_Admin_Request(RequestId);
+        }
+
+        public void MakeUserAdmin(string Username)
+        {
+            user_db.DB_Make_User_Admin(Username);
+        }
+
+        public bool CreateAdminRequest(string Username)
+        {
+            return user_db.DB_Make_Admin_Request(Username);
+        }
     }
 }
