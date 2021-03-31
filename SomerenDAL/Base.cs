@@ -104,5 +104,29 @@ namespace SomerenDAL
             }
             return dataTable;
         }
+        protected DataSet ExecuteSelectQueryOneCol(String query, params SqlParameter[] sqlParameters)
+        {
+            SqlCommand command = new SqlCommand();
+            string dataTable;
+            //DataSet dataSet = new DataSet();
+            DataSet SecurityDS = new DataSet();
+
+            
+                command.Connection = OpenConnection();
+                command.CommandText = query;
+                command.Parameters.AddRange(sqlParameters);
+                command.ExecuteNonQuery();
+                adapter.SelectCommand = command;
+                
+                adapter.Fill(SecurityDS, "Users");
+
+            // dataTable = dataSet;
+            return SecurityDS;
+
+            CloseConnection();
+            
+            
+        }
     }
+        
 }

@@ -23,16 +23,6 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CoreCompileInputs.cache
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll.config
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenDAL\bin\Debug\SomerenDAL.dll.config
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenDAL\bin\Debug\SomerenDAL.dll
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenDAL\bin\Debug\SomerenDAL.pdb
@@ -93,3 +83,13 @@ C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDA
 C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
 C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll.config
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenDAL.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\bin\Debug\SomerenModel.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CoreCompileInputs.cache
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenDAL\obj\Debug\SomerenDAL.pdb

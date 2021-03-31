@@ -31,24 +31,6 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.exe
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenUI.exe.config
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenUI.exe
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenUI.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenDAL.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenLogic.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenModel.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenDAL.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenDAL.dll.config
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenLogic.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenModel.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.SomerenUI.resources
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csproj.CoreCompileInputs.cache
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.exe
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.pdb
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenUI\bin\Debug\SomerenUI.exe.config
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenUI\bin\Debug\SomerenUI.exe
 C:\Users\basti\Desktop\ProjectVaardigheden-SanderOpdrachtC\SomerenUI\bin\Debug\SomerenUI.pdb
@@ -183,3 +165,25 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenUI\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenUI\bin\Debug\Interop.WMPLib.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenUI\bin\Debug\Magic.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.SomerenUI.resources
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csproj.CoreCompileInputs.cache
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenUI.exe.config
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenUI.exe
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenUI.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\Magic.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenDAL.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenLogic.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenModel.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\Interop.WMPLib.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\Magic.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenDAL.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenDAL.dll.config
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenLogic.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\bin\Debug\SomerenModel.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.exe
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenUI\obj\Debug\SomerenUI.pdb

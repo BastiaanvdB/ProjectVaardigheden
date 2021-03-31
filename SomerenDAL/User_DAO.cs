@@ -246,6 +246,67 @@ namespace SomerenDAL
             }
             return auth != 0;
         }
+        public User DB_Fetch_Security_Answer(string Username, string answer)
+        {
+            string query = "SELECT user_firstname, user_lastname, user_username, user_password, user_admin_status, license_key, user_secrect_question, user_secrect_answer FROM Users WHERE user_username = @Username AND user_secrect_answer = @Answer";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = Username},
+                new SqlParameter("@Answer", SqlDbType.NVarChar, 50) { Value = answer},
+
+            };
+            return ReadUser(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public String DB_Fetch_Security_Question(string Username)
+        {
+            string query = "SELECT user_secrect_question FROM Users WHERE user_username = @Username";
+            string security = "null";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = Username},
+
+            };
+            DataSet ds = ExecuteSelectQueryOneCol(query, sqlParameters);
+
+
+            if (ds.Tables[0].Rows.Count == 1)
+            {
+                security = ds.Tables[0].Rows[0]["user_secrect_question"].ToString();
+            }
+            
+                //security = (string)dr["user_secrect_question"];
+            
+
+            return security;
+        }
+        public void DB_Update_Password_Only(string Username, string answer, string Password)
+        {
+            string query = "UPDATE Users SET user_password = @Password WHERE user_username = @Username AND user_secrect_answer = @Answer";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Password", SqlDbType.VarChar) { Value = Password },
+                new SqlParameter("@Username", SqlDbType.VarChar) { Value = Username },
+                new SqlParameter("@Answer", SqlDbType.VarChar) { Value = answer }
+                
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+        public void DB_Update_Security(string Username, string secQ, string secA, string password)
+        {
+            string query = "UPDATE Users SET user_password = @Password, user_secrect_question = @secQ, user_secrect_answer = @secA WHERE user_username = @Username";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Password", SqlDbType.VarChar) { Value = password },
+                new SqlParameter("@Username", SqlDbType.VarChar) { Value = Username },
+                 new SqlParameter("@secQ", SqlDbType.VarChar) { Value = secQ },
+                new SqlParameter("@secA", SqlDbType.VarChar) { Value = secA }
+
+            };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+
 
     }
 }

@@ -48,6 +48,8 @@
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
+            this.groupBoxAskAdmin = new System.Windows.Forms.GroupBox();
+            this.AskAdminBTN = new System.Windows.Forms.Button();
             this.AdminPanelGroupBox = new System.Windows.Forms.GroupBox();
             this.AdminReqDenyBTN = new System.Windows.Forms.Button();
             this.AdminReqAcceptBTN = new System.Windows.Forms.Button();
@@ -55,6 +57,7 @@
             this.AdminRequestListView = new System.Windows.Forms.ListView();
             this.columnUserId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderuserid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
             this.listViewStudents = new System.Windows.Forms.ListView();
@@ -252,6 +255,19 @@
             this.RegisterBTN = new System.Windows.Forms.Button();
             this.SignInBTN = new System.Windows.Forms.Button();
             this.ResetGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txt_newP = new System.Windows.Forms.TextBox();
+            this.btn_resetpw = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textAnswerSecurity = new System.Windows.Forms.TextBox();
+            this.btn_answerValidate = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txt_UsernameInput = new System.Windows.Forms.TextBox();
+            this.btn_fetchSecurity = new System.Windows.Forms.Button();
+            this.lbl_security = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.labelResetPassword = new System.Windows.Forms.Label();
             this.RegisterGroupBox = new System.Windows.Forms.GroupBox();
             this.RegSerialGroupbox = new System.Windows.Forms.GroupBox();
@@ -282,13 +298,19 @@
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.columnHeaderuserid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
-            this.groupBoxAskAdmin = new System.Windows.Forms.GroupBox();
-            this.AskAdminBTN = new System.Windows.Forms.Button();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
+            this.label31 = new System.Windows.Forms.Label();
+            this.checkSecurity = new System.Windows.Forms.CheckBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txt_newSA = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txt_newSQ = new System.Windows.Forms.TextBox();
+            this.btn_clearfields = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
+            this.groupBoxAskAdmin.SuspendLayout();
             this.AdminPanelGroupBox.SuspendLayout();
             this.pnl_Students.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -323,11 +345,12 @@
             this.pnl_login.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.ResetGroupBox.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.RegisterGroupBox.SuspendLayout();
             this.RegSerialGroupbox.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.LoginGroupBox.SuspendLayout();
-            this.groupBoxAskAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -486,6 +509,27 @@
             this.pnl_Dashboard.Size = new System.Drawing.Size(938, 466);
             this.pnl_Dashboard.TabIndex = 2;
             // 
+            // groupBoxAskAdmin
+            // 
+            this.groupBoxAskAdmin.Controls.Add(this.AskAdminBTN);
+            this.groupBoxAskAdmin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.groupBoxAskAdmin.Location = new System.Drawing.Point(13, 43);
+            this.groupBoxAskAdmin.Name = "groupBoxAskAdmin";
+            this.groupBoxAskAdmin.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxAskAdmin.TabIndex = 3;
+            this.groupBoxAskAdmin.TabStop = false;
+            this.groupBoxAskAdmin.Text = "Ask for admin privileges";
+            // 
+            // AskAdminBTN
+            // 
+            this.AskAdminBTN.Location = new System.Drawing.Point(49, 36);
+            this.AskAdminBTN.Name = "AskAdminBTN";
+            this.AskAdminBTN.Size = new System.Drawing.Size(87, 28);
+            this.AskAdminBTN.TabIndex = 0;
+            this.AskAdminBTN.Text = "Ask";
+            this.AskAdminBTN.UseVisualStyleBackColor = true;
+            this.AskAdminBTN.Click += new System.EventHandler(this.AskAdminBTN_Click);
+            // 
             // AdminPanelGroupBox
             // 
             this.AdminPanelGroupBox.Controls.Add(this.AdminReqDenyBTN);
@@ -553,6 +597,10 @@
             // 
             this.columnUsername.Text = "Username";
             this.columnUsername.Width = 210;
+            // 
+            // columnHeaderuserid
+            // 
+            this.columnHeaderuserid.Text = "UserID";
             // 
             // lbl_Dashboard
             // 
@@ -2307,12 +2355,149 @@
             // ResetGroupBox
             // 
             this.ResetGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ResetGroupBox.Controls.Add(this.btn_clearfields);
+            this.ResetGroupBox.Controls.Add(this.groupBox2);
+            this.ResetGroupBox.Controls.Add(this.groupBox1);
             this.ResetGroupBox.Controls.Add(this.labelResetPassword);
-            this.ResetGroupBox.Location = new System.Drawing.Point(647, 91);
+            this.ResetGroupBox.Location = new System.Drawing.Point(158, 91);
             this.ResetGroupBox.Name = "ResetGroupBox";
-            this.ResetGroupBox.Size = new System.Drawing.Size(249, 296);
+            this.ResetGroupBox.Size = new System.Drawing.Size(738, 363);
             this.ResetGroupBox.TabIndex = 8;
             this.ResetGroupBox.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label34);
+            this.groupBox2.Controls.Add(this.txt_newSQ);
+            this.groupBox2.Controls.Add(this.label33);
+            this.groupBox2.Controls.Add(this.txt_newSA);
+            this.groupBox2.Controls.Add(this.label32);
+            this.groupBox2.Controls.Add(this.txt_newP);
+            this.groupBox2.Controls.Add(this.btn_resetpw);
+            this.groupBox2.Location = new System.Drawing.Point(365, 61);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(343, 200);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Input";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(12, 116);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(106, 13);
+            this.label32.TabIndex = 5;
+            this.label32.Text = "Enter new password:";
+            // 
+            // txt_newP
+            // 
+            this.txt_newP.Enabled = false;
+            this.txt_newP.Location = new System.Drawing.Point(11, 132);
+            this.txt_newP.Name = "txt_newP";
+            this.txt_newP.Size = new System.Drawing.Size(213, 20);
+            this.txt_newP.TabIndex = 4;
+            // 
+            // btn_resetpw
+            // 
+            this.btn_resetpw.Location = new System.Drawing.Point(241, 156);
+            this.btn_resetpw.Name = "btn_resetpw";
+            this.btn_resetpw.Size = new System.Drawing.Size(96, 38);
+            this.btn_resetpw.TabIndex = 6;
+            this.btn_resetpw.Text = "Reset password";
+            this.btn_resetpw.UseVisualStyleBackColor = true;
+            this.btn_resetpw.Click += new System.EventHandler(this.btn_resetpw_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkSecurity);
+            this.groupBox1.Controls.Add(this.label31);
+            this.groupBox1.Controls.Add(this.label30);
+            this.groupBox1.Controls.Add(this.textAnswerSecurity);
+            this.groupBox1.Controls.Add(this.btn_answerValidate);
+            this.groupBox1.Controls.Add(this.label28);
+            this.groupBox1.Controls.Add(this.txt_UsernameInput);
+            this.groupBox1.Controls.Add(this.btn_fetchSecurity);
+            this.groupBox1.Controls.Add(this.lbl_security);
+            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Location = new System.Drawing.Point(16, 59);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(343, 198);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Security Question";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(7, 106);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(156, 13);
+            this.label30.TabIndex = 10;
+            this.label30.Text = "Enter Security question answer:";
+            // 
+            // textAnswerSecurity
+            // 
+            this.textAnswerSecurity.Enabled = false;
+            this.textAnswerSecurity.Location = new System.Drawing.Point(6, 122);
+            this.textAnswerSecurity.Name = "textAnswerSecurity";
+            this.textAnswerSecurity.Size = new System.Drawing.Size(213, 20);
+            this.textAnswerSecurity.TabIndex = 9;
+            // 
+            // btn_answerValidate
+            // 
+            this.btn_answerValidate.Enabled = false;
+            this.btn_answerValidate.Location = new System.Drawing.Point(255, 154);
+            this.btn_answerValidate.Name = "btn_answerValidate";
+            this.btn_answerValidate.Size = new System.Drawing.Size(84, 38);
+            this.btn_answerValidate.TabIndex = 11;
+            this.btn_answerValidate.Text = "Submit";
+            this.btn_answerValidate.UseVisualStyleBackColor = true;
+            this.btn_answerValidate.Click += new System.EventHandler(this.btn_answerValidate_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 19);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(84, 13);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "Enter username:";
+            // 
+            // txt_UsernameInput
+            // 
+            this.txt_UsernameInput.Location = new System.Drawing.Point(5, 35);
+            this.txt_UsernameInput.Name = "txt_UsernameInput";
+            this.txt_UsernameInput.Size = new System.Drawing.Size(213, 20);
+            this.txt_UsernameInput.TabIndex = 4;
+            // 
+            // btn_fetchSecurity
+            // 
+            this.btn_fetchSecurity.Location = new System.Drawing.Point(247, 29);
+            this.btn_fetchSecurity.Name = "btn_fetchSecurity";
+            this.btn_fetchSecurity.Size = new System.Drawing.Size(84, 38);
+            this.btn_fetchSecurity.TabIndex = 6;
+            this.btn_fetchSecurity.Text = "Get question";
+            this.btn_fetchSecurity.UseVisualStyleBackColor = true;
+            this.btn_fetchSecurity.Click += new System.EventHandler(this.btn_fetchSecurity_Click);
+            // 
+            // lbl_security
+            // 
+            this.lbl_security.AutoSize = true;
+            this.lbl_security.Location = new System.Drawing.Point(6, 83);
+            this.lbl_security.Name = "lbl_security";
+            this.lbl_security.Size = new System.Drawing.Size(23, 13);
+            this.lbl_security.TabIndex = 8;
+            this.lbl_security.Text = "null";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 65);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(114, 13);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "Your security question:";
             // 
             // labelResetPassword
             // 
@@ -2591,30 +2776,69 @@
             this.textBoxPassword.Size = new System.Drawing.Size(159, 21);
             this.textBoxPassword.TabIndex = 3;
             // 
-            // columnHeaderuserid
+            // label31
             // 
-            this.columnHeaderuserid.Text = "UserID";
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(9, 148);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(206, 13);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "Do you want to change security question?";
             // 
-            // groupBoxAskAdmin
+            // checkSecurity
             // 
-            this.groupBoxAskAdmin.Controls.Add(this.AskAdminBTN);
-            this.groupBoxAskAdmin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBoxAskAdmin.Location = new System.Drawing.Point(13, 43);
-            this.groupBoxAskAdmin.Name = "groupBoxAskAdmin";
-            this.groupBoxAskAdmin.Size = new System.Drawing.Size(200, 100);
-            this.groupBoxAskAdmin.TabIndex = 3;
-            this.groupBoxAskAdmin.TabStop = false;
-            this.groupBoxAskAdmin.Text = "Ask for admin privileges";
+            this.checkSecurity.AutoSize = true;
+            this.checkSecurity.Enabled = false;
+            this.checkSecurity.Location = new System.Drawing.Point(13, 165);
+            this.checkSecurity.Name = "checkSecurity";
+            this.checkSecurity.Size = new System.Drawing.Size(44, 17);
+            this.checkSecurity.TabIndex = 13;
+            this.checkSecurity.Text = "Yes";
+            this.checkSecurity.UseVisualStyleBackColor = true;
             // 
-            // AskAdminBTN
+            // label33
             // 
-            this.AskAdminBTN.Location = new System.Drawing.Point(49, 36);
-            this.AskAdminBTN.Name = "AskAdminBTN";
-            this.AskAdminBTN.Size = new System.Drawing.Size(87, 28);
-            this.AskAdminBTN.TabIndex = 0;
-            this.AskAdminBTN.Text = "Ask";
-            this.AskAdminBTN.UseVisualStyleBackColor = true;
-            this.AskAdminBTN.Click += new System.EventHandler(this.AskAdminBTN_Click);
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(12, 77);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(134, 13);
+            this.label33.TabIndex = 8;
+            this.label33.Text = "Enter new security answer:";
+            // 
+            // txt_newSA
+            // 
+            this.txt_newSA.Enabled = false;
+            this.txt_newSA.Location = new System.Drawing.Point(11, 93);
+            this.txt_newSA.Name = "txt_newSA";
+            this.txt_newSA.Size = new System.Drawing.Size(213, 20);
+            this.txt_newSA.TabIndex = 7;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(11, 37);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(140, 13);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "Enter new security question:";
+            // 
+            // txt_newSQ
+            // 
+            this.txt_newSQ.Enabled = false;
+            this.txt_newSQ.Location = new System.Drawing.Point(10, 53);
+            this.txt_newSQ.Name = "txt_newSQ";
+            this.txt_newSQ.Size = new System.Drawing.Size(213, 20);
+            this.txt_newSQ.TabIndex = 9;
+            // 
+            // btn_clearfields
+            // 
+            this.btn_clearfields.Location = new System.Drawing.Point(17, 273);
+            this.btn_clearfields.Name = "btn_clearfields";
+            this.btn_clearfields.Size = new System.Drawing.Size(96, 38);
+            this.btn_clearfields.TabIndex = 11;
+            this.btn_clearfields.Text = "Clear fields";
+            this.btn_clearfields.UseVisualStyleBackColor = true;
+            this.btn_clearfields.Click += new System.EventHandler(this.btn_clearfields_Click);
             // 
             // SomerenUI
             // 
@@ -2622,8 +2846,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnl_Dashboard);
-            this.Controls.Add(this.pnl_Order);
             this.Controls.Add(this.pnl_login);
             this.Controls.Add(this.pnl_Schedule);
             this.Controls.Add(this.Pnl_Supervisors);
@@ -2633,6 +2855,8 @@
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Teachers);
             this.Controls.Add(this.pnl_Students);
+            this.Controls.Add(this.pnl_Dashboard);
+            this.Controls.Add(this.pnl_Order);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -2644,6 +2868,7 @@
             this.menuStrip1.PerformLayout();
             this.pnl_Dashboard.ResumeLayout(false);
             this.pnl_Dashboard.PerformLayout();
+            this.groupBoxAskAdmin.ResumeLayout(false);
             this.AdminPanelGroupBox.ResumeLayout(false);
             this.AdminPanelGroupBox.PerformLayout();
             this.pnl_Students.ResumeLayout(false);
@@ -2698,6 +2923,10 @@
             this.groupBox16.ResumeLayout(false);
             this.ResetGroupBox.ResumeLayout(false);
             this.ResetGroupBox.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.RegisterGroupBox.ResumeLayout(false);
             this.RegisterGroupBox.PerformLayout();
             this.RegSerialGroupbox.ResumeLayout(false);
@@ -2706,7 +2935,6 @@
             this.groupBox17.PerformLayout();
             this.LoginGroupBox.ResumeLayout(false);
             this.LoginGroupBox.PerformLayout();
-            this.groupBoxAskAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2971,6 +3199,27 @@
         private System.Windows.Forms.GroupBox groupBoxAskAdmin;
         private System.Windows.Forms.Button AskAdminBTN;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private System.Windows.Forms.Button btn_fetchSecurity;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txt_UsernameInput;
+        private System.Windows.Forms.Label lbl_security;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txt_newP;
+        private System.Windows.Forms.Button btn_resetpw;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textAnswerSecurity;
+        private System.Windows.Forms.Button btn_answerValidate;
+        private System.Windows.Forms.CheckBox checkSecurity;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txt_newSQ;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txt_newSA;
+        private System.Windows.Forms.Button btn_clearfields;
     }
 }
 

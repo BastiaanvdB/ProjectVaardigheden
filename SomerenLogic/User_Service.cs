@@ -61,5 +61,21 @@ namespace SomerenLogic
         {
             return user_db.DB_Make_Admin_Request(Username);
         }
+        public String FetchSecurityQuestion(string Username)
+        {
+            return user_db.DB_Fetch_Security_Question(Username);
+        }
+        public User FetchSecurityAnswer(string Username,string answer)
+        {
+            return user_db.DB_Fetch_Security_Answer(Username, answer);
+        }
+        public void UpatePasswordOnly(string Username, string answer, string password)
+        {
+            user_db.DB_Update_Password_Only(Username, answer, password);
+        }
+        public void UpdateSecurity(string Username,  string secQ, string secA, string password)
+        {
+            user_db.DB_Update_Security(Username, secQ, secA, password);
+        }
     }
 }

@@ -14,12 +14,6 @@ C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardighede
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csproj.CoreCompileInputs.cache
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.dll
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\bin\Debug\SomerenModel.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\bin\Debug\SomerenModel.pdb
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csproj.CoreCompileInputs.cache
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.dll
-C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.pdb
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenModel\bin\Debug\SomerenModel.dll
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenModel\bin\Debug\SomerenModel.pdb
 C:\Users\basti\Desktop\ProjectVaardigheden-week3SanderBranchOpdrachtA\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
@@ -44,3 +38,8 @@ C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenModel\obj\Debug\Someren
 C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.dll
 C:\Users\basti\Desktop\week 4\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.pdb
 C:\Users\basti\Desktop\Project vaardigheden\Opdrachten\Github\ProjectVaardigheden\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\bin\Debug\SomerenModel.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\bin\Debug\SomerenModel.pdb
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.csproj.CoreCompileInputs.cache
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.dll
+C:\Users\Sandier\Documents\GitHub\ProjectVaardigheden\SomerenModel\obj\Debug\SomerenModel.pdb

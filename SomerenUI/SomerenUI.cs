@@ -45,7 +45,7 @@ namespace SomerenUI
             // login screen
             pnl_login.Show();
 
-            
+
         }
 
         private void LoginMenu(string loginsetting)
@@ -58,7 +58,7 @@ namespace SomerenUI
                     ResetGroupBox.Hide();
                     // show box
                     LoginGroupBox.Show();
-                    
+
                     break;
                 //case "LoginTypeChoose":
 
@@ -104,8 +104,8 @@ namespace SomerenUI
         private void CheckSerial()
         {
             User_Service user_Service = new User_Service();
-            
-            if(RegLicenseTextbox.Text.Length > 0)
+
+            if (RegLicenseTextbox.Text.Length > 0)
             {
                 bool LicenseAuth = user_Service.LicenseCheck(RegLicenseTextbox.Text);
                 if (LicenseAuth == true)
@@ -142,7 +142,7 @@ namespace SomerenUI
         {
             User_Service user_Service = new User_Service();
 
-            if((RegFirstnameTextbox.Text.Length > 0) && (RegLastnameTextbox.Text.Length > 0) && (RegUsernameTextbox.Text.Length > 0) && (RegPasswordTextbox.Text.Length > 0) && (RegQuestionTextbox.Text.Length > 0) && (RegAnswerTextbox.Text.Length > 0))
+            if ((RegFirstnameTextbox.Text.Length > 0) && (RegLastnameTextbox.Text.Length > 0) && (RegUsernameTextbox.Text.Length > 0) && (RegPasswordTextbox.Text.Length > 0) && (RegQuestionTextbox.Text.Length > 0) && (RegAnswerTextbox.Text.Length > 0))
             {
                 bool UserExist = user_Service.CheckIfExist(RegUsernameTextbox.Text);
                 if (UserExist == false)
@@ -218,7 +218,7 @@ namespace SomerenUI
             }
         }
 
-        private void LoginType(bool AdminStatus) 
+        private void LoginType(bool AdminStatus)
         {
             RegisterGroupBox.Hide();
             ResetGroupBox.Hide();
@@ -309,7 +309,7 @@ namespace SomerenUI
                         user_Service.RemoveRequest(requests[AdminRequestListView.SelectedIndices[0]].AdminRequestId);
                         FillRequestView();
                     }
-                    
+
                 }
             }
         }
@@ -341,9 +341,9 @@ namespace SomerenUI
             {
                 AdminRequestListView.Items.Add(new ListViewItem(new string[] { $"{request.AdminRequestId}", $"{request.Username}", $"{request.UserId}" }));
             }
-            if(requests.Count > 0)
+            if (requests.Count > 0)
             {
-                if(requests.Count == 1)
+                if (requests.Count == 1)
                 {
                     MessageBox.Show($"There is {requests.Count} Admin Request", "Someren Admin Requests",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -403,7 +403,7 @@ namespace SomerenUI
 
         private void showPanel(string panelName)
         {
-            switch(panelName)
+            switch (panelName)
             {
                 case "Dashboard":
                     // hide all other panels
@@ -424,7 +424,7 @@ namespace SomerenUI
 
 
                     // fill admin request view
-                    
+
                     if (AdminStatus == true)
                     {
                         FillRequestView();
@@ -616,7 +616,7 @@ namespace SomerenUI
                         if (p.Stock < p.Restocklevel)
                         {
                             //test
-                           alarm = "REFILL!";
+                            alarm = "REFILL!";
                         }
                         if (p.Age == true)
                         {
@@ -660,9 +660,9 @@ namespace SomerenUI
                     List<Product> prodList = prodServ.GetProducts();
                     ListViewOrder_Products.View = View.Details;
                     foreach (SomerenModel.Product product in prodList)
-                    {                      
+                    {
 
-                        ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}"}));
+                        ListViewOrder_Products.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price.ToString("0.00")}", $"{product.VAT}%", $"{product.Stock}", $"{product.Sold}" }));
                     }
                     break;
                 case "Supervisors":
@@ -710,7 +710,7 @@ namespace SomerenUI
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           //
+            //
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -740,7 +740,7 @@ namespace SomerenUI
 
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void teachersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -761,13 +761,13 @@ namespace SomerenUI
 
         private void listViewBeverage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listViewBeverage.SelectedItems.Count > 0)
+            if (listViewBeverage.SelectedItems.Count > 0)
             {
                 ListViewItem item = listViewBeverage.SelectedItems[0];
                 IDTextBox.Text = item.SubItems[0].Text;
                 NameTextbox.Text = item.SubItems[1].Text;
                 PriceTextbox.Text = item.SubItems[2].Text.Replace("€", String.Empty);
-                if(item.SubItems[3].Text == ">18")
+                if (item.SubItems[3].Text == ">18")
                 {
                     AgeLowerRadioButton.Checked = false;
                     AgeHigherRadioButton.Checked = true;
@@ -802,7 +802,7 @@ namespace SomerenUI
         private void EditStorage(string setting)
         {
             SomerenLogic.Product_Service product_Service = new Product_Service();
-            
+
             switch (setting)
             {
                 case "Delete":
@@ -810,7 +810,7 @@ namespace SomerenUI
                     if (item != null)
                     {
                         // Read textbox to int
-                      //  int id = int.Parse(IDTextBox.Text);
+                        //  int id = int.Parse(IDTextBox.Text);
 
                         // send delete command to database
                         product_Service.DeleteProduct(int.Parse(IDTextBox.Text));
@@ -843,7 +843,7 @@ namespace SomerenUI
                         newproduct.Id = int.Parse(IDTextBox.Text);
                         newproduct.Name = NameTextbox.Text;
                         newproduct.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
-                        if(AgeHigherRadioButton.Checked == true)
+                        if (AgeHigherRadioButton.Checked == true)
                         {
                             newproduct.Age = true;
                         }
@@ -859,51 +859,51 @@ namespace SomerenUI
                         // send edited product to database
                         product_Service.ModifyProduct(newproduct);
                     }
-                        break;
+                    break;
                 case "Add":
-                    
-                        // create edited product
-                        Product product = new Product();
-                        product.Id = int.Parse(IDTextBox.Text);
-                        product.Name = NameTextbox.Text;
-                        product.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
-                        product.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
-                        if(AgeHigherRadioButton.Checked == true)
-                        {
-                            product.Age = true;
-                        }
-                        else if(AgeLowerRadioButton.Checked == true)
-                        {
-                            product.Age = false;
-                        }
-                        product.Stock = int.Parse(StockTextbox.Text);
-                        product.Restocklevel = int.Parse(RestockLevelTextbox.Text);
-                        product.Sold = int.Parse(SoldTextbox.Text);
 
-                        // send new product to database
-                        product_Service.AddProduct(product);
+                    // create edited product
+                    Product product = new Product();
+                    product.Id = int.Parse(IDTextBox.Text);
+                    product.Name = NameTextbox.Text;
+                    product.Price = decimal.Parse(PriceTextbox.Text.Replace("€", String.Empty));
+                    product.VAT = int.Parse(VATTextbox.Text.Replace("%", String.Empty));
+                    if (AgeHigherRadioButton.Checked == true)
+                    {
+                        product.Age = true;
+                    }
+                    else if (AgeLowerRadioButton.Checked == true)
+                    {
+                        product.Age = false;
+                    }
+                    product.Stock = int.Parse(StockTextbox.Text);
+                    product.Restocklevel = int.Parse(RestockLevelTextbox.Text);
+                    product.Sold = int.Parse(SoldTextbox.Text);
 
-                        listViewBeverage.View = View.Details;
-                        
-                        string age = "<18";
-                        string alarm = "FULL";
-                        if (product.Stock < product.Restocklevel)
-                        {
-                           alarm = "REFILL!";
-                        }
-                        if (product.Age == true)
-                        {
-                            age = ">18";
-                        }
-                        listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price}", $"{age}", $"{product.VAT}%", $"{product.Stock}", $"{product.Restocklevel}", $"{product.Sold}", $"{alarm}" }));
-                        break;
+                    // send new product to database
+                    product_Service.AddProduct(product);
+
+                    listViewBeverage.View = View.Details;
+
+                    string age = "<18";
+                    string alarm = "FULL";
+                    if (product.Stock < product.Restocklevel)
+                    {
+                        alarm = "REFILL!";
+                    }
+                    if (product.Age == true)
+                    {
+                        age = ">18";
+                    }
+                    listViewBeverage.Items.Add(new ListViewItem(new string[] { $"{product.Id}", $"{product.Name}", $"€{product.Price}", $"{age}", $"{product.VAT}%", $"{product.Stock}", $"{product.Restocklevel}", $"{product.Sold}", $"{alarm}" }));
+                    break;
             }
 
         }
 
         private void RadioButton(string button)
         {
-            switch(button)
+            switch (button)
             {
                 case "Add":
                     ProductModifyButton.Text = "Add";
@@ -960,7 +960,7 @@ namespace SomerenUI
         }
 
         private void ListViewOrder_Students_SelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
             //If a student is selected it will show in the 'For:' textbox
 
             if (ListViewOrder_Students.SelectedItems.Count > 0)
@@ -1033,7 +1033,7 @@ namespace SomerenUI
         private void PurchaseOrder(List<Product> pL)
         {
             // send order to database
-            
+
             ListViewItem stuItem = ListViewOrder_Students.SelectedItems[0];
             ListViewItem proItem = ListViewOrder_Products.SelectedItems[0];
             //order parameters
@@ -1045,7 +1045,7 @@ namespace SomerenUI
             //order insert
             orderServ.Insert_Order(sNr);
 
-           orderServ.Insert_OrderDetails_WithList(pL);
+            orderServ.Insert_OrderDetails_WithList(pL);
         }
 
         private void RemoveFromOrderlist()
@@ -1084,10 +1084,10 @@ namespace SomerenUI
         {
             order_listView.Items.Clear();
             SomerenLogic.SalesReport_Service saleServ = new SomerenLogic.SalesReport_Service();
-           
+
             DateTime CalendarFrom = Convert.ToDateTime(date_from.SelectionStart);
             DateTime CalendarTo = Convert.ToDateTime(date_to.SelectionStart);
-            
+
             if (CalendarTo > CalendarFrom)
             {
 
@@ -1098,7 +1098,7 @@ namespace SomerenUI
 
                 //List<Sale_Report> salereportList = saleServ.GetSalesReports();
 
-               // order_listView.View = View.Details;
+                // order_listView.View = View.Details;
 
 
                 foreach (SomerenModel.Sale_Report s in saleReportList)
@@ -1122,7 +1122,7 @@ namespace SomerenUI
 
         private void ActivitySupervisorMenu(string settingmenu)
         {
-            switch(settingmenu)
+            switch (settingmenu)
             {
                 case "Refresh":
                     FillListsActivitySupervisor();
@@ -1520,7 +1520,7 @@ namespace SomerenUI
 
                 List<ActivitySupervisor> activitySupervisors = activitySupervisor_Service.GetActivitySupervisor();
                 List<Activity> activities = activity_Service.GetActivities();
-                
+
                 ActivitySupervisor supervisor = activitySupervisors[SupervisorListview.SelectedIndices[0]];
 
                 for (int i = 0; i < activities.Count; i++)
@@ -1584,6 +1584,148 @@ namespace SomerenUI
             FillModifyCombobox();
         }
 
-        
+        private void btn_fetchSecurity_Click(object sender, EventArgs e)
+        {
+
+
+            string username = txt_UsernameInput.Text;
+            SomerenLogic.User_Service user_Service = new User_Service();
+            if (username != "")
+            {
+                // User u = user_Service.FetchSecurityQuestion(username);
+                string question = user_Service.FetchSecurityQuestion(username);
+                if (question == "null")
+                {
+                    MessageBox.Show("username not found.");
+                }
+                else
+                {
+
+                    lbl_security.Text = question;
+                    btn_answerValidate.Enabled = true;
+                    textAnswerSecurity.Enabled = true;
+                    checkSecurity.Enabled = true;
+                }
+            }
+
+        }
+
+        private void btn_answerValidate_Click(object sender, EventArgs e)
+        {
+            string answer = textAnswerSecurity.Text;
+            string Question = txt_UsernameInput.Text;
+            SomerenLogic.User_Service user_Service = new User_Service();
+            if (answer != "")
+            {
+                User u = user_Service.FetchSecurityAnswer(Question, answer);
+                // string question = user_Service.FetchSecurityQuestion(username);
+                if (u == null)
+                {
+                    MessageBox.Show("incorrect answer");
+                }
+                else
+                {
+                    txt_UsernameInput.Enabled = false;
+                    checkSecurity.Enabled = false;
+                    btn_answerValidate.Enabled = false;
+                    textAnswerSecurity.Enabled = false;
+                    btn_fetchSecurity.Enabled = false;
+
+                    if (checkSecurity.Checked)
+                    {
+                        txt_newSQ.Enabled = true;
+                        txt_newSQ.Text = u.SecrectQuestion;
+                        txt_newSA.Enabled = true;
+                        txt_newSA.Text = u.SecretAnswer;
+                        txt_newP.Enabled = true;
+                    }
+                    else
+                    {
+                        txt_newP.Enabled = true;
+
+                    }
+                }
+
+            }
+        }
+
+        private void btn_resetpw_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.User_Service user_Service = new User_Service();
+            string usrname = txt_UsernameInput.Text;
+            string answer = textAnswerSecurity.Text;
+            string newsecQ = txt_newSQ.Text;
+            string newsecA = txt_newSA.Text;
+            if (!txt_newSQ.Enabled && !txt_newSQ.Enabled && txt_newP.Enabled)
+            {
+
+                //update password only
+                if (IsPassValid(txt_newP.Text))
+                {
+                    user_Service.UpatePasswordOnly(usrname, answer, txt_newP.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Password has to contain atleast 8 characters 1 number 1 lowercase letter 1 uppercase letter and 1 symbol.");
+                }
+
+
+            }
+            else
+            {
+                //update all 3
+                if (txt_newSQ.Text != "" && txt_newSA.Text != "")
+                {
+                    if (IsPassValid(txt_newP.Text))
+                    {
+                        user_Service.UpdateSecurity(usrname, newsecQ, newsecA, txt_newP.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password has to contain atleast 8 characters 1 number 1 lowercase letter 1 uppercase letter and 1 symbol.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter all textboxes correctly.");
+                }
+            }
+        }
+        private bool IsPassValid(string password)
+        {
+            char[] SpecialChars = "!@#$%^&*()".ToCharArray();
+            int indexOf = Text.IndexOfAny(SpecialChars);
+
+            var list = new[] { "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "\"" };
+
+
+
+            //var values = new[] { "@", "!", ".", ",", ";", ":", "$", "%", "&", "*", "(", ")", "#", "-" };
+            if (password.Length >= 8 && password.Any(char.IsDigit) && password.Any(char.IsLower) && password.Any(char.IsUpper) && list.Any(password.Contains))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        private void btn_clearfields_Click(object sender, EventArgs e)
+        {
+            txt_newP.Clear();
+            txt_newSA.Clear();
+            txt_newSQ.Clear();
+            txt_UsernameInput.Clear();
+            textAnswerSecurity.Clear();
+            btn_resetpw.Enabled = false;
+            txt_newP.Enabled = false;
+            txt_newSA.Enabled = false;
+            txt_newSQ.Enabled = false;
+            btn_fetchSecurity.Enabled = true;
+            txt_UsernameInput.Enabled = true;
+            MessageBox.Show("Fields have been cleared.");
+        }
     }
 }
